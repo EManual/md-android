@@ -1,0 +1,2 @@
+如果后台的Activity由于某原因被系统回收了，如何在被系统回收之前保存当前状态？
+答：重写onSaveInstanceState()方法，在此方法中保存需要保存的数据，该方法将会在activity被回收之前调用。通过重写onRestoreInstanceState()方法可以从中提取保存好的数据

@@ -1,0 +1,57 @@
+Android的输入法框架比价复杂。从进程的角度来讲，相关功能主要分布在下面三个位置：
+客户端应用是一个包含有图形界面的应用，如地址本。图形界面上包含有能够接收输入的编辑框，如TextView。
+输入法模块提供软键盘，将用户在软键盘上的按键输入根据某种算法（如Zi,T9,国笔等）转换成单词，然后传递给客户端应用。
+目录development/samples/SoftKeyboard下提供了一个输入法模块实例。如果想要实现一个中文输入法，可参考这个实例。
+平台部分实现一些管理功能，负责装载某个输入法模块，启动，终止该模块等。
+相关代码主要位于下面几个位置。其中，位于3,5,6,7目录下的代码最值得关注。
+1. frameworks/base/core/java/com/android/internal/view
+这个目录下定义了几个重要的idl接口。
+```  
+IInputMethod.aidl 定义了IInputMethod idl 接口,用于客户端跨进程操作InputMethod接口。
+IInputMethodSession.aidl 定义了IInputMethodSession接口，是IInputMethod的辅助接口。用于客户端跨进程操作InputMethodSession接口。
+IInputMethodCallback.aidl定义了一个helper 接口，由客户端实现。IInputMethod.aidl和IInputMethodSession.aidl实例可以分别调用该接口中的不同方法
+IInputMethodManager.aidl 定义了Input Method Manager的service接口。客户端通过InputMethodManager interface调用这个service。
+InputMethodManagerService.java实现了IInputMethodManager.aidl接口
+IInputMethodClient.aidl定义接口，标识一个Input Method Manager 的客户。这个service在客户端实现，提供给server端调用。
+IInputContext.aidl定义了一个接口，由客户端提供InputMethod使用。InputMethod可以与客户端交互，调用客户端提供的callback。
+IInputConnectionWrapper.java 实现了IInputContext接口。
+IInputContextCallback.aidl定义了一个接口，定义了一组callback函数给IInputContext.aidl实例调用，从客户端返回信息给InputMethod。
+InputConnectionWrapper.java实现了IInputContextCallback接口。
+```
+2. frameworks/base/services/java/com/android/server
+InputMethodManagerService.java实现了IInputMethodManager.aidl接口
+3. frameworks/base/core/java/android/view/inputmethod
+这个目录下定义了几个重要的interface和类。
+InputMethodManager.java实现了InputMethodManager类。此类调用IInputMethodManager.aidl接口功能，而IInputMethodManager.aidl接口功能由InputMethodManagerService.java实现，并运行在不同于客户端进程的server进程中。
+InputConnection.java定义了InputConnection interface。InputConnection接口在输入法和客户端之间建立了一个连接，输入法可以使用该连接获取或发送信息给客户端。InputConnection实例由客户端创建之后传递给输入法使用。BaseInputConnection.java 实现了InputConnection接口的一个基类: BaseInputConnection。 EditableInputConnection.java实现了一个派生类
+InputBinding.java 定义了类InputBinding，这个类实现了parcelable 接口。这个类的成员变量包含了客户端传向server的信息。
+InputMethod.java定义了InputMethod interface。文件InputMethodService.java中类InputMethodImpl实现了这个接口。这个接口定义了一套操纵一个输入法的方法。如，createSession，startInput等。要编写一个具体输入法的话，就需要派生这个接口。
+InputMethodSession.java定义了InputMethodSession接口。文件InputMethodService.java中类InputMethodSessionImpl实现了这个接口。InputMethodSession是InputMethod的辅助接口，用于具体和某个输入法客户端交互。
+CompletionInfo.java 类描述一个text completion.
+EditorInfo.java类描述一个接收输入的view的属性，如内容属性(text, digit, etc)。
+ExtractedText.java类描述从view中提取的传递给输入法的文本属性。
+4. frameworks/base/core/java/com/android/internal/widget
+EditableInputConnection.java实现了BaseInputConnection的一个派生类。
+5. frameworks/base/core/java/android/inputmethodservice
+这个目录下的代码提供了实现一个具体输入法的框架类。从这些类派生，就可以定制一个输入法。
+SoftInputWindow.java中的SoftInputWindow类是一个Dialog子类。它代表一个输入法的顶级窗口（由窗口管理器管理），这个窗口由上到下，包含extractArea, candidatesArea, 和 inputArea。
+Keyboard.java 中的Keyboard类装载并解析一个描述虚拟键盘（Soft Keyboard)的xml文件(如development/samples/SoftKeyboard/res/xml)，并存储该键盘的属性，如该虚拟键盘包含多上行，每行有哪些键等。
+KeyboardView.java中的KeyboardView类是一个View子类。它根据Keyboard数据结构真正的在screen上画出一个虚拟键盘。这个虚拟键盘就是SoftInputWindow中的inputArea。
+AbstractInputMethodService是Service的派生类，并实现了KeyEvent.Callback 接口。实现了InputMethod 和 InputMethodSession的基类。dispatchKeyEvent 函数将收到的key event传给相应的key处理函数（在派生类中实现）。当这个service被客户端绑定时，其onBind()函数给客户端返回了一个IInputMethodWrapper实例，这个实例实现了IInputMethod idl接口。客户端可以使用该接口的相关功能。
+IInputMethodWrapper.java 实现了IInputMethod idl 接口。这个类收到客户端的跨进程命令后，调用InputMethod完成相应功能。
+IInputMethodSessionWrapper.java 实现了IInputMethodSession idl接口。这个类收到客户端的跨进程命令后，调用InputMethodSession完成相应功能。
+6. frameworks/base/core/res/res/layout
+这个目录下存放着一些系统资源。其中，
+input_method.xml描述了一个输入法的窗口（即SoftInputWindow)布局，从上往下，依次排列extractArea, candidatesArea 和 inputArea。
+input_method_extract_view.xml。
+7. development/samples/SoftKeyboard
+这个目录下代码实现了一个的输入法实例－－软键盘英文／数字输入法。这里面实现的类大都是从frameworks/base/core/java/android/inputmethodservice 中的类派生而来。
+AndroidManifest.xml：描述这个.apk提供的service以及关于这个输入法的一些信息。
+res/xml/目录下存储着几个描述不同虚拟键盘的xml文件。
+LatinKeyboard.java中的LatinKeyboard类是Keyboard的子类。
+LatinKeyboardView.java中的LatinKeyboardView类是KeyboardView的子类。
+8. frameworks/base/core/java/android/widget
+在这里TextView.java是使用Input Method Framework (IMF)的客户端。TextView创建了一个InputMethodManager的实例并调用其restartInput 函数。
+InputMethodManager::restartInput函数创建了一个InputConnection 实例并调用IInputMethodManager::startInput。
+IInputMethodManager::startInput 函数使用mContext.bindService启动一个InputMethod service, 如 Sample Soft Keyboard。
+9. frameworks/base/core/java/com/android/internal/widget

@@ -1,0 +1,20 @@
+#### 4.Android RIL的java框架
+Android RIL的Java部分也被分为了两个模块，RIL模块与Phone模块。其中RIL模块负责进行请求以及相应的处理，它将直接与RIL的原声代码进行通信。而Phone模块则向应用程序开发者提供了一系列的电话功能接口。
+#### 4.1.RIL模块结构
+在RIL.java中实现了几个类来进行与下层rild的通信。
+它实现了如下几个类来完成操作：
+```  
+RILRequest：代表一个命令请求
+RIL.RILSender：负责AT指令的发送
+RIL.RILReceiver：用于处理主动和普通上报信息
+RIL.RILSender与RIL.RILReceiver是两个线程。
+```
+RILRequest提供了obtain()方法，用于得到具体的request操作，这些操作被定义在RILConstants.java中(RILConstants.java中定义的request命令与RIL原生代码中ril.h中定义的request命令是相同的）,然后通过send()函数发送EVENT_SEND,在RIL_Sender线程中处理这个EVENT_SEND将命令写入到stream(socket)中去。Socket是来自常量SOCKET_NAME_RIL,它与RIL 原生代码部分的s_fdListen所指的socket是同一个。
+当有上报信息来到时，系统将通过RILReciver来得到信息，并进行处理。在RILReciver的生命周期里，它一直监视着SOCKET_NAME_RIL这个socket，当有数据到来时，它将通过readRilMessage()方法读取到一个完整的响应，然后通过processResponse来进行处理。
+#### 4.2.Phone模块结构
+Android通过暴露Phone模块来供上层应用程序用户使用电话功能相关的接口。它为用户提供了诸如电话呼叫，短信息，SIM卡管理之类的接口调用。它的核心部分是类GSMPhone，这个是Gsm的电话实现，需要通过PhoneFactory获取这个GSMPhone。
+GSMPhone并不是直接提供接口给上层用户使用，而是通过另外一个管理类TelephonyManager来供应用程序用户使用。
+类TelephonyManager实现了android的电话相关操作。它主要使用两个服务来访问telephony功能：
+1.ITelephony，提供给上层应用程序用户与telephony进行操作，交互的接口，在packages/apps/Phone中由PhoneInterfaceManager.java实现。
+2.ItelephonyRegistry提供了一个通知机制，将底层来的上报通知给框架中需要得到通知的部分，由TelephonyRegistry.java实现。
+GSMPhone通过PhoneNotifier的实现者DefaultPhoneNotifier将具体的事件转化为函数调用，通知到TelephonyRegistry。TelephonyRegistry再通过两种方式通知给用户，其一是广播事件，另外一种是通过服务用户在TelephonyRegistry中注册的IphoneStateListener接口，实现回调(回调方式参见android的aidl机制）。
