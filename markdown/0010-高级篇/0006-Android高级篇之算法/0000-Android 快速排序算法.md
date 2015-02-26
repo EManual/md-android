@@ -49,8 +49,8 @@ public class Partition01 {
 		return pivotpos; // 返回基准元素位置
 	}
 	/*
-	 [Tags]* 对数组元素进行排序，使各元素按排序码非递减有序，把参加排序的数组元素分成两部分，排在 它左边的元素的排序码都小于它，而右边的都大于或等于它.
-	 [Tags]*/
+	  * 对数组元素进行排序，使各元素按排序码非递减有序，把参加排序的数组元素分成两部分，排在 它左边的元素的排序码都小于它，而右边的都大于或等于它.
+	  */
 	public static void QuickSort(int left, int right) {
 		if (left < right) { // 元素序列长度大于1时
 			int pivotpos = getPivotpos(left, right); // 划分

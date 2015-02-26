@@ -8,9 +8,9 @@ private int[][][] playerTable = new int[CHESS_GRID][CHESS_GRID][CHECK_DIR]; // �
 #### 2、每个可下点的4个方向分数判断，每个方向取当前点左右每边5个棋点的状态，然后分析它们是否构成五连、活四、活三等，每种棋型给予不同的分数。
 ```  
 /**
- [Tags]* 分析存在五连
- [Tags]* @param tmpChess
- [Tags]*/
+  * 分析存在五连
+  * @param tmpChess
+  */
 public boolean analyzeWulian(int[] tmpChess, int isWho) {
 	int count = 0;
 	for (int i = 0; i < HALF_LEN; i++) {
@@ -33,10 +33,10 @@ public boolean analyzeWulian(int[] tmpChess, int isWho) {
 	return false;
 }
 
-[Tags]/**
- [Tags]* 分析活四 return 是否存在活四
- [Tags]* @param tmpChess
- [Tags]*/
+ /**
+  * 分析活四 return 是否存在活四
+  * @param tmpChess
+  */
 public boolean analyzeHuosi(int[] tmpChess, int isWho) {
 	int count = 0;
 	int i = 0;
@@ -68,10 +68,10 @@ public boolean analyzeHuosi(int[] tmpChess, int isWho) {
 	}
 	return false;
 }
-[Tags]/**
- [Tags]* 分析活三 return 是否存在活三
- [Tags]* @param tmpChess
- [Tags]*/
+ /**
+  * 分析活三 return 是否存在活三
+  * @param tmpChess
+  */
 public boolean analyzeHuosan(int[] tmpChess, int isWho) {
 	int count = 0;
 	int i = 0;
@@ -107,9 +107,9 @@ public boolean analyzeHuosan(int[] tmpChess, int isWho) {
 3、将玩家棋型数组和电脑棋型数组每个元素的分数比较，选出最大的五个放入一个降序排列的数组中。
 ```  
 /**
- [Tags]* 找到最佳点
- [Tags]* @return 最佳点
- [Tags]*/
+  * 找到最佳点
+  * @return 最佳点
+  */
 private ChessPoint findBestPoint() {
 	int i, j;
 	ChessPoint point;

@@ -5,13 +5,13 @@ import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
-[Tags]/**
- [Tags]* Usage:
- [Tags]* <pre>
- [Tags]* String crypto = SimpleCrypto.encrypt(masterpassword, cleartext)
- [Tags]* String cleartext = SimpleCrypto.decrypt(masterpassword, crypto)
- [Tags]* </pre>
- [Tags]*/
+ /**
+  * Usage:
+  * <pre>
+  * String crypto = SimpleCrypto.encrypt(masterpassword, cleartext)
+  * String cleartext = SimpleCrypto.decrypt(masterpassword, crypto)
+  * </pre>
+  */
 public class SimpleCrypto {
 	public static String encrypt(String seed, String cleartext)
 			throws Exception {

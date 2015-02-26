@@ -7,8 +7,8 @@
 CacheAdapter.java是实现缓存Item的自定义Adapter,源码如下：
 ```  
 /**
- [Tags]* 使用列表缓存过去的Item
- [Tags]*/
+  * 使用列表缓存过去的Item
+  */
 public class CacheAdapter extends BaseAdapter {
 	public class Item {
 		public String itemImageURL;
@@ -74,9 +74,9 @@ public class CacheAdapter extends BaseAdapter {
 		}
 		return convertView;
 	}
-	[Tags]/**
-	 [Tags]* 异步读取网络图片
-	 [Tags]*/
+	 /**
+	  * 异步读取网络图片
+	  */
 	class AsyncLoadImage extends AsyncTask<Object, Object, Void> {
 		@Override
 		protected Void doInBackground(Object... params) {

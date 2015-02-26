@@ -14,8 +14,8 @@
 如下代码所示：
 ```  
 /**
- [Tags]* Custom view that shows a pie chart and, optionally, a label.
- [Tags]*/
+  * Custom view that shows a pie chart and, optionally, a label.
+  */
 public class PieChart extends ViewGroup {
 	//
 	// Measurement functions. This example uses a simple heuristic: it assumes

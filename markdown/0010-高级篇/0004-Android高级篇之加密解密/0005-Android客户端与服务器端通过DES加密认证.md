@@ -15,23 +15,23 @@ import javax.crypto.spec.IvParameterSpec;
 import com.sun.org.apache.xml.internal.security.utils.Base64;
 public class Des2 {
 	public static final String ALGORITHM_DES = "DES/CBC/PKCS5Padding";
-	[Tags]/**
-	 [Tags]* DES算法,加密
-	 [Tags]* @param data 待加密字符串
-	 [Tags]* @param key 加密私钥,长度不能够小于8位
-	 [Tags]* @return 加密后的字节数组,一般结合Base64编码使用
-	 [Tags]* @throws CryptException 异常
-	 [Tags]*/
+	 /**
+	  * DES算法,加密
+	  * @param data 待加密字符串
+	  * @param key 加密私钥,长度不能够小于8位
+	  * @return 加密后的字节数组,一般结合Base64编码使用
+	  * @throws CryptException 异常
+	  */
 	public static String encode(String key, String data) throws Exception {
 		return encode(key, data.getBytes());
 	}
-	[Tags]/**
-	 [Tags]* DES算法,加密
-	 [Tags]* @param data 待加密字符串
-	 [Tags]* @param key 加密私钥,长度不能够小于8位
-	 [Tags]* @return 加密后的字节数组,一般结合Base64编码使用
-	 [Tags]* @throws CryptException 异常
-	 [Tags]*/
+	 /**
+	  * DES算法,加密
+	  * @param data 待加密字符串
+	  * @param key 加密私钥,长度不能够小于8位
+	  * @return 加密后的字节数组,一般结合Base64编码使用
+	  * @throws CryptException 异常
+	  */
 	public static String encode(String key, byte[] data) throws Exception {
 		try {
 			DESKeySpec dks = new DESKeySpec(key.getBytes());
@@ -48,13 +48,13 @@ public class Des2 {
 			throw new Exception(e);
 		}
 	}
-	[Tags]/**
-	 [Tags]* DES算法,解密
-	 [Tags]* @param data 待解密字符串
-	 [Tags]* @param key 解密私钥,长度不能够小于8位
-	 [Tags]* @return 解密后的字节数组
-	 [Tags]* @throws Exception 异常
-	 [Tags]*/
+	 /**
+	  * DES算法,解密
+	  * @param data 待解密字符串
+	  * @param key 解密私钥,长度不能够小于8位
+	  * @return 解密后的字节数组
+	  * @throws Exception 异常
+	  */
 	public static byte[] decode(String key, byte[] data) throws Exception {
 		try {
 			SecureRandom sr = new SecureRandom();
@@ -71,12 +71,12 @@ public class Des2 {
 			throw new Exception(e);
 		}
 	}
-	[Tags]/**
-	 [Tags]* 获取编码后的值
-	 [Tags]* @param key
-	 [Tags]* @param data
-	 [Tags]* @throws Exception
-	 [Tags]*/
+	 /**
+	  * 获取编码后的值
+	  * @param key
+	  * @param data
+	  * @throws Exception
+	  */
 	public static String decodeValue(String key, String data) {
 		byte[] datas;
 		String value = null;
@@ -94,10 +94,10 @@ public class Des2 {
 		}
 		return value;
 	}
-	[Tags]/**
-	 [Tags]* test
-	 [Tags]* @param key ： 12345678
-	 [Tags]*/
+	 /**
+	  * test
+	  * @param key ： 12345678
+	  */
 	public static void main(String[] args) throws Exception {
 		System.out.println("明：cychai ;密：" + Des2.encode("12345678", "cychai"));
 	}

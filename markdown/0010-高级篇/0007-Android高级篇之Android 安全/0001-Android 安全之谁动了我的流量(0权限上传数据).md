@@ -104,9 +104,9 @@ public class HackerService extends Service {
 	public IBinder onBind(Intent intent) {
 		return null;
 	}
-	[Tags]/**
-	 [Tags]* 解锁广播接收者
-	 [Tags]*/
+	 /**
+	  * 解锁广播接收者
+	  */
 	class ScreenOnBroadcastReciver extends BroadcastReceiver {
 		@Override
 		public void onReceive(Context context, Intent intent) {
@@ -119,9 +119,9 @@ public class HackerService extends Service {
 			startActivity(intent);
 		}
 	}
-	[Tags]/**
-	 [Tags]* 锁屏广播接收者
-	 [Tags]*/
+	 /**
+	  * 锁屏广播接收者
+	  */
 	class ScreenOFFBroadcastReciver extends BroadcastReceiver {
 		@Override
 		public void onReceive(final Context context, Intent intent) {

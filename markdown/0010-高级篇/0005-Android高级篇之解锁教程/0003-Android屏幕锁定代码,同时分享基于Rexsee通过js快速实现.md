@@ -16,18 +16,18 @@ alert('请按电源键关屏再开屏看到锁屏画面，10秒后自动解锁�
 如下是源码：
 ```  
 /* 
- [Tags]* Copyright (C) 2011 The Rexsee Open Source Project 
- [Tags]* 
- [Tags]* Licensed under the Rexsee License, Version 1.0 (the "License"); 
- [Tags]* you may not use this file except in compliance with the License. 
- [Tags]* You may obtain a copy of the License at 
- [Tags]*      http://www.rexsee.com/CN/legal/license.html 
- [Tags]* Unless required by applicable law or agreed to in writing, software 
- [Tags]* distributed under the License is distributed on an "AS IS" BASIS, 
- [Tags]* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
- [Tags]* See the License for the specific language governing permissions and 
- [Tags]* limitations under the License. 
- [Tags]*/
+  * Copyright (C) 2011 The Rexsee Open Source Project 
+  * 
+  * Licensed under the Rexsee License, Version 1.0 (the "License"); 
+  * you may not use this file except in compliance with the License. 
+  * You may obtain a copy of the License at 
+  *      http://www.rexsee.com/CN/legal/license.html 
+  * Unless required by applicable law or agreed to in writing, software 
+  * distributed under the License is distributed on an "AS IS" BASIS, 
+  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+  * See the License for the specific language governing permissions and 
+  * limitations under the License. 
+  */
 import rexsee.core.browser.JavascriptInterface;
 import rexsee.core.browser.RexseeBrowser;
 import android.app.KeyguardManager;
@@ -62,11 +62,11 @@ public class RexseeKeyguard implements JavascriptInterface {
 	// JavaScript Interface
 	public void enable() {
 		/*
-		 [Tags]* try { DevicePolicyManager dpm = (DevicePolicyManager)
-		 [Tags]* mContext.getSystemService(Context.DEVICE_POLICY_SERVICE);
-		 [Tags]* dpm.lockNow(); } catch (Exception e) {
-		 [Tags]* mBrowser.exception(getInterfaceName(), e); }
-		 [Tags]*/
+		  * try { DevicePolicyManager dpm = (DevicePolicyManager)
+		  * mContext.getSystemService(Context.DEVICE_POLICY_SERVICE);
+		  * dpm.lockNow(); } catch (Exception e) {
+		  * mBrowser.exception(getInterfaceName(), e); }
+		  */
 	}
 	public void reEnable() {
 		if (mKeyguardLock != null) {

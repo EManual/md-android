@@ -41,9 +41,9 @@ KeyguardManager keyguardManager = (KeyguardManager) this
 		.getSystemService(Context.KEYGUARD_SERVICE);
 KeyguardLock keyguardLock = keyguardManager.newKeyguardLock("随便写点啥都行");
 keyguardLock.disableKeyguard();
-[Tags]/**
- [Tags]* 点亮屏幕
- [Tags]*/
+ /**
+  * 点亮屏幕
+  */
 private void lightScreen() {
 	PowerManager powerManager = (PowerManager) this
 			.getSystemService(Context.POWER_SERVICE);
