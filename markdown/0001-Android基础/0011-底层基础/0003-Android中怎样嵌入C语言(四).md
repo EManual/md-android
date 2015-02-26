@@ -6,7 +6,7 @@ jnitest.java文件：
 import android.app.Activity;
 import android.os.Bundle;
 public class jnitest extends Activity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -40,10 +40,10 @@ ifdef __cplusplus
 extern "C" {
 endif
 /*
-[Tags]* Class: com_hello_jnitest_Nadd
-[Tags]* Method: nadd
-[Tags]* Signature: (II)I
-[Tags]*/
+ * Class: com_hello_jnitest_Nadd
+ * Method: nadd
+ * Signature: (II)I
+ */
 JNIEXPORT jint JNICALL Java_com_hello_jnitest_Nadd_nadd
 (JNIEnv *, jobject, jint, jint);
 ifdef __cplusplus

@@ -127,7 +127,7 @@ import android.os.Bundle;
 import android.widget.*;//注意：导入此包，或者是android.widget.Button; 
 public class HelloWorld extends Activity {
 	private CharSequence text = "new Hello!";
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -148,7 +148,7 @@ import android.os.Bundle;
 import android.widget.Button;
 public class HelloWorld extends Activity {
 	private CharSequence text = "new Hello!";
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

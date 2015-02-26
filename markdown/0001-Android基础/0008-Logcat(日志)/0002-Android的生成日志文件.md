@@ -28,14 +28,14 @@ import android.os.IBinder;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 import android.util.Log;
-[Tags]/**
- [Tags]* 日志服务，日志默认会存储在SDcar里如果没有SDcard会存储在内存中的安装目录下面。 1.本服务默认在SDcard中每天生成一个日志文件,
- [Tags]* 2.如果有SDCard的话会将之前内存中的文件拷贝到SDCard中 3.如果没有SDCard，在安装目录下只保存当前在写日志
- [Tags]* 4.SDcard的装载卸载动作会在步骤2,3中切换 5.SDcard中的日志文件只保存7天
- [Tags]* 
- [Tags]* @author Administrator
- [Tags]* 
- [Tags]*/
+ /**
+  * 日志服务，日志默认会存储在SDcar里如果没有SDcard会存储在内存中的安装目录下面。 1.本服务默认在SDcard中每天生成一个日志文件,
+  * 2.如果有SDCard的话会将之前内存中的文件拷贝到SDCard中 3.如果没有SDCard，在安装目录下只保存当前在写日志
+  * 4.SDcard的装载卸载动作会在步骤2,3中切换 5.SDcard中的日志文件只保存7天
+  * 
+  * @author Administrator
+  * 
+  */
 public class LogService extends Service {
 	private static final String TAG = "LogService";
 	private static final int MEMORY_LOG_FILE_MAX_SIZE = 10 * 1024 * 1024; // 内存中日志文件最大值，10M
@@ -59,8 +59,8 @@ public class LogService extends Service {
 	private SDStateMonitorReceiver sdStateReceiver; // SDcard状态监测
 	private LogTaskReceiver logTaskReceiver;
 	/*
-	 [Tags]* 是否正在监测日志文件大小； 如果当前日志记录在SDcard中则为false 如果当前日志记录在内存中则为true
-	 [Tags]*/
+	  * 是否正在监测日志文件大小； 如果当前日志记录在SDcard中则为false 如果当前日志记录在内存中则为true
+	  */
 	private boolean logSizeMoniting = false;
 	private static String MONITOR_LOG_SIZE_ACTION = "MONITOR_LOG_SIZE"; // 日志文件监测action
 	private static String SWITCH_LOG_FILE_ACTION = "SWITCH_LOG_FILE_ACTION"; // 切换日志文件action
@@ -89,11 +89,11 @@ public class LogService extends Service {
 				+ "log";
 		createLogDir();
 		/* ******************************************************
-		 [Tags]* try { writer = new OutputStreamWriter(new FileOutputStream(
-		 [Tags]* LOG_SERVICE_LOG_PATH, true)); } catch (FileNotFoundException e) {
-		 [Tags]* Log.e(TAG, e.getMessage(), e); }
-		 [Tags]* [Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*
-		 [Tags]*/
+		  * try { writer = new OutputStreamWriter(new FileOutputStream(
+		  * LOG_SERVICE_LOG_PATH, true)); } catch (FileNotFoundException e) {
+		  * Log.e(TAG, e.getMessage(), e); }
+		  *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+		  */
 		PowerManager pm = (PowerManager) getApplicationContext()
 				.getSystemService(Context.POWER_SERVICE);
 		wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
@@ -114,11 +114,11 @@ public class LogService extends Service {
 		logTaskReceiver = new LogTaskReceiver();
 		registerReceiver(logTaskReceiver, logTaskFilter);
 	}
-	[Tags]/**
-	 [Tags]* 获取当前应存储在内存中还是存储在SDCard中
-	 [Tags]* 
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 获取当前应存储在内存中还是存储在SDCard中
+	  * 
+	  * @return
+	  */
 	public int getCurrLogType() {
 		if (!Environment.getExternalStorageState().equals(
 				Environment.MEDIA_MOUNTED)) {
@@ -127,9 +127,9 @@ public class LogService extends Service {
 			return SDCARD_TYPE;
 		}
 	}
-	[Tags]/**
-	 [Tags]* 部署日志切换任务，每天凌晨切换日志文件
-	 [Tags]*/
+	 /**
+	  * 部署日志切换任务，每天凌晨切换日志文件
+	  */
 	private void deploySwitchLogFileTask() {
 		Intent intent = new Intent(SWITCH_LOG_FILE_ACTION);
 		PendingIntent sender = PendingIntent.getBroadcast(this, 0, intent, 0);
@@ -145,10 +145,10 @@ public class LogService extends Service {
 		recordLogServiceLog("deployNextTask succ,next task time is:
 				+ myLogSdf.format(calendar.getTime()));
 	}
-	[Tags]/**
-	 [Tags]* 日志收集 1.清除日志缓存 2.杀死应用程序已开启的Logcat进程防止多个进程写入一个日志文件 3.开启日志收集进程 4.处理日志文件 移动
-	 [Tags]* OR 删除
-	 [Tags]*/
+	 /**
+	  * 日志收集 1.清除日志缓存 2.杀死应用程序已开启的Logcat进程防止多个进程写入一个日志文件 3.开启日志收集进程 4.处理日志文件 移动
+	  * OR 删除
+	  */
 	class LogCollectorThread extends Thread {
 		public LogCollectorThread() {
 			super("LogCollectorThread");
@@ -172,9 +172,9 @@ public class LogService extends Service {
 			}
 		}
 	}
-	[Tags]/**
-	 [Tags]* 每次记录日志之前先清除日志的缓存, 不然会在两个日志文件中记录重复的日志
-	 [Tags]*/
+	 /**
+	  * 每次记录日志之前先清除日志的缓存, 不然会在两个日志文件中记录重复的日志
+	  */
 	private void clearLogCache() {
 		Process proc = null;
 		List<String> commandList = new ArrayList<String>();
@@ -207,13 +207,13 @@ public class LogService extends Service {
 			}
 		}
 	}
-	[Tags]/**
-	 [Tags]* 关闭由本程序开启的logcat进程： 根据用户名称杀死进程(如果是本程序进程开启的Logcat收集进程那么两者的USER一致)
-	 [Tags]* 如果不关闭会有多个进程读取logcat日志缓存信息写入日志文件
-	 [Tags]* 
-	 [Tags]* @param allProcList
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 关闭由本程序开启的logcat进程： 根据用户名称杀死进程(如果是本程序进程开启的Logcat收集进程那么两者的USER一致)
+	  * 如果不关闭会有多个进程读取logcat日志缓存信息写入日志文件
+	  * 
+	  * @param allProcList
+	  * @return
+	  */
 	private void killLogcatProc(List<ProcessInfo> allProcList) {
 		if (process != null) {
 			process.destroy();
@@ -221,12 +221,12 @@ public class LogService extends Service {
 		String packName = this.getPackageName();
 		String myUser = getAppUser(packName, allProcList);
 		/*
-		 [Tags]* recordLogServiceLog("app user is:"+myUser);
-		 [Tags]* recordLogServiceLog("========================"); for (ProcessInfo
-		 [Tags]* processInfo : allProcList) {
-		 [Tags]* recordLogServiceLog(processInfo.toString()); }
-		 [Tags]* recordLogServiceLog("========================");
-		 [Tags]*/
+		  * recordLogServiceLog("app user is:"+myUser);
+		  * recordLogServiceLog("========================"); for (ProcessInfo
+		  * processInfo : allProcList) {
+		  * recordLogServiceLog(processInfo.toString()); }
+		  * recordLogServiceLog("========================");
+		  */
 		for (ProcessInfo processInfo : allProcList) {
 			if (processInfo.name.toLowerCase().equals("logcat")
 					&& processInfo.user.equals(myUser)) {
@@ -237,13 +237,13 @@ public class LogService extends Service {
 			}
 		}
 	}
-	[Tags]/**
-	 [Tags]* 获取本程序的用户名称
-	 [Tags]* 
-	 [Tags]* @param packName
-	 [Tags]* @param allProcList
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 获取本程序的用户名称
+	  * 
+	  * @param packName
+	  * @param allProcList
+	  * @return
+	  */
 	private String getAppUser(String packName, List<ProcessInfo> allProcList) {
 		for (ProcessInfo processInfo : allProcList) {
 			if (processInfo.name.equals(packName)) {
@@ -252,12 +252,12 @@ public class LogService extends Service {
 		}
 		return null;
 	}
-	[Tags]/**
-	 [Tags]* 根据ps命令得到的内容获取PID，User，name等信息
-	 [Tags]* 
-	 [Tags]* @param orgProcessList
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 根据ps命令得到的内容获取PID，User，name等信息
+	  * 
+	  * @param orgProcessList
+	  * @return
+	  */
 	private List<ProcessInfo> getProcessInfoList(List<String> orgProcessList) {
 		List<ProcessInfo> procInfoList = new ArrayList<ProcessInfo>();
 		for (int i = 1; i < orgProcessList.size(); i++) {
@@ -282,12 +282,12 @@ public class LogService extends Service {
 		}
 		return procInfoList;
 	}
-	[Tags]/**
-	 [Tags]* 运行PS命令得到进程信息
-	 [Tags]* 
-	 [Tags]* @return USER PID PPID VSIZE RSS WCHAN PC NAME root 1 0 416 300 c00d4b28
-	 [Tags]*         0000cd5c S /init
-	 [Tags]*/
+	 /**
+	  * 运行PS命令得到进程信息
+	  * 
+	  * @return USER PID PPID VSIZE RSS WCHAN PC NAME root 1 0 416 300 c00d4b28
+	  *         0000cd5c S /init
+	  */
 	private List<String> getAllProcess() {
 		List<String> orgProcList = new ArrayList<String>();
 		Process proc = null;
@@ -318,9 +318,9 @@ public class LogService extends Service {
 		}
 		return orgProcList;
 	}
-	[Tags]/**
-	 [Tags]* 开始收集日志信息
-	 [Tags]*/
+	 /**
+	  * 开始收集日志信息
+	  */
 	public void createLogCollector() {
 		String logFileName = sdf.format(new Date()) + ".log";// 日志文件名称
 		List<String> commandList = new ArrayList<String>();
@@ -346,11 +346,11 @@ public class LogService extends Service {
 			recordLogServiceLog("CollectorThread == >" + e.getMessage());
 		}
 	}
-	[Tags]/**
-	 [Tags]* 根据当前的存储位置得到日志的绝对存储路径
-	 [Tags]* 
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 根据当前的存储位置得到日志的绝对存储路径
+	  * 
+	  * @return
+	  */
 	public String getLogPath() {
 		createLogDir();
 		String logFileName = sdf.format(new Date()) + ".log";// 日志文件名称
@@ -366,10 +366,10 @@ public class LogService extends Service {
 			return LOG_PATH_SDCARD_DIR + File.separator + logFileName;
 		}
 	}
-	[Tags]/**
-	 [Tags]* 处理日志文件 1.如果日志文件存储位置切换到内存中，删除除了正在写的日志文件 并且部署日志大小监控任务，控制日志大小不超过规定值
-	 [Tags]* 2.如果日志文件存储位置切换到SDCard中，删除7天之前的日志，移 动所有存储在内存中的日志到SDCard中，并将之前部署的日志大小 监控取消
-	 [Tags]*/
+	 /**
+	  * 处理日志文件 1.如果日志文件存储位置切换到内存中，删除除了正在写的日志文件 并且部署日志大小监控任务，控制日志大小不超过规定值
+	  * 2.如果日志文件存储位置切换到SDCard中，删除7天之前的日志，移 动所有存储在内存中的日志到SDCard中，并将之前部署的日志大小 监控取消
+	  */
 	public void handleLog() {
 		if (CURR_LOG_TYPE == MEMORY_TYPE) {
 			deployLogSizeMonitorTask();
@@ -380,9 +380,9 @@ public class LogService extends Service {
 			deleteSDcardExpiredLog();
 		}
 	}
-	[Tags]/**
-	 [Tags]* 部署日志大小监控任务
-	 [Tags]*/
+	 /**
+	  * 部署日志大小监控任务
+	  */
 	private void deployLogSizeMonitorTask() {
 		if (logSizeMoniting) { // 如果当前正在监控着，则不需要继续部署
 			return;
@@ -397,9 +397,9 @@ public class LogService extends Service {
 		// recordLogServiceLog("deployLogSizeMonitorTask() succ ,start time is "
 		// + calendar.getTime().toLocaleString());
 	}
-	[Tags]/**
-	 [Tags]* 取消部署日志大小监控任务
-	 [Tags]*/
+	 /**
+	  * 取消部署日志大小监控任务
+	  */
 	private void cancelLogSizeMonitorTask() {
 		logSizeMoniting = false;
 		AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
@@ -409,9 +409,9 @@ public class LogService extends Service {
 
 		Log.d(TAG, "canelLogSizeMonitorTask() succ");
 	}
-	[Tags]/**
-	 [Tags]* 检查日志文件大小是否超过了规定大小 如果超过了重新开启一个日志收集进程
-	 [Tags]*/
+	 /**
+	  * 检查日志文件大小是否超过了规定大小 如果超过了重新开启一个日志收集进程
+	  */
 	private void checkLogSize() {
 		if (CURR_INSTALL_LOG_NAME != null && !"".equals(CURR_INSTALL_LOG_NAME)) {
 			String path = LOG_PATH_MEMORY_DIR + File.separator
@@ -427,9 +427,9 @@ public class LogService extends Service {
 			}
 		}
 	}
-	[Tags]/**
-	 [Tags]* 创建日志目录
-	 [Tags]*/
+	 /**
+	  * 创建日志目录
+	  */
 	private void createLogDir() {
 		File file = new File(LOG_PATH_MEMORY_DIR);
 		boolean mkOk;
@@ -440,10 +440,10 @@ public class LogService extends Service {
 			}
 		}
 		/* ************************************
-		 [Tags]* file = new File(LOG_SERVICE_LOG_PATH); if (!file.exists()) { try {
-		 [Tags]* mkOk = file.createNewFile(); if (!mkOk) { file.createNewFile(); } }
-		 [Tags]* catch (IOException e) { Log.e(TAG, e.getMessage(), e); } }
-		 [Tags]*/
+		  * file = new File(LOG_SERVICE_LOG_PATH); if (!file.exists()) { try {
+		  * mkOk = file.createNewFile(); if (!mkOk) { file.createNewFile(); } }
+		  * catch (IOException e) { Log.e(TAG, e.getMessage(), e); } }
+		  */
 		if (Environment.getExternalStorageState().equals(
 				Environment.MEDIA_MOUNTED)) {
 			file = new File(LOG_PATH_SDCARD_DIR);
@@ -456,9 +456,9 @@ public class LogService extends Service {
 			}
 		}
 	}
-	[Tags]/**
-	 [Tags]* 将日志文件转移到SD卡下面
-	 [Tags]*/
+	 /**
+	  * 将日志文件转移到SD卡下面
+	  */
 	private void moveLogfile() {
 		if (!Environment.getExternalStorageState().equals(
 				Environment.MEDIA_MOUNTED)) {
@@ -492,9 +492,9 @@ public class LogService extends Service {
 			}
 		}
 	}
-	[Tags]/**
-	 [Tags]* 删除内存下过期的日志
-	 [Tags]*/
+	 /**
+	  * 删除内存下过期的日志
+	  */
 	private void deleteSDcardExpiredLog() {
 		File file = new File(LOG_PATH_SDCARD_DIR);
 		if (file.isDirectory()) {
@@ -513,12 +513,12 @@ public class LogService extends Service {
 			}
 		}
 	}
-	[Tags]/**
-	 [Tags]* 判断sdcard上的日志文件是否可以删除
-	 [Tags]* 
-	 [Tags]* @param createDateStr
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 判断sdcard上的日志文件是否可以删除
+	  * 
+	  * @param createDateStr
+	  * @return
+	  */
 	public boolean canDeleteSDLog(String createDateStr) {
 		boolean canDel = false;
 		Calendar calendar = Calendar.getInstance();
@@ -533,9 +533,9 @@ public class LogService extends Service {
 		}
 		return canDel;
 	}
-	[Tags]/**
-	 [Tags]* 删除内存中的过期日志，删除规则： 除了当前的日志和离当前时间最近的日志保存其他的都删除
-	 [Tags]*/
+	 /**
+	  * 删除内存中的过期日志，删除规则： 除了当前的日志和离当前时间最近的日志保存其他的都删除
+	  */
 	private void deleteMemoryExpiredLog() {
 		File file = new File(LOG_PATH_MEMORY_DIR);
 		if (file.isDirectory()) {
@@ -553,13 +553,13 @@ public class LogService extends Service {
 			}
 		}
 	}
-	[Tags]/**
-	 [Tags]* 拷贝文件
-	 [Tags]* 
-	 [Tags]* @param source
-	 [Tags]* @param target
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 拷贝文件
+	  * 
+	  * @param source
+	  * @param target
+	  * @return
+	  */
 	private boolean copy(File source, File target) {
 		FileInputStream in = null;
 		FileOutputStream out = null;
@@ -599,11 +599,11 @@ public class LogService extends Service {
 			}
 		}
 	}
-	[Tags]/**
-	 [Tags]* 记录日志服务的基本信息 防止日志服务有错，在LogCat日志中无法查找 此日志名称为Log.log
-	 [Tags]* 
-	 [Tags]* @param msg
-	 [Tags]*/
+	 /**
+	  * 记录日志服务的基本信息 防止日志服务有错，在LogCat日志中无法查找 此日志名称为Log.log
+	  * 
+	  * @param msg
+	  */
 	private void recordLogServiceLog(String msg) {
 		if (writer != null) {
 			try {
@@ -617,12 +617,12 @@ public class LogService extends Service {
 			}
 		}
 	}
-	[Tags]/**
-	 [Tags]* 去除文件的扩展类型（.log）
-	 [Tags]* 
-	 [Tags]* @param fileName
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 去除文件的扩展类型（.log）
+	  * 
+	  * @param fileName
+	  * @return
+	  */
 	private String getFileNameWithoutExtension(String fileName) {
 		return fileName.substring(0, fileName.indexOf("."));
 	}
@@ -663,12 +663,12 @@ public class LogService extends Service {
 			}
 		}
 	}
-	[Tags]/**
-	 [Tags]* 监控SD卡状态
-	 [Tags]* 
-	 [Tags]* @author Administrator
-	 [Tags]* 
-	 [Tags]*/
+	 /**
+	  * 监控SD卡状态
+	  * 
+	  * @author Administrator
+	  * 
+	  */
 	class SDStateMonitorReceiver extends BroadcastReceiver {
 		public void onReceive(Context context, Intent intent) {
 			if (Intent.ACTION_MEDIA_UNMOUNTED.equals(intent.getAction())) { // 存储卡被卸载
@@ -686,12 +686,12 @@ public class LogService extends Service {
 			}
 		}
 	}
-	[Tags]/**
-	 [Tags]* 日志任务接收 切换日志，监控日志大小
-	 [Tags]* 
-	 [Tags]* @author Administrator
-	 [Tags]* 
-	 [Tags]*/
+	 /**
+	  * 日志任务接收 切换日志，监控日志大小
+	  * 
+	  * @author Administrator
+	  * 
+	  */
 	class LogTaskReceiver extends BroadcastReceiver {
 		public void onReceive(Context context, Intent intent) {
 			String action = intent.getAction();

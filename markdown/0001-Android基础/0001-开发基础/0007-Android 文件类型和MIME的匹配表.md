@@ -2,10 +2,10 @@
 我在写android资源管理器(文件浏览器)的时候，希望能在资源管理器的中实现打开文件的操作，此时就需要用到文件的MIME类型。
 实现方法：
 ```  
-[Tags]/**
- [Tags]* 根据文件后缀名获得对应的MIME类型。
- [Tags]* @param file
- [Tags]*/
+ /**
+  * 根据文件后缀名获得对应的MIME类型。
+  * @param file
+  */
 private String getMIMEType(File file) {
 	String type = "*/*";
 	String fName = file.getName();
@@ -26,10 +26,10 @@ private String getMIMEType(File file) {
 	}
 	return type;
 }
-[Tags]/**
- [Tags]* 打开文件
- [Tags]* @param file
- [Tags]*/
+ /**
+  * 打开文件
+  * @param file
+  */
 private void openFile(File file) {
 	// Uri uri = Uri.parse("file://"+file.getAbsolutePath());
 	Intent intent = new Intent();
