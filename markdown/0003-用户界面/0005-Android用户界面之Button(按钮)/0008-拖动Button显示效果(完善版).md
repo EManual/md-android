@@ -1,7 +1,7 @@
 使得Buttton不能拖动出屏幕范围，代码如下：
 ```  
 public class DraftTest extends Activity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -21,11 +21,11 @@ public class DraftTest extends Activity {
 					lastX = (int) event.getRawX();
 					lastY = (int) event.getRawY();
 					break;
-				[Tags]/**
-				 [Tags]* layout(l,t,r,b) l Left position, relative to parent t Top
-				 [Tags]* position, relative to parent r Right position, relative to
-				 [Tags]* parent b Bottom position, relative to parent
-				 [Tags]* [Tags]*/
+				 /**
+				  * layout(l,t,r,b) l Left position, relative to parent t Top
+				  * position, relative to parent r Right position, relative to
+				  * parent b Bottom position, relative to parent
+				  *  */
 				case MotionEvent.ACTION_MOVE:
 					int dx = (int) event.getRawX() - lastX;
 					int dy = (int) event.getRawY() - lastY;

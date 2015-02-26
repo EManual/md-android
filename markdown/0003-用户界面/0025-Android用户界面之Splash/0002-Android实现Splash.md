@@ -6,17 +6,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 public class Splash extends Activity {
-	[Tags]/**
-	 [Tags]* 延期时间
-	 [Tags]*/
+	 /**
+	  * 延期时间
+	  */
 	private final int SPLASH_DISPLAY_LENGHT = 5000;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.splash);
-		[Tags]/**
-		 [Tags]* 使用handler来处理
-		 [Tags]*/
+		 /**
+		  * 使用handler来处理
+		  */
 		new Handler().postDelayed(new Runnable() {
 			@Override
 			public void run() {

@@ -51,9 +51,9 @@ public void onClick(View v) {
 		expandableList.setAdapter(superAdapter);
 	}
 }
-[Tags]/**
- [Tags]* 三级树形菜单的事件不再可用，本函数由三级树形菜单的子项(二级菜单)进行回调
- [Tags]*/
+ /**
+  * 三级树形菜单的事件不再可用，本函数由三级树形菜单的子项(二级菜单)进行回调
+  */
 OnChildClickListener stvClickEvent = new OnChildClickListener() {
 	@Override
 	public boolean onChildClick(ExpandableListView parent, View v,
@@ -64,9 +64,9 @@ OnChildClickListener stvClickEvent = new OnChildClickListener() {
 		return false;
 	}
 };
-[Tags]/**
- [Tags]* 三级树形菜单的事件不再可用，本函数由三级树形菜单的子项(二级菜单)进行回调
- [Tags]*/
+ /**
+  * 三级树形菜单的事件不再可用，本函数由三级树形菜单的子项(二级菜单)进行回调
+  */
 OnChildClickListener stvClickEvent = new OnChildClickListener() {
 	@Override
 	public boolean onChildClick(ExpandableListView parent, View v,

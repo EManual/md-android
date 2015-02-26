@@ -6,9 +6,9 @@ webview.getSettings().setJavaScriptEnabled(true);
 3.如果希望点击链接由自己处理而不是新开Android的系统browser中响应该链接.给WebView添加一个事件监听对象(WebViewClient)并重写其中的一些方法 shouldOverrideUrlLoading对网页中超链接按钮的响应 
 ```  
 mWebView.setWebViewClient(new WebViewClient() {
-	[Tags]/**
-	[Tags]* Show in webview not system webview.
-	[Tags]*/
+	 /**
+	 * Show in webview not system webview.
+	 */
 	public boolean shouldOverrideUrlLoading(WebView view, String url) {
 		view.loadUrl(url);
 		return super.shouldOverrideUrlLoading(view, url);
@@ -260,10 +260,10 @@ public class MethodMutual extends Activity {
 	final class DemoJavaScriptInterface {
 		DemoJavaScriptInterface() {
 		}
-		[Tags]/**
-		 [Tags]* This is not called on the UI thread. Post a runnable to invoke
-		 [Tags]* loadUrl on the UI thread.
-		 [Tags]*/
+		 /**
+		  * This is not called on the UI thread. Post a runnable to invoke
+		  * loadUrl on the UI thread.
+		  */
 		public void callAndroid() {
 			mHandler.post(new Runnable() {
 				public void run() {
@@ -277,10 +277,10 @@ public class MethodMutual extends Activity {
 			});
 		}
 	}
-	[Tags]/**
-	 [Tags]* Provides a hook for calling "alert" from javascript. Useful for debugging
-	 [Tags]* your javascript.
-	 [Tags]*/
+	 /**
+	  * Provides a hook for calling "alert" from javascript. Useful for debugging
+	  * your javascript.
+	  */
 	final class MyWebChromeClient extends WebChromeClient {
 		@Override
 		public boolean onJsAlert(WebView view, String url, String message,

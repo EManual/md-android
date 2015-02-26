@@ -1,8 +1,8 @@
 默认的进度条（ProgressBar）是没有文本进度提示的，为了更直观显示进度，自定义了ProgressBar控件来显示的文本进度。
 ```  
-[Tags]/**
- [Tags]* 带文本提示的进度条
- [Tags]*/
+ /**
+  * 带文本提示的进度条
+  */
 public class TextProgressBar extends ProgressBar {
 	private String text;
 	private Paint mPaint;

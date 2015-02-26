@@ -5,21 +5,21 @@
 传入参数为context和程序内drawable中的图片ID数组。之后调用其中的createReflectedImages()方法分别创造每一个图像的倒影效果，生成对应的ImageView数组，最后在getView()中返回。
 ```  
 //*
- [Tags]* Copyright (C) 2010 Neil Davies
- [Tags]* Licensed under the Apache License, Version 2.0 (the "License");
- [Tags]* you may not use this file except in compliance with the License.
- [Tags]* You may obtain a copy of the License at
- [Tags]* http://www.apache.org/licenses/LICENSE-2.0
- [Tags]* Unless required by applicable law or agreed to in writing, software
- [Tags]* distributed under the License is distributed on an "AS IS" BASIS,
- [Tags]* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- [Tags]* See the License for the specific language governing permissions and
- [Tags]* limitations under the License.
- [Tags]* 
- [Tags]* This code is base on the Android Gallery widget and was Created 
- [Tags]* by Neil Davies neild001 'at' gmail dot com to be a Coverflow widget
- [Tags]* @author Neil Davies
- [Tags]*/
+  * Copyright (C) 2010 Neil Davies
+  * Licensed under the Apache License, Version 2.0 (the "License");
+  * you may not use this file except in compliance with the License.
+  * You may obtain a copy of the License at
+  * http://www.apache.org/licenses/LICENSE-2.0
+  * Unless required by applicable law or agreed to in writing, software
+  * distributed under the License is distributed on an "AS IS" BASIS,
+  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  * See the License for the specific language governing permissions and
+  * limitations under the License.
+  * 
+  * This code is base on the Android Gallery widget and was Created 
+  * by Neil Davies neild001 'at' gmail dot com to be a Coverflow widget
+  * @author Neil Davies
+  */
 public class ImageAdapter extends BaseAdapter {
 	int mGalleryItemBackground;
 	private Context mContext;
@@ -95,21 +95,21 @@ public class ImageAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// Use this code if you want to load from resources
 		/*
-		 [Tags]* ImageView i = new ImageView(mContext);
-		 [Tags]* i.setImageResource(mImageIds[position]); i.setLayoutParams(new
-		 [Tags]* CoverFlow.LayoutParams(350,350));
-		 [Tags]* i.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-		 [Tags]* 
-		 [Tags]* //Make sure we set anti-aliasing otherwise we get jaggies
-		 [Tags]* BitmapDrawable drawable = (BitmapDrawable) i.getDrawable();
-		 [Tags]* drawable.setAntiAlias(true); return i;
-		 [Tags]*/
+		  * ImageView i = new ImageView(mContext);
+		  * i.setImageResource(mImageIds[position]); i.setLayoutParams(new
+		  * CoverFlow.LayoutParams(350,350));
+		  * i.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+		  * 
+		  * //Make sure we set anti-aliasing otherwise we get jaggies
+		  * BitmapDrawable drawable = (BitmapDrawable) i.getDrawable();
+		  * drawable.setAntiAlias(true); return i;
+		  */
 		return mImages[position];
 	}
-	[Tags]/**
-	 [Tags]* Returns the size (0.0f to 1.0f) of the views depending on the 'offset' to
-	 [Tags]* the center.
-	 [Tags]*/
+	 /**
+	  * Returns the size (0.0f to 1.0f) of the views depending on the 'offset' to
+	  * the center.
+	  */
 	public float getScale(boolean focused, int offset) {
 		/* Formula: 1 / (2 ^ offset) */
 		return Math.max(0, 1.0f / (float) Math.pow(2, Math.abs(offset)));
@@ -119,21 +119,21 @@ public class ImageAdapter extends BaseAdapter {
 仅仅实现了图片的倒影效果还不够，因为在coverflow中图片切换是有旋转和缩放效果的，而自带的gallery中并没有实现。因此，我们扩展自带的gallery，实现自己的galleryflow。在原gallery类中，提供了一个方法getChildStaticTransformation()以实现对图片的变换。我们通过覆写这个方法并在其中调用自定义的transformImageBitmap(“每个图片与gallery中心的距离”)方法，，即可实现每个图片做相应的旋转和缩放。其中使用了camera和matrix用于视图变换。具体可参考代码注释。
 ```  
 public class GalleryFlow extends Gallery {
-	[Tags]/**
-	 [Tags]* Graphics Camera used for transforming the matrix of ImageViews
-	 [Tags]*/
+	 /**
+	  * Graphics Camera used for transforming the matrix of ImageViews
+	  */
 	private Camera mCamera = new Camera();
-	[Tags]/**
-	 [Tags]* The maximum angle the Child ImageView will be rotated by
-	 [Tags]*/
+	 /**
+	  * The maximum angle the Child ImageView will be rotated by
+	  */
 	private int mMaxRotationAngle = 60;
-	[Tags]/**
-	 [Tags]* The maximum zoom on the centre Child
-	 [Tags]*/
+	 /**
+	  * The maximum zoom on the centre Child
+	  */
 	private int mMaxZoom = -120;
-	[Tags]/**
-	 [Tags]* The Centre of the Coverflow
-	 [Tags]*/
+	 /**
+	  * The Centre of the Coverflow
+	  */
 	private int mCoveflowCenter;
 	public GalleryFlow(Context context) {
 		super(context);
@@ -147,55 +147,55 @@ public class GalleryFlow extends Gallery {
 		super(context, attrs, defStyle);
 		this.setStaticTransformationsEnabled(true);
 	}
-	[Tags]/**
-	 [Tags]* Get the max rotational angle of the image
-	 [Tags]* @return the mMaxRotationAngle
-	 [Tags]*/
+	 /**
+	  * Get the max rotational angle of the image
+	  * @return the mMaxRotationAngle
+	  */
 	public int getMaxRotationAngle() {
 		return mMaxRotationAngle;
 	}
-	[Tags]/**
-	 [Tags]* Set the max rotational angle of each image
-	 [Tags]* @param maxRotationAngle
-	 [Tags]*            the mMaxRotationAngle to set
-	 [Tags]*/
+	 /**
+	  * Set the max rotational angle of each image
+	  * @param maxRotationAngle
+	  *            the mMaxRotationAngle to set
+	  */
 	public void setMaxRotationAngle(int maxRotationAngle) {
 		mMaxRotationAngle = maxRotationAngle;
 	}
-	[Tags]/**
-	 [Tags]* Get the Max zoom of the centre image
-	 [Tags]* @return the mMaxZoom
-	 [Tags]*/
+	 /**
+	  * Get the Max zoom of the centre image
+	  * @return the mMaxZoom
+	  */
 	public int getMaxZoom() {
 		return mMaxZoom;
 	}
-	[Tags]/**
-	 [Tags]* Set the max zoom of the centre image
-	 [Tags]* @param maxZoom
-	 [Tags]*            the mMaxZoom to set
-	 [Tags]*/
+	 /**
+	  * Set the max zoom of the centre image
+	  * @param maxZoom
+	  *            the mMaxZoom to set
+	  */
 	public void setMaxZoom(int maxZoom) {
 		mMaxZoom = maxZoom;
 	}
-	[Tags]/**
-	 [Tags]* Get the Centre of the Coverflow
-	 [Tags]* @return The centre of this Coverflow.
-	 [Tags]*/
+	 /**
+	  * Get the Centre of the Coverflow
+	  * @return The centre of this Coverflow.
+	  */
 	private int getCenterOfCoverflow() {
 		return (getWidth() - getPaddingLeft() - getPaddingRight()) / 2
 				+ getPaddingLeft();
 	}
-	[Tags]/**
-	 [Tags]* Get the Centre of the View
-	 [Tags]* @return The centre of the given view.
-	 [Tags]*/
+	 /**
+	  * Get the Centre of the View
+	  * @return The centre of the given view.
+	  */
 	private static int getCenterOfView(View view) {
 		return view.getLeft() + view.getWidth() / 2;
 	}
-	[Tags]/**
-	 [Tags]* {@inheritDoc}
-	 [Tags]* @see setStaticTransformationsEnabled(boolean)
-	 [Tags]*/
+	 /**
+	  * {@inheritDoc}
+	  * @see setStaticTransformationsEnabled(boolean)
+	  */
 	protected boolean getChildStaticTransformation(View child, Transformation t) {
 		final int childCenter = getCenterOfView(child);
 		final int childWidth = child.getWidth();
@@ -214,32 +214,32 @@ public class GalleryFlow extends Gallery {
 		}
 		return true;
 	}
-	[Tags]/**
-	 [Tags]* This is called during layout when the size of this view has changed. If
-	 [Tags]* you were just added to the view hierarchy, you're called with the old
-	 [Tags]* values of 0.
-	 [Tags]* @param w
-	 [Tags]*            Current width of this view.
-	 [Tags]* @param h
-	 [Tags]*            Current height of this view.
-	 [Tags]* @param oldw
-	 [Tags]*            Old width of this view.
-	 [Tags]* @param oldh
-	 [Tags]*            Old height of this view.
-	 [Tags]*/
+	 /**
+	  * This is called during layout when the size of this view has changed. If
+	  * you were just added to the view hierarchy, you're called with the old
+	  * values of 0.
+	  * @param w
+	  *            Current width of this view.
+	  * @param h
+	  *            Current height of this view.
+	  * @param oldw
+	  *            Old width of this view.
+	  * @param oldh
+	  *            Old height of this view.
+	  */
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
 		mCoveflowCenter = getCenterOfCoverflow();
 		super.onSizeChanged(w, h, oldw, oldh);
 	}
-	[Tags]/**
-	 [Tags]* Transform the Image Bitmap by the Angle passed
-	 [Tags]* @param imageView
-	 [Tags]*            ImageView the ImageView whose bitmap we want to rotate
-	 [Tags]* @param t
-	 [Tags]*            transformation
-	 [Tags]* @param rotationAngle
-	 [Tags]*            the Angle by which to rotate the Bitmap
-	 [Tags]*/
+	 /**
+	  * Transform the Image Bitmap by the Angle passed
+	  * @param imageView
+	  *            ImageView the ImageView whose bitmap we want to rotate
+	  * @param t
+	  *            transformation
+	  * @param rotationAngle
+	  *            the Angle by which to rotate the Bitmap
+	  */
 	private void transformImageBitmap(ImageView child, Transformation t,
 			int rotationAngle) {
 		mCamera.save();

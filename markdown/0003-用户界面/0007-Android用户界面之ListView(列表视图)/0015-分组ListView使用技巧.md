@@ -76,11 +76,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import com.miss.sos.util.NotifyingAsyncQueryHandler;
 import com.miss.sos.util.NotifyingAsyncQueryHandler.NotifyingAsyncQueryListener;
-[Tags]/**
- [Tags]* Shows a smart way of handling separators in {@link ListView}s. It also shows
- [Tags]* some ways to boost your {@link ListView}s using techniques like 'section
- [Tags]* caching', ViewHolder, CharArrayBuffer, etc.
- [Tags]*/
+ /**
+  * Shows a smart way of handling separators in {@link ListView}s. It also shows
+  * some ways to boost your {@link ListView}s using techniques like 'section
+  * caching', ViewHolder, CharArrayBuffer, etc.
+  */
 public class SectionedListActivity extends ListActivity implements
 		NotifyingAsyncQueryListener {
 	private AudioFilesAdapter mAdapter;
@@ -118,19 +118,19 @@ public class SectionedListActivity extends ListActivity implements
 		public StringBuilder subtitleBuffer = new StringBuilder();
 	}
 	private static class AudioFilesAdapter extends CursorAdapter {
-		[Tags]/**
-		 [Tags]* State of ListView item that has never been determined.
-		 [Tags]*/
+		 /**
+		  * State of ListView item that has never been determined.
+		  */
 		private static final int STATE_UNKNOWN = 0;
-		[Tags]/**
-		 [Tags]* State of a ListView item that is sectioned. A sectioned item must
-		 [Tags]* display the separator.
-		 [Tags]*/
+		 /**
+		  * State of a ListView item that is sectioned. A sectioned item must
+		  * display the separator.
+		  */
 		private static final int STATE_SECTIONED_CELL = 1;
-		[Tags]/**
-		 [Tags]* State of a ListView item that is not sectioned and therefore does not
-		 [Tags]* display the separator.
-		 [Tags]*/
+		 /**
+		  * State of a ListView item that is not sectioned and therefore does not
+		  * display the separator.
+		  */
 		private static final int STATE_REGULAR_CELL = 2;
 		private final CharArrayBuffer mBuffer = new CharArrayBuffer(128);
 		private int[] mCellStates;
@@ -148,8 +148,8 @@ public class SectionedListActivity extends ListActivity implements
 
 			final AudioFilesViewHolder holder = (AudioFilesViewHolder) view.getTag();
 			/*
-			 [Tags]* Separator
-			 [Tags]*/
+			  * Separator
+			  */
 			boolean needSeparator = false;
 			final int position = cursor.getPosition();
 			cursor.copyStringToBuffer(AudioFilesQuery.TITLE, holder.titleBuffer);
@@ -189,13 +189,13 @@ public class SectionedListActivity extends ListActivity implements
 				holder.separator.setVisibility(View.GONE);
 			}
 			/*
-			 [Tags]* Title
-			 [Tags]*/
+			  * Title
+			  */
 			holder.titleView.setText(holder.titleBuffer.data, 0,
 					holder.titleBuffer.sizeCopied);
 			/*
-			 [Tags]* Subtitle
-			 [Tags]*/
+			  * Subtitle
+			  */
 			holder.subtitleBuffer.setLength(0);
 			final String album = cursor.getString(AudioFilesQuery.ALBUM);
 			if (!TextUtils.isEmpty(album)) {
@@ -229,9 +229,9 @@ public class SectionedListActivity extends ListActivity implements
 			return v;
 		}
 	}
-	[Tags]/**
-	 [Tags]* Keep query data in one place
-	 [Tags]*/
+	 /**
+	  * Keep query data in one place
+	  */
 	private interface AudioFilesQuery {
 		String[] PROJECTION = { Media._ID, Media.TITLE, Media.ALBUM,
 				Media.ARTIST };

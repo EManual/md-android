@@ -43,9 +43,9 @@ case MotionEvent.ACTION_MOVE:
 	} 
 break; } 
 return true; 
-[Tags]/**
- [Tags]* 实现处理缩放
- [Tags]*/
+ /**
+  * 实现处理缩放
+  */
 private void setScale(float temp, int flag) {
 	if (flag == BIGGER) {
 		this.setFrame(this.getLeft() - (int) (temp * this.getWidth()),
@@ -59,9 +59,9 @@ private void setScale(float temp, int flag) {
 				this.getBottom() - (int) (temp * this.getHeight()));
 	}
 }
-[Tags]/**
- [Tags]* 实现处理拖动
- [Tags]*/
+ /**
+  * 实现处理拖动
+  */
 private void setPosition(int left, int top, int right, int bottom) {
 	this.layout(left, top, right, bottom);
 }
@@ -75,9 +75,9 @@ import Android.graphics.BitmapFactory;
 import Android.view.View;
 import Android.widget.AbsoluteLayout;
 import Android.widget.ImageView.ScaleType;
-[Tags]/**
- [Tags]* 一个绝对布局
- [Tags]*/
+ /**
+  * 一个绝对布局
+  */
 @SuppressWarnings("deprecation")
 public class ViewScroll extends AbsoluteLayout {
 	private int screenW;

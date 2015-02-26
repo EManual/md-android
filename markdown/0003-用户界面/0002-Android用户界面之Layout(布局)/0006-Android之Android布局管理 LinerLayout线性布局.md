@@ -141,9 +141,9 @@ import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-[Tags]/**
- [Tags]* 动态设置布局
- [Tags]*/
+ /**
+  * 动态设置布局
+  */
 public class Dyanmic_Layout_Activity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

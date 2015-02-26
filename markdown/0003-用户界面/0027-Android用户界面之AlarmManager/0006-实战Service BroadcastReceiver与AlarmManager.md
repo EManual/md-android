@@ -17,10 +17,10 @@ public class SleepMusicService extends Service {
 		return sms;
 	}
 	/*
-	 [Tags]* 这里有个小方法有必要说一下，在Service或Activity中我们可以写一个静态的方法来保留自己的实体。这样在其他的地方就可以获取到了。
-	 [Tags]* private static SleepMusicService sms = null; 用来存储自己的实体 在onCreate()中 使用sms
-	 [Tags]* = this;来存储实体 编写一个静态的getService()来返回实体就行了。
-	 [Tags]*/
+	  * 这里有个小方法有必要说一下，在Service或Activity中我们可以写一个静态的方法来保留自己的实体。这样在其他的地方就可以获取到了。
+	  * private static SleepMusicService sms = null; 用来存储自己的实体 在onCreate()中 使用sms
+	  * = this;来存储实体 编写一个静态的getService()来返回实体就行了。
+	  */
 	@Override
 	public void onCreate() {
 		super.onCreate();
@@ -82,8 +82,8 @@ public class StartActivity extends Activity {
 			Intent isleepMusicService = new Intent(StartActivity.this,
 					SleepMusicService.class);
 			/*
-			 [Tags]* 在Service启动之前可以使用Intent来传递参数给Service ，方法如下 目前的代码只是演示，与功能无关
-			 [Tags]*/
+			  * 在Service启动之前可以使用Intent来传递参数给Service ，方法如下 目前的代码只是演示，与功能无关
+			  */
 			Bundle setting = new Bundle();
 			setting.putString("TIME_SETTING", "5s");
 			// 在Service中使用“TIME_SETTING”这个标签就可以从Intent取出5s 这个字符串了

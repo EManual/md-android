@@ -33,9 +33,9 @@ android:layout_width="
 这里是欢迎启动类的核心部分
 ```  
 public class SplashScreen extends Activity {
-	[Tags]/**
-	 [Tags]* The thread to process splash screen events
-	 [Tags]*/
+	 /**
+	  * The thread to process splash screen events
+	  */
 	private Thread mSplashThread;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -79,9 +79,9 @@ public class SplashScreen extends Activity {
 		super.onCreateOptionsMenu(menu);
 		return false;
 	}
-	[Tags]/**
-	 [Tags]* Processes splash screen touch events
-	 [Tags]*/
+	 /**
+	  * Processes splash screen touch events
+	  */
 	@Override
 	public boolean onTouchEvent(MotionEvent evt) {
 		if (evt.getAction() == MotionEvent.ACTION_DOWN) {

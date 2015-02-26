@@ -1,9 +1,9 @@
 其中if(lstPosition.size()>75)是设置缓存的Item数量的关键地方,这里缓存75个Item。
 ViewHolderAdapter.java是实现ViewHolder加载Item的自定义Adapter,源码如下：
 ```  
-[Tags]/**
- [Tags]* 使用ViewHolder加载Item
- [Tags]*/
+ /**
+  * 使用ViewHolder加载Item
+  */
 public class ViewHolderAdapter extends BaseAdapter {
 	public class Item {
 		public String itemImageURL;
@@ -65,9 +65,9 @@ public class ViewHolderAdapter extends BaseAdapter {
 		}
 		return convertView;
 	}
-	[Tags]/**
-	 [Tags]* 异步读取网络图片
-	 [Tags]*/
+	 /**
+	  * 异步读取网络图片
+	  */
 	class AsyncLoadImage extends AsyncTask<Object, Object, Void> {
 		@Override
 		protected Void doInBackground(Object... params) {

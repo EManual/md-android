@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 public class EventTest5 extends Activity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	private static final String[] citys = { "杭州", "北京", "成都", "大连", "深圳", "南京" };
 	private TextView text;
 	private Spinner spinner;

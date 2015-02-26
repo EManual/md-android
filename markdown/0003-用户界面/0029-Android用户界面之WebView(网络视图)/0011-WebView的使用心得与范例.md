@@ -33,13 +33,13 @@ public class WebView_Test extends Activity {
 		setContentView(R.layout.webview);
 		// 实例化WebView
 		webView = (WebView) this.findViewById(R.id.wv_oauth);
-		[Tags]/**
-		 [Tags]* 调用loadUrl()方法进行加载内容
-		 [Tags]*/
+		 /**
+		  * 调用loadUrl()方法进行加载内容
+		  */
 		webView.loadUrl(URL);
-		[Tags]/**
-		 [Tags]* 设置WebView的属性，此时可以去执行JavaScript脚本
-		 [Tags]*/
+		 /**
+		  * 设置WebView的属性，此时可以去执行JavaScript脚本
+		  */
 		webView.getSettings().setJavaScriptEnabled(true);
 	}
 }

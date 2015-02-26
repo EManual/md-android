@@ -116,8 +116,8 @@ public class myImageAdapter extends BaseAdapter {// 自定义的类变量
 	public myImageAdapter(Context context) {
 		this.context = context;
 		/*
-		 [Tags]* 使用在res/values/attrs.xml 中的<declare-styleable>定义 的Gallery 属性.
-		 [Tags]*/
+		  * 使用在res/values/attrs.xml 中的<declare-styleable>定义 的Gallery 属性.
+		  */
 		TypedArray typed_array = context
 				.obtainStyledAttributes(R.styleable.Gallery);
 		/* 取得Gallery 属性的Index id */

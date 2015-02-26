@@ -9,9 +9,9 @@ import Android.util.FloatMath;
 import Android.view.MotionEvent;
 import Android.view.animation.TranslateAnimation;
 import Android.widget.ImageView;
-[Tags]/**
- [Tags]* 继承ImageView 实现了多点触碰的拖动和缩放
- [Tags]*/
+ /**
+  * 继承ImageView 实现了多点触碰的拖动和缩放
+  */
 public class TouchView extends ImageView {
 	static final int NONE = 0;
 	static final int DRAG = 1;
@@ -47,18 +47,18 @@ public class TouchView extends ImageView {
 		screenH = h;
 	}
 
-	[Tags]/**
-	 [Tags]* 就算两点间的距离
-	 [Tags]*/
+	 /**
+	  * 就算两点间的距离
+	  */
 	private float spacing(MotionEvent event) {
 		float x = event.getX(0) - event.getX(1);
 		float y = event.getY(0) - event.getY(1);
 		return FloatMath.sqrt(x * x + y * y);
 	}
 
-	[Tags]/**
-	 [Tags]* 处理触碰..
-	 [Tags]*/
+	 /**
+	  * 处理触碰..
+	  */
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
 		switch (event.getAction() & MotionEvent.ACTION_MASK) {

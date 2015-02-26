@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 import android.graphics.Bitmap;
 import android.util.Log;
-[Tags]/**
- [Tags]* Slip entity used to set position and maybe boundary of back and front image
- [Tags]*/
+ /**
+  * Slip entity used to set position and maybe boundary of back and front image
+  */
 public class SlipEntity {
 	public static final int FLAG_BACK = 1;
 	public static final int FLAG_FROT = 2;
@@ -14,31 +14,31 @@ public class SlipEntity {
 	public static final float DOCK_M = (float) 0.5;
 	public static final float DOCK_R = 1;
 	public static final float MICRO_X = 10;
-	[Tags]/** Background image */
+	 /** Background image */
 	Bitmap backImage;
-	[Tags]/** Front image */
+	 /** Front image */
 	Bitmap frotImage;
-	[Tags]/** Start Position of back image */
+	 /** Start Position of back image */
 	float xBackStart;
-	[Tags]/** Start Position of back image */
+	 /** Start Position of back image */
 	float yBackStart;
-	[Tags]/** Start Position of front image */
+	 /** Start Position of front image */
 	float xFrotStart;
-	[Tags]/** Start Position of front image */
+	 /** Start Position of front image */
 	float yFrotStart;
-	[Tags]/** initial Position of front image */
+	 /** initial Position of front image */
 	float xFrotInitPos;
-	[Tags]/** initial Position of front image */
+	 /** initial Position of front image */
 	float yFrotInitPos;
-	[Tags]/** Margin of front and back image in X-Axis */
+	 /** Margin of front and back image in X-Axis */
 	float xMarginLeft;
-	[Tags]/** Margin of front and back image in Y-Axis */
+	 /** Margin of front and back image in Y-Axis */
 	float yMarginTop;
-	[Tags]/** Containing dock position of the front image */
+	 /** Containing dock position of the front image */
 	Map<Float, Float> dockPosList = new HashMap<Float, Float>();
-	[Tags]/** Current dock Percentage: DOCK_L | DOCK_M | DOCK_R */
+	 /** Current dock Percentage: DOCK_L | DOCK_M | DOCK_R */
 	float curDockPer = DOCK_L;
-	[Tags]/** Weather has invoked initSlipEntity() */
+	 /** Weather has invoked initSlipEntity() */
 	boolean isInit = false;
 	public SlipEntity() {
 	}
@@ -95,10 +95,10 @@ public class SlipEntity {
 		sb.append("yFrotStart:" + yFrotStart + "\n");
 		Log.v("SlipEntity", sb.toString());
 	}
-	[Tags]/**
-	 [Tags]* Weather the front image reaches the max right of background image, if
-	 [Tags]* true, set xFrotStart to max right.
-	 [Tags]*/
+	 /**
+	  * Weather the front image reaches the max right of background image, if
+	  * true, set xFrotStart to max right.
+	  */
 	public boolean isReachRight() {
 		if (this.xFrotStart > this.dockPosList.get(DOCK_R)) {
 			this.curDockPer = DOCK_R;
@@ -108,10 +108,10 @@ public class SlipEntity {
 			return false;
 		}
 	}
-	[Tags]/**
-	 [Tags]* Weather the front image reaches the max left of background image, if
-	 [Tags]* true, set xFrotStart to max left.
-	 [Tags]*/
+	 /**
+	  * Weather the front image reaches the max left of background image, if
+	  * true, set xFrotStart to max left.
+	  */
 	public boolean isReachLeft() {
 		if (this.xFrotStart < this.dockPosList.get(DOCK_L)) {
 			this.curDockPer = DOCK_L;
@@ -121,16 +121,16 @@ public class SlipEntity {
 			return false;
 		}
 	}
-	[Tags]/**
-	 [Tags]* Weather the point(x,y) is in the area of back or front image
-	 [Tags]* @param type
-	 [Tags]*            FLAG_FROT(front image) | FLAG_BACK(back image)
-	 [Tags]* @param x
-	 [Tags]*            X-coordinate of point
-	 [Tags]* @param y
-	 [Tags]*            Y-coordinate of point
-	 [Tags]* @return weather the point is in specified area
-	 [Tags]*/
+	 /**
+	  * Weather the point(x,y) is in the area of back or front image
+	  * @param type
+	  *            FLAG_FROT(front image) | FLAG_BACK(back image)
+	  * @param x
+	  *            X-coordinate of point
+	  * @param y
+	  *            Y-coordinate of point
+	  * @return weather the point is in specified area
+	  */
 	public boolean isPointInImage(int type, float x, float y) {
 		float rPointX;
 		float rPointY;
@@ -155,10 +155,10 @@ public class SlipEntity {
 			return false;
 		}
 	}
-	[Tags]/**
-	 [Tags]* Is the current touch in some dock position
-	 [Tags]* @return return dockPer if in, or -1 while no match
-	 [Tags]*/
+	 /**
+	  * Is the current touch in some dock position
+	  * @return return dockPer if in, or -1 while no match
+	  */
 	public float isDock() {
 		for (float dockPer : this.dockPosList.keySet()) {
 			float dockPos = this.dockPosList.get(dockPer);
@@ -171,58 +171,58 @@ public class SlipEntity {
 		}
 		return -1;
 	}
-	[Tags]/**
-	 [Tags]* Get the current dock percentage in x-axis
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * Get the current dock percentage in x-axis
+	  * @return
+	  */
 	public float getCurDockPer() {
 		return this.curDockPer;
 	}
-	[Tags]/**
-	 [Tags]* Get the current dock position in x-axis
-	 [Tags]*/
+	 /**
+	  * Get the current dock position in x-axis
+	  */
 	public float getCurDockPos() {
 		return this.dockPosList.get(this.curDockPer);
 	}
-	[Tags]/**
-	 [Tags]* Add dock position to the list
-	 [Tags]* @param dockPer
-	 [Tags]*            dock Percent should be between (0.0,1.0)
-	 [Tags]*/
+	 /**
+	  * Add dock position to the list
+	  * @param dockPer
+	  *            dock Percent should be between (0.0,1.0)
+	  */
 	public void addDockPos(float dockPer) {
 		if (dockPer > 0 && dockPer < 1) {
 			this.dockPosList.put(dockPer, (float) 0.0);
 		}
 	}
-	[Tags]/**
-	 [Tags]* Return width of background image
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * Return width of background image
+	  * @return
+	  */
 	public float getBackWidth() {
 		return this.backImage.getWidth();
 	}
-	[Tags]/**
-	 [Tags]* Return height of background image
-	 [Tags]*/
+	 /**
+	  * Return height of background image
+	  */
 	public float getBackHeight() {
 		return this.backImage.getHeight();
 	}
-	[Tags]/**
-	 [Tags]* Return width of front image
-	 [Tags]*/
+	 /**
+	  * Return width of front image
+	  */
 	public float getFrotWidth() {
 		return this.frotImage.getWidth();
 	}
-	[Tags]/**
-	 [Tags]* Return height of front image
-	 [Tags]*/
+	 /**
+	  * Return height of front image
+	  */
 	public float getFrotHeight() {
 		return this.frotImage.getWidth();
 	}
-	[Tags]/**
-	 [Tags]* Dock at some position
-	 [Tags]* @param curDockPer
-	 [Tags]*/
+	 /**
+	  * Dock at some position
+	  * @param curDockPer
+	  */
 	public void setCurDockPos(float curDockPer) {
 		this.curDockPer = curDockPer;
 	}

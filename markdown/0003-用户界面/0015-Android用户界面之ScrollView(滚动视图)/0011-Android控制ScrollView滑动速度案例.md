@@ -3,9 +3,9 @@
 正文
 翻阅查找ScrollView的文档并搜索了一下没有发现直接设置的属性和方法，这里通过继承来达到这一目的。
 ```  
-[Tags]/**
- [Tags]* 快/慢滑动ScrollView
- [Tags]*/
+ /**
+  * 快/慢滑动ScrollView
+  */
 public class SlowScrollView extends ScrollView {
 	public SlowScrollView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
@@ -16,9 +16,9 @@ public class SlowScrollView extends ScrollView {
 	public SlowScrollView(Context context) {
 		super(context);
 	}
-	[Tags]/**
-	 [Tags]* 滑动事件
-	 [Tags]*/
+	 /**
+	  * 滑动事件
+	  */
 	@Override
 	public void fling(int velocityY) {
 		super.fling(velocityY / 4);

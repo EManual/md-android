@@ -31,7 +31,7 @@ animation_out.xml
 main.java
 ```  
 public class main extends Activity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	private ViewFlipper flipper;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

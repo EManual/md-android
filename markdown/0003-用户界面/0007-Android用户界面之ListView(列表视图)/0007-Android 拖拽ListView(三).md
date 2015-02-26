@@ -1,11 +1,11 @@
 看到上面的一大堆变量和操作，你可能有些眼花缭乱，在后面使用的时候回头再去理解也可。开始拖动影像startDrag()方法：
 ```  
-[Tags]/**
- [Tags]* 准备拖动，初始化拖动项的图像
- [Tags]* 
- [Tags]* @param bm
- [Tags]* @param y
- [Tags]*/
+ /**
+  * 准备拖动，初始化拖动项的图像
+  * 
+  * @param bm
+  * @param y
+  */
 public void startDrag(Bitmap bm ,int y){
 	//释放影像，在准备影像的时候，防止影像没释放，每次都执行一下
 	stopDrag();
@@ -35,9 +35,9 @@ public void startDrag(Bitmap bm ,int y){
 ```
 stopDrag()方法如下：
 ```  
-[Tags]/**
-	 [Tags]* 停止拖动，去除拖动项的头像
-	 [Tags]*/
+ /**
+	  * 停止拖动，去除拖动项的头像
+	  */
 	public void stopDrag() {
 		if (dragImageView != null) {
 			windowManager.removeView(dragImageView);
@@ -50,9 +50,9 @@ stopDrag()方法如下：
 拖动是选中项的影像随着手指滑动；放下是在拖动结束的时候交换数据。
 方法的整体结构如下：
 ```  
-[Tags]/**
- [Tags]* 触摸事件
- [Tags]*/
+ /**
+  * 触摸事件
+  */
 @Override
 public boolean onTouchEvent(MotionEvent ev) {
 	// 如果dragmageView为空，说明拦截事件中已经判定仅仅是点击，不是拖动，返回

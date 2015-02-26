@@ -39,7 +39,7 @@ public class DialogTest extends Activity {
 	private static final int dialog3 = 3;
 	private static final int dialog2 = 2;
 	private static final int dialog1 = 1;
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	private Button button01;
 	private Button button02;
 	private Button button03;

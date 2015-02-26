@@ -52,7 +52,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.widget.TabHost;
 public class Test_TabWidget extends TabActivity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	private TabHost tabHost;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

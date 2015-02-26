@@ -27,8 +27,8 @@ public class seekBarDemo extends SeekBar implements OnTouchListener
 这里实现一个自己的Runable 对象，向Handler 对象发送消息，代码如下：
 ```  
 /**
- [Tags]* 为runable 赋值
- [Tags]*/
+  * 为runable 赋值
+  */
 runable = new Runnable() {
 	@Override
 	public void run() {
@@ -50,12 +50,12 @@ runable = new Runnable() {
 3、实现长按事件的接口函数
 ```  
 /**
- [Tags]* 获取一个handler 对象
- [Tags]* @param 0代表onTouch 1代表onChange
- [Tags]* @param 视图对象
- [Tags]* @param 进度
- [Tags]* @return 返回一个handler对象
- [Tags]*/
+  * 获取一个handler 对象
+  * @param 0代表onTouch 1代表onChange
+  * @param 视图对象
+  * @param 进度
+  * @return 返回一个handler对象
+  */
 public Handler getHandler(final int j, final View v, final int progress) {
 	Handler h = new Handler() {
 		@Override
@@ -97,8 +97,8 @@ public Handler getHandler(final int j, final View v, final int progress) {
 这里我们首先定义一个onChange接口，接口中有三未实现的方法，分别代表SeekBar的三种状态
 ```  
 /**
- [Tags]* 进度改变接口
- [Tags]*/
+  * 进度改变接口
+  */
 public interface onChange {
 	public void onStopTrackingTouch(seekBarDemo seekBar);
 	public void onStartTrackingTouch(seekBarDemo seekBar);
@@ -144,16 +144,16 @@ import android.view.View.OnTouchListener;
 import android.widget.SeekBar;
 public class seekBarDemo extends SeekBar implements OnTouchListener {
 	private onLong longClick;
-	[Tags]/**
-	 [Tags]* 长按接口
-	 [Tags]*/
+	 /**
+	  * 长按接口
+	  */
 	public interface onLong {
 		public boolean onLongClick(View v);
 	}
 	private onChange SeekBarChange;
-	[Tags]/**
-	 [Tags]* 进度改变接口
-	 [Tags]*/
+	 /**
+	  * 进度改变接口
+	  */
 	public interface onChange {
 		public void onStopTrackingTouch(seekBarDemo seekBar);
 		public void onStartTrackingTouch(seekBarDemo seekBar);
@@ -196,9 +196,9 @@ public class seekBarDemo extends SeekBar implements OnTouchListener {
 				hand = getHandler(1, seekBarDemo.this, progress);
 			}
 		});
-		[Tags]/**
-		 [Tags]* 为runable 赋值
-		 [Tags]*/
+		 /**
+		  * 为runable 赋值
+		  */
 		runable = new Runnable() {
 			@Override
 			public void run() {
@@ -216,13 +216,13 @@ public class seekBarDemo extends SeekBar implements OnTouchListener {
 			}
 		};
 	}
-	[Tags]/**
-	 [Tags]* 获取一个handler 对象
-	 [Tags]* @param 0代表onTouch 1代表onChange
-	 [Tags]* @param 视图对象
-	 [Tags]* @param 进度
-	 [Tags]* @return 返回一个handler对象
-	 [Tags]*/
+	 /**
+	  * 获取一个handler 对象
+	  * @param 0代表onTouch 1代表onChange
+	  * @param 视图对象
+	  * @param 进度
+	  * @return 返回一个handler对象
+	  */
 	public Handler getHandler(final int j, final View v, final int progress) {
 		Handler h = new Handler() {
 			@Override
@@ -259,17 +259,17 @@ public class seekBarDemo extends SeekBar implements OnTouchListener {
 		};
 		return h;
 	}
-	[Tags]/**
-	 [Tags]* 设置长按事件
-	 [Tags]* @param longClick
-	 [Tags]*/
+	 /**
+	  * 设置长按事件
+	  * @param longClick
+	  */
 	public void setOnLongSeekBarClick(onLong longClick) {
 		this.longClick = longClick;
 	}
-	[Tags]/**
-	 [Tags]* 设置进度改变事件
-	 [Tags]* @param change
-	 [Tags]*/
+	 /**
+	  * 设置进度改变事件
+	  * @param change
+	  */
 	public void setOnSeekBarChange(onChange change) {
 		this.SeekBarChange = change;
 	}

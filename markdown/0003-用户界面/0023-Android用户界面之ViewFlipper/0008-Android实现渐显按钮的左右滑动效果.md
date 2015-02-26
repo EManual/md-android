@@ -16,9 +16,9 @@ import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
-[Tags]/**
- [Tags]* Android实现带渐显按钮的左右滑动效果 自然状态下按钮不可见,触摸屏幕时显示按钮
- [Tags]*/
+ /**
+  * Android实现带渐显按钮的左右滑动效果 自然状态下按钮不可见,触摸屏幕时显示按钮
+  */
 public class MainActivity extends Activity {
 	// 声明两个按钮,分别代表向左和向右滑动
 	private ImageView btnLeft = null;
@@ -39,9 +39,9 @@ public class MainActivity extends Activity {
 		// 初始化左右按钮
 		initImageButtonView();
 	}
-	[Tags]/**
-	 [Tags]* 初始化悬浮按钮
-	 [Tags]*/
+	 /**
+	  * 初始化悬浮按钮
+	  */
 	private void initImageButtonView() {
 		// 获取WindowManager
 		wm = (WindowManager) getApplicationContext().getSystemService("window");
@@ -64,9 +64,9 @@ public class MainActivity extends Activity {
 		createLeftButtonView();
 		createRightButtonView();
 	}
-	[Tags]/**
-	 [Tags]* 设置左边按钮
-	 [Tags]*/
+	 /**
+	  * 设置左边按钮
+	  */
 	private void createLeftButtonView() {
 		btnLeft = new ImageView(this);
 		btnLeft.setImageResource(R.drawable.left);
@@ -86,9 +86,9 @@ public class MainActivity extends Activity {
 		// 显示图像
 		wm.addView(btnLeft, wmParams);
 	}
-	[Tags]/**
-	 [Tags]* 设置右边按钮
-	 [Tags]*/
+	 /**
+	  * 设置右边按钮
+	  */
 	private void createRightButtonView() {
 		btnRight = new ImageView(this);
 		btnRight.setImageResource(R.drawable.right);
@@ -108,9 +108,9 @@ public class MainActivity extends Activity {
 		// 显示图像
 		wm.addView(btnRight, wmParams);
 	}
-	[Tags]/**
-	 [Tags]* 设置按钮渐显效果
-	 [Tags]*/
+	 /**
+	  * 设置按钮渐显效果
+	  */
 	private Handler mHandler = new Handler() {
 		public void handleMessage(Message msg) {
 			if (msg.what == 1 && mAlpha < 255) {

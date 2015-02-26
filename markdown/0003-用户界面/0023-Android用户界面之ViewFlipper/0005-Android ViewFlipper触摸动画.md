@@ -45,10 +45,10 @@ public class ViewFlipperDemo extends Activity implements OnGestureListener,
 		// 允许长按住ViewFlipper,这样才能识别拖动等手势
 		mFlipper.setLongClickable(true);
 	}
-	[Tags]/**
-	 [Tags]* 此方法在本例中未用到，可以指定跳转到某个页面
-	 [Tags]* @param switchTo
-	 [Tags]*/
+	 /**
+	  * 此方法在本例中未用到，可以指定跳转到某个页面
+	  * @param switchTo
+	  */
 	public void switchLayoutStateTo(int switchTo) {
 		while (mCurrentLayoutState != switchTo) {
 			if (mCurrentLayoutState > switchTo) {
@@ -64,9 +64,9 @@ public class ViewFlipperDemo extends Activity implements OnGestureListener,
 			}
 		};
 	}
-	[Tags]/**
-	 [Tags]* 定义从右侧进入的动画效果
-	 [Tags]*/
+	 /**
+	  * 定义从右侧进入的动画效果
+	  */
 	protected Animation inFromRightAnimation() {
 		Animation inFromRight = new TranslateAnimation(
 		Animation.RELATIVE_TO_PARENT, +1.0f,
@@ -77,9 +77,9 @@ public class ViewFlipperDemo extends Activity implements OnGestureListener,
 		inFromRight.setInterpolator(new AccelerateInterpolator());
 		return inFromRight;
 	}
-	[Tags]/**
-	 [Tags]* 定义从左侧退出的动画效果
-	 [Tags]*/
+	 /**
+	  * 定义从左侧退出的动画效果
+	  */
 	protected Animation outToLeftAnimation() {
 		Animation outtoLeft = new TranslateAnimation(
 		Animation.RELATIVE_TO_PARENT, 0.0f,
@@ -90,9 +90,9 @@ public class ViewFlipperDemo extends Activity implements OnGestureListener,
 		outtoLeft.setInterpolator(new AccelerateInterpolator());
 		return outtoLeft;
 	}
-	[Tags]/**
-	 [Tags]* 定义从左侧进入的动画效果
-	 [Tags]*/
+	 /**
+	  * 定义从左侧进入的动画效果
+	  */
 	protected Animation inFromLeftAnimation() {
 		Animation inFromLeft = new TranslateAnimation(
 		Animation.RELATIVE_TO_PARENT, -1.0f,
@@ -103,9 +103,9 @@ public class ViewFlipperDemo extends Activity implements OnGestureListener,
 		inFromLeft.setInterpolator(new AccelerateInterpolator());
 		return inFromLeft;
 	}
-	[Tags]/**
-	 [Tags]* 定义从右侧退出时的动画效果
-	 [Tags]*/
+	 /**
+	  * 定义从右侧退出时的动画效果
+	  */
 	protected Animation outToRightAnimation() {
 		Animation outtoRight = new TranslateAnimation(
 		Animation.RELATIVE_TO_PARENT, 0.0f,
@@ -120,14 +120,14 @@ public class ViewFlipperDemo extends Activity implements OnGestureListener,
 		return false;
 	}
 	/*
-	 [Tags]* 用户按下触摸屏、快速移动后松开即触发这个事件
-	 [Tags]* e1：第1个ACTION_DOWN MotionEvent
-	 [Tags]* e2：最后一个ACTION_MOVE MotionEvent
-	 [Tags]* velocityX：X轴上的移动速度，像素/秒
-	 [Tags]* velocityY：Y轴上的移动速度，像素/秒
-	 [Tags]* 触发条件 ：
-	 [Tags]* X轴的坐标位移大于FLING_MIN_DISTANCE，且移动速度大于FLING_MIN_VELOCITY个像素/秒
-	 [Tags]*/
+	  * 用户按下触摸屏、快速移动后松开即触发这个事件
+	  * e1：第1个ACTION_DOWN MotionEvent
+	  * e2：最后一个ACTION_MOVE MotionEvent
+	  * velocityX：X轴上的移动速度，像素/秒
+	  * velocityY：Y轴上的移动速度，像素/秒
+	  * 触发条件 ：
+	  * X轴的坐标位移大于FLING_MIN_DISTANCE，且移动速度大于FLING_MIN_VELOCITY个像素/秒
+	  */
 	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
 	float velocityY) {
 		if (e1.getX() - e2.getX() > FLING_MIN_DISTANCE

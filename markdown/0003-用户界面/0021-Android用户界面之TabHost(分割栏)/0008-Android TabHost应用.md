@@ -27,7 +27,7 @@
 最后修改MovieActivity（创建android工程时填写的Activity name），使其继承TabActivity，代码如下：
 ```  
 public class MovieActivity extends TabActivity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

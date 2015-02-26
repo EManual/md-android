@@ -7,9 +7,9 @@ import Android.widget.AdapterView;
 import Android.widget.Gallery;
 import Android.widget.LinearLayout;
 import Android.widget.AdapterView.OnItemClickListener;
-[Tags]/**
- [Tags]* activity
- [Tags]*/
+ /**
+  * activity
+  */
 public class GalleryMain extends Activity implements OnItemClickListener {
 	private ViewScroll detail;
 	private ImageAdapter ia;
@@ -48,9 +48,9 @@ import Android.widget.BaseAdapter;
 import Android.widget.Gallery;
 import Android.widget.ImageView;
 import Android.widget.ImageView.ScaleType;
-[Tags]/**
- [Tags]* Gallery的适配器类
- [Tags]*/
+ /**
+  * Gallery的适配器类
+  */
 public class ImageAdapter extends BaseAdapter {
 	/* 图片素材 */
 	public int[] imgIds = { R.drawable.jpg, R.drawable.pic };

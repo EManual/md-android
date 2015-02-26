@@ -29,7 +29,7 @@ main.xml布局文件，记住必须用RelativeLayout将ImageView重叠
 主类
 ```  
 public class IamgeTranslatActivity extends Activity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	public ImageView imageView;
 	public ImageView imageView2;
 	public Animation animation1;

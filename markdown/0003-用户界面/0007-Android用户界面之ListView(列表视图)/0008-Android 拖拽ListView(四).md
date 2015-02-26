@@ -13,10 +13,10 @@ if (dragImageView != null) {
 当数据集合很大的时候，还需要在拖动到上部区域或者下部区域的时候滚动列表，使用ListView自带的方法setSelectionFromTop()。
 一个可以滚动的拖拽列表雏形就出来了，最终onDrag()方法代码如下:
 ```  
-[Tags]/**
- [Tags]* 拖动执行，在Move方法中执行
- [Tags]* @param y
- [Tags]*/
+ /**
+  * 拖动执行，在Move方法中执行
+  * @param y
+  */
 public void onDrag(int y) {
 	if (dragImageView != null) {
 		windowParams.alpha = 0.8f;
@@ -49,10 +49,10 @@ public void onDrag(int y) {
 2）在放下位置项插入拖动数据，并删除拖动数据原位置项
 这些处理写在了onDrop()方法中,在ACTION_UP动作中执行，代码如下：
 ```  
-[Tags]/**
- [Tags]* 拖动放下的时候
- [Tags]* @param y
- [Tags]*/
+ /**
+  * 拖动放下的时候
+  * @param y
+  */
 public void onDrop(int y) {
 	// 获取放下位置在数据集合中position
 	// 定义临时位置变量为了避免滑动到分割线的时候，返回-1的问题，如果为-1，则不修改dragPosition的值，急需执行，达到跳过无效位置的效果

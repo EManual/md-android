@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-[Tags]/**
- [Tags]* Class which shows how to validate user input with regular expression
- [Tags]*/
+ /**
+  * Class which shows how to validate user input with regular expression
+  */
 public class Main extends Activity {
 	private EditText editText;
 	private Button button;
@@ -28,12 +28,12 @@ public class Main extends Activity {
 			}
 		});
 	}
-	[Tags]/**
-	 [Tags]* This method checks if String is correct
-	 [Tags]* @param s
-	 [Tags]*            - String which need to check
-	 [Tags]* @return value of matching
-	 [Tags]*/
+	 /**
+	  * This method checks if String is correct
+	  * @param s
+	  *            - String which need to check
+	  * @return value of matching
+	  */
 	private boolean checkString(String s) {
 		return s.matches("\\w*[.](Java|cpp|class)");
 	}

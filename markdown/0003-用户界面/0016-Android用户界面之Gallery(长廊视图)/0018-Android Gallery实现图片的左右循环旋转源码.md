@@ -79,8 +79,8 @@ public class EX03_15 extends Activity {
 		public ImageAdapter(Context c) {
 			myContext = c;
 			/*
-			 [Tags]* 使用在res/values/attrs.xml中的<declare-styleable>定义 的Gallery属性.
-			 [Tags]*/
+			  * 使用在res/values/attrs.xml中的<declare-styleable>定义 的Gallery属性.
+			  */
 			TypedArray a = obtainStyledAttributes(R.styleable.Gallery);
 			/* 取得Gallery属性的Index id */
 			mGalleryItemBackground = a.getResourceId(

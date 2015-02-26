@@ -44,25 +44,25 @@ public class fetion2009 extends Activity implements OnClickListener {
 		}
 		scroll.addView(layout);
 	}
-	[Tags]/**
-	 [Tags]* <a href="\"http://www.eoeandroid.com/home.php?mod=space&uid=7300\""
-	 [Tags]* target="\"_blank\"">@return</a> 当前聊天对白的底色值
-	 [Tags]*/
+	 /**
+	  * <a href="\"http://www.eoeandroid.com/home.php?mod=space&uid=7300\""
+	  * target="\"_blank\"">@return</a> 当前聊天对白的底色值
+	  */
 	private int getCurrColor() {
 		return bg[(++bgIndex) % bg.length];
 	}
-	[Tags]/**
-	 [Tags]* 动态增加一个聊天内容 这里为了简化编程把 某人说 和 内容放到一个TextView中，
-	 [Tags]* 可以根据设计文档拆成2个TextView分别显示，设置字体等
-	 [Tags]* @param layout
-	 [Tags]*            TextView控件欲添加到的目标layout
-	 [Tags]* @param context
-	 [Tags]*            构建View控件的必须参数 既View控件的环境
-	 [Tags]* @param bgColur
-	 [Tags]*            TextView控件的背景色
-	 [Tags]* @param MSG
-	 [Tags]*            TextView控件要现实的文本内容
-	 [Tags]*/
+	 /**
+	  * 动态增加一个聊天内容 这里为了简化编程把 某人说 和 内容放到一个TextView中，
+	  * 可以根据设计文档拆成2个TextView分别显示，设置字体等
+	  * @param layout
+	  *            TextView控件欲添加到的目标layout
+	  * @param context
+	  *            构建View控件的必须参数 既View控件的环境
+	  * @param bgColur
+	  *            TextView控件的背景色
+	  * @param MSG
+	  *            TextView控件要现实的文本内容
+	  */
 	private void setMsg(LinearLayout layout, Context context, int bgColur,
 			String MSG) {
 		TextView tv = new TextView(context);

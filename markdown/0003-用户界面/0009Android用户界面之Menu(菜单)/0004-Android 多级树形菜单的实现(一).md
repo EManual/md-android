@@ -59,7 +59,7 @@ import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.Toast;
 public class testExpandableList extends Activity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	ExpandableListView expandableList;
 	TreeViewAdapter adapter;
 	SuperTreeViewAdapter superAdapter;

@@ -15,31 +15,31 @@ public LinearLayoutForListView(Context context, AttributeSet attrs) {
 这两个方法可选，不过建议都写上，第一个方法可以让我们通过 编程的方式 实例化出来，第二个方法可以允许我们通过 XML的方式注册 控件，可以在第二个方法里面为扩展的复合组件加属性，详细使用方法请点击这里 。
 为其添加get/set 方法
 ```  
-[Tags]/**
- [Tags]* 获取Adapter
- [Tags]* @return adapter
- [Tags]*/
+ /**
+  * 获取Adapter
+  * @return adapter
+  */
 public AdapterForLinearLayout getAdpater() {
 	return adapter;
 }
-[Tags]/**
- [Tags]* 设置数据
- [Tags]* @param adpater
- [Tags]*/
+ /**
+  * 设置数据
+  * @param adpater
+  */
 public void setAdapter(AdapterForLinearLayout adpater) {
 	this.adapter = adpater;
 	bindLinearLayout();
 }
-[Tags]/**
- [Tags]* 获取点击事件
- [Tags]*/
+ /**
+  * 获取点击事件
+  */
 public OnClickListener getOnclickListner() {
 	return onClickListener;
 }
-[Tags]/**
- [Tags]* 设置点击事件
- [Tags]* @param onClickListener
- [Tags]*/
+ /**
+  * 设置点击事件
+  * @param onClickListener
+  */
 public void setOnclickLinstener(OnClickListener onClickListener) {
 	this.onClickListener = onClickListener;
 }
@@ -78,12 +78,12 @@ public View getView(int position, View convertView, ViewGroup parent) {
 	convertView.setTag(position);
 	return convertView;
 }
-[Tags]/**
- [Tags]* 绑定视图
- [Tags]* @param view
- [Tags]* @param item
- [Tags]* @param from
- [Tags]*/
+ /**
+  * 绑定视图
+  * @param view
+  * @param item
+  * @param from
+  */
 private void bindView(View view, Map<String, ?> item, String from) {
 	Object data = item.get(from);
 	if (view instanceof TextView) {
@@ -105,9 +105,9 @@ import android.widget.LinearLayout;
 public class LinearLayoutForListView extends LinearLayout {
 	private AdapterForLinearLayout adapter;
 	private OnClickListener onClickListener = null;
-	[Tags]/**
-	 [Tags]* 绑定布局
-	 [Tags]*/
+	 /**
+	  * 绑定布局
+	  */
 	public void bindLinearLayout() {
 		int count = adapter.getCount();
 		for (int i = 0; i < count; i++) {
@@ -127,31 +127,31 @@ public class LinearLayoutForListView extends LinearLayout {
 	public LinearLayoutForListView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 	}
-	[Tags]/**
-	 [Tags]* 获取Adapter
-	 [Tags]* @return adapter
-	 [Tags]*/
+	 /**
+	  * 获取Adapter
+	  * @return adapter
+	  */
 	public AdapterForLinearLayout getAdpater() {
 		return adapter;
 	}
-	[Tags]/**
-	 [Tags]* 设置数据
-	 [Tags]* @param adpater
-	 [Tags]*/
+	 /**
+	  * 设置数据
+	  * @param adpater
+	  */
 	public void setAdapter(AdapterForLinearLayout adpater) {
 		this.adapter = adpater;
 		bindLinearLayout();
 	}
-	[Tags]/**
-	 [Tags]* 获取点击事件
-	 [Tags]*/
+	 /**
+	  * 获取点击事件
+	  */
 	public OnClickListener getOnclickListner() {
 		return onClickListener;
 	}
-	[Tags]/**
-	 [Tags]* 设置点击事件
-	 [Tags]* @param onClickListener
-	 [Tags]*/
+	 /**
+	  * 设置点击事件
+	  * @param onClickListener
+	  */
 	public void setOnclickLinstener(OnClickListener onClickListener) {
 		this.onClickListener = onClickListener;
 	}
@@ -213,12 +213,12 @@ public class AdapterForLinearLayout extends BaseAdapter {
 		convertView.setTag(position);
 		return convertView;
 	}
-	[Tags]/**
-	 [Tags]* 绑定视图
-	 [Tags]* @param view
-	 [Tags]* @param item
-	 [Tags]* @param from
-	 [Tags]*/
+	 /**
+	  * 绑定视图
+	  * @param view
+	  * @param item
+	  * @param from
+	  */
 	private void bindView(View view, Map<String, ?> item, String from) {
 		Object data = item.get(from);
 		if (view instanceof TextView) {

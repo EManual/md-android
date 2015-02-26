@@ -117,8 +117,8 @@ public class ExpandableList extends Activity {
 		List<Map<String, String>> groups;
 		List<List<Map<String, String>>> childs;
 		/*
-		 [Tags]* 构造函数: 参数1:context对象 参数2:一级列表数据源 参数3:二级列表数据源
-		 [Tags]*/
+		  * 构造函数: 参数1:context对象 参数2:一级列表数据源 参数3:二级列表数据源
+		  */
 		public ExpandableAdapter(Context context,
 				List<Map<String, String>> groups,
 				List<List<Map<String, String>>> childs) {

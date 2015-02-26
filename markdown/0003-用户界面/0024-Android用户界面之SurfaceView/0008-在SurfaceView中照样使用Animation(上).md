@@ -21,12 +21,12 @@ import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
-[Tags]/**
- [Tags]* @AlphaAnimation 渐变透明度动画效果
- [Tags]* @ScaleAnimation 渐变尺寸伸缩动画效果
- [Tags]* @TranslateAnimation 画面转换位置移动动画效果
- [Tags]* @RotateAnimation 画面转移旋转动画效果
- [Tags]*/
+ /**
+  * @AlphaAnimation 渐变透明度动画效果
+  * @ScaleAnimation 渐变尺寸伸缩动画效果
+  * @TranslateAnimation 画面转换位置移动动画效果
+  * @RotateAnimation 画面转移旋转动画效果
+  */
 public class MyViewAnimation extends View {
 	private Paint paint;
 	private Bitmap bmp;

@@ -33,9 +33,9 @@ scrollBy(0, deltaY);
 基于这些就可以重写ScrollView的onTouchEvent并结合ScrollView的内部视图的layout()方法、TranslateAnimation()实现反弹效果。
 ScrollView代码：
 ```  
-[Tags]/**
- [Tags]* ScrollView反弹效果的实现
- [Tags]*/
+ /**
+  * ScrollView反弹效果的实现
+  */
 public class MyScrollView extends ScrollView {
 	private View inner;
 	private float y;

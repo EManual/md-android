@@ -44,15 +44,15 @@ location[1] + anchor.getHeight())；
 import android.util.Log;
 import android.view.animation.Interpolator;
 public class CustomInterpolator implements Interpolator {
-	[Tags]/**
-	 [Tags]* @param input
-	 [Tags]*            A value between 0 and 1.0 indicating our current point in the
-	 [Tags]*            animation where 0 represents the start and 1.0 represents the
-	 [Tags]*            end
-	 [Tags]* @return Returns The interpolation value. This value can be more than 1.0
-	 [Tags]*         for Interpolators which overshoot their targets, or less than 0
-	 [Tags]*         for Interpolators that undershoot their targets.
-	 [Tags]*/
+	 /**
+	  * @param input
+	  *            A value between 0 and 1.0 indicating our current point in the
+	  *            animation where 0 represents the start and 1.0 represents the
+	  *            end
+	  * @return Returns The interpolation value. This value can be more than 1.0
+	  *         for Interpolators which overshoot their targets, or less than 0
+	  *         for Interpolators that undershoot their targets.
+	  */
 	public float getInterpolation(float input) {
 		Log.d("ANDROID_LAB", "input=" + input);
 		// 设定动画的加速度变化值.此例的效果是使用actionsLayout超过目标旋转区后再反弹回来.

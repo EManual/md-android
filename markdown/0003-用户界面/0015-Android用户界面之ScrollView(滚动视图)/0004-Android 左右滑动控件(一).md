@@ -12,14 +12,14 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-[Tags]/**
- [Tags]* Slip the front part to some dock position
- [Tags]*/
+ /**
+  * Slip the front part to some dock position
+  */
 public class SlipView extends View {
 	private static final String TAG = "SlipView";
-	[Tags]/** Listen slip on the block, no matter the event is success or fail */
+	 /** Listen slip on the block, no matter the event is success or fail */
 	private OnSlipListener onSlipListener;
-	[Tags]/** Slip entity to set the value about backImage, frontImage position */
+	 /** Slip entity to set the value about backImage, frontImage position */
 	private SlipEntity slipEntity;
 	private float tmpTouchX;
 	private float tmpTouchGap;
@@ -55,9 +55,9 @@ public class SlipView extends View {
 		canvas.drawBitmap(this.slipEntity.getFrotImage(),
 				this.slipEntity.xFrotStart, this.slipEntity.yFrotStart, null);
 	}
-	[Tags]/**
-	 [Tags]* listen touch events and notify listener
-	 [Tags]*/
+	 /**
+	  * listen touch events and notify listener
+	  */
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
 		Log.v(TAG, "Touch Position:" + event.getX());
@@ -171,33 +171,33 @@ public class SlipView extends View {
 		this.invalidate();
 		return true;
 	}
-	[Tags]/**
-	 [Tags]* Listener on slip event on slippery view author diydyq
-	 [Tags]*/
+	 /**
+	  * Listener on slip event on slippery view author diydyq
+	  */
 	public interface OnSlipListener {
-		[Tags]/**
-		 [Tags]* Listen a slip after touch down and up, not including touch move
-		 [Tags]* @param slipEntity
-		 [Tags]* @param event
-		 [Tags]* @param isSuccess
-		 [Tags]*/
+		 /**
+		  * Listen a slip after touch down and up, not including touch move
+		  * @param slipEntity
+		  * @param event
+		  * @param isSuccess
+		  */
 		public abstract void slipLeft(SlipEntity slipEntity, MotionEvent event,
 				boolean isSuccess);
-		[Tags]/**
-		 [Tags]* Listen a slip after touch down and up, not including touch move
-		 [Tags]* @param slipEntity
-		 [Tags]* @param event
-		 [Tags]* @param isSuccess
-		 [Tags]*/
+		 /**
+		  * Listen a slip after touch down and up, not including touch move
+		  * @param slipEntity
+		  * @param event
+		  * @param isSuccess
+		  */
 		public abstract void slipRight(SlipEntity slipEntity,
 				MotionEvent event, boolean isSuccess);
-		[Tags]/**
-		 [Tags]* Listen some dock(more than DOCK_L,DOCK_R), normally need not
-		 [Tags]* implement it unless more docks are needed.
-		 [Tags]* @param slipEntity
-		 [Tags]* @param event
-		 [Tags]* @param dockPer
-		 [Tags]*/
+		 /**
+		  * Listen some dock(more than DOCK_L,DOCK_R), normally need not
+		  * implement it unless more docks are needed.
+		  * @param slipEntity
+		  * @param event
+		  * @param dockPer
+		  */
 		public abstract void slipDock(SlipEntity slipEntity, MotionEvent event,
 				float dockPer);
 	}

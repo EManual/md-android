@@ -79,11 +79,11 @@ public class testToGray extends Activity {
 			}
 		}
 	}
-	[Tags]/**
-	 [Tags]* 把资源图片转为灰度图
-	 [Tags]* @param resID
-	 [Tags]*            资源ID
-	 [Tags]*/
+	 /**
+	  * 把资源图片转为灰度图
+	  * @param resID
+	  *            资源ID
+	  */
 	public Bitmap ConvertGrayImg(int resID) {
 		Bitmap img1 = ((BitmapDrawable) getResources().getDrawable(resID)).getBitmap();
 		int w = img1.getWidth(), h = img1.getHeight();
@@ -115,10 +115,10 @@ public class LibFuns {
 	static {
 		System.loadLibrary("Imgdemo");
 	}
-	[Tags]/**
-	 [Tags]* @param宽度当前视图的宽度
-	 [Tags]* @param高度当前视图的高度
-	 [Tags]*/
+	 /**
+	  * @param宽度当前视图的宽度
+	  * @param高度当前视图的高度
+	  */
 	public static native int[] ImgToGray(int[] buf, int w, int h);
 }
 ```

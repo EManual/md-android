@@ -58,8 +58,8 @@ public class testImageView extends Activity implements ViewFactory {
 				android.R.anim.fade_out));
 		is.setOnTouchListener(new OnTouchListener() {
 			/*
-			 [Tags]* 在ImageSwitcher控件上滑动可以切换图片
-			 [Tags]*/
+			  * 在ImageSwitcher控件上滑动可以切换图片
+			  */
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {

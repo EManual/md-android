@@ -5,13 +5,13 @@ private Dialog buildDialog4(Context context) {
 	dialog.setTitle("正在下载歌曲");
 	dialog.setMessage("请稍候......");
 	/*
-	 [Tags]* TimePickerDialog dialog=new TimePickerDialog(context, 0, null, 0, 0,
-	 [Tags]* false); dialog.setTitle("时钟");
-	 [Tags]*/
+	  * TimePickerDialog dialog=new TimePickerDialog(context, 0, null, 0, 0,
+	  * false); dialog.setTitle("时钟");
+	  */
 	/*
-	 [Tags]* DatePickerDialog dialog=new DatePickerDialog(context, 0, null, 0, 0,
-	 [Tags]* 0); dialog.setTitle("日期");
-	 [Tags]*/return dialog;
+	  * DatePickerDialog dialog=new DatePickerDialog(context, 0, null, 0, 0,
+	  * 0); dialog.setTitle("日期");
+	  */return dialog;
 }
 private Dialog buildDialog3(Context context) {
 	LayoutInflater inflater = LayoutInflater.from(this);

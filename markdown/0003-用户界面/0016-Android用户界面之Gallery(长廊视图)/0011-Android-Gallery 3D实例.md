@@ -20,17 +20,17 @@ import android.widget.Toast;
 import android.widget.ViewSwitcher;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Gallery.LayoutParams;
-[Tags]/**
-[Tags]* [Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*
-[Tags]* 文件名称    : ImageActivity.java
-[Tags]* 文件描述    : 图片浏览器
-[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*
-[Tags]*/
+ /**
+ *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * 文件名称    : ImageActivity.java
+ * 文件描述    : 图片浏览器
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ */
 public class ACDsee extends Activity implements
         AdapterView.OnItemSelectedListener, ViewSwitcher.ViewFactory {
-    [Tags]/**
-     [Tags]* 手机设备中图像列表
-     [Tags]*/
+     /**
+      * 手机设备中图像列表
+      */
     private List<String> ImageList;
     private ImageSwitcher mSwitcher;
     @Override
@@ -38,29 +38,29 @@ public class ACDsee extends Activity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.image);
         ImageList = getImagesFromSD();
-        [Tags]/**
-         [Tags]* xml获取Switcher 
-         [Tags]*/
+         /**
+          * xml获取Switcher 
+          */
         mSwitcher = (ImageSwitcher) findViewById(R.id.switcher);
         mSwitcher.setFactory(this);
         mSwitcher.setInAnimation(AnimationUtils.loadAnimation(this,
                 android.R.anim.slide_in_left));
         mSwitcher.setOutAnimation(AnimationUtils.loadAnimation(this,
                 android.R.anim.slide_out_right));
-        [Tags]/**
-         [Tags]* xml获取Gallery
-         [Tags]*/
+         /**
+          * xml获取Gallery
+          */
         Gallery g = (Gallery) findViewById(R.id.mygallery);
         if(ImageList == null || ImageList.size() == 0)
             return;
-        [Tags]/**
-         [Tags]* 创建适配器，注册适配器
-         [Tags]*/
+         /**
+          * 创建适配器，注册适配器
+          */
         g.setAdapter(new ImageAdapter(this, ImageList));
         g.setOnItemSelectedListener(this);
-        [Tags]/**
-         [Tags]* 点击事件监听器
-         [Tags]*/
+         /**
+          * 点击事件监听器
+          */
         g.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                     int position, long id) {
@@ -83,9 +83,9 @@ public class ACDsee extends Activity implements
         File[] files = f.listFiles();
         if(files == null || files.length == 0)
             return imageList;
-        [Tags]/**
-         [Tags]* 将所有图像文件的路径存入ArrayList列表
-         [Tags]*/
+         /**
+          * 将所有图像文件的路径存入ArrayList列表
+          */
         for (int i = 0; i < files.length; i++) {
             File file = files;
             if (isImageFile(file.getPath()))
@@ -93,17 +93,17 @@ public class ACDsee extends Activity implements
         }
         return imageList;
     }
-    [Tags]/**
-     [Tags]* @param fName
-     [Tags]*/
+     /**
+      * @param fName
+      */
     private boolean isImageFile(String fName) {
         boolean re;
         String end = fName
                 .substring(fName.lastIndexOf(".") + 1, fName.length())
                 .toLowerCase();
-        [Tags]/**
-         [Tags]* 依据文件扩展名判断是否为图像文件
-         [Tags]*/
+         /**
+          * 依据文件扩展名判断是否为图像文件
+          */
         if (end.equals("jpg") || end.equals("gif") || end.equals("png")
                 || end.equals("jpeg") || end.equals("bmp")) {
             re = true;
@@ -115,14 +115,14 @@ public class ACDsee extends Activity implements
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position,
             long id) {
-        [Tags]/**
-         [Tags]* 获取当前要显示的Image的路径
-         [Tags]*/
+         /**
+          * 获取当前要显示的Image的路径
+          */
         String photoURL = ImageList.get(position);
         Log.i("A", String.valueOf(position));
-        [Tags]/**
-         [Tags]* 设置当前要显示的Image的路径     
-         [Tags]*/
+         /**
+          * 设置当前要显示的Image的路径     
+          */
         mSwitcher.setImageURI(Uri.parse(photoURL));
     }
     @Override
@@ -149,26 +149,26 @@ import android.view.View;
 import android.view.animation.Transformation;
 import android.widget.Gallery;
 import android.widget.ImageView;
-[Tags]/**
-[Tags]* [Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*
-[Tags]* 文件名称    : GalleryFlow.java
-[Tags]* 文件描述    : 自定义Gallery视图，实现图片旋转效果
-[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*
-[Tags]*/
+ /**
+ *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * 文件名称    : GalleryFlow.java
+ * 文件描述    : 自定义Gallery视图，实现图片旋转效果
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ */
 public class GalleryFlow extends Gallery {
-    [Tags]/**
-     [Tags]* 用于ImageView的矩阵变换
-     [Tags]*/
+     /**
+      * 用于ImageView的矩阵变换
+      */
     private Camera mCamera = new Camera();//视角
 
     private int mMaxRotationAngle = 60; //转换最大的角度
-    [Tags]/**
-     [Tags]* The maximum zoom on the centre Child
-     [Tags]*/
+     /**
+      * The maximum zoom on the centre Child
+      */
     private int mMaxZoom = -120;
-    [Tags]/**
-     [Tags]* Coverflow的中心
-     [Tags]*/
+     /**
+      * Coverflow的中心
+      */
     private int mCoveflowCenter;
     public GalleryFlow(Context context) {
             super(context);
@@ -182,9 +182,9 @@ public class GalleryFlow extends Gallery {
             super(context, attrs, defStyle);
             this.setStaticTransformationsEnabled(true);
     }
-    [Tags]/**
-     [Tags]* get set 方法
-     [Tags]*/
+     /**
+      * get set 方法
+      */
     public int getMaxRotationAngle() {
             return mMaxRotationAngle;
     }
@@ -197,18 +197,18 @@ public class GalleryFlow extends Gallery {
     public void setMaxZoom(int maxZoom) {
             mMaxZoom = maxZoom;
     }
-    [Tags]/**
-     [Tags]* 获取Coverflow的中心位置
-     [Tags]* @return
-     [Tags]*/
+     /**
+      * 获取Coverflow的中心位置
+      * @return
+      */
     private int getCenterOfCoverflow() {
             return (getWidth() - getPaddingLeft() - getPaddingRight()) / 2
                             + getPaddingLeft();
     }
-    [Tags]/**
-     [Tags]* 获取子视图的中心位置
-     [Tags]* @param view
-     [Tags]*/
+     /**
+      * 获取子视图的中心位置
+      * @param view
+      */
     private static int getCenterOfView(View view) {
             return view.getLeft() + view.getWidth() / 2;
     }
@@ -219,18 +219,18 @@ public class GalleryFlow extends Gallery {
         final int childWidth = child.getWidth();
         //设置旋转的角度
         int rotationAngle = 0;
-        [Tags]/**
-         [Tags]* 重置transformation
-         [Tags]*/
+         /**
+          * 重置transformation
+          */
         t.clear();
         t.setTransformationType(Transformation.TYPE_MATRIX);
 
         if (childCenter == mCoveflowCenter) {
             transformImageBitmap((ImageView) child, t, 0);
         } else {
-            [Tags]/**
-             [Tags]* 计算旋转角度
-             [Tags]*/
+             /**
+              * 计算旋转角度
+              */
             rotationAngle = (int)
                     (((float) (mCoveflowCenter - childCenter) / childWidth) * mMaxRotationAngle);
             if (Math.abs(rotationAngle) > mMaxRotationAngle) {
@@ -244,48 +244,48 @@ public class GalleryFlow extends Gallery {
             mCoveflowCenter = getCenterOfCoverflow();
             super.onSizeChanged(w, h, oldw, oldh);
     }
-    [Tags]/**
-     [Tags]* 将子视图旋转相应角度 ？？？？？？？？？？？？？
-     [Tags]* @param imageView
-     [Tags]*            ImageView the ImageView whose bitmap we want to rotate
-     [Tags]* @param t
-     [Tags]*            transformation
-     [Tags]* @param rotationAngle
-     [Tags]*            the Angle by which to rotate the Bitmap
-     [Tags]*/
+     /**
+      * 将子视图旋转相应角度 ？？？？？？？？？？？？？
+      * @param imageView
+      *            ImageView the ImageView whose bitmap we want to rotate
+      * @param t
+      *            transformation
+      * @param rotationAngle
+      *            the Angle by which to rotate the Bitmap
+      */
     private void transformImageBitmap(ImageView child, Transformation t,
                     int rotationAngle) {
-        [Tags]/**
-         [Tags]* 保存相机当前状态
-         [Tags]*/
+         /**
+          * 保存相机当前状态
+          */
             mCamera.save();
-            [Tags]/**
-             [Tags]* 获取变换矩阵
-             [Tags]*/
+             /**
+              * 获取变换矩阵
+              */
             final Matrix imageMatrix = t.getMatrix();
             final int imageHeight = child.getLayoutParams().height;
             final int imageWidth = child.getLayoutParams().width;
             final int rotation = Math.abs(rotationAngle);
-            [Tags]/**
-             [Tags]* 在Z轴上正向移动camera的视角，实际效果为放大图片。
-             [Tags]* 如果在Y轴上移动，则图片上下移动；X轴上对应图片左右移动。
-             [Tags]*/
+             /**
+              * 在Z轴上正向移动camera的视角，实际效果为放大图片。
+              * 如果在Y轴上移动，则图片上下移动；X轴上对应图片左右移动。
+              */
             mCamera.translate(0.0f, 0.0f, 100.0f);
             // As the angle of the view gets less, zoom in
             if (rotation < mMaxRotationAngle) {
                     float zoomAmount = (float) (mMaxZoom + (rotation * 1.5));
                     mCamera.translate(0.0f, 0.0f, zoomAmount);
             }
-            [Tags]/**
-             [Tags]* 在Y轴上旋转，对应图片竖向向里翻转。如果在X轴上旋转，则对应图片横向向里翻转。
-             [Tags]*/
+             /**
+              * 在Y轴上旋转，对应图片竖向向里翻转。如果在X轴上旋转，则对应图片横向向里翻转。
+              */
             mCamera.rotateY(rotationAngle);
             mCamera.getMatrix(imageMatrix);
             imageMatrix.preTranslate(-(imageWidth / 2), -(imageHeight / 2));
             imageMatrix.postTranslate((imageWidth / 2), (imageHeight / 2));
-            [Tags]/**
-             [Tags]* 恢复相机原状态
-             [Tags]*/
+             /**
+              * 恢复相机原状态
+              */
             mCamera.restore();
     }
 }
@@ -310,18 +310,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-[Tags]/**
-[Tags]* [Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*
-[Tags]* 文件名称    : ImageAdapter.java
-[Tags]* 文件描述    : 自定义Gallery适配器，添加视图阴影
-[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*[Tags]*
-[Tags]*/
+ /**
+ *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * 文件名称    : ImageAdapter.java
+ * 文件描述    : 自定义Gallery适配器，添加视图阴影
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ */
 public class ImageAdapter extends BaseAdapter {
     private int mGalleryItemBackground;
     private Context mContext;
-    [Tags]/**
-     [Tags]* 图像路径列表
-     [Tags]*/
+     /**
+      * 图像路径列表
+      */
     private List<String> lis;
     public ImageAdapter(Context c,  List<String> li) {
         mContext = c;
@@ -343,15 +343,15 @@ public class ImageAdapter extends BaseAdapter {
                 height / 2, width, height / 2, matrix, false);
         Bitmap bitmapWithReflection = Bitmap.createBitmap(width,
                 (height + height / 2), Config.ARGB_8888);
-        [Tags]/**
-         [Tags]* 创建一个绘有bitmapWithReflection的画布，画布质量和bitmapWithReflection质量相同
-         [Tags]* 也就相当于把bitmapWithReflection作为画布使用
-         [Tags]* 该画布高度为 原图 + 间隔 + 倒影
-         [Tags]*/
+         /**
+          * 创建一个绘有bitmapWithReflection的画布，画布质量和bitmapWithReflection质量相同
+          * 也就相当于把bitmapWithReflection作为画布使用
+          * 该画布高度为 原图 + 间隔 + 倒影
+          */
         Canvas canvas = new Canvas(bitmapWithReflection);
-        [Tags]/**
-         [Tags]* 在画布左上角（0,0）绘制原始图
-         [Tags]*/
+         /**
+          * 在画布左上角（0,0）绘制原始图
+          */
         canvas.drawBitmap(originalImage, 0, 0, null);
         Paint deafaultPaint = new Paint();
         canvas.drawRect(0, height, width, height + reflectionGap,
@@ -363,28 +363,28 @@ public class ImageAdapter extends BaseAdapter {
                 + reflectionGap, 0x70ffffff, 0x00ffffff, TileMode.CLAMP);
         paint.setShader(shader);
         paint.setXfermode(new PorterDuffXfermode(Mode.DST_IN));
-            [Tags]/**
-             [Tags]* 在倒影图上用带阴影的画笔绘制矩形
-             [Tags]*/
+             /**
+              * 在倒影图上用带阴影的画笔绘制矩形
+              */
         canvas.drawRect(0, height, width, bitmapWithReflection.getHeight()
                 + reflectionGap, paint);
         ImageView imageView = new ImageView(mContext);
-            [Tags]/**
-             [Tags]* BitmapDrawable bd = new BitmapDrawable(bitmapWithReflection);
-             [Tags]* bd.setAntiAlias=true;
-             [Tags]* imageView.setImageDrawable(bd);
-             [Tags]* 替代下面：
-             [Tags]* imageView.setImageBitmap(bitmapWithReflection);
-             [Tags]* 可实现消除锯齿的效果
-             [Tags]*/
+             /**
+              * BitmapDrawable bd = new BitmapDrawable(bitmapWithReflection);
+              * bd.setAntiAlias=true;
+              * imageView.setImageDrawable(bd);
+              * 替代下面：
+              * imageView.setImageBitmap(bitmapWithReflection);
+              * 可实现消除锯齿的效果
+              */
         imageView.setImageBitmap(bitmapWithReflection);
         imageView.setLayoutParams(new GalleryFlow.LayoutParams(180, 240));
         imageView.setBackgroundResource(mGalleryItemBackground);
-            [Tags]/**
-             [Tags]* 设置图像缩放模式以适应ImageView大小。ScaleType.MATRIX：绘制时使用图像变换矩阵缩放。
-             [Tags]* 
-             [Tags]* 注意：如果执行此行代码，则原始图盛满整个ImageView，无倒影效果
-             [Tags]*/
+             /**
+              * 设置图像缩放模式以适应ImageView大小。ScaleType.MATRIX：绘制时使用图像变换矩阵缩放。
+              * 
+              * 注意：如果执行此行代码，则原始图盛满整个ImageView，无倒影效果
+              */
         //imageView.setScaleType(ScaleType.MATRIX);
         return imageView;
     }

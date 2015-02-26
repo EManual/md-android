@@ -116,7 +116,7 @@ public class ConfigTabActivity extends TabActivity {
 	private final static String TAG = "ConfigTabActivity";
 	private final Context context = ConfigTabActivity.this;
 	private TabHost mTabHost;
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -137,9 +137,9 @@ public class ConfigTabActivity extends TabActivity {
 		InitTextView();
 		InitViewPager();
 	}
-	[Tags]/**
-	 [Tags]* 初始化头标
-	 [Tags]*/
+	 /**
+	  * 初始化头标
+	  */
 	private void InitTextView() {
 		t1 = (TextView) findViewById(R.id.text1);
 		t2 = (TextView) findViewById(R.id.text2);
@@ -148,9 +148,9 @@ public class ConfigTabActivity extends TabActivity {
 		t2.setOnClickListener(new MyOnClickListener(1));
 		t3.setOnClickListener(new MyOnClickListener(2));
 	}
-	[Tags]/**
-	 [Tags]* 初始化ViewPager
-	 [Tags]*/
+	 /**
+	  * 初始化ViewPager
+	  */
 	private void InitViewPager() {
 		mPager = (ViewPager) findViewById(R.id.vPager);
 		listViews = new ArrayList<View>();
@@ -165,9 +165,9 @@ public class ConfigTabActivity extends TabActivity {
 		mPager.setCurrentItem(0);
 		mPager.setOnPageChangeListener(new MyOnPageChangeListener());
 	}
-	[Tags]/**
-	 [Tags]* 初始化动画
-	 [Tags]*/
+	 /**
+	  * 初始化动画
+	  */
 	private void InitImageView() {
 		cursor = (ImageView) findViewById(R.id.cursor);
 		bmpW = BitmapFactory.decodeResource(getResources(), R.drawable.a)
@@ -180,9 +180,9 @@ public class ConfigTabActivity extends TabActivity {
 		matrix.postTranslate(offset, 0);
 		cursor.setImageMatrix(matrix);// 设置动画初始位置
 	}
-	[Tags]/**
-	 [Tags]* ViewPager适配器
-	 [Tags]*/
+	 /**
+	  * ViewPager适配器
+	  */
 	public class MyPagerAdapter extends PagerAdapter {
 		public List<View> mListViews;
 		public MyPagerAdapter(List<View> mListViews) {
@@ -220,9 +220,9 @@ public class ConfigTabActivity extends TabActivity {
 		public void startUpdate(View arg0) {
 		}
 	}
-	[Tags]/**
-	 [Tags]* 头标点击监听
-	 [Tags]*/
+	 /**
+	  * 头标点击监听
+	  */
 	public class MyOnClickListener implements View.OnClickListener {
 		private int index = 0;
 		public MyOnClickListener(int i) {
@@ -233,9 +233,9 @@ public class ConfigTabActivity extends TabActivity {
 			mPager.setCurrentItem(index);
 		}
 	};
-	[Tags]/**
-	 [Tags]* 页卡切换监听
-	 [Tags]*/
+	 /**
+	  * 页卡切换监听
+	  */
 	public class MyOnPageChangeListener implements OnPageChangeListener {
 		int one = offset * 2 + bmpW;// 页卡1 -> 页卡2 偏移量
 		int two = one * 2;// 页卡1 -> 页卡3 偏移量

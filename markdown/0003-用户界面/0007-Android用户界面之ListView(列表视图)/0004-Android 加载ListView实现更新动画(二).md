@@ -16,9 +16,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-[Tags]/**
- [Tags]*  实现动态加载一个ListView
- [Tags]*/
+ /**
+  *  实现动态加载一个ListView
+  */
 public class ProcessorBarTest extends Activity {
 	public static final int MSG_UPDATE_LIST = 18;
 	private ListView mApps;

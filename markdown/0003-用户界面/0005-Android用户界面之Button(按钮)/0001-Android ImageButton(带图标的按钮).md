@@ -21,7 +21,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 public class ImageButtonTest extends Activity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	TextView textview;
 	ImageButton imgbtn1;
 	ImageButton imgbtn2;

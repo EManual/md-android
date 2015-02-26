@@ -99,9 +99,9 @@ public class TestSurfaceView extends Activity {
 			}
 		}
 	}
-	[Tags]/**
-	 [Tags]* 绘制指定区域
-	 [Tags]*/
+	 /**
+	  * 绘制指定区域
+	  */
 	void SimpleDraw(int length) {
 		if (length == 0)
 			oldX = 0;

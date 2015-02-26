@@ -23,9 +23,9 @@ shouldOverrideUrlLoading(…) not executed if “window.location.href” modifie
 目前还没法办解决，对于想截获地址并禁止其访问的，可以在WebViewClient.onPageStart()里处理：
 ```  
 class MyWebViewClient extends WebViewClient {
-	[Tags]/**
-	 [Tags]* 网页开始加载
-	 [Tags]*/
+	 /**
+	  * 网页开始加载
+	  */
 	publicvoidonPageStarted(WebView view, String url, Bitmap favicon) {
 		if (IsIgnoreWebsite(url)) {
 			view.stopLoading();

@@ -62,7 +62,7 @@ public class GalleryTest extends Activity implements OnItemSelectedListener,
 ```  
 public class GalleryTest extends Activity implements OnItemSelectedListener,
 		ViewFactory {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	// 声明ImageSwitcher
 	private ImageSwitcher switcher;
 	// 缩略图片id数组

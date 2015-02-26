@@ -5,9 +5,9 @@
 1、Gellary总是对center进行锁定的，所以可以考虑修改它的center的位置，把center改成在left的位置就可以了。
 Gallery中有个方法：
 ```  
-[Tags]/**
-[Tags]*@return The center of this Gallery.
-[Tags]*/
+ /**
+ *@return The center of this Gallery.
+ */
 private int getCenterOfGallery() {
 	return (getWidth() - mPaddingLeft -mPaddingRight) / 2 + mPaddingLeft;
 }

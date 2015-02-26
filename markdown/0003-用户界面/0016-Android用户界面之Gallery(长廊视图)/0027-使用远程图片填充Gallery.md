@@ -38,25 +38,25 @@ public class GalleryExample extends Activity {
 		super.onCreate(icicle);
 		setContentView(R.layout.main);
 		/*
-		 [Tags]* Find the gallery defined in the main.xml Apply a new (custom)
-		 [Tags]* ImageAdapter to it.
-		 [Tags]*/
+		  * Find the gallery defined in the main.xml Apply a new (custom)
+		  * ImageAdapter to it.
+		  */
 		((Gallery) findViewById(R.id.gallery))
 				.setAdapter(new ImageAdapter(this));
 	}
 	public class ImageAdapter extends BaseAdapter {
-		[Tags]/** The parent context */
+		 /** The parent context */
 		private Context myContext;
-		[Tags]/** URL-Strings to some remote images. */
+		 /** URL-Strings to some remote images. */
 		private String[] myRemoteImages = {
 				"http://www.anddev.org/images/tiny_tutheaders/weather_forecast.png",
 				"http://www.anddev.org/images/tiny_tutheaders/cellidtogeo.png",
 				"http://www.anddev.org/images/tiny_tutheaders/droiddraw.png" };
-		[Tags]/** Simple Constructor saving the 'parent' context. */
+		 /** Simple Constructor saving the 'parent' context. */
 		public ImageAdapter(Context c) {
 			this.myContext = c;
 		}
-		[Tags]/** Returns the amount of images we have defined. */
+		 /** Returns the amount of images we have defined. */
 		public int getCount() {
 			return this.myRemoteImages.length;
 		}
@@ -67,10 +67,10 @@ public class GalleryExample extends Activity {
 		public long getItemId(int position) {
 			return position;
 		}
-		[Tags]/**
-		 [Tags]* Returns a new ImageView to be displayed, depending on the position
-		 [Tags]* passed.
-		 [Tags]*/
+		 /**
+		  * Returns a new ImageView to be displayed, depending on the position
+		  * passed.
+		  */
 		public View getView(int position, View convertView, ViewGroup parent) {
 			ImageView i = new ImageView(this.myContext);
 			try {
@@ -97,10 +97,10 @@ public class GalleryExample extends Activity {
 			i.setLayoutParams(new Gallery.LayoutParams(150, 150));
 			return i;
 		}
-		[Tags]/**
-		 [Tags]* Returns the size (0.0f to 1.0f) of the views depending on the
-		 [Tags]* 'offset' to the center.
-		 [Tags]*/
+		 /**
+		  * Returns the size (0.0f to 1.0f) of the views depending on the
+		  * 'offset' to the center.
+		  */
 		public float getScale(boolean focused, int offset) {
 			/* Formula: 1 / (2 ^ offset) */
 			return Math.max(0, 1.0f / (float) Math.pow(2, Math.abs(offset)));

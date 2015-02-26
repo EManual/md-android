@@ -142,19 +142,19 @@ menuGrid.setOnKeyListener(new OnKeyListener() {
 		return true;
 	}
 });
-[Tags]/**
- [Tags]* ColorDrawable dw = new ColorDrawable(-00000);
- [Tags]* popupWindow.setBackgroundDrawable(dw);
- [Tags]* 本来看了个示例，加上上面这两行就不用调用dismiss，点击窗口之外的部位，或者按back键都能关闭窗口。 但是我这样写了，还是不行。
- [Tags]* 而且竟然捕获不到键盘事件，杯具，希望哪个解决了这个问题告诉我，谢谢。 ytdcr@tom.com
- [Tags]*/
-[Tags]/*
- [Tags]* @Override public boolean onKeyDown(int keyCode, KeyEvent event) { switch
- [Tags]* (keyCode) { case KeyEvent.KEYCODE_BACK: if (popupWindow != null) {
- [Tags]* popupWindow.dismiss(); }
- [Tags]*
- [Tags]* Toast.makeText(this, "fd", 1000).show(); break;
- [Tags]*
- [Tags]* } return super.onKeyUp(keyCode, event); }
- [Tags]*/
+ /**
+  * ColorDrawable dw = new ColorDrawable(-00000);
+  * popupWindow.setBackgroundDrawable(dw);
+  * 本来看了个示例，加上上面这两行就不用调用dismiss，点击窗口之外的部位，或者按back键都能关闭窗口。 但是我这样写了，还是不行。
+  * 而且竟然捕获不到键盘事件，杯具，希望哪个解决了这个问题告诉我，谢谢。 ytdcr@tom.com
+  */
+ /*
+  * @Override public boolean onKeyDown(int keyCode, KeyEvent event) { switch
+  * (keyCode) { case KeyEvent.KEYCODE_BACK: if (popupWindow != null) {
+  * popupWindow.dismiss(); }
+  *
+  * Toast.makeText(this, "fd", 1000).show(); break;
+  *
+  * } return super.onKeyUp(keyCode, event); }
+  */
 ```

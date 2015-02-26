@@ -253,7 +253,7 @@ android 图片拖动效果(Gallery)
 示例代码
 ```  
 public class MyGallery extends Activity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	private Gallery gallery;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

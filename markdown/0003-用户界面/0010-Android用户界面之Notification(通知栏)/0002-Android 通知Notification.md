@@ -37,9 +37,9 @@ n.flags = Notification.FLAG_ONGOING_EVENT
 下面代码演示下通知Notification的使用。
 Notification实现的步骤：
 ```  
-[Tags]/**
- [Tags]* MainActivity
- [Tags]*/
+ /**
+  * MainActivity
+  */
 public class MainActivity extends Activity {
 	private Button notifyBtn;
 	private Button cancelBtn;
@@ -91,9 +91,9 @@ public class MainActivity extends Activity {
 ```
 打开通知后跳转到的Activity：
 ```  
-[Tags]/**
- [Tags]* 打开通知后跳转的Activity
- [Tags]*/
+ /**
+  * 打开通知后跳转的Activity
+  */
 public class NotificationView extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

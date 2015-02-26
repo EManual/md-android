@@ -139,9 +139,9 @@ public class MainActivity extends Activity {
 			}
 		});
 	}
-	[Tags]/**
-	 [Tags]* 模拟数据
-	 [Tags]*/
+	 /**
+	  * 模拟数据
+	  */
 	private void initPersonData() {
 		Person mPerson;
 		for (int i = 1; i <= 12; i++) {

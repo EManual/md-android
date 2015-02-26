@@ -7,9 +7,9 @@
 下面看看主要代码：
 #### １、创建一个类继承TextView
 ```  
-[Tags]/**
- [Tags]* 垂直滚动的TextView Widget
- [Tags]*/
+ /**
+  * 垂直滚动的TextView Widget
+  */
 public class VerticalScrollTextView extends TextView {
 ```
 #### 2、实现构造函数：

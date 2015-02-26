@@ -64,7 +64,7 @@ public class Activity01 extends Activity {
 	private static final int REFRESH = 0x000001;
 	/* 声明GameView类对象 */
 	private GameView mGameView = null;
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -102,14 +102,14 @@ public class Activity01 extends Activity {
 			}
 		}
 	}
-	[Tags]/**
-	 [Tags]* 当然可以将GameThread类这样写 同样可以更新界面，并且不在需要 Handler在接受消息 class GameThread
-	 [Tags]* implements Runnable { public void run() { while
-	 [Tags]* (!Thread.currentThread().isInterrupted()) { try { Thread.sleep(100); }
-	 [Tags]* catch (InterruptedException e) { Thread.currentThread().interrupt(); }
-	 [Tags]* //使用postInvalidate可以直接在线程中更新界面 //我认为它这个方法也是给主线程发送消息 最后刷新界面的工作还是在主线程中执行的
-	 [Tags]* //如果我的看法错误 还请 大家疯狂留言。 mGameView.postInvalidate(); } } }
-	 [Tags]*/
+	 /**
+	  * 当然可以将GameThread类这样写 同样可以更新界面，并且不在需要 Handler在接受消息 class GameThread
+	  * implements Runnable { public void run() { while
+	  * (!Thread.currentThread().isInterrupted()) { try { Thread.sleep(100); }
+	  * catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+	  * //使用postInvalidate可以直接在线程中更新界面 //我认为它这个方法也是给主线程发送消息 最后刷新界面的工作还是在主线程中执行的
+	  * //如果我的看法错误 还请 大家疯狂留言。 mGameView.postInvalidate(); } } }
+	  */
 	// 详细事件处理见第三章
 	// 当然这些事件也可以写在GameView中
 	// 触笔事件

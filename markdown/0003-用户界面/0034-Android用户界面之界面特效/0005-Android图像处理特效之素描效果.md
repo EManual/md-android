@@ -155,25 +155,25 @@ public class SketchActivity extends Activity {
 		int i;
 		n_p[0] = x4 + x6;
 		n_p[1] = (Math.exp(x1)
-				[Tags]* (x7 [Tags]* Math.sin(x3) - (x6 + 2 [Tags]* x4) [Tags]* Math.cos(x3)) + Math
+				 * (x7  * Math.sin(x3) - (x6 + 2  * x4)  * Math.cos(x3)) + Math
 				.exp(x0) * (x5 * Math.sin(x2) - (2 * x6 + x4) * Math.cos(x2)));
 		n_p[2] = (2
-				[Tags]* Math.exp(x0 + x1)
-				[Tags]* ((x4 + x6) [Tags]* Math.cos(x3) [Tags]* Math.cos(x2) - x5 [Tags]* Math.cos(x3)
-						[Tags]* Math.sin(x2) - x7 [Tags]* Math.cos(x2) [Tags]* Math.sin(x3)) + x6
-				[Tags]* Math.exp(2 [Tags]* x0) + x4 [Tags]* Math.exp(2 [Tags]* x1));
+				 * Math.exp(x0 + x1)
+				 * ((x4 + x6)  * Math.cos(x3)  * Math.cos(x2) - x5  * Math.cos(x3)
+						 * Math.sin(x2) - x7  * Math.cos(x2)  * Math.sin(x3)) + x6
+				 * Math.exp(2  * x0) + x4  * Math.exp(2  * x1));
 		n_p[3] = (Math.exp(x1 + 2 * x0)
-				[Tags]* (x7 [Tags]* Math.sin(x3) - x6 [Tags]* Math.cos(x3)) + Math.exp(x0 + 2
-				[Tags]* x1)
-				[Tags]* (x5 [Tags]* Math.sin(x2) - x4 [Tags]* Math.cos(x2)));
+				 * (x7  * Math.sin(x3) - x6  * Math.cos(x3)) + Math.exp(x0 + 2
+				 * x1)
+				 * (x5  * Math.sin(x2) - x4  * Math.cos(x2)));
 		n_p[4] = 0.0;
 		d_p[0] = 0.0;
 		d_p[1] = -2 * Math.exp(x1) * Math.cos(x3) - 2 * Math.exp(x0)
-				[Tags]* Math.cos(x2);
+				 * Math.cos(x2);
 		d_p[2] = 4 * Math.cos(x3) * Math.cos(x2) * Math.exp(x0 + x1)
 				+ Math.exp(2 * x1) + Math.exp(2 * x0);
 		d_p[3] = -2 * Math.cos(x2) * Math.exp(x0 + 2 * x1) - 2 * Math.cos(x3)
-				[Tags]* Math.exp(x1 + 2 [Tags]* x0);
+				 * Math.exp(x1 + 2  * x0);
 		d_p[4] = Math.exp(2 * x0 + 2 * x1);
 		for (i = 0; i <= 4; i++) {
 			d_m = d_p;
@@ -246,9 +246,9 @@ public class SketchActivity extends Activity {
 					terms = (row < 4) ? row : 4;
 					for (i = 0; i <= terms; i++) {
 						val_p[vp_idx] += n_p * src[sp_p_idx - i] - d_p
-								[Tags]* val_p[vp_idx - i];
+								 * val_p[vp_idx - i];
 						val_m[vm_idx] += n_m * src[sp_m_idx + i] - d_m
-								[Tags]* val_m[vm_idx + i];
+								 * val_m[vm_idx + i];
 					}
 					for (j = i; j <= 4; j++) {
 						val_p[vp_idx] += (n_p[j] - bd_p[j]) * initial_p[0];
@@ -291,9 +291,9 @@ public class SketchActivity extends Activity {
 					terms = (col < 4) ? col : 4;
 					for (i = 0; i <= terms; i++) {
 						val_p[vp_idx] += n_p * src[sp_p_idx - i] - d_p
-								[Tags]* val_p[vp_idx - i];
+								 * val_p[vp_idx - i];
 						val_m[vm_idx] += n_m * src[sp_m_idx + i] - d_m
-								[Tags]* val_m[vm_idx + i];
+								 * val_m[vm_idx + i];
 					}
 					for (j = i; j <= 4; j++) {
 						val_p[vp_idx] += (n_p[j] - bd_p[j]) * initial_p[0];

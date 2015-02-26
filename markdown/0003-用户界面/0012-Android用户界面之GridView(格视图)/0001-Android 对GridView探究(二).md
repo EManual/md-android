@@ -99,17 +99,17 @@ public class GvActivity extends Activity {
 		gridview.setOnItemClickListener(new ItemClickListener());
 	}
 	class ItemClickListener implements OnItemClickListener {
-		[Tags]/**
-		 [Tags]* 点击项时触发事件
-		 [Tags]* @param parent
-		 [Tags]*            发生点击动作的AdapterView
-		 [Tags]* @param view
-		 [Tags]*            在AdapterView中被点击的视图(它是由adapter提供的一个视图)。
-		 [Tags]* @param position
-		 [Tags]*            视图在adapter中的位置。
-		 [Tags]* @param rowid
-		 [Tags]*            被点击元素的行id。
-		 [Tags]*/
+		 /**
+		  * 点击项时触发事件
+		  * @param parent
+		  *            发生点击动作的AdapterView
+		  * @param view
+		  *            在AdapterView中被点击的视图(它是由adapter提供的一个视图)。
+		  * @param position
+		  *            视图在adapter中的位置。
+		  * @param rowid
+		  *            被点击元素的行id。
+		  */
 		public void onItemClick(AdapterView<?> parent, View view, int position,
 				long rowid) {
 			HashMap<String, Object> item = (HashMap<String, Object>) parent

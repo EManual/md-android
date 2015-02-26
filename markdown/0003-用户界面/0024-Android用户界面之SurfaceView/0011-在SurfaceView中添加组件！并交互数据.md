@@ -77,11 +77,11 @@ public class MainActivity extends Activity implements OnClickListener {
 		button2 = (Button) findViewById(R.id.button2);
 		button2.setOnClickListener(this);
 		/*
-		 [Tags]* 其实大家也可以不用本类使用接口，可以内部类来完成。 以下是不使用OnClickListener接口的绑定监听方式;
-		 [Tags]* button2.setOnClickListener(new OnClickListener() {
-		 [Tags]* @Override public void onClick(View v) { //这里处理按键操作
-		 [Tags]* } });
-		 [Tags]*/
+		  * 其实大家也可以不用本类使用接口，可以内部类来完成。 以下是不使用OnClickListener接口的绑定监听方式;
+		  * button2.setOnClickListener(new OnClickListener() {
+		  * @Override public void onClick(View v) { //这里处理按键操作
+		  * } });
+		  */
 	}
 	@Override
 	public void onClick(View v) {
@@ -97,9 +97,9 @@ public class MainActivity extends Activity implements OnClickListener {
 ```
 该有的备注在代码后面都备注了，MySurfaceView.button_str，这个是自己的SurfaceView中定义的一个static的变量用来交互数据用到；在那么下面就要看我们的SurfaceView，当在Xml注册需要注意什么了，我半天的时候都花在了这里！！！一定要引起注意，这也是在SurfaceView中并显示组件完成最重要的一步。先分析：1.SurfaceView类的创建和实现等等和之前都是一样的，该怎么去写还怎么去写，但是！构造函数一定要注意！
 ```  
-[Tags]/* 
- [Tags]* public MySurfaceView(Context context) { super(context); }//备注1（这里一定要引起注意，仔细看下文对备注1的解释 ） 
- [Tags]*/  
+ /* 
+  * public MySurfaceView(Context context) { super(context); }//备注1（这里一定要引起注意，仔细看下文对备注1的解释 ） 
+  */  
 public MySurfaceView(Context context, AttributeSet attrs) {//备注1}  
 ```
 这里解释下备注1：

@@ -80,9 +80,9 @@ public synchronized void setIndeterminate(boolean indeterminate) {
 public class BeanUtils {
 	private BeanUtils() {
 	}
-	[Tags]/**
-	 [Tags]* 直接设置对象属性值,无视private/protected修饰符,不经过setter函数.
-	 [Tags]*/
+	 /**
+	  * 直接设置对象属性值,无视private/protected修饰符,不经过setter函数.
+	  */
 	public static void setFieldValue(final Object object,
 			final String fieldName, final Object value) {
 		Field field = getDeclaredField(object, fieldName);
@@ -96,16 +96,16 @@ public class BeanUtils {
 			Log.e("zbkc", "", e);
 		}
 	}
-	[Tags]/**
-	 [Tags]* 循环向上转型,获取对象的DeclaredField.
-	 [Tags]*/
+	 /**
+	  * 循环向上转型,获取对象的DeclaredField.
+	  */
 	protected static Field getDeclaredField(final Object object,
 			final String fieldName) {
 		return getDeclaredField(object.getClass(), fieldName);
 	}
-	[Tags]/**
-	 [Tags]* 循环向上转型,获取类的DeclaredField.
-	 [Tags]*/
+	 /**
+	  * 循环向上转型,获取类的DeclaredField.
+	  */
 	@SuppressWarnings("unchecked")
 	protected static Field getDeclaredField(final Class clazz,
 			final String fieldName) {
@@ -119,9 +119,9 @@ public class BeanUtils {
 		}
 		return null;
 	}
-	[Tags]/**
-	 [Tags]* 强制转换fileld可访问.
-	 [Tags]*/
+	 /**
+	  * 强制转换fileld可访问.
+	  */
 	protected static void makeAccessible(Field field) {
 		if (!Modifier.isPublic(field.getModifiers())
 				|| !Modifier.isPublic(field.getDeclaringClass()

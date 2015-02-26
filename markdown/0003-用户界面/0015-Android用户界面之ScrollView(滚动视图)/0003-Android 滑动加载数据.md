@@ -115,12 +115,12 @@ public class EndLessActivity extends ListActivity {
 		// getListView().setOnScrollListener(this);
 	}
 	/*
-	 [Tags]* public void onScroll(AbsListView view, int firstVisible, int
-	 [Tags]* visibleCount, int totalCount) {
-	 [Tags]* boolean loadMore = firstVisible + visibleCount >= totalCount;
-	 [Tags]* if(loadMore) { adapter.count += visibleCount;
-	 [Tags]* adapter.notifyDataSetChanged(); } }
-	 [Tags]*/
+	  * public void onScroll(AbsListView view, int firstVisible, int
+	  * visibleCount, int totalCount) {
+	  * boolean loadMore = firstVisible + visibleCount >= totalCount;
+	  * if(loadMore) { adapter.count += visibleCount;
+	  * adapter.notifyDataSetChanged(); } }
+	  */
 	public void onScrollStateChanged(AbsListView v, int s) {
 	}
 	class Aleph0 extends BaseAdapter {

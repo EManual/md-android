@@ -116,9 +116,9 @@ public class TestSurfaceView extends Activity {
 			Log.i("Surface:", "Destroy");
 		}
 	}
-	[Tags]/**
-	 [Tags]* 读取并显示图片的线程
-	 [Tags]*/
+	 /**
+	  * 读取并显示图片的线程
+	  */
 	class Load_DrawImage extends Thread {
 		int x, y;
 		int imgIndex = 0;
@@ -141,9 +141,9 @@ public class TestSurfaceView extends Activity {
 			}
 		}
 	};
-	[Tags]/**
-	 [Tags]* 只负责绘图的线程
-	 [Tags]*/
+	 /**
+	  * 只负责绘图的线程
+	  */
 	class DrawImage extends Thread {
 		int x, y;
 		public DrawImage(int x, int y) {
@@ -161,9 +161,9 @@ public class TestSurfaceView extends Activity {
 			}
 		}
 	};
-	[Tags]/**
-	 [Tags]* 只负责读取图片的线程
-	 [Tags]*/
+	 /**
+	  * 只负责读取图片的线程
+	  */
 	class LoadImage extends Thread {
 		int imgIndex = 0;
 		public void run() {

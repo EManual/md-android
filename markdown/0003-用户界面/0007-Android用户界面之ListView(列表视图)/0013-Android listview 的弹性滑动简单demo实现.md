@@ -41,9 +41,9 @@ public class MyListView extends ListView {
 				@Override
 				public void onShowPress(MotionEvent e) {
 				}
-				[Tags]/**
-				 [Tags]* 手势滑动的时候触发
-				 [Tags]*/
+				 /**
+				  * 手势滑动的时候触发
+				  */
 				@Override
 				public boolean onScroll(MotionEvent e1, MotionEvent e2,
 						float distanceX, float distanceY) {
@@ -153,7 +153,7 @@ import android.os.Bundle;
 import android.view.animation.TranslateAnimation;
 import android.widget.SimpleAdapter;
 public class Main extends Activity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

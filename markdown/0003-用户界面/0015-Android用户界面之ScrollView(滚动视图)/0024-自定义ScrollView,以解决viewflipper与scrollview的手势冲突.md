@@ -5,10 +5,10 @@ import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.widget.ScrollView;
-[Tags]/**
- [Tags]* 自定义ScrollView，并重写其onTouchEvent和dispatchTouchEvent方法， 以解决viewflipper
- [Tags]* 与scrollview的手势冲突
- [Tags]*/
+ /**
+  * 自定义ScrollView，并重写其onTouchEvent和dispatchTouchEvent方法， 以解决viewflipper
+  * 与scrollview的手势冲突
+  */
 public class MyScrollView extends ScrollView {
 	GestureDetector gestureDetector;
 	public MyScrollView(Context context) {

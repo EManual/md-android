@@ -2,8 +2,8 @@
 ```  
 Intent notificationIntent = new Intent(this.context, this.context.getClass());
 /*
- [Tags]* add the followed two lines to resume the app same with previous statues
- [Tags]*/
+  * add the followed two lines to resume the app same with previous statues
+  */
 notificationIntent.setAction(Intent.ACTION_MAIN);
 notificationIntent.addCategory(Intent.CATEGORY_LAUNCHER);
 PendingIntent contentIntent = PendingIntent.getActivity(this.context,

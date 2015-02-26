@@ -23,9 +23,9 @@ my_layout.xml布局文件：带一个图片的按钮
 ```  
 import android.app.Activity;
 import android.os.Bundle;
-[Tags]/**
- [Tags]* 主程序入口类
- [Tags]*/
+ /**
+  * 主程序入口类
+  */
 public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

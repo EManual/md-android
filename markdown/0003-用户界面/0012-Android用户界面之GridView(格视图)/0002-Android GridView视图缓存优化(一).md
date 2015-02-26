@@ -6,9 +6,9 @@
 总结："CacheAdapter缓存50个Item"速度与HolderView略快，读取最近的Item速度最快，缓存的Item越多速度越快。"CacheAdapter缓存75个Item"占用内存最少，这是由于一部分图片下载失败，保存的Item的图片为空，实际上是缓存越多Item占用的内存越多。
 CacheAdapter.java是实现缓存Item的自定义Adapter,源码如下：
 ```  
-[Tags]/**
- [Tags]* 使用列表缓存过去的Item
- [Tags]*/
+ /**
+  * 使用列表缓存过去的Item
+  */
 public class CacheAdapter extends BaseAdapter {
 	public class Item {
 		public String itemImageURL;
@@ -74,9 +74,9 @@ public class CacheAdapter extends BaseAdapter {
 		}
 		return convertView;
 	}
-	[Tags]/**
-	 [Tags]* 异步读取网络图片
-	 [Tags]*/
+	 /**
+	  * 异步读取网络图片
+	  */
 	class AsyncLoadImage extends AsyncTask<Object, Object, Void> {
 		@Override
 		protected Void doInBackground(Object... params) {

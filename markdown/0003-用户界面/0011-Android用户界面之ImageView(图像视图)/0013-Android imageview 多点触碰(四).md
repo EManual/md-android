@@ -10,9 +10,9 @@ import Android.graphics.Paint;
 import Android.graphics.drawable.BitmapDrawable;
 import Android.view.MotionEvent;
 import Android.widget.ImageView;
-[Tags]/**
- [Tags]* ImageAdapter中ImageView的实现类
- [Tags]*/
+ /**
+  * ImageAdapter中ImageView的实现类
+  */
 public class ImageViewImp extends ImageView {
 	private int alpha = 250;
 	private boolean pressed = false;

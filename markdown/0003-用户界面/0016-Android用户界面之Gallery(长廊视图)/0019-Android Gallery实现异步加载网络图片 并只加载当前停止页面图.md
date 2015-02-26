@@ -83,9 +83,9 @@ public class MyActivity extends Activity implements OnItemClickListener {
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		Log.i("GOLF", "第" + arg2 + "个被点击了");
 	}
-	[Tags]/**
-	 [Tags]* 判断Gallery滚动是否停止,如果停止则加载当前页面的图片
-	 [Tags]*/
+	 /**
+	  * 判断Gallery滚动是否停止,如果停止则加载当前页面的图片
+	  */
 	private void GalleryWhetherStop() {
 		Runnable runnable = new Runnable() {
 			public void run() {

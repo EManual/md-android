@@ -4,9 +4,9 @@ activity中：
 ```  
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
-[Tags]/**
- [Tags]* @description 有关首选项preferences的研究
- [Tags]*/
+ /**
+  * @description 有关首选项preferences的研究
+  */
 public class MyPreferencesActivity extends PreferenceActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

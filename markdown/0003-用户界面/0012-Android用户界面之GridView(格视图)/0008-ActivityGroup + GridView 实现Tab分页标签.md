@@ -35,9 +35,9 @@ public class ImageAdapter extends BaseAdapter {
     public long getItemId(int position) {   
         return position;   
     }   
-    [Tags]/**  
-     [Tags]* 设置选中的效果  
-     [Tags]*/    
+     /**  
+      * 设置选中的效果  
+      */    
     public void SetFocus(int index)    
     {
         for(int i=0;i<imgItems.length;i++)
@@ -89,7 +89,7 @@ public class ActivityGroupDemo extends ActivityGroup {
 	private GridView gvTopBar;
 	private ImageAdapter topImgAdapter;
 	public LinearLayout container;// 装载sub Activity的容器
-	[Tags]/** 顶部按钮图片 **/
+	 /** 顶部按钮图片 **/
 	int[] topbar_image_array = { R.drawable.topbar_home,
 			R.drawable.topbar_user, R.drawable.topbar_shoppingcart,
 			R.drawable.topbar_note };
@@ -117,11 +117,11 @@ public class ActivityGroupDemo extends ActivityGroup {
 			SwitchActivity(arg2);
 		}
 	}
-	[Tags]/**
-	 [Tags]* 根据ID打开指定的Activity
-	 [Tags]* @param id
-	 [Tags]*            GridView选中项的序号
-	 [Tags]*/
+	 /**
+	  * 根据ID打开指定的Activity
+	  * @param id
+	  *            GridView选中项的序号
+	  */
 	void SwitchActivity(int id) {
 		topImgAdapter.SetFocus(id);// 选中项获得高亮
 		container.removeAllViews();// 必须先清除容器中所有的View

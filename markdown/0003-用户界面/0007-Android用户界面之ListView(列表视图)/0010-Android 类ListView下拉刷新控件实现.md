@@ -14,9 +14,9 @@ ListView刷新其实类似于网页。如果没用下拉刷新，那么用户得
 基本效果就是这样。
 自定义控件代码
 ```  
-[Tags]/**
- [Tags]* 刷新控制view
- [Tags]*/
+ /**
+  * 刷新控制view
+  */
 public class RefreshableView extends LinearLayout {
 	private static final String TAG = "LILITH";
 	private Scroller scroller;
@@ -74,10 +74,10 @@ public class RefreshableView extends LinearLayout {
 		releaseTextString = mContext.getResources().getString(
 				R.string.refresh_release_text);
 	}
-	[Tags]/**
-	 [Tags]* 刷新
-	 [Tags]* @param time
-	 [Tags]*/
+	 /**
+	  * 刷新
+	  * @param time
+	  */
 	private void setRefreshText(String time) {
 		// timeTextView.setText(time);
 	}
@@ -106,9 +106,9 @@ public class RefreshableView extends LinearLayout {
 		}
 		return true;
 	}
-	[Tags]/**
-	 [Tags]* up事件处理
-	 [Tags]*/
+	 /**
+	  * up事件处理
+	  */
 	private void fling() {
 		LinearLayout.LayoutParams lp = (LayoutParams) refreshView
 				.getLayoutParams();
@@ -154,10 +154,10 @@ public class RefreshableView extends LinearLayout {
 			invalidate();
 		}
 	}
-	[Tags]/**
-	 [Tags]* 下拉move事件处理
-	 [Tags]* @param moveY
-	 [Tags]*/
+	 /**
+	  * 下拉move事件处理
+	  * @param moveY
+	  */
 	private void doMovement(int moveY) {
 		LinearLayout.LayoutParams lp = (LayoutParams) refreshView
 				.getLayoutParams();
@@ -194,15 +194,15 @@ public class RefreshableView extends LinearLayout {
 	public void setRefreshListener(RefreshListener listener) {
 		this.refreshListener = listener;
 	}
-	[Tags]/**
-	 [Tags]* 刷新时间
-	 [Tags]* @param refreshTime2
-	 [Tags]*/
+	 /**
+	  * 刷新时间
+	  * @param refreshTime2
+	  */
 	private void setRefreshTime(Long time) {
 	}
-	[Tags]/**
-	 [Tags]* 结束刷新事件
-	 [Tags]*/
+	 /**
+	  * 结束刷新事件
+	  */
 	public void finishRefresh() {
 		Log.i(TAG, "执行了=====finishRefresh");
 		LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) this.refreshView
@@ -215,11 +215,11 @@ public class RefreshableView extends LinearLayout {
 		isRefreshing = false;
 	}
 	/*
-	 [Tags]* 该方法一般和ontouchEvent 一起用 (non-Javadoc) <a
-	 [Tags]* href="\"http://www.eoeandroid.com/home.php?mod=space&uid=133757\""
-	 [Tags]* target="\"_blank\"">@see</a>
-	 [Tags]* android.view.ViewGrouponInterceptTouchEvent(android.view.MotionEvent)
-	 [Tags]*/
+	  * 该方法一般和ontouchEvent 一起用 (non-Javadoc) <a
+	  * href="\"http://www.eoeandroid.com/home.php?mod=space&uid=133757\""
+	  * target="\"_blank\"">@see</a>
+	  * android.view.ViewGrouponInterceptTouchEvent(android.view.MotionEvent)
+	  */
 	@Override
 	public boolean onInterceptTouchEvent(MotionEvent e) {
 		int action = e.getAction();
@@ -267,9 +267,9 @@ public class RefreshableView extends LinearLayout {
 		}
 		return false;
 	}
-	[Tags]/**
-	 [Tags]* 刷新监听接口
-	 [Tags]*/
+	 /**
+	  * 刷新监听接口
+	  */
 	public interface RefreshListener {
 		public void onRefresh(RefreshableView view);
 	}

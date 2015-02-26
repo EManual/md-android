@@ -2,7 +2,7 @@
 ```  
 private EditText mEditText;
 mEditText = (EditText) findViewById(R.id.mEditText);
-[Tags]/** 限制字数 */
+ /** 限制字数 */
 mEditText.addTextChangedListener(new TextWatcher() {
 	private CharSequence temp;
 	private int selectionStart;

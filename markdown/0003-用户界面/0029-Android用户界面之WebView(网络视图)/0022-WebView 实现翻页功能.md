@@ -42,17 +42,17 @@ public class MyWebView extends WebView {
 						+ "px Time: " + time + "ms");
 				if ((downXValue < currentX)
 						&& (difference > 100 && (time < 220))) {
-					[Tags]/** 跳到上一页 */
+					 /** 跳到上一页 */
 					this.flipper.setInAnimation(AnimationUtils.loadAnimation(
 							this.getContext(), R.anim.push_right_in));
 					this.flipper.setOutAnimation(AnimationUtils.loadAnimation(
 							this.getContext(), R.anim.push_right_out));
 					flipper.showPrevious();
 				}
-				[Tags]/** X轴滑动间隔大于100，并且时候小于220ms，并且向X轴左标的目标滑动 */
+				 /** X轴滑动间隔大于100，并且时候小于220ms，并且向X轴左标的目标滑动 */
 				if ((downXValue > currentX) && (difference > 100)
 						&& (time < 220)) {
-					[Tags]/** 跳到下一页 */
+					 /** 跳到下一页 */
 					this.flipper.setInAnimation(AnimationUtils.loadAnimation(
 							this.getContext(), R.anim.push_left_in));
 					this.flipper.setOutAnimation(AnimationUtils.loadAnimation(

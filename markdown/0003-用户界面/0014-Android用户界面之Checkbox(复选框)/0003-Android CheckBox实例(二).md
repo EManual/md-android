@@ -133,7 +133,7 @@ public class CheckBoxCalc extends Activity {
 		}
 		if (Operation == "*") {
 			Temp = Float.parseFloat(mEditText.getText().toString())
-					[Tags]* Float.parseFloat(mEditText1.getText().toString());
+					 * Float.parseFloat(mEditText1.getText().toString());
 		}
 		if (Operation == "/") {
 			Temp = Float.parseFloat(mEditText.getText().toString())

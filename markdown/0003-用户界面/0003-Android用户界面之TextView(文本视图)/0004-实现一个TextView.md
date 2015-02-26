@@ -92,12 +92,12 @@ public class Text2View extends View {
 		}
 		return result;
 	}
-	[Tags]/**
-	 [Tags]* Determines the height of this view
-	 [Tags]* @param measureSpec
-	 [Tags]*            A measureSpec packed into an int
-	 [Tags]* @return The height of the view, honoring constraints from measureSpec
-	 [Tags]*/
+	 /**
+	  * Determines the height of this view
+	  * @param measureSpec
+	  *            A measureSpec packed into an int
+	  * @return The height of the view, honoring constraints from measureSpec
+	  */
 	private int measureHeight(int measureSpec) {
 		int result = 0;
 		int specMode = MeasureSpec.getMode(measureSpec);

@@ -14,9 +14,9 @@ public void onCreate(Bundle savedInstanceState) {
 	webview.getSettings().setJavaScriptEnabled(true);
 	final Activity activity = this;
 	/*
-	 [Tags]* WebChromeClient类:用来辅助WebView处理JavaScript的对话框,网站图标,网站Title,加载进度等
-	 [Tags]* 通过setWebChromeClient调协WebChromeClient类
-	 [Tags]*/
+	  * WebChromeClient类:用来辅助WebView处理JavaScript的对话框,网站图标,网站Title,加载进度等
+	  * 通过setWebChromeClient调协WebChromeClient类
+	  */
 	webview.setWebChromeClient(new WebChromeClient() {
 		// 加载进度中,100时停止
 		public void onProgressChanged(WebView view, int progress) {
@@ -28,9 +28,9 @@ public void onCreate(Bundle savedInstanceState) {
 		}
 	});
 	/*
-	 [Tags]* WebViewClient类: 用来辅助WebView处理各种通知,请求等事件的类
-	 [Tags]* 通过setWebViewClient设置WebViewClient类
-	 [Tags]*/
+	  * WebViewClient类: 用来辅助WebView处理各种通知,请求等事件的类
+	  * 通过setWebViewClient设置WebViewClient类
+	  */
 	webview.setWebViewClient(new WebViewClient() {
 		// 页面加载失败
 		public void onReceivedError(WebView view, int errorCode,
@@ -42,8 +42,8 @@ public void onCreate(Bundle savedInstanceState) {
 	webview.loadUrl(Url);
 }
 /*
- [Tags]* 通过WebView的goBack(),goForward()方法设置其前进和后退
- [Tags]*/
+  * 通过WebView的goBack(),goForward()方法设置其前进和后退
+  */
 @Override
 public boolean onKeyDown(int keyCode, KeyEvent event) {
 	if (keyCode == KeyEvent.KEYCODE_BACK && webview.canGoBack()) {

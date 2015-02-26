@@ -48,10 +48,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
-[Tags]/**
- [Tags]* 本例是实现TabHost----->直接在XML文件中进行配置 【注意】在xml文件中
- [Tags]* TahWidget和FrameLayout标签中的ID,必须要使用Android中默认的
- [Tags]*/
+ /**
+  * 本例是实现TabHost----->直接在XML文件中进行配置 【注意】在xml文件中
+  * TahWidget和FrameLayout标签中的ID,必须要使用Android中默认的
+  */
 public class TabHostActivity_First extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

@@ -113,9 +113,9 @@ public class ImageAdapter extends BaseAdapter {
 		mImageIds = ImageIds;
 		mImages = new ImageView[mImageIds.length];
 	}
-	[Tags]/**
-	 [Tags]* 创建倒影效果
-	 [Tags]*/
+	 /**
+	  * 创建倒影效果
+	  */
 	public boolean createReflectedImages() {
 		// 倒影图和原图之间的距离
 		final int reflectionGap = 4;
@@ -148,10 +148,10 @@ public class ImageAdapter extends BaseAdapter {
 			canvas.drawBitmap(reflectionImage, 0, height + reflectionGap, null);
 			Paint paint = new Paint();
 			paint.setAntiAlias(false);
-			[Tags]/**
-			 [Tags]* 参数一:为渐变起初点坐标x位置， 参数二:为y轴位置， 参数三和四:分辨对应渐变终点， 最后参数为平铺方式，
-			 [Tags]* 这里设置为镜像Gradient是基于Shader类，所以我们通过Paint的setShader方法来设置这个渐变
-			 [Tags]*/
+			 /**
+			  * 参数一:为渐变起初点坐标x位置， 参数二:为y轴位置， 参数三和四:分辨对应渐变终点， 最后参数为平铺方式，
+			  * 这里设置为镜像Gradient是基于Shader类，所以我们通过Paint的setShader方法来设置这个渐变
+			  */
 			LinearGradient shader = new LinearGradient(0,
 					originalImage.getHeight(), 0,
 					bitmapWithReflection.getHeight() + reflectionGap,

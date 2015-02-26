@@ -28,10 +28,10 @@ public class Test1 extends Activity {
 			}
 		});
 	}
-	[Tags]/**
-	 [Tags]* 新建一个popupWindow弹出框 popupWindow是一个阻塞式的弹出框，这就意味着在我们退出这个弹出框之前，程序会一直等待，
-	 [Tags]* 这和AlertDialog不同哦，AlertDialog是非阻塞式弹出框，AlertDialog弹出的时候，后台可是还可以做其他事情的哦。
-	 [Tags]*/
+	 /**
+	  * 新建一个popupWindow弹出框 popupWindow是一个阻塞式的弹出框，这就意味着在我们退出这个弹出框之前，程序会一直等待，
+	  * 这和AlertDialog不同哦，AlertDialog是非阻塞式弹出框，AlertDialog弹出的时候，后台可是还可以做其他事情的哦。
+	  */
 	private void initPopWindow() {
 		// 加载popupWindow的布局文件
 		View contentView = LayoutInflater.from(getApplicationContext())
@@ -48,18 +48,18 @@ public class Test1 extends Activity {
 		// 设定当你点击editText时，弹出的输入框是啥样子的。这里设置默认为数字输入哦，这时候你会发现你输入非数字的东西是不行的哦
 		editText.setInputType(InputType.TYPE_CLASS_NUMBER);
 		/*
-		 [Tags]* 这个popupWindow.setFocusable(true);非常重要，如果不在弹出之前加上这条语句，你会很悲剧的发现，你是无法在
-		 [Tags]* editText中输入任何东西的
-		 [Tags]* 。该方法可以设定popupWindow获取焦点的能力。当设置为true时，系统会捕获到焦点给popupWindow
-		 [Tags]* 上的组件。默认为false哦.该方法一定要在弹出对话框之前进行调用。
-		 [Tags]*/
+		  * 这个popupWindow.setFocusable(true);非常重要，如果不在弹出之前加上这条语句，你会很悲剧的发现，你是无法在
+		  * editText中输入任何东西的
+		  * 。该方法可以设定popupWindow获取焦点的能力。当设置为true时，系统会捕获到焦点给popupWindow
+		  * 上的组件。默认为false哦.该方法一定要在弹出对话框之前进行调用。
+		  */
 		popupWindow.setFocusable(true);
 		/*
-		 [Tags]* popupWindow.showAsDropDown（View view）弹出对话框，位置在紧挨着view组件
-		 [Tags]* showAsDropDown(View anchor, int xoff, int yoff)弹出对话框，位置在紧挨着view组件，x y
-		 [Tags]* 代表着偏移量 showAtLocation(View parent, int gravity, int x, int y)弹出对话框
-		 [Tags]* parent 父布局 gravity 依靠父布局的位置如Gravity.CENTER x y 坐标值
-		 [Tags]*/
+		  * popupWindow.showAsDropDown（View view）弹出对话框，位置在紧挨着view组件
+		  * showAsDropDown(View anchor, int xoff, int yoff)弹出对话框，位置在紧挨着view组件，x y
+		  * 代表着偏移量 showAtLocation(View parent, int gravity, int x, int y)弹出对话框
+		  * parent 父布局 gravity 依靠父布局的位置如Gravity.CENTER x y 坐标值
+		  */
 		popupWindow.showAsDropDown(button);
 		Button button_sure = (Button) contentView.findViewById(R.id.button1_sure);
 		button_sure.setOnClickListener(new OnClickListener() {

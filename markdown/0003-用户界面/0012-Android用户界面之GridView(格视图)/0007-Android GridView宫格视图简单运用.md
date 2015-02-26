@@ -191,8 +191,8 @@ public class GridViewTest extends Activity implements
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
 			long arg3) {
 		/*
-		 [Tags]* GridView中的图片移动焦点选中时，下面的大图ImageView显示相应的大图片
-		 [Tags]*/
+		  * GridView中的图片移动焦点选中时，下面的大图ImageView显示相应的大图片
+		  */
 		big_imageView.setImageResource(myImageViewAdapter
 				.getcheckedImageIDPostion(arg2));
 	}

@@ -10,10 +10,10 @@ public class f extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		[Tags]/** 全屏设置，隐藏窗口所有装饰 */
+		 /** 全屏设置，隐藏窗口所有装饰 */
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		[Tags]/** 标题是属于View的，所以窗口所有的修饰部分被隐藏后标题依然有效 */
+		 /** 标题是属于View的，所以窗口所有的修饰部分被隐藏后标题依然有效 */
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.iv);
 	}

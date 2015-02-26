@@ -54,10 +54,10 @@ android.R.layout.simple_spinner_dropdown_item:右边带有radio的下拉菜单
 public class MainActivity extends Activity {
 	private static final String TAG = "SpinnerActivity";
 	/*
-	 [Tags]* Spinner.getItemAtPosition(Spinner.getSelectedItemPosition());获取下拉列表框的值
-	 [Tags]* 调用setOnItemSelectedListener()方法，处理下拉列表框被选择事件，
-	 [Tags]* 把AdapterView.OnItemSelectedListener实例作为参数传入
-	 [Tags]*/
+	  * Spinner.getItemAtPosition(Spinner.getSelectedItemPosition());获取下拉列表框的值
+	  * 调用setOnItemSelectedListener()方法，处理下拉列表框被选择事件，
+	  * 把AdapterView.OnItemSelectedListener实例作为参数传入
+	  */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

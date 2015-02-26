@@ -41,9 +41,9 @@ import android.view.View;
 import android.view.GestureDetector.OnGestureListener;
 import android.view.SurfaceHolder.Callback;
 import android.view.View.OnTouchListener;
-[Tags]/**
- [Tags]* @SurfaceView 运行机制详解
- [Tags]*/
+ /**
+  * @SurfaceView 运行机制详解
+  */
 public class MySurfaceViewAnimation extends SurfaceView implements Callback,
 		Runnable {
 	private Thread th;

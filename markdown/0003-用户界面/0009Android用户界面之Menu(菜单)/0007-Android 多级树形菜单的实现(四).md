@@ -48,9 +48,9 @@ public class SuperTreeViewAdapter extends BaseExpandableListAdapter {
 		superTreeView.setLayoutParams(lp);
 		return superTreeView;
 	}
-	[Tags]/**
-	 [Tags]* 三层树结构中的第二层是一个ExpandableListView
-	 [Tags]*/
+	 /**
+	  * 三层树结构中的第二层是一个ExpandableListView
+	  */
 	public View getChildView(int groupPosition, int childPosition,
 			boolean isLastChild, View convertView, ViewGroup parent) {
 		// 是
@@ -64,9 +64,9 @@ public class SuperTreeViewAdapter extends BaseExpandableListAdapter {
 		treeView.setAdapter(treeViewAdapter);
 		// 关键点：取得选中的二级树形菜单的父子节点,结果返回给外部回调函数
 		treeView.setOnChildClickListener(this.stvClickEvent);
-		[Tags]/**
-		 [Tags]* 关键点：第二级菜单展开时通过取得节点数来设置第三级菜单的大小
-		 [Tags]*/
+		 /**
+		  * 关键点：第二级菜单展开时通过取得节点数来设置第三级菜单的大小
+		  */
 		treeView.setOnGroupExpandListener(new OnGroupExpandListener() {
 			@Override
 			public void onGroupExpand(int groupPosition) {
@@ -76,9 +76,9 @@ public class SuperTreeViewAdapter extends BaseExpandableListAdapter {
 				treeView.setLayoutParams(lp);
 			}
 		});
-		[Tags]/**
-		 [Tags]* 第二级菜单回收时设置为标准Item大小
-		 [Tags]*/
+		 /**
+		  * 第二级菜单回收时设置为标准Item大小
+		  */
 		treeView.setOnGroupCollapseListener(new OnGroupCollapseListener() {
 			@Override
 			public void onGroupCollapse(int groupPosition) {
@@ -91,9 +91,9 @@ public class SuperTreeViewAdapter extends BaseExpandableListAdapter {
 		treeView.setPadding(TreeViewAdapter.PaddingLeft, 0, 0, 0);
 		return treeView;
 	}
-	[Tags]/**
-	 [Tags]* 三级树结构中的首层是TextView,用于作为title
-	 [Tags]*/
+	 /**
+	  * 三级树结构中的首层是TextView,用于作为title
+	  */
 	public View getGroupView(int groupPosition, boolean isExpanded,
 			View convertView, ViewGroup parent) {
 		TextView textView = TreeViewAdapter.getTextView(this.parentContext);
