@@ -23,7 +23,9 @@ implements Drawable.Callback, KeyEvent.Callback, AccessibilityEventSource
 这个类表示用户界面组件的基本构建块，一个View占据屏幕上的一个矩形区域，并负责绘图和事件处理。View类是widgets的基类，widgets用于创建交互式UI组件（buttons、text fields等）。View类的直接子类ViewGroup类是layouts的基类，layouts是不可见的容器用户保持其他Views或者其他ViewGroups和定义它们的布局属性。
 一个View对象是一个数据结构，它的属性存储屏幕上一个特定矩形区域的布局参数和内容。一个View对象处理它自己的测度、布局、绘图、焦点改变、滚动、键/手势等与屏幕上矩形区域的交互。作为用户界面中的对象，View也是与用户交互的一个点且交互事件接收器。
 在Android平台上，你定义活动的UI使用的View和ViewGroup节点的层次结构如下图所示。根据你的需要这个层次树可以是简单的或复杂的，并且你能使用Android预定义的widgets和layouts集合，或者使用自定义的Views。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_env/04_layout.jpg)  
+  
 为了将视图层次树呈现到屏幕上，你的活动必须调用setContentView()方法并且传递到根节点对象的引用。Android系统接收这个引用并使用它来验证、测度、绘制树。层次的根节点要求它的孩子节点绘制它自己——相应地每个试图组节点要求调用自己的孩子视图去绘制他们自己。子视图可能在父视图中请求指定的大小和位置，但是父视图对象有最终决定权（子视图在哪个位置及多大）。因为它们是按序绘制的，如果元素有重叠的地方，重叠部分后面绘制的将在之前绘制的上面。
 #### 2、Android中布局定义方法
 布局是一个活动中的用户界面的架构，它定义了布局结构且存储所有显示给用户的元素。有两种方式可以声明布局，这个我们在上文中已经用了（对应上文的“Hello World的手术（二）”、“Hello World的手术（三）”）。我们再重温总结一下：
@@ -84,7 +86,9 @@ android:id="@android:id/empty"
 Button myButton = (Button) findViewById(R.id.my_button);
 #### 4.2、布局参数
 名为layout_something的XML布局属性，为视图定义适合于它所驻留的ViewGroup的布局参数。每个ViewGroup类实现一个扩展自ViewGroup.LayoutParams的嵌套类。这个子类包含为每个子视图定义大小和位置的属性类型，以适合于该视图组。如下图所示，父视图组为每个子视图定义布局参数（包括子视图组）。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_env/04_layout2.jpg)  
+
 注意每个LayoutParams子类有它自己的设置值的语法。每个子元素必须定义适合于它父视图的LayoutParams，虽然它可能也为自己的子视图定义不同LayoutParams。
 所有的视图组包括宽带和高度（layout_width和layout_height），并且每个视图要求要定义它们。许多LayoutParams也包括可选的边距和边界。你可以指定宽度和高度的具体值，虽然你可能并不想这样做。更多地你将告诉视图它的大小依据它内容要求或跟父视图组所允许的一样大（分别用wrap_content和fill_parent值）。
 #### 5、布局位置&大小&补距&边距
@@ -155,7 +159,9 @@ public class HelloWorld extends Activity {
 }
 ```
 上面红色粗体的两行代码就是编程地改变button2的text属性，这体现了Android框架给我们灵活地使用上面两个方法之一或两个声明和管理你的应用程序的UI。运行结果如下图所示:
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_env/04_layout4.jpg)  
+ 
 #### 6.3、又是“Hello World！”（三） 
 验证视图对象的布局位置&大小&补距，实验设置为：在实验一的基础上在main.xml中修改button1的布局位置、大小、补距等属性。修改后的mian.xml文件如下：
 ```   
@@ -181,7 +187,9 @@ public class HelloWorld extends Activity {
 </LinearLayout> 
 ```
 运行后结果如下所示：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_env/04_layout5.jpg)  
+ 
 NOTE：上述代码中布局位置&大小&补距的单位（如width="250dp"）。单位可以为px、in、mm、pt、dp、sp。
 ```  
 px：pixels（像素）——对应屏幕上实际的像素

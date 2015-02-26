@@ -8,8 +8,10 @@ android.util.Log常用的方法有以下5个：Log.v()、Log.d()、Log.i()、Log
 下面是我做的一个简单的LogDemo(Step By Step):
 Step 1:准备工作(打开LogCat视窗)。
 启动Eclipse,在Window->Show View会出来一个对话框，当我们点击Ok按钮时，会在控制台窗口出现LogCat视窗。如下图：
-![img](P)  
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_logcat/01_logcat.gif) 
+![img](http://emanual.github.io/md-android/img/basic_logcat/01_logcat2.gif) 
+
 Step 2:新建一个Android工程，命名为LogDemo。
 Step 3:设计UI界面，我们在这里就加了一个Button按钮(点击按钮出现Log日志信息)。
 Main.xml代码如下:
@@ -61,6 +63,9 @@ public class LogDemo extends Activity {
 }
 ```
 Step 5:运行LogDemo工程，效果如下:
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_logcat/01_logcat3.gif)  
+
 当我们点击按钮时，会触发事件，在Logcat视窗下有如下效果:
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_logcat/01_logcat4.gif) 

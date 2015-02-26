@@ -1,6 +1,8 @@
 一，重要性AndroidManifest.xml是Android应用程序中最重要的文件之一。它是Android程序的全局配置文件，是每个android程序中必须的文件。它位于我们开发的应用程序的根目录下，描述了package中的全局数据，包括package中暴露的组件（activities,services,等等），以及他们各自的实现类，各种能被处理的数据和启动位置等重要信息。
 因此，该文件提供了Android系统所需要的关于该应用程序的必要信息，即在该应用程序的任何代码运行之前系统所必须拥有的信息。一个典型的Android应用程序的结构如下图所示：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_manifest/03_manifest.gif) 
+
 二，主要功能它指定了该应用程序的Java包：该包名作为应用程序的一个独特标识。
 它描述了应用程序组件：该应用程序由哪些activity，service，broadcast receiver和content provider组成。它指定了实现每个组件的类以及公开发布它们的能力(例如，它们能持有哪个Intent信息)。这些声明使Android系统知道这儿有什么组件以及在什么条件下它们可以被载入。
 它决定那些进程将容纳应用程序组件。 

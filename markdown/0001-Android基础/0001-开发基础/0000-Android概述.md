@@ -15,7 +15,9 @@ Android操作系统最初由Andy Rubin开发，主要支持手机。2005年8月�
 2012年1月6日，谷歌Android Market已有10万开发者推出超过40万活跃的应用，大多数的应用程序为免费。Android Market应用程序商店目录在新年首周周末突破40万基准，距离突破30万应用仅4个月。在2011年早些时候，Android Market从20万增加到30万应用也花了四个月。
 #### 发行版本
 Android在正式发行之前，最开始拥有两个内部测试版本，并且以著名的机器人名称来对其进行命名，它们分别是：阿童木（AndroidBeta），发条机器人（Android 1.0）。后来由于涉及到版权问题，谷歌将其命名规则变更为用甜点作为它们系统版本的代号的命名方法。甜点命名法开始于Android 1.5发布的时候。作为每个版本代表的甜点的尺寸越变越大，然后按照26个字母数序：纸杯蛋糕（Android 1.5），甜甜圈（Android 1.6），松饼（Android 2.0/2.1），冻酸奶（Android 2.2），姜饼（Android 2.3），蜂巢（Android 3.0），冰激凌三明治（Android 4.0），果冻豆（Jelly Bean，Android4.1和Android 4.2）。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_basic/01_android.jpg)  
+
 #### 1.1
 2008年9月发布的Android第一版。
 #### 1.5

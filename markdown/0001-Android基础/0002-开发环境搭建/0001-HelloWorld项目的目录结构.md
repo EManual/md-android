@@ -12,7 +12,9 @@
 ```
 1、HelloWorld项目的目录结构
 （这个HelloWorld项目是基于Android 2.1的）在Eclipse的左侧展开HelloWorld项目，可以看到如下图的目录结构：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_env/02_helloworld.jpg)  
+
 下面将分节介绍上面的各级目录结构。
 1.1、src文件夹
 顾名思义（src, source code）该文件夹是放项目的源代码的。打开HelloWorld.java文件会看到如下代码：
@@ -50,7 +52,9 @@ public void oncreate(Bundle savedInstanceState){…….}
 从字符串值映射各种可打包的（Parcelable）类型（Bundle单词就是捆绑的意思，所有这个类很好理解和记忆）。如该类提供了公有方法——public boolean containKey(String key)，如果给定的key包含在Bundle的映射中返回true，否则返回false。该类实现了Parceable和Cloneable接口，所以它具有这两者的特性。
 #### 1.2、gen文件夹
 该文件夹下面有个R.java文件，R.java是在建立项目时自动生成的，这个文件是只读模式的，不能更改。R.java文件中定义了一个类——R，R类中包含很多静态类，且静态类的名字都与res中的一个名字对应，即R类定义该项目所有资源的索引。看我们的HelloWorld项目是不是如此，如下图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_env/02_helloworld2.jpg)  
+ 
 通过R.java我们可以很快地查找我们需要的资源，另外编绎器也会检查R.java列表中的资源是否被使用到，没有被使用到的资源不会编绎进软件中，这样可以减少应用在手机占用的空间。
 #### 1.3、Android 2.1文件夹
 该文件夹下包含android.jar文件，这是一个Java 归档文件，其中包含构建应用程序所需的所有的Android SDK 库（如Views、Controls）和APIs。通过android.jar将自己的应用程序绑定到Android SDK和Android Emulator，这允许你使用所有Android的库和包，且使你的应用程序在适当的环境中调试。例如上面的HelloWorld.java源文件中的：

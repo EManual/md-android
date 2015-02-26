@@ -69,12 +69,16 @@ public class HelloWorld extends Activity {
 </LinearLayout> 
 ```
 其它的地方不用修改，直接运行即可！
-![img](P)  
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_env/03_helloworld.jpg)  
+![img](http://emanual.github.io/md-android/img/basic_env/03_helloworld2.jpg)  
+
 从这个例子我们可以看出我们上节的分析是对的，接下来我们继续对它做一个手术。
 #### 3、Hello World的手术（二）
 我们这次不用Button来显示“Hello World！”，我们这次用一个图片来显示。首先我们准备一张png的图片，如下：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_env/03_helloworld3.jpg)  
+
 接下来我们将它复制到， res/drawable-dhpi中。然后我们查看R.java文件我们会发现，R中自动加了一行：（关于R文件，你可以参考Android 开发之旅：HelloWorld项目的目录结构中的1.2、gen文件夹） 
 ```  
 /* AUTO-GENERATED FILE.  DO NOT MODIFY. 
@@ -121,7 +125,9 @@ drawable- hdpi、drawable- mdpi、drawable-ldpi的区别：
 </LinearLayout> 
 ```
 运行之后，结果如下所示：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_env/03_helloworld4.jpg)  
+ 
 我们看到上面的ImageView有一个id属性。其实，每个View对象都有一个关联的ID，来唯一标识它。当应用程序被编译时，这个ID作为一个整数引用。但是ID通常是在布局XML文件中作为字符串分配的，在元素的id属性。这个XML属性对所有的View对象可用且会经常用到。XML中的ID语法如下：android:id="@+id/my_button"。
 字符串前的@符号表示XML解析器应该解析和扩展剩下的ID字符串，并把它作为ID资源。+符号表示这是一个新的资源名字，它必须被创建且加入到我们的资源（R.java文件，R是Resource）。Android框架提供一些其他的ID资源。当引用一个Android资源ID时，你不需要+符号，但是你必须添加android包名字空间，如下：android:id="@android:id/empty"。
 #### 4、Hello World的手术（三）
@@ -144,5 +150,8 @@ public class HelloWorld extends Activity {
 }
 ```
 运行之后，同样会得到Hello World的手术（二）的结果，只是图片的显示位置不太一样。在这里注意上面那行粗体代码，如果是TextView或者Button的话，应该调用setText()方法来设置”Hello World!”。
-![img](P)  
+
+
+![img](http://emanual.github.io/md-android/img/basic_env/03_helloworld5.jpg)  
+
 Note：构建ImageView对象时传递了一个this参数，表示与当前上下文（context）关联。这个Context由系统处理，它提供诸如资源解析、获取访问数据库和偏好等服务。因为Activity类继承自Context，且因为你的HelloWorld类是Activity的子类，它也是一个Context。因此，你可以传递this作为你的Context给ImageView引用。

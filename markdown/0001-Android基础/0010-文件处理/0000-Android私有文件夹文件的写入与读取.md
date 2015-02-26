@@ -5,7 +5,9 @@
 二：第二种获取 FileInputStream 和 FileOutputStream 对象的方式是调用 Context.openFileInput 和 Context.openFileOutput两个方法来创建。除了这两个方法外，Context对象还提供了其他几个用于对文件操作的方法。
 下面通过一个小例子来说明Android平台下的文件I/O 操作方式，主要功能是在应用程序私有的数据文件夹下创建一个文件并读取其中的数据显示到屏幕的 TextView中,这个例子也比较简单只有一个类。
 先看一下运行后的效果吧。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_file/01_file.jpg)  
+
 ```  
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

@@ -9,13 +9,17 @@ ADB 的全称为Android Debug Bridge，就是起到调试桥的作用。通过ad
 adb devices
 ```
 这个命令是查看当前连接的设备, 连接到计算机的android设备或者模拟器将会列出显示；
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_adb/07_adb.jpg) 
+
 安装软件：
 ```  
 adb install
 adb install :这个命令将指定的apk文件安装到设备上；
 ```
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_adb/07_adb2.jpg) 
+
 卸载软件：
 ```  
 adb uninstall <软件名>
@@ -63,4 +67,5 @@ adb get-serialno
 adb shell
 sqlite3
 ```
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_adb/07_adb3.jpg) 

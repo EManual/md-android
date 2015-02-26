@@ -24,12 +24,18 @@ Use a KML file describing individual placemarks for sequenced playback to the de
 现实所有针对测试终端操作的日志记录，可以很明显的区分开警告信息和错误信息。
 利用DDMS从模拟器上导入\导出文件学习内容: 你将学会如何使用Eclipse的DDMS-View 从模拟器上导入导出文件。描述:
 依照下图打开 DDMS-View . (如果你上面没有按钮A, 那么请按照 B所示方式打开)。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_ddms/03_ddms.jpg)  
+
 打开文件浏览器，使用右上角的导入导出按钮来操作目标文件..
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_ddms/03_ddms2.jpg) 
+
 另外一种导入方法:
 运行模拟器，在命令行模式下到 ".../android_sdk/tools"目录下，使用下面的命令
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_ddms/03_ddms3.jpg) 
+ 
 ```  
 adb push <local_source> <emulator_destination> 
 ```

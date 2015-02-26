@@ -11,4 +11,5 @@ hw.ramSize=256 ：模拟器的RAM运行内存大小，可以看到这里只有�
 image.sysdir.1=platforms\android-11\images\ ：模拟器的映像文件路径
 ```
 这里大家主要是修改hw.ramSize这句，将后面的256换为更大的，当然要根据你PC电脑的物理内存来修改了，否则会严重映像你电脑的性能，如果你电脑的内存是2GB或以上，推荐和摩托Xoom平台的RAM设置的一样大小，hw.ramSize=后面写1024，保存即可，如图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_emulator/10_emulator2.jpg) 

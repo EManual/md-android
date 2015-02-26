@@ -12,7 +12,9 @@
 ```
 #### 1、架构图直观
 下面这张图展示了Android系统的主要组成部分：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/basic_basic/02_android.jpg)  
+
 可以很明显看出，Android系统架构由5部分组成，分别是：Linux Kernel、Android Runtime、Libraries、Application Framework、Applications。第二部分将详细介绍这5个部分。
 #### 2、架构详解
 现在我们拿起手术刀来剖析各个部分。其实这部分SDK文档已经帮我们做得很好了，我们要做的就是拿来主义，然后再加上自己理解。下面自底向上分析各层。
