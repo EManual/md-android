@@ -16,7 +16,8 @@ android中，不同进程之间传递信息要用到广播，可以有两种方�
 	</intent-filter>
 </receiver> 
 ```
-上面两个android:name分别是广播名和广播的动作（这里的动作是表示系统启动完成），如果要自己发送一个广播，在代码中为：```  
+上面两个android:name分别是广播名和广播的动作（这里的动作是表示系统启动完成），如果要自己发送一个广播，在代码中为：
+```  
 Intent i = new Intent("android.intent.action.BOOT_COMPLETED"); 
 sendBroadcast(i);
 ```
@@ -61,7 +62,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 public class MainBroadcastReceiver extends Activity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -151,7 +152,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 public class MainBroadcastReceiver extends Activity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	HelloBroadReciever br;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

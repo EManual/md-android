@@ -43,14 +43,14 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-[Tags]/**
- [Tags]* Android使用InstanceState保存和恢复数据
- [Tags]*/
+ /**
+  * Android使用InstanceState保存和恢复数据
+  */
 public class MainActivity extends Activity {
 	private String message = "";
 	private EditText text = null;
 	private Button button = null;
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -148,21 +148,21 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
-[Tags]/**
- [Tags]* Android实现屏幕旋转异步下载效果
- [Tags]* 
- [Tags]* @Description: Android实现屏幕旋转异步下载效果
- [Tags]* 
- [Tags]* @File: RotationAsyncActivity.java
- [Tags]* 
- [Tags]* @Package com.rotation.demo
- [Tags]* 
- [Tags]* @Author Hanyonglu
- [Tags]* 
- [Tags]* @Date 2012-03-28 下午08:14:57
- [Tags]* 
- [Tags]* @Version V1.0
- [Tags]*/
+ /**
+  * Android实现屏幕旋转异步下载效果
+  * 
+  * @Description: Android实现屏幕旋转异步下载效果
+  * 
+  * @File: RotationAsyncActivity.java
+  * 
+  * @Package com.rotation.demo
+  * 
+  * @Author Hanyonglu
+  * 
+  * @Date 2012-03-28 下午08:14:57
+  * 
+  * @Version V1.0
+  */
 public class RotationAsyncActivity extends Activity {
 	// 进度条
 	private ProgressBar progressBar = null;
@@ -186,9 +186,9 @@ public class RotationAsyncActivity extends Activity {
 			}
 		}
 	}
-	[Tags]/**
-	 [Tags]* 保存对象
-	 [Tags]*/
+	 /**
+	  * 保存对象
+	  */
 	@Override
 	public Object onRetainNonConfigurationInstance() {
 		asyncTask.detach();
@@ -204,17 +204,17 @@ public class RotationAsyncActivity extends Activity {
 	private static class RotationAsyncTask extends AsyncTask<Void, Void, Void> {
 		private RotationAsyncActivity activity = null;
 		private int progress = 0;
-		[Tags]/**
-		 [Tags]* 默认的构造器
-		 [Tags]*/
+		 /**
+		  * 默认的构造器
+		  */
 		public RotationAsyncTask() {
 			// TODO Auto-generated constructor stub
 		}
-		[Tags]/**
-		 [Tags]* 带参构造器
-		 [Tags]* 
-		 [Tags]* @param activity
-		 [Tags]*/
+		 /**
+		  * 带参构造器
+		  * 
+		  * @param activity
+		  */
 		public RotationAsyncTask(RotationAsyncActivity activity) {
 			attach(activity);
 		}

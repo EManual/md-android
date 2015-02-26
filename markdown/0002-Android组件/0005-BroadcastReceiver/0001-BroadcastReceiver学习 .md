@@ -16,7 +16,7 @@ public class EX06_05 extends Activity {
 	public String[] strEmailReciver;
 	public String strEmailSubject;
 	public String strEmailBody;
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,8 +36,8 @@ public class EX06_05 extends Activity {
 				/* 设置邮件格式为"plain/text" */
 				mEmailIntent.setType("plain/text");
 				/*
-				 [Tags]* 取得EditText01,02,03,04的值作为 收件人地址,附件,主题,正文
-				 [Tags]*/
+				  * 取得EditText01,02,03,04的值作为 收件人地址,附件,主题,正文
+				  */
 				strEmailReciver = new String[] { "[url=mailto:jay.mingchieh@gmail.com]jay.mingchieh@gmail.com[/url" };
 				strEmailSubject = "你有一封短信!!";
 				strEmailBody = sb.toString();
@@ -68,8 +68,8 @@ import android.widget.Toast;
 /*自定义继承自BroadcastReceiver类,聆听系统服务广播的信息 */
 public class EX06_05SMSreceiver extends BroadcastReceiver {
 	/*
-	 [Tags]* 声明静态字符串,并使用 android.provider.Telephony.SMS_RECEIVED 作为Action为短信的依据
-	 [Tags]*/
+	  * 声明静态字符串,并使用 android.provider.Telephony.SMS_RECEIVED 作为Action为短信的依据
+	  */
 	private static final String mACTION = "android.provider.Telephony.SMS_RECEIVED";
 	private String str_receive = "收到短信!";
 	@Override
@@ -86,8 +86,8 @@ public class EX06_05SMSreceiver extends BroadcastReceiver {
 			/* 判断Intent是有数据 */
 			if (bundle != null) {
 				/*
-				 [Tags]* pdus为 android内置短信参数 identifier 通过bundle.get("")返回一包含pdus的对象
-				 [Tags]*/
+				  * pdus为 android内置短信参数 identifier 通过bundle.get("")返回一包含pdus的对象
+				  */
 				Object[] myOBJpdus = (Object[]) bundle.get("pdus");
 				/* 构造短信对象array,并依据收到的对象长度来创建array的大小 */
 				SmsMessage[] messages = new SmsMessage[myOBJpdus.length];

@@ -24,9 +24,9 @@ public class MyHandlerActivity extends Activity {
 		MyThread m = new MyThread();
 		new Thread(m).start();
 	}
-	[Tags]/**
-	 [Tags]* 接受消息,处理消息 ,此Handler会与当前主线程一块运行
-	 [Tags]* [Tags]*/
+	 /**
+	  * 接受消息,处理消息 ,此Handler会与当前主线程一块运行
+	  *  */
 	class MyHandler extends Handler {
 		public MyHandler() {
 		}

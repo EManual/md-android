@@ -32,7 +32,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 public class MyService extends Activity implements OnClickListener {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	Button buttonStart, buttonStop, buttonBind, buttonUnbind, buttonCount;
 	private static final String TAG = "ServicesDemo";
 	@Override

@@ -25,7 +25,7 @@ import android.util.Log;
 import android.widget.Toast;
 public class ContentProviderTest extends Activity {
 	private final String TAG = "ContentProviderTest";
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

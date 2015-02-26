@@ -27,32 +27,32 @@ Handler属于某个线程，取决Handlerd对象在哪个线程中建立。Handl
 2、通过Looper获取到消息队列并记录在自己的成员mQueue变量中，Handler使用消息队列进行对象封装，提供如下的成员函数：
 3、通过post(Runnable r)发送。Runnable是消息处理的回调函数，通过该消息的发送，引起Runable的回调运行，post消息放置消息队列的前面。Message.callback=Runable。
 ```  
-[Tags]/**
- [Tags]* Causes the Runnable r to be added to the message queue. The runnable will
- [Tags]* be run on the thread to which this handler is attached.
- [Tags]* 
- [Tags]* @param r
- [Tags]*            The Runnable that will be executed.
- [Tags]* 
- [Tags]* @return Returns true if the Runnable was successfully placed in to the
- [Tags]*         message queue. Returns false on failure, usually because the
- [Tags]*         looper processing the message queue is exiting.
- [Tags]*/
+ /**
+  * Causes the Runnable r to be added to the message queue. The runnable will
+  * be run on the thread to which this handler is attached.
+  * 
+  * @param r
+  *            The Runnable that will be executed.
+  * 
+  * @return Returns true if the Runnable was successfully placed in to the
+  *         message queue. Returns false on failure, usually because the
+  *         looper processing the message queue is exiting.
+  */
 public final boolean post(Runnable r) {
 	return sendMessageDelayed(getPostMessage(r), 0);
 }
 ```
 通过 sendMessage发送。放置在所有的Post消息之后，sendMessage发送消息。（具体源码：）
 ```  
-[Tags]/**
- [Tags]* Pushes a message onto the end of the message queue after all pending
- [Tags]* messages before the current time. It will be received in
- [Tags]* {@link handleMessage}, in the thread attached to this handler.
- [Tags]* 
- [Tags]* @return Returns true if the message was successfully placed in to the
- [Tags]*         message queue. Returns false on failure, usually because the
- [Tags]*         looper processing the message queue is exiting.
- [Tags]*/
+ /**
+  * Pushes a message onto the end of the message queue after all pending
+  * messages before the current time. It will be received in
+  * {@link handleMessage}, in the thread attached to this handler.
+  * 
+  * @return Returns true if the message was successfully placed in to the
+  *         message queue. Returns false on failure, usually because the
+  *         looper processing the message queue is exiting.
+  */
 public final boolean sendMessage(Message msg) {
 	return sendMessageDelayed(msg, 0);
 }

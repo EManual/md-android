@@ -50,9 +50,9 @@ public class WordWidget extends AppWidgetProvider { // appWidget
 						Uri.parse(definePage)); // 这里是打开相应的网页，所以Uri是http的url，action是view即打开web浏览器
 				PendingIntent pendingIntent = PendingIntent.getActivity(
 						context, 0 /* no requestCode */, defineIntent, 0 /*
-																		 [Tags]* no
-																		 [Tags]* flags
-																		 [Tags]*/);
+																		  * no
+																		  * flags
+																		  */);
 				updateViews.setOnClickPendingIntent(R.id.widget, pendingIntent); // 单击Widget打开Activity
 			} else {
 				updateViews = new RemoteViews(context.getPackageName(),

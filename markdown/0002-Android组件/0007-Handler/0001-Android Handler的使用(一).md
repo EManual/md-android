@@ -29,7 +29,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 public class HandlerTest extends Activity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	private Button startButton;
 	private Button endButton;
 	@Override
@@ -109,7 +109,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ProgressBar;
 public class ProgressBarHandlerTest extends Activity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	private ProgressBar progressBar;
 	private Button startButton;
 	@Override

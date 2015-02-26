@@ -9,7 +9,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 public class HandlerTwo extends Activity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	Handler handler = new Handler();
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

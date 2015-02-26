@@ -161,7 +161,7 @@ public class MessageExample extends Activity implements OnClickListener {
 	private Context context = null;
 	private final String sTag = "MessageExample";
 	private boolean postRunnable = false;
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

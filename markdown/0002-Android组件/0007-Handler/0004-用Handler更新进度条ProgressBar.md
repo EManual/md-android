@@ -1,7 +1,7 @@
 通过对Handler的学习，使我们理解了线程的运行，当我们使用多个线程的时候，会感觉很乱，如果我们应用Handler，我们可以更加清晰的去进行更新。下面是利用线程Handler更新进度条的示例：
 ```  
 public class Main extends Activity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	ProgressBar pb1;
 	Handler handle = new Handler();
 	// 新建一个Handler对象

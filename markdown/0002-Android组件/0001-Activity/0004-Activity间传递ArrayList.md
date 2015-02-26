@@ -47,17 +47,17 @@ Android内存受限，迫使其封装了Parcel容器来替代Serializable方法�
 ```  
 import android.os.Parcel;
 import android.os.Parcelable;
-[Tags]/**
- [Tags]* Parcel类:http://developer.android.com/reference/android/os/Parcel.html <br>
- [Tags]* 封装数据的容器，封装后的数据可以通过Intent或IPC传递 <br>
- [Tags]* 
- [Tags]* Parcelable接口：http://developer.android.com/reference/android/os/Parcelable.
- [Tags]* html <br>
- [Tags]* 自定义类继承该接口后，其实例化后能够被写入Parcel或从Parcel中恢复。 <br>
- [Tags]* 
- [Tags]* 如果某个类实现了这个接口，那么它的对象实例可以写入到 Parcel 中，并且能够从中恢复， 并且这个类必须要有一个 static 的 field
- [Tags]* ，并且名称要为 CREATOR ，这个 field 是某个实现了 Parcelable.Creator 接口的类的对象实例。
- [Tags]*/
+ /**
+  * Parcel类:http://developer.android.com/reference/android/os/Parcel.html <br>
+  * 封装数据的容器，封装后的数据可以通过Intent或IPC传递 <br>
+  * 
+  * Parcelable接口：http://developer.android.com/reference/android/os/Parcelable.
+  * html <br>
+  * 自定义类继承该接口后，其实例化后能够被写入Parcel或从Parcel中恢复。 <br>
+  * 
+  * 如果某个类实现了这个接口，那么它的对象实例可以写入到 Parcel 中，并且能够从中恢复， 并且这个类必须要有一个 static 的 field
+  * ，并且名称要为 CREATOR ，这个 field 是某个实现了 Parcelable.Creator 接口的类的对象实例。
+  */
 public class MyClass2 implements Parcelable {
 	public String userName;
 	public String psw;

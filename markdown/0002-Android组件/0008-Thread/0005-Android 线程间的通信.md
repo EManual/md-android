@@ -8,24 +8,24 @@ Andriod提供了Handler和Looper来满足线程间的通信。例如一个子线
 class ChildThread extends Thread {
 	public void run() {
 		/*
-		 [Tags]* 创建 handler前先初始化Looper.
-		 [Tags]*/
+		  * 创建 handler前先初始化Looper.
+		  */
 		Looper.prepare();
 		/*
-		 [Tags]* 在子线程创建handler，所以会绑定到子线程的消息队列中
-		 [Tags]*/
+		  * 在子线程创建handler，所以会绑定到子线程的消息队列中
+		  */
 		mChildHandler = new Handler() {
 
 			public void handleMessage(Message msg) {
 
 				/*
-				 [Tags]* Do some expensive operations there.
-				 [Tags]*/
+				  * Do some expensive operations there.
+				  */
 			}
 		};
 		/*
-		 [Tags]* 启动该线程的消息队列
-		 [Tags]*/
+		  * 启动该线程的消息队列
+		  */
 		Looper.loop();
 	}
 }

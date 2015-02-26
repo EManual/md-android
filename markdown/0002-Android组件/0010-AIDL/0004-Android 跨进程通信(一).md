@@ -67,9 +67,9 @@ public class AIDLServiceImpl extends Service {
 	public IBinder onBind(Intent intent) {
 		return mBinder;
 	}
-	[Tags]/**
-	 [Tags]* 在AIDL文件中定义的接口实现。
-	 [Tags]*/
+	 /**
+	  * 在AIDL文件中定义的接口实现。
+	  */
 	private IAIDLService.Stub mBinder = new Stub() {
 		public String getName() throws RemoteException {
 			return "mayingcai";

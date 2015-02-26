@@ -50,9 +50,9 @@ public class AIDLClientAcitivty extends Activity {
 	private TextView mName;
 	private Button mMessage;
 	private Button mPerson;
-	[Tags]/**
-	 [Tags]* 第一步，创建ServiceConnection对象，在onServiceConnected()方法中获取IAIDLService实现。
-	 [Tags]*/
+	 /**
+	  * 第一步，创建ServiceConnection对象，在onServiceConnected()方法中获取IAIDLService实现。
+	  */
 	private ServiceConnection mServiceConnection = new ServiceConnection() {
 		public void onServiceConnected(ComponentName name, IBinder service) {
 			mAIDLService = IAIDLService.Stub.asInterface(service);
@@ -72,9 +72,9 @@ public class AIDLClientAcitivty extends Activity {
 		mName = (TextView) findViewById(R.id.name);
 		findViewById(R.id.connection).setOnClickListener(new OnClickListener() {
 			public void onClick(View view) {
-				[Tags]/**
-				 [Tags]* 第二步，单击"连接"按钮后用mServiceConnection去bind服务器端创建的Service。
-				 [Tags]*/
+				 /**
+				  * 第二步，单击"连接"按钮后用mServiceConnection去bind服务器端创建的Service。
+				  */
 				Intent service = new Intent("com.focus.aidl.IAIDLService");
 				bindService(service, mServiceConnection, BIND_AUTO_CREATE);
 
@@ -83,9 +83,9 @@ public class AIDLClientAcitivty extends Activity {
 		mMessage = (Button) findViewById(R.id.message);
 		mMessage.setOnClickListener(new OnClickListener() {
 			public void onClick(View view) {
-				[Tags]/**
-				 [Tags]* 第三步，从服务器端获取字符串。
-				 [Tags]*/
+				 /**
+				  * 第三步，从服务器端获取字符串。
+				  */
 				try {
 					mName.setText(mAIDLService.getName());
 				} catch (RemoteException e) {
@@ -96,9 +96,9 @@ public class AIDLClientAcitivty extends Activity {
 		mPerson = (Button) findViewById(R.id.person);
 		mPerson.setOnClickListener(new OnClickListener() {
 			public void onClick(View view) {
-				[Tags]/**
-				 [Tags]* 第四步，从服务器端获取Person对象。
-				 [Tags]*/
+				 /**
+				  * 第四步，从服务器端获取Person对象。
+				  */
 				try {
 					Person mPerson = mAIDLService.getPerson();
 					mName.setText("姓名:" + mPerson.getName() + ", 年龄:

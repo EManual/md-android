@@ -1,14 +1,14 @@
 例子代码如下：
 ```  
 public class JSON {
-	[Tags]/**
-	 [Tags]* 获取"数组形式"的JSON数据， 数据形式：[{"id":1,"name":"小猪"},{"id":2,"name":"小猫"}]
-	 [Tags]* 
-	 [Tags]* @param path
-	 [Tags]*            网页路径
-	 [Tags]* @return 返回List
-	 [Tags]* @throws Exception
-	 [Tags]*/
+	 /**
+	  * 获取"数组形式"的JSON数据， 数据形式：[{"id":1,"name":"小猪"},{"id":2,"name":"小猫"}]
+	  * 
+	  * @param path
+	  *            网页路径
+	  * @return 返回List
+	  * @throws Exception
+	  */
 	public static List<Map<String, String>> getJSONArray(String path)
 			throws Exception {
 		String json = null;
@@ -45,16 +45,16 @@ public class JSON {
 		}
 		return list;
 	}
-	[Tags]/**
-	 [Tags]* 获取"对象形式"的JSON数据，
-	 [Tags]* 数据形式：{"total":2,"success":true,"arrayData":[{"id":1,"name"
-	 [Tags]* :"小猪"},{"id":2,"name":"小猫"}]}
-	 [Tags]* 
-	 [Tags]* @param path
-	 [Tags]*            网页路径
-	 [Tags]* @return 返回List
-	 [Tags]* @throws Exception
-	 [Tags]*/
+	 /**
+	  * 获取"对象形式"的JSON数据，
+	  * 数据形式：{"total":2,"success":true,"arrayData":[{"id":1,"name"
+	  * :"小猪"},{"id":2,"name":"小猫"}]}
+	  * 
+	  * @param path
+	  *            网页路径
+	  * @return 返回List
+	  * @throws Exception
+	  */
 	public static List<Map<String, String>> getJSONObject(String path)
 			throws Exception {
 		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
@@ -91,17 +91,17 @@ public class JSON {
 		}
 		return list;
 	}
-	[Tags]/**
-	 [Tags]* 获取类型复杂的JSON数据 数据形式： {"name":"小猪", "age":23,
-	 [Tags]* "content":{"questionsTotal":2, "questions": [ { "question":
-	 [Tags]* "what's your name?", "answer": "小猪"},{"question": "what's your age",
-	 [Tags]* "answer": "23"}] } }
-	 [Tags]* 
-	 [Tags]* @param path
-	 [Tags]*            网页路径
-	 [Tags]* @return 返回List
-	 [Tags]* @throws Exception
-	 [Tags]*/
+	 /**
+	  * 获取类型复杂的JSON数据 数据形式： {"name":"小猪", "age":23,
+	  * "content":{"questionsTotal":2, "questions": [ { "question":
+	  * "what's your name?", "answer": "小猪"},{"question": "what's your age",
+	  * "answer": "23"}] } }
+	  * 
+	  * @param path
+	  *            网页路径
+	  * @return 返回List
+	  * @throws Exception
+	  */
 	public static List<Map<String, String>> getJSON(String path)
 			throws Exception {
 		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
@@ -115,10 +115,10 @@ public class JSON {
 			byte[] data = readStream(is); // 把输入流转换成字符数组
 			String json = new String(data); // 把字符数组转换成字符串
 			/*
-			 [Tags]* 数据形式： {"name":"小猪", "age":23, "content":{"questionsTotal":2,
-			 [Tags]* "questions": [ { "question": "what's your name?", "answer":
-			 [Tags]* "小猪"},{"question": "what's your age", "answer": "23"}] } }
-			 [Tags]*/
+			  * 数据形式： {"name":"小猪", "age":23, "content":{"questionsTotal":2,
+			  * "questions": [ { "question": "what's your name?", "answer":
+			  * "小猪"},{"question": "what's your age", "answer": "23"}] } }
+			  */
 			JSONObject jsonObject = new JSONObject(json); // 返回的数据形式是一个Object类型，所以可以直接转换成一个Object
 			String name = jsonObject.getString("name");
 			int age = jsonObject.getInt("age");
@@ -146,14 +146,14 @@ public class JSON {
 		}
 		return list;
 	}
-	[Tags]/**
-	 [Tags]* 把输入流转换成字符数组
-	 [Tags]* 
-	 [Tags]* @param inputStream
-	 [Tags]*            输入流
-	 [Tags]* @return 字符数组
-	 [Tags]* @throws Exception
-	 [Tags]*/
+	 /**
+	  * 把输入流转换成字符数组
+	  * 
+	  * @param inputStream
+	  *            输入流
+	  * @return 字符数组
+	  * @throws Exception
+	  */
 	public static byte[] readStream(InputStream inputStream) throws Exception {
 		ByteArrayOutputStream bout = new ByteArrayOutputStream();
 		byte[] buffer = new byte[1024];

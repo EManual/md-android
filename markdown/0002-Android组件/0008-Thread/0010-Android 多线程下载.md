@@ -16,7 +16,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class ManyThreadActivity extends Activity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	private Button button;
 	private TextView textView;
 	private static final int THREAD_COUNT = 4;
@@ -58,16 +58,16 @@ public class ManyThreadActivity extends Activity {
 		private long from;
 		private long end;
 
-		[Tags]/**
-		 [Tags]* @param url
-		 [Tags]*            下载的URL
-		 [Tags]* @param file
-		 [Tags]*            下载完成之后存储的文件
-		 [Tags]* @param from
-		 [Tags]*            当前线程对应文件的起始位置
-		 [Tags]* @param end
-		 [Tags]*            当前线程对应文件的结束位置
-		 [Tags]*/
+		 /**
+		  * @param url
+		  *            下载的URL
+		  * @param file
+		  *            下载完成之后存储的文件
+		  * @param from
+		  *            当前线程对应文件的起始位置
+		  * @param end
+		  *            当前线程对应文件的结束位置
+		  */
 		DownloadThread(URL url, RandomAccessFile file, long from, long end) {
 			this.url = url;
 			this.file = file;
@@ -114,10 +114,10 @@ public class ManyThreadActivity extends Activity {
 		System.out.println(fileLength);
 		// 计算每个线程请求的起始位置和结束位置。
 		/*
-		 [Tags]* 第一个线程的起始位置是0~0+packageLength(每个线程要下载的字节数)
-		 [Tags]* 第二个线程的起始位置是endPos+1(第一个线程的packageLength+1)~endPos+1+packageLength
-		 [Tags]* 第二个线程的起始位置是.........
-		 [Tags]*/
+		  * 第一个线程的起始位置是0~0+packageLength(每个线程要下载的字节数)
+		  * 第二个线程的起始位置是endPos+1(第一个线程的packageLength+1)~endPos+1+packageLength
+		  * 第二个线程的起始位置是.........
+		  */
 		long pos = 0;
 		for (int i = 0; i < THREAD_COUNT; i++) {
 			long endPos = pos + packageLength;

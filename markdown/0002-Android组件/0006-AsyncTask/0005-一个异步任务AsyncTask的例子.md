@@ -9,15 +9,15 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
-[Tags]/**
- [Tags]* 一个使用异步任务的例子。一般来说一个异步任务只执行一次，这个例子有点非主流，任务结束后会触发下一次任务执行。
- [Tags]* 由任务task在屏幕上打印数字，第一次任务执行由主Activity的onCreate触发，每次任务结束后
- [Tags]* 设定下一次触发的时间，共执行5次。对于任务来说doInBackground()接收任务的参数params，并执行产生数字的动作，每一个数字
- [Tags]* 产生后调用一次publishProgress()来更新UI，这个函数本身也是异步的只是用来发个消息调用完成后立即返回，
- [Tags]* 而产生数字的动作在继续进行。更新界面的操作在onProgressUpdate()中设定。 所有的on函数都由系统调用，不能用户调用。
- [Tags]* 代码中使用Handler是为了能触发任务执行，android规定这种异步任务每次执行完就结束，若要重新执行需要new一个新的。
- [Tags]* 异步任务只能在UI线程里面创建和执行
- [Tags]*/
+ /**
+  * 一个使用异步任务的例子。一般来说一个异步任务只执行一次，这个例子有点非主流，任务结束后会触发下一次任务执行。
+  * 由任务task在屏幕上打印数字，第一次任务执行由主Activity的onCreate触发，每次任务结束后
+  * 设定下一次触发的时间，共执行5次。对于任务来说doInBackground()接收任务的参数params，并执行产生数字的动作，每一个数字
+  * 产生后调用一次publishProgress()来更新UI，这个函数本身也是异步的只是用来发个消息调用完成后立即返回，
+  * 而产生数字的动作在继续进行。更新界面的操作在onProgressUpdate()中设定。 所有的on函数都由系统调用，不能用户调用。
+  * 代码中使用Handler是为了能触发任务执行，android规定这种异步任务每次执行完就结束，若要重新执行需要new一个新的。
+  * 异步任务只能在UI线程里面创建和执行
+  */
 public class testAsync extends Activity {
 	private final int MSG_TIMER = 12;
 	private TextView vText = null;
