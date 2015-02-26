@@ -7,7 +7,7 @@ import Android.opengl.GLSurfaceView;
 import Android.opengl.GLU;
 import Android.os.Bundle;
 public class SetView extends Activity implements GLSurfaceView.Renderer {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

@@ -77,7 +77,7 @@ gl.glLoadIdentity();
 8、Renderer 类在实现了上面的三个重写之后，在程序入口中只需要调用 
 ```  
 Renderer render=new ThreeDGl(this);
-[Tags]/** Called when the activity is first created. */
+ /** Called when the activity is first created. */
 @Override
 public void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
@@ -127,7 +127,7 @@ public class GLRender implements Renderer {
 		gl.glDisableClientState(GL10.GL_COLOR_ARRAY);
 		// 绘制三角形结束
 		gl.glFinish();
-		[Tags]/***********************/
+		 /***********************/
 		/* 渲染正方形 */
 		// 重置当前的模型观察矩阵
 		gl.glLoadIdentity();

@@ -23,10 +23,10 @@ import com.threed.jpct.World;
 import com.threed.jpct.util.BitmapHelper;
 import com.threed.jpct.util.MemoryHelper;
 
-[Tags]/**
- [Tags]* 一个简单的例子。比起展示如何写一个正确的android应用它更着重于展示如何使用JPCT-AE这个3D游戏框架。
- [Tags]* 它包含了Activity类去处理pause和resume等方法
- [Tags]*/
+ /**
+  * 一个简单的例子。比起展示如何写一个正确的android应用它更着重于展示如何使用JPCT-AE这个3D游戏框架。
+  * 它包含了Activity类去处理pause和resume等方法
+  */
 
 public class HelloWorld extends Activity {
 	// HelloWorld对象用来处理Activity的onPause和onResume方法

@@ -3,14 +3,14 @@
 class LunarView extends SurfaceView implements SurfaceHolder.Callback {
 	class LunarThread extends Thread {
 		/*
-		 [Tags]* Difficulty setting constants
-		 [Tags]*/
+		  * Difficulty setting constants
+		  */
 		public static final int DIFFICULTY_EASY = 0;
 		public static final int DIFFICULTY_HARD = 1;
 		public static final int DIFFICULTY_MEDIUM = 2;
 		/*
-		 [Tags]* Physics constants
-		 [Tags]*/
+		  * Physics constants
+		  */
 		public static final int PHYS_DOWN_ACCEL_SEC = 35;
 		public static final int PHYS_FIRE_ACCEL_SEC = 80;
 		public static final int PHYS_FUEL_INIT = 60;
@@ -21,24 +21,24 @@ class LunarView extends SurfaceView implements SurfaceHolder.Callback {
 		public static final int PHYS_SPEED_INIT = 30;
 		public static final int PHYS_SPEED_MAX = 120;
 		/*
-		 [Tags]* State-tracking constants
-		 [Tags]*/
+		  * State-tracking constants
+		  */
 		public static final int STATE_LOSE = 1;
 		public static final int STATE_PAUSE = 2;
 		public static final int STATE_READY = 3;
 		public static final int STATE_RUNNING = 4;
 		public static final int STATE_WIN = 5;
 		/*
-		 [Tags]* Goal condition constants
-		 [Tags]*/
+		  * Goal condition constants
+		  */
 		public static final int TARGET_ANGLE = 18; // > this angle means crash
 		public static final int TARGET_BOTTOM_PADDING = 17; // px below gear
 		public static final int TARGET_PAD_HEIGHT = 8; // how high above ground
 		public static final int TARGET_SPEED = 28; // > this speed means crash
 		public static final double TARGET_WIDTH = 1.6; // width of target
 		/*
-		 [Tags]* UI constants (i.e. the speed & fuel bars)
-		 [Tags]*/
+		  * UI constants (i.e. the speed & fuel bars)
+		  */
 		public static final int UI_BAR = 100; // width of the bar(s)
 		public static final int UI_BAR_HEIGHT = 10; // height of the bar(s)
 		private static final String KEY_DIFFICULTY = "mDifficulty";
@@ -56,110 +56,110 @@ class LunarView extends SurfaceView implements SurfaceHolder.Callback {
 		private static final String KEY_X = "mX";
 		private static final String KEY_Y = "mY";
 		/*
-		 [Tags]* Member (state) fields
-		 [Tags]*/
-		[Tags]/** The drawable to use as the background of the animation canvas */
+		  * Member (state) fields
+		  */
+		 /** The drawable to use as the background of the animation canvas */
 		private Bitmap mBackgroundImage;
 
-		[Tags]/**
-		 [Tags]* Current height of the surface/canvas.
-		 [Tags]* 
-		 [Tags]* @see setSurfaceSize
-		 [Tags]*/
+		 /**
+		  * Current height of the surface/canvas.
+		  * 
+		  * @see setSurfaceSize
+		  */
 		private int mCanvasHeight = 1;
 
-		[Tags]/**
-		 [Tags]* Current width of the surface/canvas.
-		 [Tags]* 
-		 [Tags]* @see setSurfaceSize
-		 [Tags]*/
+		 /**
+		  * Current width of the surface/canvas.
+		  * 
+		  * @see setSurfaceSize
+		  */
 		private int mCanvasWidth = 1;
 
-		[Tags]/** What to draw for the Lander when it has crashed */
+		 /** What to draw for the Lander when it has crashed */
 		private Drawable mCrashedImage;
 
-		[Tags]/**
-		 [Tags]* Current difficulty -- amount of fuel, allowed angle, etc. Default is
-		 [Tags]* MEDIUM.
-		 [Tags]*/
+		 /**
+		  * Current difficulty -- amount of fuel, allowed angle, etc. Default is
+		  * MEDIUM.
+		  */
 		private int mDifficulty;
 
-		[Tags]/** Velocity dx. */
+		 /** Velocity dx. */
 		private double mDX;
 
-		[Tags]/** Velocity dy. */
+		 /** Velocity dy. */
 		private double mDY;
 
-		[Tags]/** Is the engine burning? */
+		 /** Is the engine burning? */
 		private boolean mEngineFiring;
 
-		[Tags]/** What to draw for the Lander when the engine is firing */
+		 /** What to draw for the Lander when the engine is firing */
 		private Drawable mFiringImage;
 
-		[Tags]/** Fuel remaining */
+		 /** Fuel remaining */
 		private double mFuel;
 
-		[Tags]/** Allowed angle. */
+		 /** Allowed angle. */
 		private int mGoalAngle;
 
-		[Tags]/** Allowed speed. */
+		 /** Allowed speed. */
 		private int mGoalSpeed;
 
-		[Tags]/** Width of the landing pad. */
+		 /** Width of the landing pad. */
 		private int mGoalWidth;
 
-		[Tags]/** X of the landing pad. */
+		 /** X of the landing pad. */
 		private int mGoalX;
 
-		[Tags]/** Message handler used by thread to interact with TextView */
+		 /** Message handler used by thread to interact with TextView */
 		private Handler mHandler;
 
-		[Tags]/**
-		 [Tags]* Lander heading in degrees, with 0 up, 90 right. Kept in the range
-		 [Tags]* 0..360.
-		 [Tags]*/
+		 /**
+		  * Lander heading in degrees, with 0 up, 90 right. Kept in the range
+		  * 0..360.
+		  */
 		private double mHeading;
 
-		[Tags]/** Pixel height of lander image. */
+		 /** Pixel height of lander image. */
 		private int mLanderHeight;
 
-		[Tags]/** What to draw for the Lander in its normal state */
+		 /** What to draw for the Lander in its normal state */
 		private Drawable mLanderImage;
 
-		[Tags]/** Pixel width of lander image. */
+		 /** Pixel width of lander image. */
 		private int mLanderWidth;
 
-		[Tags]/** Used to figure out elapsed time between frames */
+		 /** Used to figure out elapsed time between frames */
 		private long mLastTime;
 
-		[Tags]/** Paint to draw the lines on screen. */
+		 /** Paint to draw the lines on screen. */
 		private Paint mLinePaint;
 
-		[Tags]/** "Bad" speed-too-high variant of the line color. */
+		 /** "Bad" speed-too-high variant of the line color. */
 		private Paint mLinePaintBad;
 
-		[Tags]/** The state of the game. One of READY, RUNNING, PAUSE, LOSE, or WIN */
+		 /** The state of the game. One of READY, RUNNING, PAUSE, LOSE, or WIN */
 		private int mMode;
 
-		[Tags]/** Currently rotating, -1 left, 0 none, 1 right. */
+		 /** Currently rotating, -1 left, 0 none, 1 right. */
 		private int mRotating;
 
-		[Tags]/** Indicate whether the surface has been created & is ready to draw */
+		 /** Indicate whether the surface has been created & is ready to draw */
 		private boolean mRun = false;
 
-		[Tags]/** Scratch rect object. */
+		 /** Scratch rect object. */
 		private RectF mScratchRect;
 
-		[Tags]/** Handle to the surface manager object we interact with */
+		 /** Handle to the surface manager object we interact with */
 		private SurfaceHolder mSurfaceHolder;
 
-		[Tags]/** Number of wins in a row. */
+		 /** Number of wins in a row. */
 		private int mWinsInARow;
 
-		[Tags]/** X of lander center. */
+		 /** X of lander center. */
 		private double mX;
 
-		[Tags]/** Y of lander center. */
+		 /** Y of lander center. */
 		private double mY;
 
 		public LunarThread(SurfaceHolder surfaceHolder, Context context,
@@ -211,9 +211,9 @@ class LunarView extends SurfaceView implements SurfaceHolder.Callback {
 			mEngineFiring = true;
 		}
 
-		[Tags]/**
-		 [Tags]* Starts the game, setting parameters for the current difficulty.
-		 [Tags]*/
+		 /**
+		  * Starts the game, setting parameters for the current difficulty.
+		  */
 		public void doStart() {
 			synchronized (mSurfaceHolder) {
 				// First set the game for Medium difficulty
@@ -259,9 +259,9 @@ class LunarView extends SurfaceView implements SurfaceHolder.Callback {
 			}
 		}
 
-		[Tags]/**
-		 [Tags]* Pauses the physics update & animation.
-		 [Tags]*/
+		 /**
+		  * Pauses the physics update & animation.
+		  */
 		public void pause() {
 			synchronized (mSurfaceHolder) {
 				if (mMode == STATE_RUNNING)
@@ -269,14 +269,14 @@ class LunarView extends SurfaceView implements SurfaceHolder.Callback {
 			}
 		}
 
-		[Tags]/**
-		 [Tags]* Restores game state from the indicated Bundle. Typically called when
-		 [Tags]* the Activity is being restored after having been previously
-		 [Tags]* destroyed.
-		 [Tags]* 
-		 [Tags]* @param savedState
-		 [Tags]*            Bundle containing the game state
-		 [Tags]*/
+		 /**
+		  * Restores game state from the indicated Bundle. Typically called when
+		  * the Activity is being restored after having been previously
+		  * destroyed.
+		  * 
+		  * @param savedState
+		  *            Bundle containing the game state
+		  */
 		public synchronized void restoreState(Bundle savedState) {
 			synchronized (mSurfaceHolder) {
 				setState(STATE_PAUSE);
@@ -323,12 +323,12 @@ class LunarView extends SurfaceView implements SurfaceHolder.Callback {
 			}
 		}
 
-		[Tags]/**
-		 [Tags]* Dump game state to the provided Bundle. Typically called when the
-		 [Tags]* Activity is being suspended.
-		 [Tags]* 
-		 [Tags]* @return Bundle with this view's state
-		 [Tags]*/
+		 /**
+		  * Dump game state to the provided Bundle. Typically called when the
+		  * Activity is being suspended.
+		  * 
+		  * @return Bundle with this view's state
+		  */
 		public Bundle saveState(Bundle map) {
 			synchronized (mSurfaceHolder) {
 				if (map != null) {
@@ -352,71 +352,71 @@ class LunarView extends SurfaceView implements SurfaceHolder.Callback {
 			return map;
 		}
 
-		[Tags]/**
-		 [Tags]* Sets the current difficulty.
-		 [Tags]* 
-		 [Tags]* @param difficulty
-		 [Tags]*/
+		 /**
+		  * Sets the current difficulty.
+		  * 
+		  * @param difficulty
+		  */
 		public void setDifficulty(int difficulty) {
 			synchronized (mSurfaceHolder) {
 				mDifficulty = difficulty;
 			}
 		}
 
-		[Tags]/**
-		 [Tags]* Sets if the engine is currently firing.
-		 [Tags]*/
+		 /**
+		  * Sets if the engine is currently firing.
+		  */
 		public void setFiring(boolean firing) {
 			synchronized (mSurfaceHolder) {
 				mEngineFiring = firing;
 			}
 		}
 
-		[Tags]/**
-		 [Tags]* Used to signal the thread whether it should be running or not.
-		 [Tags]* Passing true allows the thread to run; passing false will shut it
-		 [Tags]* down if it's already running. Calling start() after this was most
-		 [Tags]* recently called with false will result in an immediate shutdown.
-		 [Tags]* 
-		 [Tags]* @param b
-		 [Tags]*            true to run, false to shut down
-		 [Tags]*/
+		 /**
+		  * Used to signal the thread whether it should be running or not.
+		  * Passing true allows the thread to run; passing false will shut it
+		  * down if it's already running. Calling start() after this was most
+		  * recently called with false will result in an immediate shutdown.
+		  * 
+		  * @param b
+		  *            true to run, false to shut down
+		  */
 		public void setRunning(boolean b) {
 			mRun = b;
 		}
 
-		[Tags]/**
-		 [Tags]* Sets the game mode. That is, whether we are running, paused, in the
-		 [Tags]* failure state, in the victory state, etc.
-		 [Tags]* 
-		 [Tags]* @see setState(int, CharSequence)
-		 [Tags]* @param mode
-		 [Tags]*            one of the STATE_[Tags]* constants
-		 [Tags]*/
+		 /**
+		  * Sets the game mode. That is, whether we are running, paused, in the
+		  * failure state, in the victory state, etc.
+		  * 
+		  * @see setState(int, CharSequence)
+		  * @param mode
+		  *            one of the STATE_ * constants
+		  */
 		public void setState(int mode) {
 			synchronized (mSurfaceHolder) {
 				setState(mode, null);
 			}
 		}
 
-		[Tags]/**
-		 [Tags]* Sets the game mode. That is, whether we are running, paused, in the
-		 [Tags]* failure state, in the victory state, etc.
-		 [Tags]* 
-		 [Tags]* @param mode
-		 [Tags]*            one of the STATE_[Tags]* constants
-		 [Tags]* @param message
-		 [Tags]*            string to add to screen or null
-		 [Tags]*/
+		 /**
+		  * Sets the game mode. That is, whether we are running, paused, in the
+		  * failure state, in the victory state, etc.
+		  * 
+		  * @param mode
+		  *            one of the STATE_ * constants
+		  * @param message
+		  *            string to add to screen or null
+		  */
 		public void setState(int mode, CharSequence message) {
 			/*
-			 [Tags]* This method optionally can cause a text message to be displayed
-			 [Tags]* to the user when the mode changes. Since the View that actually
-			 [Tags]* renders that text is part of the main View hierarchy and not
-			 [Tags]* owned by this thread, we can't touch the state of that View.
-			 [Tags]* Instead we use a Message + Handler to relay commands to the main
-			 [Tags]* thread, which updates the user-text View.
-			 [Tags]*/
+			  * This method optionally can cause a text message to be displayed
+			  * to the user when the mode changes. Since the View that actually
+			  * renders that text is part of the main View hierarchy and not
+			  * owned by this thread, we can't touch the state of that View.
+			  * Instead we use a Message + Handler to relay commands to the main
+			  * thread, which updates the user-text View.
+			  */
 			synchronized (mSurfaceHolder) {
 				mMode = mode;
 
@@ -473,9 +473,9 @@ class LunarView extends SurfaceView implements SurfaceHolder.Callback {
 			}
 		}
 
-		[Tags]/**
-		 [Tags]* Resumes from a pause.
-		 [Tags]*/
+		 /**
+		  * Resumes from a pause.
+		  */
 		public void unpause() {
 			// Move the real time clock up to now
 			synchronized (mSurfaceHolder) {
@@ -484,15 +484,15 @@ class LunarView extends SurfaceView implements SurfaceHolder.Callback {
 			setState(STATE_RUNNING);
 		}
 
-		[Tags]/**
-		 [Tags]* Handles a key-down event.
-		 [Tags]* 
-		 [Tags]* @param keyCode
-		 [Tags]*            the key that was pressed
-		 [Tags]* @param msg
-		 [Tags]*            the original event object
-		 [Tags]* @return true
-		 [Tags]*/
+		 /**
+		  * Handles a key-down event.
+		  * 
+		  * @param keyCode
+		  *            the key that was pressed
+		  * @param msg
+		  *            the original event object
+		  * @return true
+		  */
 		boolean doKeyDown(int keyCode, KeyEvent msg) {
 			synchronized (mSurfaceHolder) {
 				boolean okStart = false;
@@ -538,15 +538,15 @@ class LunarView extends SurfaceView implements SurfaceHolder.Callback {
 			}
 		}
 
-		[Tags]/**
-		 [Tags]* Handles a key-up event.
-		 [Tags]* 
-		 [Tags]* @param keyCode
-		 [Tags]*            the key that was pressed
-		 [Tags]* @param msg
-		 [Tags]*            the original event object
-		 [Tags]* @return true if the key was handled and consumed, or else false
-		 [Tags]*/
+		 /**
+		  * Handles a key-up event.
+		  * 
+		  * @param keyCode
+		  *            the key that was pressed
+		  * @param msg
+		  *            the original event object
+		  * @return true if the key was handled and consumed, or else false
+		  */
 		boolean doKeyUp(int keyCode, KeyEvent msg) {
 			boolean handled = false;
 			synchronized (mSurfaceHolder) {
@@ -567,10 +567,10 @@ class LunarView extends SurfaceView implements SurfaceHolder.Callback {
 			return handled;
 		}
 
-		[Tags]/**
-		 [Tags]* Draws the ship, fuel/speed bars, and background to the provided
-		 [Tags]* Canvas.
-		 [Tags]*/
+		 /**
+		  * Draws the ship, fuel/speed bars, and background to the provided
+		  * Canvas.
+		  */
 		private void doDraw(Canvas canvas) {
 			// Draw the background image. Operations on the Canvas accumulate
 			// so this is like clearing the screen.
@@ -623,11 +623,11 @@ class LunarView extends SurfaceView implements SurfaceHolder.Callback {
 			canvas.restore();
 		}
 
-		[Tags]/**
-		 [Tags]* Figures the lander state (x, y, fuel, ...) based on the passage of
-		 [Tags]* realtime. Does not invalidate(). Called at the start of draw().
-		 [Tags]* Detects the end-of-game and sets the UI to the next state.
-		 [Tags]*/
+		 /**
+		  * Figures the lander state (x, y, fuel, ...) based on the passage of
+		  * realtime. Does not invalidate(). Called at the start of draw().
+		  * Detects the end-of-game and sets the UI to the next state.
+		  */
 		private void updatePhysics() {
 			long now = System.currentTimeMillis();
 			// Do nothing if mLastTime is in the future.
@@ -713,11 +713,11 @@ class LunarView extends SurfaceView implements SurfaceHolder.Callback {
 		}
 	}
 
-	[Tags]/** Handle to the application context, used to e.g. fetch Drawables. */
+	 /** Handle to the application context, used to e.g. fetch Drawables. */
 	private Context mContext;
-	[Tags]/** Pointer to the text view to display "Paused.." etc. */
+	 /** Pointer to the text view to display "Paused.." etc. */
 	private TextView mStatusText;
-	[Tags]/** The thread that actually draws the animation */
+	 /** The thread that actually draws the animation */
 	private LunarThread thread;
 
 	public LunarView(Context context, AttributeSet attrs) {
@@ -737,45 +737,45 @@ class LunarView extends SurfaceView implements SurfaceHolder.Callback {
 		setFocusable(true); // make sure we get key events
 	}
 
-	[Tags]/**
-	 [Tags]* Fetches the animation thread corresponding to this LunarView.
-	 [Tags]* 
-	 [Tags]* @return the animation thread
-	 [Tags]*/
+	 /**
+	  * Fetches the animation thread corresponding to this LunarView.
+	  * 
+	  * @return the animation thread
+	  */
 	public LunarThread getThread() {
 		return thread;
 	}
 
-	[Tags]/**
-	 [Tags]* Standard override to get key-press events.
-	 [Tags]*/
+	 /**
+	  * Standard override to get key-press events.
+	  */
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent msg) {
 		return thread.doKeyDown(keyCode, msg);
 	}
 
-	[Tags]/**
-	 [Tags]* Standard override for key-up. We actually care about these, so we can
-	 [Tags]* turn off the engine or stop rotating.
-	 [Tags]*/
+	 /**
+	  * Standard override for key-up. We actually care about these, so we can
+	  * turn off the engine or stop rotating.
+	  */
 	@Override
 	public boolean onKeyUp(int keyCode, KeyEvent msg) {
 		return thread.doKeyUp(keyCode, msg);
 	}
 
-	[Tags]/**
-	 [Tags]* Standard window-focus override. Notice focus lost so we can pause on
-	 [Tags]* focus lost. e.g. user switches to take a call.
-	 [Tags]*/
+	 /**
+	  * Standard window-focus override. Notice focus lost so we can pause on
+	  * focus lost. e.g. user switches to take a call.
+	  */
 	@Override
 	public void onWindowFocusChanged(boolean hasWindowFocus) {
 		if (!hasWindowFocus)
 			thread.pause();
 	}
 
-	[Tags]/**
-	 [Tags]* Installs a pointer to the text view used for messages.
-	 [Tags]*/
+	 /**
+	  * Installs a pointer to the text view used for messages.
+	  */
 	public void setTextView(TextView textView) {
 		mStatusText = textView;
 	}
@@ -787,9 +787,9 @@ class LunarView extends SurfaceView implements SurfaceHolder.Callback {
 	}
 
 	/*
-	 [Tags]* Callback invoked when the Surface has been created and is ready to be
-	 [Tags]* used.
-	 [Tags]*/
+	  * Callback invoked when the Surface has been created and is ready to be
+	  * used.
+	  */
 	public void surfaceCreated(SurfaceHolder holder) {
 		// start the thread here so that we don't busy-wait in run()
 		// waiting for the surface to be created
@@ -798,10 +798,10 @@ class LunarView extends SurfaceView implements SurfaceHolder.Callback {
 	}
 
 	/*
-	 [Tags]* Callback invoked when the Surface has been destroyed and must no longer
-	 [Tags]* be touched. WARNING: after this method returns, the Surface/Canvas must
-	 [Tags]* never be touched again!
-	 [Tags]*/
+	  * Callback invoked when the Surface has been destroyed and must no longer
+	  * be touched. WARNING: after this method returns, the Surface/Canvas must
+	  * never be touched again!
+	  */
 	public void surfaceDestroyed(SurfaceHolder holder) {
 		// we have to tell thread to shut down & wait for it to finish, or else
 		// it might touch the Surface after we return and explode

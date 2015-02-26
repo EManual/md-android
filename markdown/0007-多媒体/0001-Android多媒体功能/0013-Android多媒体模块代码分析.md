@@ -32,9 +32,9 @@ public MediaRecorder() {
 			mEventHandler = null;
 		}
 		/*
-		 [Tags]* Native setup requires a weak reference to our object. It's easier to
-		 [Tags]* create it here than in C++.
-		 [Tags]*/
+		  * Native setup requires a weak reference to our object. It's easier to
+		  * create it here than in C++.
+		  */
 		native_setup(new WeakReference<MediaRecorder>(this));
 	}
 ```

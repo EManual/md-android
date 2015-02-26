@@ -19,45 +19,45 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 import org.xmlpull.v1.XmlSerializer;
 import android.util.Xml;
-[Tags]/**
-[Tags]* XMLRPCClient allows to call remote XMLRPC method.
-[Tags]* <p>
-[Tags]* The following table shows how XML-RPC types are mapped to java call parameters/response values.
-[Tags]* </p>
-[Tags]* <p>
-[Tags]* <table border="2" align="center" cellpadding="5">
-[Tags]* <thead><tr><th>XML-RPC Type</th><th>Call Parameters</th><th>Call Response</th></tr></thead>
-[Tags]* <tbody>
-[Tags]* <td>int, i4</td><td>byte<br />Byte<br />short<br />Short<br />int<br />Integer</td><td>int<br />Integer</td>
-[Tags]* </tr>
-[Tags]* <tr>
-[Tags]* <td>i8</td><td>long<br />Long</td><td>long<br />Long</td>
-[Tags]* </tr>
-[Tags]* <tr>
-[Tags]* <td>double</td><td>float<br />Float<br />double<br />Double</td><td>double<br />Double</td>
-[Tags]* </tr>
-[Tags]* <tr>
-[Tags]* <td>string</td><td>String</td><td>String</td>
-[Tags]* </tr>
-[Tags]* <tr>
-[Tags]* <td>boolean</td><td>boolean<br />Boolean</td><td>boolean<br />Boolean</td>
-[Tags]* </tr>
-[Tags]* <tr>
-[Tags]* <td>dateTime.iso8601</td><td>java.util.Date<br />java.util.Calendar</td><td>java.util.Date</td>
-[Tags]* </tr>
-[Tags]* <tr>
-[Tags]* <td>base64</td><td>byte[]</td><td>byte[]</td>
-[Tags]* </tr>
-[Tags]* <tr>
-[Tags]* <td>array</td><td>java.util.List<Object><br />Object[]</td><td>Object[]</td>
-[Tags]* </tr>
-[Tags]* <tr>
-[Tags]* <td>struct</td><td>java.util.Map<String, Object></td><td>java.util.Map<String, Object></td>
-[Tags]* </tr>
-[Tags]* </tbody>
-[Tags]* </table>
-[Tags]* </p>
-[Tags]*/
+ /**
+ * XMLRPCClient allows to call remote XMLRPC method.
+ * <p>
+ * The following table shows how XML-RPC types are mapped to java call parameters/response values.
+ * </p>
+ * <p>
+ * <table border="2" align="center" cellpadding="5">
+ * <thead><tr><th>XML-RPC Type</th><th>Call Parameters</th><th>Call Response</th></tr></thead>
+ * <tbody>
+ * <td>int, i4</td><td>byte<br />Byte<br />short<br />Short<br />int<br />Integer</td><td>int<br />Integer</td>
+ * </tr>
+ * <tr>
+ * <td>i8</td><td>long<br />Long</td><td>long<br />Long</td>
+ * </tr>
+ * <tr>
+ * <td>double</td><td>float<br />Float<br />double<br />Double</td><td>double<br />Double</td>
+ * </tr>
+ * <tr>
+ * <td>string</td><td>String</td><td>String</td>
+ * </tr>
+ * <tr>
+ * <td>boolean</td><td>boolean<br />Boolean</td><td>boolean<br />Boolean</td>
+ * </tr>
+ * <tr>
+ * <td>dateTime.iso8601</td><td>java.util.Date<br />java.util.Calendar</td><td>java.util.Date</td>
+ * </tr>
+ * <tr>
+ * <td>base64</td><td>byte[]</td><td>byte[]</td>
+ * </tr>
+ * <tr>
+ * <td>array</td><td>java.util.List<Object><br />Object[]</td><td>Object[]</td>
+ * </tr>
+ * <tr>
+ * <td>struct</td><td>java.util.Map<String, Object></td><td>java.util.Map<String, Object></td>
+ * </tr>
+ * </tbody>
+ * </table>
+ * </p>
+ */
 public class XMLRPCClient {
 	private static final String TAG_METHOD_CALL = "methodCall";
 	private static final String TAG_METHOD_NAME = "methodName";
@@ -71,11 +71,11 @@ public class XMLRPCClient {
 	private HttpPost postMethod;
 	private XmlSerializer serializer;
 	private HttpParams httpParams;
-	[Tags]/**
-	 [Tags]* XMLRPCClient constructor. Creates new instance based on server URI
-	 [Tags]* @param XMLRPC
-	 [Tags]*            server URI
-	 [Tags]*/
+	 /**
+	  * XMLRPCClient constructor. Creates new instance based on server URI
+	  * @param XMLRPC
+	  *            server URI
+	  */
 	public XMLRPCClient(URI uri) {
 		postMethod = new HttpPost(uri);
 		postMethod.addHeader("Content-Type", "text/xml");
@@ -88,230 +88,230 @@ public class XMLRPCClient {
 		client = new DefaultHttpClient();
 		serializer = Xml.newSerializer();
 	}
-	[Tags]/**
-	 [Tags]* Convenience constructor. Creates new instance based on server String
-	 [Tags]* address
-	 [Tags]* @param XMLRPC
-	 [Tags]*            server address
-	 [Tags]*/
+	 /**
+	  * Convenience constructor. Creates new instance based on server String
+	  * address
+	  * @param XMLRPC
+	  *            server address
+	  */
 	public XMLRPCClient(String url) {
 		this(URI.create(url));
 	}
-	[Tags]/**
-	 [Tags]* Convenience XMLRPCClient constructor. Creates new instance based on
-	 [Tags]* server URL
-	 [Tags]* @param XMLRPC
-	 [Tags]*            server URL
-	 [Tags]*/
+	 /**
+	  * Convenience XMLRPCClient constructor. Creates new instance based on
+	  * server URL
+	  * @param XMLRPC
+	  *            server URL
+	  */
 	public XMLRPCClient(URL url) {
 		this(URI.create(url.toExternalForm()));
 	}
-	[Tags]/**
-	 [Tags]* Call method with optional parameters. This is general method. If you want
-	 [Tags]* to call your method with 0-8 parameters, you can use more convenience
-	 [Tags]* call methods
-	 [Tags]* @param method
-	 [Tags]*            name of method to call
-	 [Tags]* @param params
-	 [Tags]*            parameters to pass to method (may be null if method has no
-	 [Tags]*            parameters)
-	 [Tags]* @return deserialized method return value
-	 [Tags]* @throws XMLRPCException
-	 [Tags]*/
+	 /**
+	  * Call method with optional parameters. This is general method. If you want
+	  * to call your method with 0-8 parameters, you can use more convenience
+	  * call methods
+	  * @param method
+	  *            name of method to call
+	  * @param params
+	  *            parameters to pass to method (may be null if method has no
+	  *            parameters)
+	  * @return deserialized method return value
+	  * @throws XMLRPCException
+	  */
 	public Object call(String method, Object[] params) throws XMLRPCException {
 		return callXMLRPC(method, params);
 	}
-	[Tags]/**
-	 [Tags]* Convenience method call with no parameters
-	 [Tags]* @param method
-	 [Tags]*            name of method to call
-	 [Tags]* @return deserialized method return value
-	 [Tags]* @throws XMLRPCException
-	 [Tags]*/
+	 /**
+	  * Convenience method call with no parameters
+	  * @param method
+	  *            name of method to call
+	  * @return deserialized method return value
+	  * @throws XMLRPCException
+	  */
 	public Object call(String method) throws XMLRPCException {
 		return callXMLRPC(method, null);
 	}
 
-	[Tags]/**
-	 [Tags]* Convenience method call with one parameter
-	 [Tags]* @param method
-	 [Tags]*            name of method to call
-	 [Tags]* @param p0
-	 [Tags]*            method's parameter
-	 [Tags]* @return deserialized method return value
-	 [Tags]* @throws XMLRPCException
-	 [Tags]*/
+	 /**
+	  * Convenience method call with one parameter
+	  * @param method
+	  *            name of method to call
+	  * @param p0
+	  *            method's parameter
+	  * @return deserialized method return value
+	  * @throws XMLRPCException
+	  */
 	public Object call(String method, Object p0) throws XMLRPCException {
 		Object[] params = { p0, };
 		return callXMLRPC(method, params);
 	}
-	[Tags]/**
-	 [Tags]* Convenience method call with two parameters
-	 [Tags]* @param method
-	 [Tags]*            name of method to call
-	 [Tags]* @param p0
-	 [Tags]*            method's 1st parameter
-	 [Tags]* @param p1
-	 [Tags]*            method's 2nd parameter
-	 [Tags]* @return deserialized method return value
-	 [Tags]* @throws XMLRPCException
-	 [Tags]*/
+	 /**
+	  * Convenience method call with two parameters
+	  * @param method
+	  *            name of method to call
+	  * @param p0
+	  *            method's 1st parameter
+	  * @param p1
+	  *            method's 2nd parameter
+	  * @return deserialized method return value
+	  * @throws XMLRPCException
+	  */
 	public Object call(String method, Object p0, Object p1)
 			throws XMLRPCException {
 		Object[] params = { p0, p1, };
 		return callXMLRPC(method, params);
 	}
 
-	[Tags]/**
-	 [Tags]* Convenience method call with three parameters
-	 [Tags]* @param method
-	 [Tags]*            name of method to call
-	 [Tags]* @param p0
-	 [Tags]*            method's 1st parameter
-	 [Tags]* @param p1
-	 [Tags]*            method's 2nd parameter
-	 [Tags]* @param p2
-	 [Tags]*            method's 3rd parameter
-	 [Tags]* @return deserialized method return value
-	 [Tags]* @throws XMLRPCException
-	 [Tags]*/
+	 /**
+	  * Convenience method call with three parameters
+	  * @param method
+	  *            name of method to call
+	  * @param p0
+	  *            method's 1st parameter
+	  * @param p1
+	  *            method's 2nd parameter
+	  * @param p2
+	  *            method's 3rd parameter
+	  * @return deserialized method return value
+	  * @throws XMLRPCException
+	  */
 	public Object call(String method, Object p0, Object p1, Object p2)
 			throws XMLRPCException {
 		Object[] params = { p0, p1, p2, };
 		return callXMLRPC(method, params);
 	}
-	[Tags]/**
-	 [Tags]* Convenience method call with four parameters
-	 [Tags]* @param method
-	 [Tags]*            name of method to call
-	 [Tags]* @param p0
-	 [Tags]*            method's 1st parameter
-	 [Tags]* @param p1
-	 [Tags]*            method's 2nd parameter
-	 [Tags]* @param p2
-	 [Tags]*            method's 3rd parameter
-	 [Tags]* @param p3
-	 [Tags]*            method's 4th parameter
-	 [Tags]* @return deserialized method return value
-	 [Tags]* @throws XMLRPCException
-	 [Tags]*/
+	 /**
+	  * Convenience method call with four parameters
+	  * @param method
+	  *            name of method to call
+	  * @param p0
+	  *            method's 1st parameter
+	  * @param p1
+	  *            method's 2nd parameter
+	  * @param p2
+	  *            method's 3rd parameter
+	  * @param p3
+	  *            method's 4th parameter
+	  * @return deserialized method return value
+	  * @throws XMLRPCException
+	  */
 	public Object call(String method, Object p0, Object p1, Object p2, Object p3)
 			throws XMLRPCException {
 		Object[] params = { p0, p1, p2, p3, };
 		return callXMLRPC(method, params);
 	}
-	[Tags]/**
-	 [Tags]* Convenience method call with five parameters
-	 [Tags]* @param method
-	 [Tags]*            name of method to call
-	 [Tags]* @param p0
-	 [Tags]*            method's 1st parameter
-	 [Tags]* @param p1
-	 [Tags]*            method's 2nd parameter
-	 [Tags]* @param p2
-	 [Tags]*            method's 3rd parameter
-	 [Tags]* @param p3
-	 [Tags]*            method's 4th parameter
-	 [Tags]* @param p4
-	 [Tags]*            method's 5th parameter
-	 [Tags]* @return deserialized method return value
-	 [Tags]* @throws XMLRPCException
-	 [Tags]*/
+	 /**
+	  * Convenience method call with five parameters
+	  * @param method
+	  *            name of method to call
+	  * @param p0
+	  *            method's 1st parameter
+	  * @param p1
+	  *            method's 2nd parameter
+	  * @param p2
+	  *            method's 3rd parameter
+	  * @param p3
+	  *            method's 4th parameter
+	  * @param p4
+	  *            method's 5th parameter
+	  * @return deserialized method return value
+	  * @throws XMLRPCException
+	  */
 	public Object call(String method, Object p0, Object p1, Object p2,
 			Object p3, Object p4) throws XMLRPCException {
 		Object[] params = { p0, p1, p2, p3, p4, };
 		return callXMLRPC(method, params);
 	}
-	[Tags]/**
-	 [Tags]* Convenience method call with six parameters
-	 [Tags]* @param method
-	 [Tags]*            name of method to call
-	 [Tags]* @param p0
-	 [Tags]*            method's 1st parameter
-	 [Tags]* @param p1
-	 [Tags]*            method's 2nd parameter
-	 [Tags]* @param p2
-	 [Tags]*            method's 3rd parameter
-	 [Tags]* @param p3
-	 [Tags]*            method's 4th parameter
-	 [Tags]* @param p4
-	 [Tags]*            method's 5th parameter
-	 [Tags]* @param p5
-	 [Tags]*            method's 6th parameter
-	 [Tags]* @return deserialized method return value
-	 [Tags]* @throws XMLRPCException
-	 [Tags]*/
+	 /**
+	  * Convenience method call with six parameters
+	  * @param method
+	  *            name of method to call
+	  * @param p0
+	  *            method's 1st parameter
+	  * @param p1
+	  *            method's 2nd parameter
+	  * @param p2
+	  *            method's 3rd parameter
+	  * @param p3
+	  *            method's 4th parameter
+	  * @param p4
+	  *            method's 5th parameter
+	  * @param p5
+	  *            method's 6th parameter
+	  * @return deserialized method return value
+	  * @throws XMLRPCException
+	  */
 	public Object call(String method, Object p0, Object p1, Object p2,
 			Object p3, Object p4, Object p5) throws XMLRPCException {
 		Object[] params = { p0, p1, p2, p3, p4, p5, };
 		return callXMLRPC(method, params);
 	}
 
-	[Tags]/**
-	 [Tags]* Convenience method call with seven parameters
-	 [Tags]* @param method
-	 [Tags]*            name of method to call
-	 [Tags]* @param p0
-	 [Tags]*            method's 1st parameter
-	 [Tags]* @param p1
-	 [Tags]*            method's 2nd parameter
-	 [Tags]* @param p2
-	 [Tags]*            method's 3rd parameter
-	 [Tags]* @param p3
-	 [Tags]*            method's 4th parameter
-	 [Tags]* @param p4
-	 [Tags]*            method's 5th parameter
-	 [Tags]* @param p5
-	 [Tags]*            method's 6th parameter
-	 [Tags]* @param p6
-	 [Tags]*            method's 7th parameter
-	 [Tags]* @return deserialized method return value
-	 [Tags]* @throws XMLRPCException
-	 [Tags]*/
+	 /**
+	  * Convenience method call with seven parameters
+	  * @param method
+	  *            name of method to call
+	  * @param p0
+	  *            method's 1st parameter
+	  * @param p1
+	  *            method's 2nd parameter
+	  * @param p2
+	  *            method's 3rd parameter
+	  * @param p3
+	  *            method's 4th parameter
+	  * @param p4
+	  *            method's 5th parameter
+	  * @param p5
+	  *            method's 6th parameter
+	  * @param p6
+	  *            method's 7th parameter
+	  * @return deserialized method return value
+	  * @throws XMLRPCException
+	  */
 	public Object call(String method, Object p0, Object p1, Object p2,
 			Object p3, Object p4, Object p5, Object p6) throws XMLRPCException {
 		Object[] params = { p0, p1, p2, p3, p4, p5, p6, };
 		return callXMLRPC(method, params);
 	}
-	[Tags]/**
-	 [Tags]* Convenience method call with eight parameters
-	 [Tags]* @param method
-	 [Tags]*            name of method to call
-	 [Tags]* @param p0
-	 [Tags]*            method's 1st parameter
-	 [Tags]* @param p1
-	 [Tags]*            method's 2nd parameter
-	 [Tags]* @param p2
-	 [Tags]*            method's 3rd parameter
-	 [Tags]* @param p3
-	 [Tags]*            method's 4th parameter
-	 [Tags]* @param p4
-	 [Tags]*            method's 5th parameter
-	 [Tags]* @param p5
-	 [Tags]*            method's 6th parameter
-	 [Tags]* @param p6
-	 [Tags]*            method's 7th parameter
-	 [Tags]* @param p7
-	 [Tags]*            method's 8th parameter
-	 [Tags]* @return deserialized method return value
-	 [Tags]* @throws XMLRPCException
-	 [Tags]*/
+	 /**
+	  * Convenience method call with eight parameters
+	  * @param method
+	  *            name of method to call
+	  * @param p0
+	  *            method's 1st parameter
+	  * @param p1
+	  *            method's 2nd parameter
+	  * @param p2
+	  *            method's 3rd parameter
+	  * @param p3
+	  *            method's 4th parameter
+	  * @param p4
+	  *            method's 5th parameter
+	  * @param p5
+	  *            method's 6th parameter
+	  * @param p6
+	  *            method's 7th parameter
+	  * @param p7
+	  *            method's 8th parameter
+	  * @return deserialized method return value
+	  * @throws XMLRPCException
+	  */
 	public Object call(String method, Object p0, Object p1, Object p2,
 			Object p3, Object p4, Object p5, Object p6, Object p7)
 			throws XMLRPCException {
 		Object[] params = { p0, p1, p2, p3, p4, p5, p6, p7, };
 		return callXMLRPC(method, params);
 	}
-	[Tags]/**
-	 [Tags]* Call method with optional parameters
-	 [Tags]* @param method
-	 [Tags]*            name of method to call
-	 [Tags]* @param params
-	 [Tags]*            parameters to pass to method (may be null if method has no
-	 [Tags]*            parameters)
-	 [Tags]* @return deserialized method return value
-	 [Tags]* @throws XMLRPCException
-	 [Tags]*/
+	 /**
+	  * Call method with optional parameters
+	  * @param method
+	  *            name of method to call
+	  * @param params
+	  *            parameters to pass to method (may be null if method has no
+	  *            parameters)
+	  * @return deserialized method return value
+	  * @throws XMLRPCException
+	  */
 	private Object callXMLRPC(String method, Object[] params)
 			throws XMLRPCException {
 		try {

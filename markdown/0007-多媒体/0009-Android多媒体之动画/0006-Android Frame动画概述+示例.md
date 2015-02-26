@@ -76,12 +76,12 @@ public class GameView extends View {
 			frameAnimation.addFrame(mBitAnimation, 500);
 		}
 		/*
-		 [Tags]* 上边用到了Resources的getIdentifier方法 方法返回一个资源的唯一标识符，如果没有这个资源就返回0
-		 [Tags]* 0不是有效的标识符，在说说这个方法几个参数的含义
-		 [Tags]* 第一个 就是我们的资源名称了。
-		 [Tags]* 第二个 就是我们要去哪里找我们的资源 我们的图片在drawable 下 所以为drawable
-		 [Tags]* 第三个 我们用了Context的getPackageName返回应用程序的包名
-		 [Tags]*/
+		  * 上边用到了Resources的getIdentifier方法 方法返回一个资源的唯一标识符，如果没有这个资源就返回0
+		  * 0不是有效的标识符，在说说这个方法几个参数的含义
+		  * 第一个 就是我们的资源名称了。
+		  * 第二个 就是我们要去哪里找我们的资源 我们的图片在drawable 下 所以为drawable
+		  * 第三个 我们用了Context的getPackageName返回应用程序的包名
+		  */
 		// 设置播放模式是否循环播放，false表示循环，true表示不循环
 		frameAnimation.setOneShot(false);
 		// 设置本类将要显示的这个动画

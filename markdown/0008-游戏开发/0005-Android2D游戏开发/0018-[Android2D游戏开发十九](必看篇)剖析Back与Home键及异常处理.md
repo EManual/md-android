@@ -40,10 +40,10 @@ import android.view.View;
 import android.view.GestureDetector.OnGestureListener;
 import android.view.SurfaceHolder.Callback;
 import android.view.View.OnTouchListener;
-[Tags]/**
- [Tags]* @author android
- [Tags]* @SurfaceView 运行机制详解
- [Tags]*/
+ /**
+  * @author android
+  * @SurfaceView 运行机制详解
+  */
 public class MySurfaceViewAnimation extends SurfaceView implements Callback,
 		Runnable {
 	private Thread th;
@@ -123,10 +123,10 @@ import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder.Callback;
-[Tags]/**
- [Tags]* @author android
- [Tags]* @SurfaceView 运行机制详解(修改后的最佳方式)
- [Tags]*/
+ /**
+  * @author android
+  * @SurfaceView 运行机制详解(修改后的最佳方式)
+  */
 public class MySurfaceViewAnimation extends SurfaceView implements Callback,
 		Runnable {
 	private Thread th;

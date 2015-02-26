@@ -25,9 +25,9 @@ private Random random;
 ```
 本类构造函数：
 ```  
-[Tags]/** 
-[Tags]* SurfaceView初始化函数 
-[Tags]*/  
+ /** 
+ * SurfaceView初始化函数 
+ */  
 public MySurfaceView(Context context) {  
     super(context);  
     ...
@@ -44,10 +44,10 @@ public MySurfaceView(Context context) {
 ```
 接着我把绘制贝赛尔曲线封装一个方法了，函数如下：
 ```  
-[Tags]/** 
-[Tags]* 绘制贝赛尔曲线 
-[Tags]* @param canvas 主画布 
-[Tags]*/  
+ /** 
+ * 绘制贝赛尔曲线 
+ * @param canvas 主画布 
+ */  
 public void drawQpath(Canvas canvas) {  
     path.reset();// 重置path
     // 贝赛尔曲线的起始点  
@@ -60,18 +60,18 @@ public void drawQpath(Canvas canvas) {
 ```
 最后是用户触屏监听函数以及逻辑函数：
 ```  
-[Tags]/** 
-[Tags]* 触屏事件监听 
-[Tags]*/  
+ /** 
+ * 触屏事件监听 
+ */  
 @Override  
 public boolean onTouchEvent(MotionEvent event) {  
     endX = (int) event.getX();
     endY = (int) event.getY();
     return true;  
 }  
-[Tags]/** 
-[Tags]* 游戏逻辑 
-[Tags]*/  
+ /** 
+ * 游戏逻辑 
+ */  
 private void logic() {  
     if (endX != 0 && endY != 0) {  
         // 设置操作点为线段x/y的一半  
@@ -89,9 +89,9 @@ ok，效果接图如下：
 ![img](P)  
 这里可能由于图片是静止的效果看起来不是很明显，大家可以运行源码来观察，好了～本节就这样吧；
 ```  
-[Tags]/**
- [Tags]* 赛贝尔曲线
- [Tags]*/
+ /**
+  * 赛贝尔曲线
+  */
 public class MySurfaceView extends SurfaceView implements Callback, Runnable {
 	private SurfaceHolder sfh;
 	private Paint paint;
@@ -108,9 +108,9 @@ public class MySurfaceView extends SurfaceView implements Callback, Runnable {
 	private Paint paintQ;
 	// 随机库（让贝赛尔曲线更明显）
 	private Random random;
-	[Tags]/**
-	 [Tags]* SurfaceView初始化函数
-	 [Tags]*/
+	 /**
+	  * SurfaceView初始化函数
+	  */
 	public MySurfaceView(Context context) {
 		super(context);
 		sfh = this.getHolder();
@@ -129,9 +129,9 @@ public class MySurfaceView extends SurfaceView implements Callback, Runnable {
 		paintQ.setColor(Color.WHITE);
 		random = new Random();
 	}
-	[Tags]/**
-	 [Tags]* SurfaceView视图创建，响应此函数
-	 [Tags]*/
+	 /**
+	  * SurfaceView视图创建，响应此函数
+	  */
 	public void surfaceCreated(SurfaceHolder holder) {
 		screenW = this.getWidth();
 		screenH = this.getHeight();
@@ -142,9 +142,9 @@ public class MySurfaceView extends SurfaceView implements Callback, Runnable {
 		th.start();
 		// -----------以上是SurfaceView游戏框架
 	}
-	[Tags]/**
-	 [Tags]* 游戏绘图
-	 [Tags]*/
+	 /**
+	  * 游戏绘图
+	  */
 	public void myDraw() {
 		try {
 			canvas = sfh.lockCanvas();
@@ -160,12 +160,12 @@ public class MySurfaceView extends SurfaceView implements Callback, Runnable {
 				sfh.unlockCanvasAndPost(canvas);
 		}
 	}
-	[Tags]/**
-	 [Tags]* 绘制贝赛尔曲线
-	 [Tags]* 
-	 [Tags]* @param canvas
-	 [Tags]*            主画布
-	 [Tags]*/
+	 /**
+	  * 绘制贝赛尔曲线
+	  * 
+	  * @param canvas
+	  *            主画布
+	  */
 	public void drawQpath(Canvas canvas) {
 		path.reset();// 重置path
 		// 贝赛尔曲线的起始点
@@ -175,18 +175,18 @@ public class MySurfaceView extends SurfaceView implements Callback, Runnable {
 		// 绘制贝赛尔曲线（Path）
 		canvas.drawPath(path, paintQ);
 	}
-	[Tags]/**
-	 [Tags]* 触屏事件监听
-	 [Tags]*/
+	 /**
+	  * 触屏事件监听
+	  */
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
 		endX = (int) event.getX();
 		endY = (int) event.getY();
 		return true;
 	}
-	[Tags]/**
-	 [Tags]* 游戏逻辑
-	 [Tags]*/
+	 /**
+	  * 游戏逻辑
+	  */
 	private void logic() {
 		if (endX != 0 && endY != 0) {
 			// 设置操作点为线段x/y的一半
@@ -194,9 +194,9 @@ public class MySurfaceView extends SurfaceView implements Callback, Runnable {
 			controlY = random.nextInt((endY - startY) / 2);
 		}
 	}
-	[Tags]/**
-	 [Tags]* 按键事件监听
-	 [Tags]*/
+	 /**
+	  * 按键事件监听
+	  */
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		return super.onKeyDown(keyCode, event);
@@ -216,15 +216,15 @@ public class MySurfaceView extends SurfaceView implements Callback, Runnable {
 			}
 		}
 	}
-	[Tags]/**
-	 [Tags]* SurfaceView视图状态发生改变，响应此函数
-	 [Tags]*/
+	 /**
+	  * SurfaceView视图状态发生改变，响应此函数
+	  */
 	public void surfaceChanged(SurfaceHolder holder, int format, int width,
 			int height) {
 	}
-	[Tags]/**
-	 [Tags]* SurfaceView视图消亡时，响应此函数
-	 [Tags]*/
+	 /**
+	  * SurfaceView视图消亡时，响应此函数
+	  */
 	public void surfaceDestroyed(SurfaceHolder holder) {
 		flag = false;
 	}

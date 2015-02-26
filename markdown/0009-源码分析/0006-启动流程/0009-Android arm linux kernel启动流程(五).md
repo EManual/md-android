@@ -1,9 +1,9 @@
 他这里的执行过程其实比较简单就是在__proc_info_begin和__proc_info_end这个段里面里面去读取我们注册在里面的proc_info_list这个结构体，这个结构体的定义在arch/arm/include/asm/procinfo.h，具体实现根据你使用的cpu的架构在arch/arm/mm/里面找到具体的实现，这里我们使用的ARM11是proc-v6.S，我们可以看看这个结构体：
 ```  
 .section ".proc.info.init", alloc, execinstr 
-[Tags]/* 
-[Tags]* Match any ARMv6 processor core. 
-[Tags]*/
+ /* 
+ * Match any ARMv6 processor core. 
+ */
 .type __v6_proc_info, object 
 _proc_info: 
 .long 0x0007b000 
@@ -83,21 +83,21 @@ add pc, r10, PROCINFO_INITFUNC
 ```
 这个__cpu_flush在这里就是我们proc-v6.S里面的__v6_setup函数了，具体它的实现我就不分析了，都是对arm控制寄存器的操作，这里转一下它对这部分操作的注释，看完之后就基本知道它完成的功能了。
 ```  
-[Tags]/*
-[Tags]* __v6_setup
-[Tags]*
-[Tags]* Initialise TLB, Caches, and MMU state ready to switch the MMU
-[Tags]* on. Return in r0 the new CP15 C1 control register setting.
-[Tags]*
-[Tags]* We automatically detect if we have a Harvard cache, and use the
-[Tags]* Harvard cache control instructions insead of the unified cache
-[Tags]* control instructions.
-[Tags]*
-[Tags]* This should be able to cover all ARMv6 cores.
-[Tags]*
-[Tags]* It is assumed that: 
-[Tags]* - cache type register is implemented
-[Tags]*/ 
+ /*
+ * __v6_setup
+ *
+ * Initialise TLB, Caches, and MMU state ready to switch the MMU
+ * on. Return in r0 the new CP15 C1 control register setting.
+ *
+ * We automatically detect if we have a Harvard cache, and use the
+ * Harvard cache control instructions insead of the unified cache
+ * control instructions.
+ *
+ * This should be able to cover all ARMv6 cores.
+ *
+ * It is assumed that: 
+ * - cache type register is implemented
+ */ 
 ```
 完成这部分关于CPU的操作以后，下面就是打开MMU了，这部分内容也没什么好说的，也是对arm控制寄存器的操作，打开MMU以后我们就可以使用虚拟地址了，而不需要我们自己来进行地址的重定位，ARM硬件会完成这部分的工作。打开MMU以后，会将SP的值赋给PC，这样代码就会跳到__switch_data来运行，这个__switch_data是一个定义在head-common.S里面的结构体，我们实际上是跳到它地一个函数指针__mmap_switched处执行的。
 这个switch的执行过程我们只是简单看一下，前面的copy data_loc段以及清空.bss段就不用说了，它后面会将proc的信息和machine的信息保存在__switch_data这个结构体里面，而这个结构体将来会在start_kernel的setup_arch里面被使用到。这个在后面的对start_kernel的详细分析中会讲到。另外这个switch还涉及到控制寄存器的一些操作，这里我不没仔细研究spec，不懂也就不说了～

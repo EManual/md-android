@@ -62,9 +62,9 @@ public class FolderIcon extends BubbleTextView implements DropTarget {
 		for (int i = 0; i < ICON_COUNT; i++) {
 			if (i < mInfo.contents.size()) {
 				x = MARGIN + PADDING * (2 * (i % NUM_COL) + 1) + scaleWidth
-						[Tags]* (i % NUM_COL);
+						 * (i % NUM_COL);
 				y = MARGIN + PADDING * (2 * (i / NUM_COL) + 1) + scaleWidth
-						[Tags]* (i / NUM_COL);
+						 * (i / NUM_COL);
 				ShortcutInfo scInfo = (ShortcutInfo) mInfo.contents.get(i);
 				Bitmap iconbmp = scInfo.getIcon(mIconCache); // 获取缩略图标
 				Bitmap scalebmp = Bitmap.createBitmap(iconbmp, 0, 0, iconWidth,

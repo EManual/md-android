@@ -19,11 +19,11 @@ public class GLTutorialTwo extends GLTutorialBase {
 		gl.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		gl.glMatrixMode(GL10.GL_PROJECTION);
 		/*
-		 [Tags]* glMatrixMode用来转换当前是模型矩阵还是投影矩阵，操作物体时使用模型矩阵，如平移、旋转、缩放等。
-		 [Tags]* 设置观察物体的方式时，选择投影矩阵。
-		 [Tags]* 下面的是定义了个1.2X1.0的矩形视图，该矩形视图的左下角是二维坐标原点。然后重新切换到模型视图模式 在比较复杂的程序中
-		 [Tags]* 往往不能确定当前矩阵的模式，所以为了避免这种情形的发生，我们要及时切换到给定的矩形模式，这是个很好的主意
-		 [Tags]*/
+		  * glMatrixMode用来转换当前是模型矩阵还是投影矩阵，操作物体时使用模型矩阵，如平移、旋转、缩放等。
+		  * 设置观察物体的方式时，选择投影矩阵。
+		  * 下面的是定义了个1.2X1.0的矩形视图，该矩形视图的左下角是二维坐标原点。然后重新切换到模型视图模式 在比较复杂的程序中
+		  * 往往不能确定当前矩阵的模式，所以为了避免这种情形的发生，我们要及时切换到给定的矩形模式，这是个很好的主意
+		  */
 		gl.glLoadIdentity();
 		GLU.gluOrtho2D(gl, 0.0f, 1.2f, 0.0f, 1.0f);
 
@@ -37,11 +37,11 @@ public class GLTutorialTwo extends GLTutorialBase {
 		gl.glVertexPointer(3, GL10.GL_FLOAT, 0, squareBuff); // 说明启用数组的类型和字节缓冲，类型为GL_FLOAT
 		gl.glEnableClientState(GL10.GL_VERTEX_ARRAY); // 指定需要启用定点数组
 		/*
-		 [Tags]* 渲染是把物体坐标所指定的图元转化成帧缓冲区中的图像。图像和顶点坐标有着密切的关系。
-		 [Tags]* 这个关系通过绘制模式给出。常用到得绘制模式有GL_POINTS
-		 [Tags]* 、GL_LINE_STRIP、GL_LINE_LOOP、GL_LINES、GL_TRIANGLES
-		 [Tags]* 、GL_TRIANGLE_STRIP、GL_TRIANGLE_FAN。 上边会分别介绍：
-		 [Tags]*/
+		  * 渲染是把物体坐标所指定的图元转化成帧缓冲区中的图像。图像和顶点坐标有着密切的关系。
+		  * 这个关系通过绘制模式给出。常用到得绘制模式有GL_POINTS
+		  * 、GL_LINE_STRIP、GL_LINE_LOOP、GL_LINES、GL_TRIANGLES
+		  * 、GL_TRIANGLE_STRIP、GL_TRIANGLE_FAN。 上边会分别介绍：
+		  */
 		gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 0, 4);
 		// 创建一个几何图元序列，使用每个被的数组中从first开始，到first + count – 1结束的数组元素， mode为绘制模式。
 		gl.glDisableClientState(GL10.GL_VERTEX_ARRAY); // 关闭顶点数组

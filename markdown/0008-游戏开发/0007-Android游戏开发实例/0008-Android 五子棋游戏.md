@@ -12,7 +12,7 @@ import android.widget.TextView;
 //这是主程序，继承自Activity，实现onCreate方法。：
 public class gobang extends Activity {
 	GobangView gbv;
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -69,8 +69,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 /*棋盘一共10×10格 
- [Tags]* 棋盘居中
- [Tags]*/
+  * 棋盘居中
+  */
 public class GobangView extends View {
 	protected static int GRID_SIZE = 10;
 	protected static int GRID_WIDTH = 30; // 棋盘格的宽度

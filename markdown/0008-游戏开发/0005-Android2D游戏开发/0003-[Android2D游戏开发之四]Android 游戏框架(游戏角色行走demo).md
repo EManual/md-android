@@ -73,7 +73,7 @@ public class MySurfaceView extends SurfaceView implements Callback, Runnable {
 		} else if (animation_init == animation_right) {
 			canvas.drawBitmap(bmp,
 					bmp_x - animation_right[frame_count]
-							[Tags]* (bmp.getWidth() / 13), bmp_y, p);
+							 * (bmp.getWidth() / 13), bmp_y, p);
 		}
 		canvas.restore(); // 备注3
 		sfh.unlockCanvasAndPost(canvas);

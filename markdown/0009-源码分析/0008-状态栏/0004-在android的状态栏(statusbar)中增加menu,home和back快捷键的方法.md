@@ -258,14 +258,14 @@ public boolean onInterceptTouchEvent(MotionEvent event) {
 		return mService.interceptTouchEvent(event) ? true : super
 				.onInterceptTouchEvent(event);
 	/*
-	 [Tags]* int parentLeft = mStatusIcons.getLeft();
-	 [Tags]* android.util.Log.i("Tiger","....."+(event.getX() < (parentLeft +
-	 [Tags]* iconVolDown.getLeft()) || event.getX() > (parentLeft +
-	 [Tags]* iconHome.getRight()))); if(event.getX() < (parentLeft +
-	 [Tags]* iconVolDown.getLeft()) || event.getX() > (parentLeft +
-	 [Tags]* iconHome.getRight())) return mService.interceptTouchEvent(event) ?
-	 [Tags]* true : super.onInterceptTouchEvent(event);
-	 [Tags]*/
+	  * int parentLeft = mStatusIcons.getLeft();
+	  * android.util.Log.i("Tiger","....."+(event.getX() < (parentLeft +
+	  * iconVolDown.getLeft()) || event.getX() > (parentLeft +
+	  * iconHome.getRight()))); if(event.getX() < (parentLeft +
+	  * iconVolDown.getLeft()) || event.getX() > (parentLeft +
+	  * iconHome.getRight())) return mService.interceptTouchEvent(event) ?
+	  * true : super.onInterceptTouchEvent(event);
+	  */
 	return false;
 }
 ```

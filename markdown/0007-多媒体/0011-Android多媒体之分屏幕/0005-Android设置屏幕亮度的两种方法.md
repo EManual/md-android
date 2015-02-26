@@ -1,9 +1,9 @@
 在0.9的版本中，android是调用IHardwareService来进行屏幕亮度调整的，但在1.0r2,1.0r1 以后的SDK中却找不到这个类。
 这时又要翻出0.9的SDK了，在0.9 SDK中android.os包中有相关类。只要将这些相关类添加到项目类路径中，我们也可以用IHardwareService来调整屏幕亮度了。以下代码G1下测试通过。
 ```  
-[Tags]/**
- [Tags]* 取得当前用户自定义的屏幕亮度
- [Tags]*/
+ /**
+  * 取得当前用户自定义的屏幕亮度
+  */
 private int getOldBrightness() {
 	int brightness;
 	try {
@@ -14,9 +14,9 @@ private int getOldBrightness() {
 	}
 	return brightness;
 }
-[Tags]/**
- [Tags]* 设置屏幕亮度
- [Tags]*/
+ /**
+  * 设置屏幕亮度
+  */
 private void setBrightness(int brightness) {
 	IHardwareService hardware = IHardwareService.Stub
 			.asInterface(ServiceManager.getService("hardware"));

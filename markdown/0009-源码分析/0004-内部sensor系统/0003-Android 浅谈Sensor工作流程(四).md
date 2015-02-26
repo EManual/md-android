@@ -36,32 +36,32 @@ static sensors_control_device_t* sSensorDevice = 0;
 ```  
 struct sensors_control_device_t {
 	struct hw_device_t common;
-	[Tags]/**
-	[Tags]* Returns the fd which will be the parameter to
-	[Tags]* sensors_data_device_t::open_data().
-	[Tags]* The caller takes ownership of this fd. This is intended to be
-	[Tags]* passed cross processes.
-	[Tags]*
-	[Tags]* @return a fd if successful, < 0 on error
-	[Tags]*/
+	 /**
+	 * Returns the fd which will be the parameter to
+	 * sensors_data_device_t::open_data().
+	 * The caller takes ownership of this fd. This is intended to be
+	 * passed cross processes.
+	 *
+	 * @return a fd if successful, < 0 on error
+	 */
 	int (*open_data_source)(struct sensors_control_device_t *dev);
-	[Tags]/** Activate/deactivate one sensor.
-	[Tags]*
-	[Tags]* @param handle is the handle of the sensor to change.
-	[Tags]* @param enabled set to 1 to enable, or 0 to disable the sensor.
-	[Tags]*
-	[Tags]* @return 0 on success, negative errno code otherwise
-	[Tags]*/
+	 /** Activate/deactivate one sensor.
+	 *
+	 * @param handle is the handle of the sensor to change.
+	 * @param enabled set to 1 to enable, or 0 to disable the sensor.
+	 *
+	 * @return 0 on success, negative errno code otherwise
+	 */
 	int (*activate)(struct sensors_control_device_t *dev,int handle, int enabled);
-	[Tags]/**
-	[Tags]* Set the delay between sensor events in ms
-	[Tags]*
-	[Tags]* @return 0 if successful, < 0 on error
-	[Tags]*/
+	 /**
+	 * Set the delay between sensor events in ms
+	 *
+	 * @return 0 if successful, < 0 on error
+	 */
 	int (*set_delay)(struct sensors_control_device_t *dev, int32_t ms);
-	[Tags]/**
-	[Tags]* Causes sensors_data_device_t.poll() to return -EWOULDBLOCK immediately.
-	[Tags]*/
+	 /**
+	 * Causes sensors_data_device_t.poll() to return -EWOULDBLOCK immediately.
+	 */
 	int (*wake)(struct sensors_control_device_t *dev);
 };
 ```

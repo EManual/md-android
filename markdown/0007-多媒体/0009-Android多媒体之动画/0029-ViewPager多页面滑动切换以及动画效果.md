@@ -84,9 +84,9 @@ private int bmpW;// 动画图片宽度
 ```
 (2) 初始化头标
 ```  
-[Tags]/**
- [Tags]* 初始化头标
- [Tags]*/
+ /**
+  * 初始化头标
+  */
 private void InitTextView() {
 	t1 = (TextView) findViewById(R.id.text1);
 	t2 = (TextView) findViewById(R.id.text2);
@@ -95,9 +95,9 @@ private void InitTextView() {
 	t2.setOnClickListener(new MyOnClickListener(1));
 	t3.setOnClickListener(new MyOnClickListener(2));
 }
-[Tags]/**
- [Tags]* 头标点击监听
- [Tags]*/
+ /**
+  * 头标点击监听
+  */
 public class MyOnClickListener implements View.OnClickListener {
 	private int index = 0;
 	public MyOnClickListener(int i) {
@@ -112,9 +112,9 @@ public class MyOnClickListener implements View.OnClickListener {
 相信大家看后都没什么问题，点击第几个，就展示第几个页卡内容。
 (3) 初始化页卡内容区
 ```  
-[Tags]/**
- [Tags]* 初始化ViewPager
- [Tags]*/
+ /**
+  * 初始化ViewPager
+  */
 private void InitViewPager() {
 	mPager = (ViewPager) findViewById(R.id.vPager);
 	listViews = new ArrayList<View>();
@@ -129,9 +129,9 @@ private void InitViewPager() {
 ```
 我们将三个页卡界面装入其中，默认显示第一个页卡。这里我们还需要实现一个适配器。
 ```  
-[Tags]/**
- [Tags]* ViewPager适配器
- [Tags]*/
+ /**
+  * ViewPager适配器
+  */
 public class MyPagerAdapter extends PagerAdapter {
 	public List<View> mListViews;
 	public MyPagerAdapter(List<View> mListViews) {
@@ -172,9 +172,9 @@ public class MyPagerAdapter extends PagerAdapter {
 这里我们实现了各页卡的装入和卸载
 (4) 初始化动画
 ```  
-[Tags]/**
- [Tags]* 初始化动画
- [Tags]*/
+ /**
+  * 初始化动画
+  */
 private void InitImageView() {
 	cursor = (ImageView) findViewById(R.id.cursor);
 	bmpW = BitmapFactory.decodeResource(getResources(), R.drawable.a)
@@ -192,9 +192,9 @@ private void InitImageView() {
 ![img](P)  
 实现页卡切换监听
 ```  
-[Tags]/**
- [Tags]* 页卡切换监听
- [Tags]*/
+ /**
+  * 页卡切换监听
+  */
 public class MyOnPageChangeListener implements OnPageChangeListener {
 	int one = offset * 2 + bmpW;// 页卡1 -> 页卡2 偏移量
 	int two = one * 2;// 页卡1 -> 页卡3 偏移量

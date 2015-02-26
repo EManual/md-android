@@ -32,26 +32,26 @@ public class OpenGLRenderer implements GLSurfaceView.Renderer {
 	}
 	@Override
 	public void onDrawFrame(GL10 gl) {
-		[Tags]/**
-		 [Tags]* 我们通过glClearColor()方法为底色定义了颜色。 底色是在我们能看到的所有东西的后面，所以所有在底色后面的东西都是不可见的。
-		 [Tags]* 可以想象这种东西为浓雾，挡住了所有的东西。
-		 [Tags]*/
+		 /**
+		  * 我们通过glClearColor()方法为底色定义了颜色。 底色是在我们能看到的所有东西的后面，所以所有在底色后面的东西都是不可见的。
+		  * 可以想象这种东西为浓雾，挡住了所有的东西。
+		  */
 		gl.glClearColor(red, green, blue, 1.0f);
 		// 清除颜色的Buffer然后让现实上面我们通过glClearColor来定义的颜色
-		[Tags]/**
-		 [Tags]* 为了让颜色变化可见，我们必须调用glClear()以及颜色缓冲的Mask来清空buffer， 然后为我们的底色使用新的底色。
-		 [Tags]*/
+		 /**
+		  * 为了让颜色变化可见，我们必须调用glClear()以及颜色缓冲的Mask来清空buffer， 然后为我们的底色使用新的底色。
+		  */
 		gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 	}
-	[Tags]/**
-	 [Tags]* 设置颜色的值
-	 [Tags]* @param r
-	 [Tags]*            Red值
-	 [Tags]* @param g
-	 [Tags]*            Green值
-	 [Tags]* @param b
-	 [Tags]*            Blue值
-	 [Tags]*/
+	 /**
+	  * 设置颜色的值
+	  * @param r
+	  *            Red值
+	  * @param g
+	  *            Green值
+	  * @param b
+	  *            Blue值
+	  */
 	public void setColor(float r, float g, float b) {
 		red = r;
 		green = g;

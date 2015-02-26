@@ -19,9 +19,9 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.widget.Scroller;
-[Tags]/**
- [Tags]* [Tags]* 仿Launcher中的WorkSapce，可以左右滑动切换屏幕的类 [Tags]*
- [Tags]*/
+ /**
+  *  * 仿Launcher中的WorkSapce，可以左右滑动切换屏幕的类  *
+  */
 public class ScrollLayout extends ViewGroup {
 	private static final String TAG = "ScrollLayout";
 	private Scroller mScroller;
@@ -83,9 +83,9 @@ public class ScrollLayout extends ViewGroup {
 		// Log.e(TAG, "moving to screen "+mCurScreen);
 		scrollTo(mCurScreen * width, 0);
 	}
-	[Tags]/**
-	 [Tags]* [Tags]* According to the position of current layout [Tags]* scroll to the destination page.
-	 [Tags]*/
+	 /**
+	  *  * According to the position of current layout  * scroll to the destination page.
+	  */
 	public void snapToDestination() {
 		final int screenWidth = getWidth();
 		final int destScreen = (getScrollX() + screenWidth / 2) / screenWidth;

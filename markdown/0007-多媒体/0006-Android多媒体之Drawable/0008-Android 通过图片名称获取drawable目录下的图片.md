@@ -12,9 +12,9 @@ public class ReadyDrawable extends Activity {
 		btn = (Button) findViewById(R.id.an);
 		btn.setOnClickListener(new MyOnClickListener());
 	}
-	[Tags]/**
-	 [Tags]* 通过java反射机制反射出R.drawable类中的属性，因为都是静态常量所以可以获取属性对应的值。
-	 [Tags]*/
+	 /**
+	  * 通过java反射机制反射出R.drawable类中的属性，因为都是静态常量所以可以获取属性对应的值。
+	  */
 	public class MyOnClickListener implements OnClickListener {
 		@SuppressWarnings("unchecked")
 		public void onClick(View v) {

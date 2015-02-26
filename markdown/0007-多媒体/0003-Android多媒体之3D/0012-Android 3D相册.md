@@ -13,9 +13,9 @@ import android.widget.ImageView;
 public class GalleryFlow extends Gallery {
 	/* 图形的照相机ImageViews用于转换矩阵的 */
 	private Camera mCamera = new Camera();
-	[Tags]/** 这个的最大角ImageView将旋转 */
+	 /** 这个的最大角ImageView将旋转 */
 	private int mMaxRotationAngle = 60;
-	[Tags]/** 这个研究中心的最大放大效果 */
+	 /** 这个研究中心的最大放大效果 */
 	private int mMaxZoom = -120;
 	/* Coverflow的中心 */
 	private int mCoveflowCenter;
@@ -31,15 +31,15 @@ public class GalleryFlow extends Gallery {
 		super(context, attrs, defStyle);
 		this.setStaticTransformationsEnabled(true);
 	}
-	[Tags]/**
-	 [Tags]* 旋转角度得到最大的形象
-	 [Tags]*/
+	 /**
+	  * 旋转角度得到最大的形象
+	  */
 	public int getMaxRotationAngle() {
 		return mMaxRotationAngle;
 	}
-	[Tags]/**
-	 [Tags]* 设置它的最大旋转角度的每一个图像
-	 [Tags]*/
+	 /**
+	  * 设置它的最大旋转角度的每一个图像
+	  */
 	public void setMaxRotationAngle(int maxRotationAngle) {
 		mMaxRotationAngle = maxRotationAngle;
 	}
@@ -56,9 +56,9 @@ public class GalleryFlow extends Gallery {
 	}
 	private static int getCenterOfView(View view) {
 		/*
-		 [Tags]* Log.e("ChildView Width+Height", view.getWidth() + "[Tags]*"
-		 [Tags]* + view.getHeight());
-		 [Tags]*/
+		  * Log.e("ChildView Width+Height", view.getWidth() + " *"
+		  * + view.getHeight());
+		  */
 		return view.getLeft() + view.getWidth() / 2;
 	}
 	protected boolean getChildStaticTransformation(View child, Transformation t) {
@@ -78,32 +78,32 @@ public class GalleryFlow extends Gallery {
 		}
 		return true;
 	}
-	[Tags]/**
-	 [Tags]* 这就是所谓的在大小的布局时,这一观点已经发生了改变。如果
-	 [Tags]* 你只是添加到视图层次,有人叫你旧的观念
-	 [Tags]* 值为0.
-	 [Tags]* @param w
-	 [Tags]*            Current width of this view.
-	 [Tags]* @param h
-	 [Tags]*            Current height of this view.
-	 [Tags]* @param oldw
-	 [Tags]*            Old width of this view.
-	 [Tags]* @param oldh
-	 [Tags]*            Old height of this view.
-	 [Tags]*/
+	 /**
+	  * 这就是所谓的在大小的布局时,这一观点已经发生了改变。如果
+	  * 你只是添加到视图层次,有人叫你旧的观念
+	  * 值为0.
+	  * @param w
+	  *            Current width of this view.
+	  * @param h
+	  *            Current height of this view.
+	  * @param oldw
+	  *            Old width of this view.
+	  * @param oldh
+	  *            Old height of this view.
+	  */
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
 		mCoveflowCenter = getCenterOfCoverflow();
 		super.onSizeChanged(w, h, oldw, oldh);
 	}
-	[Tags]/**
-	 [Tags]* Transform the Image Bitmap by the Angle passed
-	 [Tags]* @param imageView
-	 [Tags]*            ImageView the ImageView whose bitmap we want to rotate
-	 [Tags]* @param t
-	 [Tags]*            transformation
-	 [Tags]* @param rotationAngle
-	 [Tags]*            以旋转角度的位图
-	 [Tags]*/
+	 /**
+	  * Transform the Image Bitmap by the Angle passed
+	  * @param imageView
+	  *            ImageView the ImageView whose bitmap we want to rotate
+	  * @param t
+	  *            transformation
+	  * @param rotationAngle
+	  *            以旋转角度的位图
+	  */
 	private void transformImageBitmap(ImageView child, Transformation t, int rotationAngle) {
 		mCamera.save();
 		final Matrix imageMatrix = t.getMatrix();
@@ -212,14 +212,14 @@ public class ImageAdapter extends BaseAdapter {
 	}
 	public View getView(int position, View convertView, ViewGroup parent) {
 		/*
-		 [Tags]* ImageView i = new ImageView(mContext);
-		 [Tags]* i.setImageResource(mImageIds[position]); i.setLayoutParams(new
-		 [Tags]* CoverFlow.LayoutParams(350,350));
-		 [Tags]* i.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-		 [Tags]* //Make sure we set anti-aliasing otherwise we get jaggies
-		 [Tags]* BitmapDrawable drawable = (BitmapDrawable) i.getDrawable();
-		 [Tags]* drawable.setAntiAlias(true); return i;
-		 [Tags]*/
+		  * ImageView i = new ImageView(mContext);
+		  * i.setImageResource(mImageIds[position]); i.setLayoutParams(new
+		  * CoverFlow.LayoutParams(350,350));
+		  * i.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+		  * //Make sure we set anti-aliasing otherwise we get jaggies
+		  * BitmapDrawable drawable = (BitmapDrawable) i.getDrawable();
+		  * drawable.setAntiAlias(true); return i;
+		  */
 		return mImages[position];
 	}
 	public float getScale(boolean focused, int offset) {
@@ -230,9 +230,9 @@ public class ImageAdapter extends BaseAdapter {
 ```
 MainActivity.java
 ```  
-[Tags]/**
- [Tags]* 一个实现了3D效果的Gallery，就像iPhone中的相册浏览一样炫……
- [Tags]*/
+ /**
+  * 一个实现了3D效果的Gallery，就像iPhone中的相册浏览一样炫……
+  */
 import android.app.Activity;
 import android.os.Bundle;
 public class MainActivity extends Activity {

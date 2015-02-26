@@ -14,15 +14,15 @@ public static void main(String[] args) {
 ```
 绘制扇形的方法
 ```  
-[Tags]/**
- [Tags]* 绘制一个扇形
- [Tags]* @param canvas
- [Tags]* @param color
- [Tags]* @param oval
- [Tags]* @param startAngle
- [Tags]* @param sweepAngle
- [Tags]* @param useCenter
- [Tags]*/
+ /**
+  * 绘制一个扇形
+  * @param canvas
+  * @param color
+  * @param oval
+  * @param startAngle
+  * @param sweepAngle
+  * @param useCenter
+  */
 public void drawFillCircle(Canvas canvas, int color, RectF oval,
 		int startAngle, int sweepAngle, boolean useCenter) {
 	int backColor = mPaint.getColor();

@@ -81,10 +81,10 @@ private void releaseBitmap() {
 	}
 	freeBitmapFromIndex(end);
 }
-[Tags]/**
- [Tags]* 从某一位置开始释放bitmap资源
- [Tags]* @param index
- [Tags]*/
+ /**
+  * 从某一位置开始释放bitmap资源
+  * @param index
+  */
 private void freeBitmapFromIndex(int end) {
 	// 释放之外的bitmap资源
 	Bitmap delBitmap;

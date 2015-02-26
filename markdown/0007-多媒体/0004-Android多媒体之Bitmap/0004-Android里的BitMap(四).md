@@ -2,11 +2,11 @@
 生成水印的过程。其实分为三个环节：第一，载入原始图片；第二，载入水印图片；第三，保存新的图片。
 ```  
 /*
- [Tags]* create the bitmap from a byte array
- [Tags]* @param src the bitmap object you want proecss
- [Tags]* @param watermark the water mark above the src
- [Tags]* @return return a bitmap object ,if paramter's length is 0,return null
- [Tags]*/
+  * create the bitmap from a byte array
+  * @param src the bitmap object you want proecss
+  * @param watermark the water mark above the src
+  * @return return a bitmap object ,if paramter's length is 0,return null
+  */
 private Bitmap createBitmap(Bitmap src, Bitmap watermark) {
 	String tag = "createBitmap";
 	Log.d(tag, "create a new bitmap");

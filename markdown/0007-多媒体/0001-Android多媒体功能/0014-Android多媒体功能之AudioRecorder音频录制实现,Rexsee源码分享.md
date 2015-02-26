@@ -4,20 +4,20 @@ Rexsee实现这个类的方法倒真的很值得学习研究。关于Audio系统
 如下是源码。。
 ```  
 /* 
- [Tags]* Copyright (C) 2011 The Rexsee Open Source Project 
- [Tags]* 
- [Tags]* Licensed under the Rexsee License, Version 1.0 (the "License"); 
- [Tags]* you may not use this file except in compliance with the License. 
- [Tags]* You may obtain a copy of the License at 
- [Tags]* 
- [Tags]*      http://www.rexsee.com/CN/legal/license.html 
- [Tags]* 
- [Tags]* Unless required by applicable law or agreed to in writing, software 
- [Tags]* distributed under the License is distributed on an "AS IS" BASIS, 
- [Tags]* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
- [Tags]* See the License for the specific language governing permissions and 
- [Tags]* limitations under the License. 
- [Tags]*/
+  * Copyright (C) 2011 The Rexsee Open Source Project 
+  * 
+  * Licensed under the Rexsee License, Version 1.0 (the "License"); 
+  * you may not use this file except in compliance with the License. 
+  * You may obtain a copy of the License at 
+  * 
+  *      http://www.rexsee.com/CN/legal/license.html 
+  * 
+  * Unless required by applicable law or agreed to in writing, software 
+  * distributed under the License is distributed on an "AS IS" BASIS, 
+  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+  * See the License for the specific language governing permissions and 
+  * limitations under the License. 
+  */
 import rexsee.core.browser.ActivityResult.ActivityResultListener;
 import rexsee.core.browser.JavascriptInterface;
 import rexsee.core.browser.RexseeBrowser;

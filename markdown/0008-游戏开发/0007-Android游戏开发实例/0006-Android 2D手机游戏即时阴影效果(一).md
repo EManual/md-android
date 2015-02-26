@@ -19,23 +19,23 @@ OK!既然这么简单，立马实现到现有的游戏中去看看效果!
 FPS提升了5倍!好吧，你应该有所启发，横向、纵向扫描越过几个像素完全由你控制，我们可以理解为扫描精度。来更进一步优化，即便是跳着扫描，仍然需要判断很多次，而我们只是要获得精灵的大致轮廓，画出阴影而已。我们完全可以从图片的两边扫描不透明点的起始位置，然后计算不透明区域的长度，根据这个长度直接贴图!
 好吧，光放几张图，不贴代码是不厚道的，下面是影子绘制部分的核心代码
 ```  
-[Tags]/**
- [Tags]* 利用透明图片绘制向下的影子
- [Tags]* @param g
- [Tags]*            Graphics 画布对象
- [Tags]* @param img
- [Tags]*            Image 要绘制阴影的原图
- [Tags]* @param px
- [Tags]*            int 绘制x位置
- [Tags]* @param py
- [Tags]*            int 绘制y位置
- [Tags]* @param height
- [Tags]*            int 影子高度(<=原图像素高度)
- [Tags]* @param scanSkip
- [Tags]*            int 扫描跳过的像素个数(1最高精度，建议用2)
- [Tags]* @param cot256
- [Tags]*            int 影子角度的cot值(这里是查表法得来的256倍)
- [Tags]*/
+ /**
+  * 利用透明图片绘制向下的影子
+  * @param g
+  *            Graphics 画布对象
+  * @param img
+  *            Image 要绘制阴影的原图
+  * @param px
+  *            int 绘制x位置
+  * @param py
+  *            int 绘制y位置
+  * @param height
+  *            int 影子高度(<=原图像素高度)
+  * @param scanSkip
+  *            int 扫描跳过的像素个数(1最高精度，建议用2)
+  * @param cot256
+  *            int 影子角度的cot值(这里是查表法得来的256倍)
+  */
 public static void drawTransShadowDown(Graphics g, Image img, int px,
 		int py, int height, int scanSkip, int cot256) {
 	int w = img.getWidth();

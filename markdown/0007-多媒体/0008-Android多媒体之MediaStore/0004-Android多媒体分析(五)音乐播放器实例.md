@@ -39,10 +39,10 @@ public void onCreate(Bundle savedInstanceState) {
 // 从数据库读取歌曲信息，此处只做了读取数据库中第一首歌曲的信息
 private void getSongInfo() {
 	ContentResolver cr = getContentResolver();
-	[Tags]/**
-	 [Tags]* 此处的query是ContentResolver,不是数据库的,因此必须得到一个ContentResolver对象
-	 [Tags]* 返回所有在外部存储卡上的音乐文件的信息 第二个参数Null则返回所有信息
-	 [Tags]*/
+	 /**
+	  * 此处的query是ContentResolver,不是数据库的,因此必须得到一个ContentResolver对象
+	  * 返回所有在外部存储卡上的音乐文件的信息 第二个参数Null则返回所有信息
+	  */
 	Cursor c = cr.query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, null,
 			null, null, MediaStore.Audio.Media.DEFAULT_SORT_ORDER);
 	if (c == null) {

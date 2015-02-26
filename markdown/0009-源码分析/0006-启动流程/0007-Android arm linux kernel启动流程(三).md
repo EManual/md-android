@@ -14,11 +14,11 @@ str r0, [r2], 4
 str r0, [r2], 4 
 cmp r2, r3 
 blo 1b 
-[Tags]/* 
-[Tags]* The C runtime environment should now be setup 
-[Tags]* sufficiently. Turn the cache on, set up some 
-[Tags]* pointers, and start decompressing. 
-[Tags]*/ 
+ /* 
+ * The C runtime environment should now be setup 
+ * sufficiently. Turn the cache on, set up some 
+ * pointers, and start decompressing. 
+ */ 
 bl cache_on 
 ```
 重定位完成以后打开cache，具体这个打开cache的过程咱没仔细研究过，大致过程是先从C0里面读到processor ID，然后根据ID来进行cache_on。
@@ -28,15 +28,15 @@ add r2, sp, 0x10000 @ 64k max
 ```
 解压的过程首先是在堆栈之上申请一个空间
 ```  
-[Tags]/* 
-[Tags]* Check to see if we will overwrite ourselves. 
-[Tags]* r4 = final kernel address 
-[Tags]* r5 = start of this image 
-[Tags]* r2 = end of malloc space (and therefore this image) 
-[Tags]* We basically want: 
-[Tags]* r4 >= r2 -> OK 
-[Tags]* r4 + image length <= r5 -> OK 
-[Tags]*/
+ /* 
+ * Check to see if we will overwrite ourselves. 
+ * r4 = final kernel address 
+ * r5 = start of this image 
+ * r2 = end of malloc space (and therefore this image) 
+ * We basically want: 
+ * r4 >= r2 -> OK 
+ * r4 + image length <= r5 -> OK 
+ */
 cmp r4, r2 
 bhs wont_overwrite 
 sub r3, sp, r5 @ > compressed kernel size 
@@ -52,15 +52,15 @@ bic r0, r0, 127 @ align the kernel length
 ```
 这个过程是判断我们解压出的vmlinx会不会覆盖原来的zImage，这里的final kernel address就是解压后的kernel要存放的地址，而start of this image则是zImage在内存中的地址。根据我们前面的分析，现在这两个地址是重复的，即都是0x00208000。同样r2是我们申请的一段内存空间，因为他是在sp上申请的，而根据vmlinx.lds我们知道stack实际上处与vmlinx的最上面，所以r4>=r2是不可能的，这里首先计算zImage的大小，然后判断r4+r3是不是比r5小，很明显r4和r5的值是一样的，所以这里先将r2的值赋给r0，经kernel先解压到s申请的内存空间上面，具体的解压过程就不描述了，定义在misc.c里面。
 ```  
-[Tags]/* r0 = decompressed kernel length 
-[Tags]* r1-r3 = unused 
-[Tags]* r4 = kernel execution address 
-[Tags]* r5 = decompressed kernel start 
-[Tags]* r6 = processor ID 
-[Tags]* r7 = architecture ID 
-[Tags]* r8 = atags pointer 
-[Tags]* r9-r14 = corrupted 
-[Tags]*/ 
+ /* r0 = decompressed kernel length 
+ * r1-r3 = unused 
+ * r4 = kernel execution address 
+ * r5 = decompressed kernel start 
+ * r6 = processor ID 
+ * r7 = architecture ID 
+ * r8 = atags pointer 
+ * r9-r14 = corrupted 
+ */ 
 add r1, r5, r0 @ end of decompressed kernel 
 adr r2, reloc_start 
 ldr r3, LC1 
@@ -77,20 +77,20 @@ add pc, r5, r0 @ call relocation code
 ```
 因为没有将kernel解压在要求的地址，所以必须重定向，说穿了就是要将解压的kernel拷贝到正确的地址，因为正确的地址与zImage的地址是重合的，而要拷贝我们又要执行zImage的重定位代码，所以这里首先将重定位代码reloc_start拷贝到vmlinx上面，然后再将vmlinx拷贝到正确的地址并覆盖掉zImage。这里首先计算出解压后的vmlinux的高地址放在r1里面，r2存放着重定位代码的首地址，r3存放着重定位代码的size，这样通过拷贝就将reloc_start移动到vmlinx后面去了，然后跳转到重定位代码开始执行。
 ```  
-[Tags]/* 
-[Tags]* All code following this line is relocatable. It is relocated by 
-[Tags]* the above code to the end of the decompressed kernel image and 
-[Tags]* executed there. During this time, we have no stacks. 
-[Tags]* 
-[Tags]* r0 = decompressed kernel length 
-[Tags]* r1-r3 = unused 
-[Tags]* r4 = kernel execution address 
-[Tags]* r5 = decompressed kernel start 
-[Tags]* r6 = processor ID 
-[Tags]* r7 = architecture ID 
-[Tags]* r8 = atags pointer 
-[Tags]* r9-r14 = corrupted 
-[Tags]*/ 
+ /* 
+ * All code following this line is relocatable. It is relocated by 
+ * the above code to the end of the decompressed kernel image and 
+ * executed there. During this time, we have no stacks. 
+ * 
+ * r0 = decompressed kernel length 
+ * r1-r3 = unused 
+ * r4 = kernel execution address 
+ * r5 = decompressed kernel start 
+ * r6 = processor ID 
+ * r7 = architecture ID 
+ * r8 = atags pointer 
+ * r9-r14 = corrupted 
+ */ 
 .align 5 
 reloc_start: add r9, r5, r0 
 sub r9, r9, 128 @ do not copy the stack 

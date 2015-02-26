@@ -16,14 +16,14 @@
 总结：其实本保存方式如同它的名字一样是个配置保存，虽然方便，但只适合存储比较简单的数据!
 下面是SharedPreference 的代码实现和详细讲解:
 ```  
-[Tags]/**
- [Tags]* @author android
- [Tags]* @保存方式：SharedPreference
- [Tags]* @注意：SharedPreference 只能在同一包内使用，不能在不同包之间使用!
- [Tags]* @操作模式: Context.MODE_PRIVATE：新内容覆盖原内容 Context.MODE_APPEND：新内容追加到原内容后
- [Tags]*        Context.MODE_WORLD_READABLE：允许其他应用程序读取
- [Tags]*        Context.MODE_WORLD_WRITEABLE：允许其他应用程序写入，会覆盖原数据。
- [Tags]*/
+ /**
+  * @author android
+  * @保存方式：SharedPreference
+  * @注意：SharedPreference 只能在同一包内使用，不能在不同包之间使用!
+  * @操作模式: Context.MODE_PRIVATE：新内容覆盖原内容 Context.MODE_APPEND：新内容追加到原内容后
+  *        Context.MODE_WORLD_READABLE：允许其他应用程序读取
+  *        Context.MODE_WORLD_WRITEABLE：允许其他应用程序写入，会覆盖原数据。
+  */
 public class MainActivity extends Activity implements OnClickListener {
 	private EditText et_login, et_password;
 	private Button btn_save;
@@ -45,9 +45,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		// 第二个参数是指：操作模式(上面对各种操作模式已有解释)
 		sp = getSharedPreferences("Setting_android", MODE_PRIVATE);
 		/*
-		 [Tags]* 下面代码是我们要在程序刚启动的时候我们来读取之前的数据, 当然我们还没有保存任何数据所以肯定找不到！！
-		 [Tags]* 如果找不到也没关系会默认返回一个参数值，看下面的方法含义便知！
-		 [Tags]*/
+		  * 下面代码是我们要在程序刚启动的时候我们来读取之前的数据, 当然我们还没有保存任何数据所以肯定找不到！！
+		  * 如果找不到也没关系会默认返回一个参数值，看下面的方法含义便知！
+		  */
 		sp.getString("login", "");
 		// getString()类似哈希表，一个key 一个volue ,
 		// 这个方法如果找不到对应的第一个参数(key),那么将以第二个参数作为此key的返回值
@@ -82,23 +82,23 @@ public class MainActivity extends Activity implements OnClickListener {
 2.不仅能存储到系统中，也能存储到SD卡中！           
 总结：如果童鞋们对SQL不太熟习的话那么选择此种方式最为合适的啦。
 ```  
-[Tags]/**
- [Tags]* @author android
- [Tags]* @保存方式：Stream 数据流方式
- [Tags]* @注意1：默认情况下，使用openFileOutput 方法创建的文件只能被其调用的应用使用， 其他应用无法读取这个文件，如果需要在不同的应用中共享数据；
- [Tags]* @注意2：因为android os内部闪存有限，所以适合保存较少的数据，当然我们也有解决的方法，
- [Tags]*                就是把数据保存在SD开中，这样就可以了，后面我也会向大家讲解 !
- [Tags]* @提醒1 调用FileOutputStream 时指定的文件不存在，Android 会自动创建它。 另外，在默认情况下，写入的时候会覆盖原
- [Tags]*      文件内容，如果想把新写入的内 容附加到原文件内容后，则可以指定其mode为Context.MODE_APPEND。
- [Tags]* @提醒2 启动程序就初始化的时候一定要注意处理！代码中有注释！一定要仔细看！
- [Tags]* 
- [Tags]* @提醒3 这里我给大家讲两种方式，一种是原生态file流来写入/读入, 另外一种是用Data流包装file流进行写入/读入
- [Tags]*      其实用data流来包装进行操作; 原因是：包装后支持了更多的写入/读入操作，比如：file流写入不支持 writeUTF(String
- [Tags]*      str); 但是用Data包装后就会支持。
- [Tags]* @操作模式: Context.MODE_PRIVATE：新内容覆盖原内容 Context.MODE_APPEND：新内容追加到原内容后
- [Tags]*        Context.MODE_WORLD_READABLE：允许其他应用程序读取
- [Tags]*        Context.MODE_WORLD_WRITEABLE：允许其他应用程序写入，会覆盖原数据。
- [Tags]*/
+ /**
+  * @author android
+  * @保存方式：Stream 数据流方式
+  * @注意1：默认情况下，使用openFileOutput 方法创建的文件只能被其调用的应用使用， 其他应用无法读取这个文件，如果需要在不同的应用中共享数据；
+  * @注意2：因为android os内部闪存有限，所以适合保存较少的数据，当然我们也有解决的方法，
+  *                就是把数据保存在SD开中，这样就可以了，后面我也会向大家讲解 !
+  * @提醒1 调用FileOutputStream 时指定的文件不存在，Android 会自动创建它。 另外，在默认情况下，写入的时候会覆盖原
+  *      文件内容，如果想把新写入的内 容附加到原文件内容后，则可以指定其mode为Context.MODE_APPEND。
+  * @提醒2 启动程序就初始化的时候一定要注意处理！代码中有注释！一定要仔细看！
+  * 
+  * @提醒3 这里我给大家讲两种方式，一种是原生态file流来写入/读入, 另外一种是用Data流包装file流进行写入/读入
+  *      其实用data流来包装进行操作; 原因是：包装后支持了更多的写入/读入操作，比如：file流写入不支持 writeUTF(String
+  *      str); 但是用Data包装后就会支持。
+  * @操作模式: Context.MODE_PRIVATE：新内容覆盖原内容 Context.MODE_APPEND：新内容追加到原内容后
+  *        Context.MODE_WORLD_READABLE：允许其他应用程序读取
+  *        Context.MODE_WORLD_WRITEABLE：允许其他应用程序写入，会覆盖原数据。
+  */
 public class MainActivity extends Activity implements OnClickListener {
 	private EditText et_login, et_password;
 	private Button btn_save;

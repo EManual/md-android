@@ -68,10 +68,10 @@ name 表示生成的.trace文件，cmd的时候不需要输入“.trace”后缀
 ![img](P)  
 最右上角表示运行程序总共用了多少时间，从traceview画面中我们看到有各种颜色，每种颜色代表不同的函数和步骤，那么同一颜色的区域越大，就代表这个步骤运行时间越长，或者看到下面的统计表，明显可以看出除了序列 0 1 是系统函数外，2. 3.函数 占用的时间比较长，那么序列4是个自定义的函数名为 “hot”这个占用了几乎与主线程 主draw的时间一样了，那么肯定有问题。当然其实这个方法是我故意写的，就是为了来演示traceview。这个hot函数的代码如下：
 ```  
-[Tags]/** 
-[Tags]* @author android 
-[Tags]* @param canvas 
-[Tags]*/  
+ /** 
+ * @author android 
+ * @param canvas 
+ */  
 public void hot(Canvas canvas) {  
 	for (int i = 1; i < 100; i++) {  
 		Bitmap bmp = BitmapFactory.decodeResource(getResources(),

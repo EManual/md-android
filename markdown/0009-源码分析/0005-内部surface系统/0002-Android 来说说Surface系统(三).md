@@ -35,7 +35,7 @@ throws OutOfResourcesException {
 上面两个类的JNI实现都在framework/base/core/jni/android_view_Surface.cpp中。
 ```  
 public class SurfaceSession { 
-[Tags]/** Create a new connection with the surface flinger. */
+ /** Create a new connection with the surface flinger. */
 public SurfaceSession() { 
 	init();
 }

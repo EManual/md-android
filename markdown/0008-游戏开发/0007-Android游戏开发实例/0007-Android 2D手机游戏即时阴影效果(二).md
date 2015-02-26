@@ -9,12 +9,12 @@ public final static int SIN_TABLE[] = { 0, 4, 8, 13, 17, 22, 26, 31, 35,
 		229, 231, 232, 234, 236, 238, 239, 241, 242, 243, 245, 246, 247,
 		248, 249, 250, 251, 251, 252, 253, 253, 254, 254, 254, 254, 254,
 		255 };
-[Tags]/**
- [Tags]* 查表法求SIN值
- [Tags]* @param angle
- [Tags]*            int 0到360度
- [Tags]* @return int 返回SIN值的256倍
- [Tags]*/
+ /**
+  * 查表法求SIN值
+  * @param angle
+  *            int 0到360度
+  * @return int 返回SIN值的256倍
+  */
 public static int sin256(int angle) {
 	angle %= 360;
 	if (angle <= 90) {

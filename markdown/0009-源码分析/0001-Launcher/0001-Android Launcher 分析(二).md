@@ -35,10 +35,10 @@ protected void onCreate(Bundle savedInstanceState) {
 	// mcc：mobile country code(国家代码China 460); mnc：mobile network code(网络代码)
 	checkForLocaleChange();
 	/*
-	 [Tags]* This allows such applications to have a virtual wallpaper that is
-	 [Tags]* larger than the physical screen, matching the size of their
-	 [Tags]* workspace.
-	 [Tags]*/
+	  * This allows such applications to have a virtual wallpaper that is
+	  * larger than the physical screen, matching the size of their
+	  * workspace.
+	  */
 	setWallpaperDimension();
 	// 显示主屏幕UI元素，workspace,slidingdrawer(handleview and
 	// appgridview),deletezone

@@ -14,11 +14,11 @@ IBinder b = ServiceManager.getService("activity");
 ```  
 public class Snippet {
 	/*
-	 [Tags]* 从ServiceManager中获取service对应的代理Binder
-	 [Tags]* @param na
-	 [Tags]* @return
-	 [Tags]* @throws RemoteException
-	 [Tags]*/
+	  * 从ServiceManager中获取service对应的代理Binder
+	  * @param na
+	  * @return
+	  * @throws RemoteException
+	  */
 	public IBinder getService(String name) throws RemoteException {
 		Parcel data = Parcel.obtain();
 		Parcel reply = Parcel.obtain();

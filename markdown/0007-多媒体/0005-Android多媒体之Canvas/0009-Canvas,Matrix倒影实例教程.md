@@ -2,21 +2,21 @@
 效果图：
 ![img](P)  
 ```  
-[Tags]/**
- [Tags]* 创建有倒影的位图
- [Tags]* @param oldBitmap
- [Tags]*/
+ /**
+  * 创建有倒影的位图
+  * @param oldBitmap
+  */
 private Bitmap createFlectionBitmap(Bitmap oldBitmap) {
 	final int gap = 2; // 老图 和倒立图的间隔距离
 	// 获取老图的宽、高
 	int mWidth = oldBitmap.getWidth();
 	int mHeight = oldBitmap.getHeight();
-	[Tags]/**
-	 [Tags]* 第一步:创建倒立的Bitmap，宽度跟老图一样 高度是老图的一般
-	 [Tags]* 第二步：画出能容纳老图、倒立图、间隔的背景Bitmap-background 第三步:创建间隔的图形 (如果你不喜欢，也可以不花)
-	 [Tags]* 第四部：用backgroud传给canvas 然后安顺序在background上 画出老图、间隔(用矩形)、倒立的图 第五部：渐变处理用
-	 [Tags]* LinearGradient 第六步：用一个矩形覆盖在倒立的像上,这样在渐变的效果下使得看起来像倒影一样 大功告成
-	 [Tags]*/
+	 /**
+	  * 第一步:创建倒立的Bitmap，宽度跟老图一样 高度是老图的一般
+	  * 第二步：画出能容纳老图、倒立图、间隔的背景Bitmap-background 第三步:创建间隔的图形 (如果你不喜欢，也可以不花)
+	  * 第四部：用backgroud传给canvas 然后安顺序在background上 画出老图、间隔(用矩形)、倒立的图 第五部：渐变处理用
+	  * LinearGradient 第六步：用一个矩形覆盖在倒立的像上,这样在渐变的效果下使得看起来像倒影一样 大功告成
+	  */
 	// 第一步：画倒立的Bitmap 宽度跟老图一样 高度是原图的一般
 	Matrix matrix = new Matrix();
 	matrix.preScale(1, -1); // 1表示翻转x的一倍 -1表示翻转拉伸-1倍 也就是倒立过来

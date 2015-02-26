@@ -7,14 +7,14 @@
 平滑着色：
 ```  
 private int one = 0x10000;  
-[Tags]/** 
- [Tags]* 三角形的顶点颜色值 
- [Tags]* 参数： 
- [Tags]* 1、红色分量 
- [Tags]* 2、绿色分量 
- [Tags]* 3、蓝色分量 
- [Tags]* 4、alpha值 
- [Tags]*/  
+ /** 
+  * 三角形的顶点颜色值 
+  * 参数： 
+  * 1、红色分量 
+  * 2、绿色分量 
+  * 3、蓝色分量 
+  * 4、alpha值 
+  */  
 private IntBuffer colorBuffer=IntBuffer.wrap(new int[]{  
 	one,0,0,one,
 	0,one,0,one,
@@ -27,13 +27,13 @@ private IntBuffer colorBuffer=IntBuffer.wrap(new int[]{
 gl.glEnableClientState(GL10.GL_COLOR_ARRAY);  
 //设置三角形颜色  
 gl.glColorPointer(4, GL10.GL_FIXED, 0, colorBuffer);  
-[Tags]/** 
- [Tags]* 绘制顶点 
- [Tags]* 参数： 
- [Tags]* 1、绘制的模式----我们使用GL_TRIANGLES来表示绘制三角形 
- [Tags]* 2、开始位置 
- [Tags]* 3、要绘制的顶点计数 
- [Tags]*/  
+ /** 
+  * 绘制顶点 
+  * 参数： 
+  * 1、绘制的模式----我们使用GL_TRIANGLES来表示绘制三角形 
+  * 2、开始位置 
+  * 3、要绘制的顶点计数 
+  */  
 gl.glDrawArrays(GL10.GL_TRIANGLES, 0, 3);  
 //关闭色彩渲染功能  
 gl.glDisableClientState(GL10.GL_COLOR_ARRAY);  
@@ -53,14 +53,14 @@ private float rotateTri;
 ```
 然后调用旋转的方法：
 ```  
-[Tags]/** 
- [Tags]* 旋转三角形 
- [Tags]* 参数： 
- [Tags]* 1、旋转角度 
- [Tags]* 234是x、y、z共同决定旋转轴方向的参数 
- [Tags]* 例如:1,0,0 表示经过x坐标的一个单位向右旋转 
- [Tags]*      -1,0,0 表示.................向左旋转 
- [Tags]*/  
+ /** 
+  * 旋转三角形 
+  * 参数： 
+  * 1、旋转角度 
+  * 234是x、y、z共同决定旋转轴方向的参数 
+  * 例如:1,0,0 表示经过x坐标的一个单位向右旋转 
+  *      -1,0,0 表示.................向左旋转 
+  */  
 gl.glRotatef(rotateTri, 0.0f, 1.0f, 0.0f);  
 ```
 就这一行，就可以旋转了，还是比较好理解的，为了让物体能够不停的旋转，可以在onDrawFrame方法中改变角度常量rotateTri+=0.5f;
@@ -79,17 +79,17 @@ public class GLReader implements Renderer {
 			});
 	// 定义三角形和四边形的旋转变量
 	private float rotateTri, rotateQuad;
-	[Tags]/**
-	 [Tags]* 三角形的顶点颜色值 参数： 1、红色分量 2、绿色分量 3、蓝色分量 4、alpha值
-	 [Tags]*/
+	 /**
+	  * 三角形的顶点颜色值 参数： 1、红色分量 2、绿色分量 3、蓝色分量 4、alpha值
+	  */
 	private IntBuffer colorBuffer = IntBuffer.wrap(new int[] { one, 0, 0, one,
 			0, one, 0, one, 0, 0, one, one, });
 	// 四边形的四个顶点
 	private IntBuffer quaterBuffer = IntBuffer.wrap(new int[] { one, one, 0,
 			-one, one, 0, one, -one, 0, -one, -one, 0 });
-	[Tags]/**
-	 [Tags]* 所有绘图的工作放到此方法里
-	 [Tags]*/
+	 /**
+	  * 所有绘图的工作放到此方法里
+	  */
 	@Override
 	public void onDrawFrame(GL10 gl) {
 		// 清除屏幕和深度缓存
@@ -100,23 +100,23 @@ public class GLReader implements Renderer {
 		gl.glTranslatef(-1.5f, 0.0f, -6.0f);
 		// 开启顶点设置功能
 		gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
-		[Tags]/**
-		 [Tags]* 旋转三角形 参数： 1、旋转角度 234是x、y、z共同决定旋转轴方向的参数 例如:1,0,0 表示经过x坐标的一个单位向右旋转
-		 [Tags]* -1,0,0 表示.................向左旋转
-		 [Tags]*/
+		 /**
+		  * 旋转三角形 参数： 1、旋转角度 234是x、y、z共同决定旋转轴方向的参数 例如:1,0,0 表示经过x坐标的一个单位向右旋转
+		  * -1,0,0 表示.................向左旋转
+		  */
 		gl.glRotatef(rotateTri, 0.0f, 1.0f, 0.0f);
-		[Tags]/**
-		 [Tags]* 设置顶点数据 参数： 1、顶点尺寸----这里使用的是xyz坐标系，所以是3 2、顶点类型----这里是固定的，所以用GL_FIXED
-		 [Tags]* 3、步长 4、顶点缓存----即顶点数组
-		 [Tags]*/
+		 /**
+		  * 设置顶点数据 参数： 1、顶点尺寸----这里使用的是xyz坐标系，所以是3 2、顶点类型----这里是固定的，所以用GL_FIXED
+		  * 3、步长 4、顶点缓存----即顶点数组
+		  */
 		gl.glVertexPointer(3, GL10.GL_FIXED, 0, triggerBuffer);
 		// 开启色彩渲染功能
 		gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
 		// 设置三角形颜色
 		gl.glColorPointer(4, GL10.GL_FIXED, 0, colorBuffer);
-		[Tags]/**
-		 [Tags]* 绘制顶点 参数： 1、绘制的模式----我们使用GL_TRIANGLES来表示绘制三角形 2、开始位置 3、要绘制的顶点计数
-		 [Tags]*/
+		 /**
+		  * 绘制顶点 参数： 1、绘制的模式----我们使用GL_TRIANGLES来表示绘制三角形 2、开始位置 3、要绘制的顶点计数
+		  */
 		gl.glDrawArrays(GL10.GL_TRIANGLES, 0, 3);
 		// 关闭色彩渲染功能
 		gl.glDisableClientState(GL10.GL_COLOR_ARRAY);
@@ -138,9 +138,9 @@ public class GLReader implements Renderer {
 		rotateTri += 0.5;
 		rotateQuad -= 0.5;
 	}
-	[Tags]/**
-	 [Tags]* 当窗口大小发生改变是调用此方法 不管窗口大小是否已经改变，此方法至少执行一次 所以在此方法中设置OpenGL场景的大小
-	 [Tags]*/
+	 /**
+	  * 当窗口大小发生改变是调用此方法 不管窗口大小是否已经改变，此方法至少执行一次 所以在此方法中设置OpenGL场景的大小
+	  */
 	@Override
 	public void onSurfaceChanged(GL10 gl, int width, int height) {
 		float ratio = (float) width / height;
@@ -158,9 +158,9 @@ public class GLReader implements Renderer {
 		// 重置模型观察矩阵
 		gl.glLoadIdentity();
 	}
-	[Tags]/**
-	 [Tags]* 窗口创建时调用此方法 此方法内做初始化的操作
-	 [Tags]*/
+	 /**
+	  * 窗口创建时调用此方法 此方法内做初始化的操作
+	  */
 	@Override
 	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
 		// 对透视进行修正

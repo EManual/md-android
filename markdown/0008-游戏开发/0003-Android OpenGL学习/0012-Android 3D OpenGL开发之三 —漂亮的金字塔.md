@@ -42,9 +42,9 @@ public class Pyramid {
 	public int getNumberOfPoint() {
 		return numberOfPoint;
 	}
-	[Tags]/**
-	 [Tags]* 初始化金字塔
-	 [Tags]*/
+	 /**
+	  * 初始化金字塔
+	  */
 	private void initPyramid() {
 		float[] coords = { -0.5f, -0.5f, 0.5f, // 0
 				0.5f, -0.5f, 0.5f, // 1
@@ -117,21 +117,21 @@ public class VortexRenderer implements GLSurfaceView.Renderer {
 		gl.glLoadIdentity();
 		gl.glRotatef(xAngle, 1f, 0f, 0f);
 		gl.glRotatef(yAngle, 0f, 1f, 0f);
-		[Tags]/**
-		 [Tags]* 第一个参数是大小，也是顶点的维数。我们使用的是x,y,z三维坐标。 第二个参数，GL_FLOAT定义buffer中使用的数据类型。
-		 [Tags]* 第三个变量是0，是因为我们的坐标是在数组中紧凑的排列的，没有使用offset。 最后,第四个参数顶点缓冲。
-		 [Tags]*/
+		 /**
+		  * 第一个参数是大小，也是顶点的维数。我们使用的是x,y,z三维坐标。 第二个参数，GL_FLOAT定义buffer中使用的数据类型。
+		  * 第三个变量是0，是因为我们的坐标是在数组中紧凑的排列的，没有使用offset。 最后,第四个参数顶点缓冲。
+		  */
 		gl.glVertexPointer(3, GL10.GL_FLOAT, 0, vertexBuffer);
 
-		[Tags]/**
-		 [Tags]* 参数4表示RGBA(RGBA刚好是四个值），其余的几个参数大家都比较熟悉了。
-		 [Tags]*/
+		 /**
+		  * 参数4表示RGBA(RGBA刚好是四个值），其余的几个参数大家都比较熟悉了。
+		  */
 		gl.glColorPointer(4, GL10.GL_FLOAT, 0, colorBuffer);
 
-		[Tags]/**
-		 [Tags]* 将所有这些元素画出来。第一个参数定义了什么样的图元将被画出来。 第二个参数定义有多少个元素， 第三个是indices使用的数据类型。
-		 [Tags]* 最后一个是绘制顶点使用的索引缓冲。
-		 [Tags]*/
+		 /**
+		  * 将所有这些元素画出来。第一个参数定义了什么样的图元将被画出来。 第二个参数定义有多少个元素， 第三个是indices使用的数据类型。
+		  * 最后一个是绘制顶点使用的索引缓冲。
+		  */
 		gl.glDrawElements(GL10.GL_TRIANGLES, nrOfVertices * 3,
 				GL10.GL_UNSIGNED_SHORT, indexBuffer);
 		// gl.glColorPointer(4, GL10.GL_FLOAT, 0, colorBuffer);

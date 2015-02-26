@@ -65,8 +65,8 @@ public class EX05_08 extends Activity {
 	/* 发出Notification的method */
 	private void setNotiType(int iconId, String text) {
 		/*
-		 [Tags]* 创建新的Intent，作为单击Notification留言条时， 会运行的Activity
-		 [Tags]*/
+		  * 创建新的Intent，作为单击Notification留言条时， 会运行的Activity
+		  */
 		Intent notifyIntent = new Intent(this, EX05_08_1.class);
 		notifyIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		/* 创建PendingIntent作为设置递延运行的Activity */

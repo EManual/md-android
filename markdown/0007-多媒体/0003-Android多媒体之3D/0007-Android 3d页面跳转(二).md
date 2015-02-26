@@ -32,7 +32,7 @@ public class Rotate3d extends Animation {
 	protected void applyTransformation(float interpolatedTime, Transformation t) {
 		final float FromDegree = mFromDegree;
 		float degrees = FromDegree + (mToDegree - mFromDegree)
-				[Tags]* interpolatedTime;
+				 * interpolatedTime;
 		final float centerX = mCenterX;
 		final float centerY = mCenterY;
 		final Matrix matrix = t.getMatrix();

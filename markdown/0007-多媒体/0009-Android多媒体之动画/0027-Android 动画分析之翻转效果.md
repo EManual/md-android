@@ -111,16 +111,16 @@ public class Transition3d extends Activity implements
 		// 设置需要保存缓存
 		mContainer.setPersistentDrawingCache(ViewGroup.PERSISTENT_ANIMATION_CACHE);
 	}
-	[Tags]/**
-	 [Tags]* Setup a new 3D rotation on the container view.
-	 [Tags]* @param position
-	 [Tags]*            the item that was clicked to show a picture, or -1 to show the
-	 [Tags]*            list
-	 [Tags]* @param start
-	 [Tags]*            the start angle at which the rotation must begin
-	 [Tags]* @param end
-	 [Tags]*            the end angle of the rotation
-	 [Tags]*/
+	 /**
+	  * Setup a new 3D rotation on the container view.
+	  * @param position
+	  *            the item that was clicked to show a picture, or -1 to show the
+	  *            list
+	  * @param start
+	  *            the start angle at which the rotation must begin
+	  * @param end
+	  *            the end angle of the rotation
+	  */
 	private void applyRotation(int position, float start, float end) {
 		// 计算中心点
 		final float centerX = mContainer.getWidth() / 2.0f;
@@ -145,11 +145,11 @@ public class Transition3d extends Activity implements
 	public void onClick(View v) {
 		applyRotation(-1, 180, 90);
 	}
-	[Tags]/**
-	 [Tags]* This class listens for the end of the first half of the animation. It
-	 [Tags]* then posts a new action that effectively swaps the views when the
-	 [Tags]* container is rotated 90 degrees and thus invisible.
-	 [Tags]*/
+	 /**
+	  * This class listens for the end of the first half of the animation. It
+	  * then posts a new action that effectively swaps the views when the
+	  * container is rotated 90 degrees and thus invisible.
+	  */
 	private final class DisplayNextView implements Animation.AnimationListener {
 		private final int mPosition;
 		private DisplayNextView(int position) {
@@ -164,10 +164,10 @@ public class Transition3d extends Activity implements
 		public void onAnimationRepeat(Animation animation) {
 		}
 	}
-	[Tags]/**
-	 [Tags]* This class is responsible for swapping the views and start the second
-	 [Tags]* half of the animation.
-	 [Tags]*/
+	 /**
+	  * This class is responsible for swapping the views and start the second
+	  * half of the animation.
+	  */
 	private final class SwapViews implements Runnable {
 		private final int mPosition;
 		public SwapViews(int position) {

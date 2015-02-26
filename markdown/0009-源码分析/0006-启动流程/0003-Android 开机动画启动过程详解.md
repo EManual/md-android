@@ -11,9 +11,9 @@ static int nologo;
 module_param(nologo, bool, 0); 
 MODULE_PARM_DESC(nologo, "Disables startup logo"); 
 /* logo's are marked __initdata. Use __init_refok to tell 
-[Tags]* modpost that it is intended that this function uses data 
-[Tags]* marked __initdata. 
-[Tags]*/ 
+ * modpost that it is intended that this function uses data 
+ * marked __initdata. 
+ */ 
 const struct linux_logo * __init_refok fb_find_logo(int depth) 
 { 
 	const struct linux_logo *logo = NULL;

@@ -11,9 +11,9 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.view.MotionEvent;
 import android.view.View;
-[Tags]/**
- [Tags]* 图片三维翻转
- [Tags]*/
+ /**
+  * 图片三维翻转
+  */
 public class CubeView extends View {
 	// 摄像机
 	private Camera mCamera;
@@ -39,11 +39,11 @@ public class CubeView extends View {
 		centerX = bWidth >> 1;
 		centerY = bHeight >> 1;
 	}
-	[Tags]/**
-	 [Tags]* 转动
-	 [Tags]* @param degreeX
-	 [Tags]* @param degreeY
-	 [Tags]*/
+	 /**
+	  * 转动
+	  * @param degreeX
+	  * @param degreeY
+	  */
 	void rotate(int degreeX, int degreeY) {
 		deltaX += degreeX;
 		deltaY += degreeY;

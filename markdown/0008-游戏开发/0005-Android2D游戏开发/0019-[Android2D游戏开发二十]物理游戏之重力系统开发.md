@@ -12,10 +12,10 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
-[Tags]/**
- [Tags]* @author android
- [Tags]* @自定义圆形类
- [Tags]*/
+ /**
+  * @author android
+  * @自定义圆形类
+  */
 public class MyArc {
 	private int arc_x, arc_y, arc_r;// 圆形的X,Y坐标和半径
 	private float speed_x = 1.2f, speed_y = 1.2f;// 小球的x、y的速度
@@ -25,15 +25,15 @@ public class MyArc {
 	private final float RECESSION = 0.2f;// 每次弹起的衰退系数
 	private boolean isDown = true;// 是否处于下落 状态
 	private Random ran;// 随即数库
-	[Tags]/**
-	 [Tags]* @定义圆形的构造函数
-	 [Tags]* @param x
-	 [Tags]*            圆形X坐标
-	 [Tags]* @param y
-	 [Tags]*            圆形Y坐标
-	 [Tags]* @param r
-	 [Tags]*            圆形半径
-	 [Tags]*/
+	 /**
+	  * @定义圆形的构造函数
+	  * @param x
+	  *            圆形X坐标
+	  * @param y
+	  *            圆形Y坐标
+	  * @param r
+	  *            圆形半径
+	  */
 	public MyArc(int x, int y, int r) {
 		ran = new Random();
 		this.arc_x = x;
@@ -43,13 +43,13 @@ public class MyArc {
 	public void drawMyArc(Canvas canvas, Paint paint) {// 每个圆形都应该拥有一套绘画方法
 		paint.setColor(getRandomColor());// 不断的获取随即颜色，对圆形进行填充(实现圆形闪烁效果)
 		canvas.drawArc(new RectF(arc_x + speed_x, arc_y + speed_y, arc_x + 2
-				[Tags]* arc_r + speed_x, arc_y + 2 [Tags]* arc_r + speed_y), 0, 360, true,
+				 * arc_r + speed_x, arc_y + 2  * arc_r + speed_y), 0, 360, true,
 				paint);
 	}
-	[Tags]/**
-	 [Tags]* @return
-	 [Tags]* @返回一个随即颜色
-	 [Tags]*/
+	 /**
+	  * @return
+	  * @返回一个随即颜色
+	  */
 	public int getRandomColor() {
 		int ran_color = ran.nextInt(8);
 		int temp_color = 0;
@@ -79,9 +79,9 @@ public class MyArc {
 		}
 		return temp_color;
 	}
-	[Tags]/**
-	 [Tags]* 圆形的逻辑
-	 [Tags]*/
+	 /**
+	  * 圆形的逻辑
+	  */
 	public void logic() {// 每个圆形都应该拥有一套逻辑
 		if (isDown) {// 圆形下落逻辑
 		/*--备注1-*/
@@ -105,12 +105,12 @@ public class MyArc {
 			vertical_speed -= vertical_speed * RECESSION;// 每次碰撞都会衰减反弹的加速度
 		}
 	}
-	[Tags]/**
-	 [Tags]* 圆形与屏幕底部的碰撞
-	 [Tags]* 
-	 [Tags]* @return
-	 [Tags]* @返回true 发生碰撞
-	 [Tags]*/
+	 /**
+	  * 圆形与屏幕底部的碰撞
+	  * 
+	  * @return
+	  * @返回true 发生碰撞
+	  */
 	public boolean isCollision() {
 		return arc_y + 2 * arc_r + speed_y >= MySurfaceViee.screenH;
 	}

@@ -57,11 +57,11 @@ public class MySurfaceView extends SurfaceView implements Callback, Runnable {
 	}
 	public void surfaceCreated(SurfaceHolder holder) {
 		/*
-		 [Tags]* Android OS中，如果你去按手机上的调节音量的按钮，会分两种情况，
-		 [Tags]* 一种是调整手机本身的铃声音量，一种是调整游戏，软件，音乐播放的音量 当我们在游戏中的时候 ，总是想调整游戏的音量而不是手机的铃声音量，
-		 [Tags]* 可是烦人的问题又来了，我在开发中发现，只有游戏中有声音在播放的时候 ，你才能去调整游戏的音量，否则就是手机的音量，有没有办法让手机只要是
-		 [Tags]* 在运行游戏的状态就只调整游戏的音量呢？试试下面这段代码吧!
-		 [Tags]*/
+		  * Android OS中，如果你去按手机上的调节音量的按钮，会分两种情况，
+		  * 一种是调整手机本身的铃声音量，一种是调整游戏，软件，音乐播放的音量 当我们在游戏中的时候 ，总是想调整游戏的音量而不是手机的铃声音量，
+		  * 可是烦人的问题又来了，我在开发中发现，只有游戏中有声音在播放的时候 ，你才能去调整游戏的音量，否则就是手机的音量，有没有办法让手机只要是
+		  * 在运行游戏的状态就只调整游戏的音量呢？试试下面这段代码吧!
+		  */
 		MainActivity.instance.setVolumeControlStream(AudioManager.STREAM_MUSIC);
 		// 设定调整音量为媒体音量,当暂停播放的时候调整音量就不会再默认调整铃声音量了，娃哈哈
 

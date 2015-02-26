@@ -23,9 +23,9 @@ import android.view.View;
 import android.view.GestureDetector.OnGestureListener;
 import android.view.SurfaceHolder.Callback;
 import android.view.View.OnTouchListener;
-[Tags]/**
- [Tags]* @ Gesture （上文）触摸屏手势识别
- [Tags]*/
+ /**
+  * @ Gesture （上文）触摸屏手势识别
+  */
 public class MySurfaceViewAnimation extends SurfaceView implements Callback,
 		Runnable, OnGestureListener, OnTouchListener {
 	private Thread th = new Thread(this);
@@ -112,13 +112,13 @@ public class MySurfaceViewAnimation extends SurfaceView implements Callback,
 		return gd.onTouchEvent(event);// 备注4
 	}
 	// --------------以下是使用OnGestureListener手势监听的时候重写的函数---------
-	[Tags]/**
-	 [Tags]* @以下方法中的参数解释：
-	 [Tags]* @e1：第1个是 ACTION_DOWN MotionEvent 按下的动作
-	 [Tags]* @e2：后一个是ACTION_UP MotionEvent 抬起的动作(这里要看下备注5的解释)
-	 [Tags]* @velocityX：X轴上的移动速度，像素/秒
-	 [Tags]* @velocityY：Y轴上的移动速度，像素/秒
-	 [Tags]*/
+	 /**
+	  * @以下方法中的参数解释：
+	  * @e1：第1个是 ACTION_DOWN MotionEvent 按下的动作
+	  * @e2：后一个是ACTION_UP MotionEvent 抬起的动作(这里要看下备注5的解释)
+	  * @velocityX：X轴上的移动速度，像素/秒
+	  * @velocityY：Y轴上的移动速度，像素/秒
+	  */
 	@Override
 	public boolean onDown(MotionEvent e) {
 		// ACTION_DOWN

@@ -42,12 +42,12 @@ OK，那么既然利用手势既然能进行解锁等操作，那么我们游戏
 ```
 xml中注册的有我们自定义的surfaceview，对此不太熟悉可以去看下【Android2D开发之六】,不多解释了。关于GestureOverlayView这里也只是简单的定义了宽高,还有一些重要的属性设置在代码中设置了，当然xml也可以设置的;下面看MainActivity.java
 ```  
-[Tags]/**
- [Tags]* @author android
- [Tags]* @输入法手势识别
- [Tags]* @注意: android.gesture这个类在api-4(SDK1.6)才开始支持的！
- [Tags]* @提醒：默认存到SD卡中，所以别忘记在AndroidMainfest.xml加上SD卡读写权限！
- [Tags]*/
+ /**
+  * @author android
+  * @输入法手势识别
+  * @注意: android.gesture这个类在api-4(SDK1.6)才开始支持的！
+  * @提醒：默认存到SD卡中，所以别忘记在AndroidMainfest.xml加上SD卡读写权限！
+  */
 public class MainActivity extends Activity {
 	private GestureOverlayView gov;// 创建一个手写绘图区
 	private Gesture gesture;// 手写实例

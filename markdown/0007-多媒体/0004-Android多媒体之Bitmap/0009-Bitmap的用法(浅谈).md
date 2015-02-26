@@ -46,9 +46,9 @@ public void createSDFile() {
 	File file = new File(sdroot + "/Android/date/包名/文件名");
 	if (Environment.MEDIA_MOUNTED.equals(Environment
 			.getExternalStorageState())) {
-		[Tags]/**
-		 [Tags]* 相关操作
-		 [Tags]*/
+		 /**
+		  * 相关操作
+		  */
 	}
 }
 ```

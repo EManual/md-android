@@ -31,10 +31,10 @@ public class GLReader implements Renderer {
 	-one, one, 0,
 	one, -one, 0,
 	-one, -one, 0 });
-	[Tags]/**
-	 [Tags]* 
-	 [Tags]* 所有绘图的工作放到此方法里
-	 [Tags]*/
+	 /**
+	  * 
+	  * 所有绘图的工作放到此方法里
+	  */
 	@Override
 	public void onDrawFrame(GL10 gl) {
 		// 清除屏幕和深度缓存
@@ -45,22 +45,22 @@ public class GLReader implements Renderer {
 		gl.glTranslatef(-1.5f, 0.0f, -6.0f);
 		// 开启顶点设置功能
 		gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
-		[Tags]/**
-		 [Tags]* 设置顶点数据
-		 [Tags]* 参数：
-		 [Tags]* 1、顶点尺寸----这里使用的是xyz坐标系，所以是3
-		 [Tags]* 2、顶点类型----这里是固定的，所以用GL_FIXED
-		 [Tags]* 3、步长
-		 [Tags]* 4、顶点缓存----即顶点数组
-		 [Tags]*/
+		 /**
+		  * 设置顶点数据
+		  * 参数：
+		  * 1、顶点尺寸----这里使用的是xyz坐标系，所以是3
+		  * 2、顶点类型----这里是固定的，所以用GL_FIXED
+		  * 3、步长
+		  * 4、顶点缓存----即顶点数组
+		  */
 		gl.glVertexPointer(3, GL10.GL_FIXED, 0, triggerBuffer);
-		[Tags]/**
-		 [Tags]* 绘制顶点
-		 [Tags]* 参数：
-		 [Tags]* 1、绘制的模式----我们使用GL_TRIANGLES来表示绘制三角形
-		 [Tags]* 2、开始位置
-		 [Tags]* 3、要绘制的顶点计数
-		 [Tags]*/
+		 /**
+		  * 绘制顶点
+		  * 参数：
+		  * 1、绘制的模式----我们使用GL_TRIANGLES来表示绘制三角形
+		  * 2、开始位置
+		  * 3、要绘制的顶点计数
+		  */
 		gl.glDrawArrays(GL10.GL_TRIANGLES, 0, 3);
 		// 重置当前的模型观察矩阵
 		gl.glLoadIdentity();
@@ -73,11 +73,11 @@ public class GLReader implements Renderer {
 		// 取消顶点设置
 		gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);
 	}
-	[Tags]/**
-	 [Tags]* 当窗口大小发生改变是调用此方法
-	 [Tags]* 不管窗口大小是否已经改变，此方法至少执行一次
-	 [Tags]* 所以在此方法中设置OpenGL场景的大小
-	 [Tags]*/
+	 /**
+	  * 当窗口大小发生改变是调用此方法
+	  * 不管窗口大小是否已经改变，此方法至少执行一次
+	  * 所以在此方法中设置OpenGL场景的大小
+	  */
 	@Override
 	public void onSurfaceChanged(GL10 gl, int width, int height) {
 		float ratio = (float) width / height;
@@ -95,10 +95,10 @@ public class GLReader implements Renderer {
 		// 重置模型观察矩阵
 		gl.glLoadIdentity();
 	}
-	[Tags]/**
-	 [Tags]* 窗口创建时调用此方法
-	 [Tags]* 此方法内做初始化的操作
-	 [Tags]*/
+	 /**
+	  * 窗口创建时调用此方法
+	  * 此方法内做初始化的操作
+	  */
 	@Override
 	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
 		// 对透视进行修正

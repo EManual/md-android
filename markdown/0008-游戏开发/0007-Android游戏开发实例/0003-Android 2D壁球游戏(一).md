@@ -83,8 +83,8 @@ public class MySurfaceView extends SurfaceView implements Callback, Runnable {
 		if (game_status == GameStatus.GAME_PAUSED) {
 			// drawPausedWindow();
 			/*
-			 [Tags]* 显示快捷键菜单，并提示游戏已经ready
-			 [Tags]*/
+			  * 显示快捷键菜单，并提示游戏已经ready
+			  */
 			if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT
 					|| keyCode == KeyEvent.KEYCODE_DPAD_LEFT
 					|| kyCode == KeyEvent.KEYCODE_DPAD_DOWN) {
@@ -99,8 +99,8 @@ public class MySurfaceView extends SurfaceView implements Callback, Runnable {
 		if (game_status == GameStatus.GAME_READY) {
 			// drawPausedWindow();
 			/*
-			 [Tags]* 显示快捷键菜单，并提示游戏已经ready
-			 [Tags]*/
+			  * 显示快捷键菜单，并提示游戏已经ready
+			  */
 			if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT
 					|| keyCode == KeyEvent.KEYCODE_DPAD_LEFT) {
 				game_status = GameStatus.GAME_ON;

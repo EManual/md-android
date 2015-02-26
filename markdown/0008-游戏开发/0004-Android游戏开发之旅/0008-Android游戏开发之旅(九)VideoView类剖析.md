@@ -77,17 +77,17 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
 		switch (specMode) {
 		case MeasureSpec.UNSPECIFIED:
 			/*
-			 [Tags]* Parent says we can be as big as we want. Just don't be larger
-			 [Tags]* than max size imposed on ourselves.
-			 [Tags]*/
+			  * Parent says we can be as big as we want. Just don't be larger
+			  * than max size imposed on ourselves.
+			  */
 			result = desiredSize;
 			break;
 		case MeasureSpec.AT_MOST:
 			/*
-			 [Tags]* Parent says we can be as big as we want, up to specSize. Don't be
-			 [Tags]* larger than specSize, and don't be larger than the max size
-			 [Tags]* imposed on ourselves.
-			 [Tags]*/
+			  * Parent says we can be as big as we want, up to specSize. Don't be
+			  * larger than specSize, and don't be larger than the max size
+			  * imposed on ourselves.
+			  */
 			result = Math.min(desiredSize, specSize);
 			break;
 		case MeasureSpec.EXACTLY:

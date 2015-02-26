@@ -94,9 +94,9 @@ public class GameView extends View implements Runnable {
 	public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
 		return true;
 	}
-	[Tags]/**
-	 [Tags]* 线程处理
-	 [Tags]*/
+	 /**
+	  * 线程处理
+	  */
 	public void run() {
 		while (!Thread.currentThread().isInterrupted()) {
 			try {

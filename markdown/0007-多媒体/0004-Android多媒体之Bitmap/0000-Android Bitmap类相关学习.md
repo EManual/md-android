@@ -17,13 +17,13 @@ private static class SampleView extends View {
 		c.drawCircle(x / 2, y / 2, x / 2, p);
 		p.setAlpha(0x30);
 		/*
-		 [Tags]* 用指定的PorterDuff模型创建xformode，PorterDuff.Mode.SRC 表示下面要绘制的文本应在上面绘制的圆的上层
-		 [Tags]*/
+		  * 用指定的PorterDuff模型创建xformode，PorterDuff.Mode.SRC 表示下面要绘制的文本应在上面绘制的圆的上层
+		  */
 		p.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
 		p.setTextSize(60);
 		/*
-		 [Tags]* Paint.Align 是文本对齐方式的一个枚举类 CENTER表示文本居中 LEFT 表示做对齐 RIGHT 表示右对齐
-		 [Tags]*/
+		  * Paint.Align 是文本对齐方式的一个枚举类 CENTER表示文本居中 LEFT 表示做对齐 RIGHT 表示右对齐
+		  */
 		p.setTextAlign(Paint.Align.CENTER);
 		Paint.FontMetrics fm = p.getFontMetrics();
 		c.drawText("Alpha", x / 2, (y - fm.ascent) / 2, p);
@@ -35,17 +35,17 @@ private static class SampleView extends View {
 		InputStream is = context.getResources().openRawResource(
 				R.drawable.app_sample_code);
 		/*
-		 [Tags]* BitmapFactory 是位图的一个工厂类 从各种各样的位图对象中创建位图对象，包括文件，流，字节数组。
-		 [Tags]*/
+		  * BitmapFactory 是位图的一个工厂类 从各种各样的位图对象中创建位图对象，包括文件，流，字节数组。
+		  */
 		mBitmap = BitmapFactory.decodeStream(is);
 		/*
-		 [Tags]* extractAlpha()位图的这个方法是通过提取 了原始位图的透明通道值重建新的位图
-		 [Tags]*/
+		  * extractAlpha()位图的这个方法是通过提取 了原始位图的透明通道值重建新的位图
+		  */
 		mBitmap2 = mBitmap.extractAlpha();
 		/*
-		 [Tags]* 通过位图的宽度和高度已经位图的颜色配置来创建位图 Bitmap.Config是内部枚举类表示位图的颜色配置
-		 [Tags]* 它的颜色配置有ALPHA_8、ARGB_4444、ARGB_8888、RGB_565
-		 [Tags]*/
+		  * 通过位图的宽度和高度已经位图的颜色配置来创建位图 Bitmap.Config是内部枚举类表示位图的颜色配置
+		  * 它的颜色配置有ALPHA_8、ARGB_4444、ARGB_8888、RGB_565
+		  */
 		mBitmap3 = Bitmap.createBitmap(200, 200, Bitmap.Config.ALPHA_8);
 		drawIntoBitmap(mBitmap3);
 	}

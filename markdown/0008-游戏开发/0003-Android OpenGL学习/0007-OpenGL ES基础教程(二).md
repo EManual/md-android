@@ -108,11 +108,11 @@ public class Square {
 		indexBuffer.put(indices);
 		indexBuffer.position(0);
 	}
-	[Tags]/**
-	 [Tags]* 绘制正方形到屏幕
-	 [Tags]* 
-	 [Tags]* @param gl
-	 [Tags]*/
+	 /**
+	  * 绘制正方形到屏幕
+	  * 
+	  * @param gl
+	  */
 	public void draw(GL10 gl) {
 		// 逆时针环绕
 		gl.glFrontFace(GL10.GL_CCW);

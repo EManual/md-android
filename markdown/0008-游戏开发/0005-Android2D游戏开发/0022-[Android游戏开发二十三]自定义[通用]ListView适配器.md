@@ -139,9 +139,9 @@ public class MySimpleAdapter extends BaseAdapter {
 		addListener(convertView);
 		return convertView;
 	}
-	[Tags]/**
-	 [Tags]* 童鞋们只需要将需要设置监听事件的组件写在下面这方法里就可以啦！ 别的不需要修改！ 备注3
-	 [Tags]*/
+	 /**
+	  * 童鞋们只需要将需要设置监听事件的组件写在下面这方法里就可以啦！ 别的不需要修改！ 备注3
+	  */
 	public void addListener(View convertView) {
 		((Button) convertView.findViewById(R.id.btn))
 				.setOnClickListener(new View.OnClickListener() {

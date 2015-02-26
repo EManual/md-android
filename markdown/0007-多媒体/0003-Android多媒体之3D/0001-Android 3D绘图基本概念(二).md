@@ -47,10 +47,10 @@ public class Square {
 		indexBuffer.put(indices);
 		indexBuffer.position(0);
 	}
-	[Tags]/**
-	 [Tags]* This function draws our square on screen.
-	 [Tags]* @param gl
-	 [Tags]*/
+	 /**
+	  * This function draws our square on screen.
+	  * @param gl
+	  */
 	public void draw(GL10 gl) {
 		// Counter-clockwise winding.
 		gl.glFrontFace(GL10.GL_CCW);
