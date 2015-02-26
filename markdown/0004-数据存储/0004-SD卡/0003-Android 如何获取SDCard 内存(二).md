@@ -31,7 +31,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 public class getStorageActivity extends Activity {
 	private Button myButton;
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

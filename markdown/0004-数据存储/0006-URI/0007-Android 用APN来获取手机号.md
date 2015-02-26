@@ -1,23 +1,23 @@
 今天我们来看看怎么样才能用APN来获取手机号。
 ```  
-[Tags]/**
-[Tags]* 电信APN列表
-[Tags]*/
+ /**
+ * 电信APN列表
+ */
 public class APNNET {
 	public static String CTWAP="ctwap";
 	public static String CTNET="ctnet";
 }
-[Tags]/**
- [Tags]* 获得APN类型
- [Tags]*/
+ /**
+  * 获得APN类型
+  */
 public class ApnUtil {
 	private static Uri PREFERRED_APN_URI = Uri
 			.parse("content://telephony/carriers/preferapn");
-	[Tags]/**
-	 [Tags]* get apntype
-	 [Tags]* @param context
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * get apntype
+	  * @param context
+	  * @return
+	  */
 	public static String getApnType(Context context) {
 		String apntype = "nomatch";
 		Cursor c = context.getContentResolver().query(PREFERRED_APN_URI, null,

@@ -15,15 +15,15 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
 import com.bingo.BingoApp;
 public class Communication {
-	[Tags]/**
-	 [Tags]* @param 只发送普通数据
-	 [Tags]*            ,调用此方法
-	 [Tags]* @param urlString
-	 [Tags]*            对应的Php 页面
-	 [Tags]* @param params
-	 [Tags]*            需要发送的相关数据 包括调用的方法
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * @param 只发送普通数据
+	  *            ,调用此方法
+	  * @param urlString
+	  *            对应的Php 页面
+	  * @param params
+	  *            需要发送的相关数据 包括调用的方法
+	  * @return
+	  */
 	public String communication(String urlString, Map<String, String> params) {
 		HttpClient client = new DefaultHttpClient();
 		client.getConnectionManager()
@@ -75,17 +75,17 @@ public class Communication {
 		}
 		return result;
 	}
-	[Tags]/**
-	 [Tags]* @param 只发送普通数据
-	 [Tags]*            ,调用此方法
-	 [Tags]* @param urlString
-	 [Tags]*            对应的Php 页面
-	 [Tags]* @param params
-	 [Tags]*            需要发送的相关数据 包括调用的方法
-	 [Tags]* @paramimage 图片字节数组或者文件字节数组
-	 [Tags]* @paramimg 图片名称
-	 [Tags]* @return Json
-	 [Tags]*/
+	 /**
+	  * @param 只发送普通数据
+	  *            ,调用此方法
+	  * @param urlString
+	  *            对应的Php 页面
+	  * @param params
+	  *            需要发送的相关数据 包括调用的方法
+	  * @paramimage 图片字节数组或者文件字节数组
+	  * @paramimg 图片名称
+	  * @return Json
+	  */
 	public String communication01(String urlString, Map<String, Object> params,
 			byte[] image, String img) {
 		String result = "";
@@ -149,19 +149,19 @@ public class Communication {
 		}
 		return result;
 	}
-	[Tags]/**
-	 [Tags]* @param 只发送普通数据
-	 [Tags]*            ,调用此方法
-	 [Tags]* @param urlString
-	 [Tags]*            对应的Php 页面
-	 [Tags]* @param params
-	 [Tags]*            需要发送的相关数据 包括调用的方法
-	 [Tags]* @param imageuri
-	 [Tags]*            图片或文件手机上的地址 如:sdcard/photo/123.jpg
-	 [Tags]* @param img
-	 [Tags]*            图片名称
-	 [Tags]* @return Json
-	 [Tags]*/
+	 /**
+	  * @param 只发送普通数据
+	  *            ,调用此方法
+	  * @param urlString
+	  *            对应的Php 页面
+	  * @param params
+	  *            需要发送的相关数据 包括调用的方法
+	  * @param imageuri
+	  *            图片或文件手机上的地址 如:sdcard/photo/123.jpg
+	  * @param img
+	  *            图片名称
+	  * @return Json
+	  */
 	public String communication02(String urlString, Map<String, Object> params,
 			String imageuri, String img) {
 		String result = "";

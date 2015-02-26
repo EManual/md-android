@@ -11,7 +11,7 @@ settings.setJavaScriptCanOpenWindowsAutomatically(true);
 //映射Java对象到一个名为”js2java“的Javascript对象上
 //JavaScript中可以通过"window.js2java"来调用Java对象的方法
 mWebView.addJavascriptInterface(new JSInvokeClass(), "HTMLOUT");
-[Tags]/**网页Javascript调用接口**/
+ /**网页Javascript调用接口**/
 class JSInvokeClass {
     public void back() {
         activity.finish();
@@ -32,7 +32,7 @@ mWebView.loadUrl("javascript:window.HTMLOUT.back();");
 当然如果想传参数怎么办？
 不要急，首先在JSInvokeClass.back方法处，申明一个代参数的方法就行了：
 ```  
-[Tags]/**网页Javascript调用接口**/
+ /**网页Javascript调用接口**/
 class JSInvokeClass {
     public void back() {
         activity.finish();

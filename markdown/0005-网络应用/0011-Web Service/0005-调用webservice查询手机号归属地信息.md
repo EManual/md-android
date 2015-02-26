@@ -55,11 +55,11 @@ public class MobileService {
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 public class StreamTool {
-	[Tags]/**
-	 [Tags]* 读取输入流数据
-	 [Tags]* @param is
-	 [Tags]* @throws Exception
-	 [Tags]*/
+	 /**
+	  * 读取输入流数据
+	  * @param is
+	  * @throws Exception
+	  */
 	public static byte[] readStream(InputStream is) throws Exception {
 		ByteArrayOutputStream os = new ByteArrayOutputStream();
 		byte[] buffer = new byte[2048];

@@ -16,8 +16,8 @@ private static final String strRes = "android.provider.Telephony.SMS_RECEIVED";
 @Override
 public void onReceive(Context context, Intent intent) {
 	/*
-	 [Tags]* 判断是否是SMS_RECEIVED事件被触发
-	 [Tags]*/
+	  * 判断是否是SMS_RECEIVED事件被触发
+	  */
 	if (intent.getAction().equals(strRes)) {
 		StringBuilder sb = new StringBuilder();
 		Bundle bundle = intent.getExtras();

@@ -1,6 +1,6 @@
 java代码：
 ```  
-[Tags]/*WifiInfoManager.java 可获取wifi的信息，目前我只取了当前连接的wifi，没有获取所有能扫描到的wifi信息。 */
+ /*WifiInfoManager.java 可获取wifi的信息，目前我只取了当前连接的wifi，没有获取所有能扫描到的wifi信息。 */
 import java.util.ArrayList;
 import android.content.Context;
 import android.net.wifi.WifiManager;

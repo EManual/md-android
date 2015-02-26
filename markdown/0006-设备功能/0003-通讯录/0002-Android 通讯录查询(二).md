@@ -1,9 +1,9 @@
 按这个细路就可以写代码了:
 ```  
-[Tags]/** 
-[Tags]* 通过姓名(uName)来查找通讯录，返回一个list。 
-[Tags]*其中"display_name"保存姓名,"phone_number"保存电话 
-[Tags]*/ 
+ /** 
+ * 通过姓名(uName)来查找通讯录，返回一个list。 
+ *其中"display_name"保存姓名,"phone_number"保存电话 
+ */ 
 public List<HashMap<String, String>> getContactsByName(String uName) { 
 List<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
 boolean isQueryAll = false; 

@@ -113,10 +113,10 @@ public class NotePadProvider extends ContentProvider {
 		}
 		// 返回以毫秒为单位的系统当前时间
 		Long now = Long.valueOf(java.lang.System.currentTimeMillis());
-		[Tags]/**
-		 [Tags]* contaisKey()我的理解就是判断传进来的那个ContentValues有没有相应的列值
-		 [Tags]* 因为我们的一个ContentValues对象 对应一条数据库的记录
-		 [Tags]* [Tags]*/
+		 /**
+		  * contaisKey()我的理解就是判断传进来的那个ContentValues有没有相应的列值
+		  * 因为我们的一个ContentValues对象 对应一条数据库的记录
+		  *  */
 		if (values.containsKey(NotePad.Notes.CREATEDDATE) == false) {
 			values.put(NotePad.Notes.CREATEDDATE, now);
 		}

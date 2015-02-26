@@ -61,10 +61,10 @@ owActivity extends Activity {
 			// 循环读取并存到HashMap中，再增加到ArrayList上，一个HashMap就是一项
 			items.add(map);
 		}
-		[Tags]/**
-		 [Tags]* 参数：Context ArrayList(item的集合) item的layout 包含ArrayList中的HashMap的key的数组
-		 [Tags]* key所对应的值的相应的控件id
-		 [Tags]*/
+		 /**
+		  * 参数：Context ArrayList(item的集合) item的layout 包含ArrayList中的HashMap的key的数组
+		  * key所对应的值的相应的控件id
+		  */
 		adapter = new MyAdapter(this, items, R.layout.piitem, new String[] {
 				"icon", "appName", "packageName" }, new int[] { R.id.icon,
 				R.id.appName, R.id.packageName });
@@ -133,11 +133,11 @@ class MyAdapter extends SimpleAdapter {
 					bound = binder.setViewValue(v, data, text);
 				}
 				if (!bound) {
-					[Tags]/**
-					 [Tags]* 自定义适配器，关在在这里，根据传递过来的控件以及值的数据类型，
-					 [Tags]* 执行相应的方法，可以根据自己需要自行添加if语句。另外，CheckBox等
-					 [Tags]* 集成自TextView的控件也会被识别成TextView，这就需要判断值的类型
-					 [Tags]*/
+					 /**
+					  * 自定义适配器，关在在这里，根据传递过来的控件以及值的数据类型，
+					  * 执行相应的方法，可以根据自己需要自行添加if语句。另外，CheckBox等
+					  * 集成自TextView的控件也会被识别成TextView，这就需要判断值的类型
+					  */
 					if (v instanceof TextView) {
 						// 如果是TextView控件，则调用SimpleAdapter自带的方法，设置文本
 						setViewText((TextView) v, text);

@@ -92,13 +92,13 @@ public class SocketActivity extends Activity {
 				// din = new DataInputStream(client.getInputStream());
 				dout.writeUTF(sendText);
 				/*
-				 [Tags]* display.setText(display.getText().toString() + " " +
-				 [Tags]* "服务器发来的消息：" + din.readUTF());
-				 [Tags]*/
+				  * display.setText(display.getText().toString() + " " +
+				  * "服务器发来的消息：" + din.readUTF());
+				  */
 				/*
-				 [Tags]* display.setText(display.getText().toString() + " " +
-				 [Tags]* "服务器发来的消息--：" + din.readUTF());
-				 [Tags]*/
+				  * display.setText(display.getText().toString() + " " +
+				  * "服务器发来的消息--：" + din.readUTF());
+				  */
 			} catch (UnknownHostException e) {
 				e.printStackTrace();
 			} catch (IOException e) {

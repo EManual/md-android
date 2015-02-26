@@ -38,29 +38,29 @@ Log.e("network OperatorName", telephonyManager.getNetworkOperatorName());
 ```
 其中：
 ```  
-[Tags]/** Network type is unknown */
+ /** Network type is unknown */
  //public static final int NETWORK_TYPE_UNKNOWN = 0;
-[Tags]/** Current network is GPRS */
+ /** Current network is GPRS */
 //public static final int NETWORK_TYPE_GPRS = 1;
-[Tags]/** Current network is EDGE */
+ /** Current network is EDGE */
 //public static final int NETWORK_TYPE_EDGE = 2;
-[Tags]/** Current network is UMTS */
+ /** Current network is UMTS */
 //public static final int NETWORK_TYPE_UMTS = 3;
-[Tags]/** Current network is CDMA: Either IS95A or IS95B*/
+ /** Current network is CDMA: Either IS95A or IS95B*/
 //public static final int NETWORK_TYPE_CDMA = 4;
-[Tags]/** Current network is EVDO revision 0*/
+ /** Current network is EVDO revision 0*/
 //public static final int NETWORK_TYPE_EVDO_0 = 5;
-[Tags]/** Current network is EVDO revision A*/
+ /** Current network is EVDO revision A*/
 //public static final int NETWORK_TYPE_EVDO_A = 6;
-[Tags]/** Current network is 1xRTT*/
+ /** Current network is 1xRTT*/
 //public static final int NETWORK_TYPE_1xRTT = 7;
-[Tags]/** Current network is HSDPA */
+ /** Current network is HSDPA */
 //public static final int NETWORK_TYPE_HSDPA = 8;
-[Tags]/** Current network is HSUPA */
+ /** Current network is HSUPA */
 //public static final int NETWORK_TYPE_HSUPA = 9;
-[Tags]/** Current network is HSPA */
+ /** Current network is HSPA */
 //public static final int NETWORK_TYPE_HSPA = 10;
-[Tags]/** Current network is iDen */
+ /** Current network is iDen */
 //public static final int NETWORK_TYPE_IDEN = 11;
 ```
 下面总结一些常用方法：
@@ -76,16 +76,16 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
-[Tags]/**
- [Tags]* 网络信息
- [Tags]*/
+ /**
+  * 网络信息
+  */
 public class NetworkUtil {
 	private static final String TAG = "NetworkUtil";
-	[Tags]/**
-	 [Tags]* 判断网络是否可用 <br>
-	 [Tags]* code from: http://www.androidsnippets.com/have-internet
-	 [Tags]* @param context
-	 [Tags]*/
+	 /**
+	  * 判断网络是否可用 <br>
+	  * code from: http://www.androidsnippets.com/have-internet
+	  * @param context
+	  */
 	public static boolean haveInternet(Context context) {
 		NetworkInfo info = (NetworkInfo) ((ConnectivityManager) context
 				.getSystemService(Context.CONNECTIVITY_SERVICE))
@@ -102,12 +102,12 @@ public class NetworkUtil {
 		}
 		return true;
 	}
-	[Tags]/**
-	 [Tags]* 判断网络是否可用
-	 [Tags]* 
-	 [Tags]* @param context
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 判断网络是否可用
+	  * 
+	  * @param context
+	  * @return
+	  */
 	public static boolean isnetWorkAvilable(Context context) {
 		ConnectivityManager connectivityManager = (ConnectivityManager) context
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -126,13 +126,13 @@ public class NetworkUtil {
 		}
 		return false;
 	}
-	[Tags]/**
-	 [Tags]* IP地址<br>
-	 [Tags]* code from:
-	 [Tags]* http://www.droidnova.com/get-the-ip-address-of-your-device,304.html <br>
-	 [Tags]* 
-	 [Tags]* @return 如果返回null，证明没有网络链接。 如果返回String，就是设备当前使用的IP地址，不管是WiFi还是3G
-	 [Tags]*/
+	 /**
+	  * IP地址<br>
+	  * code from:
+	  * http://www.droidnova.com/get-the-ip-address-of-your-device,304.html <br>
+	  * 
+	  * @return 如果返回null，证明没有网络链接。 如果返回String，就是设备当前使用的IP地址，不管是WiFi还是3G
+	  */
 	public static String getLocalIpAddress() {
 		try {
 			for (Enumeration<NetworkInterface> en = NetworkInterface
@@ -151,25 +151,25 @@ public class NetworkUtil {
 		}
 		return null;
 	}
-	[Tags]/**
-	 [Tags]* 获取MAC地址 <br>
-	 [Tags]* code from: http://orgcent.com/android-wifi-mac-ip-address/
-	 [Tags]* 
-	 [Tags]* @param context
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 获取MAC地址 <br>
+	  * code from: http://orgcent.com/android-wifi-mac-ip-address/
+	  * 
+	  * @param context
+	  * @return
+	  */
 	public static String getLocalMacAddress(Context context) {
 		WifiManager wifi = (WifiManager) context
 				.getSystemService(Context.WIFI_SERVICE);
 		WifiInfo info = wifi.getConnectionInfo();
 		return info.getMacAddress();
 	}
-	[Tags]/**
-	 [Tags]* WIFI 是否可用
-	 [Tags]* 
-	 [Tags]* @param context
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * WIFI 是否可用
+	  * 
+	  * @param context
+	  * @return
+	  */
 	public static boolean isWiFiActive(Context context) {
 		ConnectivityManager connectivity = (ConnectivityManager) context
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -186,12 +186,12 @@ public class NetworkUtil {
 		}
 		return false;
 	}
-	[Tags]/**
-	 [Tags]* 存在多个连接点
-	 [Tags]* 
-	 [Tags]* @param context
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 存在多个连接点
+	  * 
+	  * @param context
+	  * @return
+	  */
 	public static boolean hasMoreThanOneConnection(Context context) {
 		ConnectivityManager manager = (ConnectivityManager) context
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -212,32 +212,32 @@ public class NetworkUtil {
 		return false;
 	}
 	/*
-	 [Tags]* HACKISH: These constants aren't yet available in my API level (7), but I
-	 [Tags]* need to handle these cases if they come up, on newer versions
-	 [Tags]*/
+	  * HACKISH: These constants aren't yet available in my API level (7), but I
+	  * need to handle these cases if they come up, on newer versions
+	  */
 	public static final int NETWORK_TYPE_EHRPD = 14; // Level 11
 	public static final int NETWORK_TYPE_EVDO_B = 12; // Level 9
 	public static final int NETWORK_TYPE_HSPAP = 15; // Level 13
 	public static final int NETWORK_TYPE_IDEN = 11; // Level 8
 	public static final int NETWORK_TYPE_LTE = 13; // Level 11
-	[Tags]/**
-	 [Tags]* Check if there is any connectivity
-	 [Tags]* 
-	 [Tags]* @param context
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * Check if there is any connectivity
+	  * 
+	  * @param context
+	  * @return
+	  */
 	public static boolean isConnected(Context context) {
 		ConnectivityManager cm = (ConnectivityManager) context
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo info = cm.getActiveNetworkInfo();
 		return (info != null && info.isConnected());
 	}
-	[Tags]/**
-	 [Tags]* Check if there is fast connectivity
-	 [Tags]* 
-	 [Tags]* @param context
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * Check if there is fast connectivity
+	  * 
+	  * @param context
+	  * @return
+	  */
 	public static boolean isConnectedFast(Context context) {
 		ConnectivityManager cm = (ConnectivityManager) context
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -245,13 +245,13 @@ public class NetworkUtil {
 		return (info != null && info.isConnected() && isConnectionFast(
 				info.getType(), info.getSubtype()));
 	}
-	[Tags]/**
-	 [Tags]* Check if the connection is fast
-	 [Tags]* 
-	 [Tags]* @param type
-	 [Tags]* @param subType
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * Check if the connection is fast
+	  * 
+	  * @param type
+	  * @param subType
+	  * @return
+	  */
 	public static boolean isConnectionFast(int type, int subType) {
 		if (type == ConnectivityManager.TYPE_WIFI) {
 			System.out.println("CONNECTED VIA WIFI");
@@ -299,23 +299,23 @@ public class NetworkUtil {
 			return false;
 		}
 	}
-	[Tags]/**
-	 [Tags]* IP转整型
-	 [Tags]* 
-	 [Tags]* @param ip
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * IP转整型
+	  * 
+	  * @param ip
+	  * @return
+	  */
 	public static long ip2int(String ip) {
 		String[] items = ip.split("\\.");
 		return Long.valueOf(items[0]) << 24 | Long.valueOf(items[1]) << 16
 				| Long.valueOf(items[2]) << 8 | Long.valueOf(items[3]);
 	}
-	[Tags]/**
-	 [Tags]* 整型转IP
-	 [Tags]* 
-	 [Tags]* @param ipInt
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 整型转IP
+	  * 
+	  * @param ipInt
+	  * @return
+	  */
 	public static String int2ip(long ipInt) {
 		StringBuilder sb = new StringBuilder();
 		sb.append(ipInt & 0xFF).append(".");

@@ -84,8 +84,8 @@ public void downFiletoSDCard(String url, String path, String filename) {
 		downloader(input, path, filename);
 	} else {
 		/*
-		 [Tags]* 对不合发的参数做处理
-		 [Tags]*/
+		  * 对不合发的参数做处理
+		  */
 		if (url == null || "".equals(url)) {
 			toasterror("url不能为空或为“”");
 		}

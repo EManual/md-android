@@ -11,10 +11,10 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 public class testPcClient {
-	[Tags]/**
-	 [Tags]* @param args
-	 [Tags]* @throws InterruptedException
-	 [Tags]*/
+	 /**
+	  * @param args
+	  * @throws InterruptedException
+	  */
 	public static void main(String[] args) throws InterruptedException {
 		try {
 			Runtime.getRuntime().exec(

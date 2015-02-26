@@ -28,21 +28,21 @@ public class SDCardActivity extends Activity implements OnClickListener {
 	private void showSDCardSize() {
 		progressBar.setProgress(0);
 		File sdcard = Environment.getExternalStorageDirectory();
-		[Tags]/**
-		 [Tags]* 我们可以通过StatFs访问文件系统的空间容量等信息
-		 [Tags]*/
+		 /**
+		  * 我们可以通过StatFs访问文件系统的空间容量等信息
+		  */
 		StatFs statFs = new StatFs(sdcard.getPath());
-		[Tags]/**
-		 [Tags]* statFs.getBlockSize可以获取当前的文件系统中，一个block所占有的字节数
-		 [Tags]*/
+		 /**
+		  * statFs.getBlockSize可以获取当前的文件系统中，一个block所占有的字节数
+		  */
 		int blockSize = statFs.getBlockSize();
-		[Tags]/**
-		 [Tags]* statFs.getAvaliableBlocks方法可以返回尚未使用的block的数量
-		 [Tags]*/
+		 /**
+		  * statFs.getAvaliableBlocks方法可以返回尚未使用的block的数量
+		  */
 		int avaliableBlocks = statFs.getAvailableBlocks();
-		[Tags]/**
-		 [Tags]* statFs.getBlockCount可以获取总的block数量
-		 [Tags]*/
+		 /**
+		  * statFs.getBlockCount可以获取总的block数量
+		  */
 		int totalBlocks = statFs.getBlockCount();
 		result += "/n 尚未被使用的空间大小：" + avaliableBlocks * blockSize + "byte";
 		result += "/n 总空间大小：" + totalBlocks * blockSize + "byte";

@@ -43,10 +43,10 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-[Tags]/**
- [Tags]* 此类不需要基于sql语句 进行增删查改操作 但是SQLiteDatabase对象是通过内部构造sql语句而执行操作的
- [Tags]* 
- [Tags]*/
+ /**
+  * 此类不需要基于sql语句 进行增删查改操作 但是SQLiteDatabase对象是通过内部构造sql语句而执行操作的
+  * 
+  */
 public class PersonSQLservice {
 	private MangerDatabase dbmanger;
 	public PersonSQLservice(Context context) {

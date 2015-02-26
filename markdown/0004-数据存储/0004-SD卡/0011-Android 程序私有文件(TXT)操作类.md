@@ -12,27 +12,27 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import android.content.Context;
-[Tags]/**
- [Tags]* Android私有TXT文件操作类
- [Tags]*/
+ /**
+  * Android私有TXT文件操作类
+  */
 public class TextManager {
 	private Context context;
 	private String fileName;
-	[Tags]/**
-	 [Tags]* 构造函数
-	 [Tags]* 
-	 [Tags]* @param context
-	 [Tags]* @param fileName
-	 [Tags]*/
+	 /**
+	  * 构造函数
+	  * 
+	  * @param context
+	  * @param fileName
+	  */
 	public TextManager(Context context, String fileName) {
 		this.context = context;
 		this.fileName = fileName;
 	}
-	[Tags]/**
-	 [Tags]* 判断文件是否存在
-	 [Tags]* 
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 判断文件是否存在
+	  * 
+	  * @return
+	  */
 	public boolean isExist() {
 		String[] fileNameArray = context.fileList();
 		for (int i = 0; i < fileNameArray.length; i++) {
@@ -42,11 +42,11 @@ public class TextManager {
 		}
 		return false;
 	}
-	[Tags]/**
-	 [Tags]* 创建文件
-	 [Tags]* 
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 创建文件
+	  * 
+	  * @return
+	  */
 	public boolean create() {
 		boolean result = false;
 		if (!isExist()) {
@@ -67,12 +67,12 @@ public class TextManager {
 		}
 		return result;
 	}
-	[Tags]/**
-	 [Tags]* 写入
-	 [Tags]* 
-	 [Tags]* @param str
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 写入
+	  * 
+	  * @param str
+	  * @return
+	  */
 	public boolean write(String str) {
 		boolean result = true;
 		FileOutputStream fos = null;
@@ -101,11 +101,11 @@ public class TextManager {
 		}
 		return result;
 	}
-	[Tags]/**
-	 [Tags]* 读取一行
-	 [Tags]* 
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 读取一行
+	  * 
+	  * @return
+	  */
 	public String readLine() {
 		String str = "";
 		FileInputStream fis = null;
@@ -125,11 +125,11 @@ public class TextManager {
 		}
 		return str;
 	}
-	[Tags]/**
-	 [Tags]* 读取全部
-	 [Tags]* 
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 读取全部
+	  * 
+	  * @return
+	  */
 	public String read() {
 		String str = "";
 		String line = "";
@@ -152,16 +152,16 @@ public class TextManager {
 		}
 		return str;
 	}
-	[Tags]/**
-	 [Tags]* 清空文件
-	 [Tags]*/
+	 /**
+	  * 清空文件
+	  */
 	public void clean() {
 		delete();
 		create();
 	}
-	[Tags]/**
-	 [Tags]* 删除文件
-	 [Tags]*/
+	 /**
+	  * 删除文件
+	  */
 	public void delete() {
 		context.deleteFile(fileName);
 	}

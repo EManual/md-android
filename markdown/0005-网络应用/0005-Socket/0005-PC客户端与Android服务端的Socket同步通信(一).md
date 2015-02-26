@@ -142,12 +142,12 @@ public void run() {
 7.socket在out.write(bytes);时，要是数据太大时，超过socket的缓存，socket自动分包发送，所以对方就一定要用循环来多次读。最好的办法就是服务器和客户端协议好，比如发文件时，先写过来一个要发送的文件的大小，然后再发送文件;对方用这个大小，来循环读取数据。
 android端接收数据的代码:
 ```  
-[Tags]/**
- [Tags]* 功能：从socket流中读取完整文件数据
- [Tags]* InputStream in：socket输入流
- [Tags]* byte[] filelength: 流的前4个字节存储要转送的文件的字节数
- [Tags]* byte[] fileformat：流的前5-8字节存储要转送的文件的格式（如.apk）
- [Tags]* [Tags]*/
+ /**
+  * 功能：从socket流中读取完整文件数据
+  * InputStream in：socket输入流
+  * byte[] filelength: 流的前4个字节存储要转送的文件的字节数
+  * byte[] fileformat：流的前5-8字节存储要转送的文件的格式（如.apk）
+  *  */
 public static byte[] receiveFileFromSocket(InputStream in,
 		OutputStream out, byte[] filelength, byte[] fileformat) {
 	byte[] filebytes = null;// 文件数据

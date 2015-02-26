@@ -12,7 +12,7 @@ void readSDCard() {
 		Log.d("", "block大小:" + blockSize + ",block数目:" + blockCount
 				+ ",总大小:" + blockSize * blockCount / 1024 + "KB");
 		Log.d("", "可用的block数目：:" + availCount + ",剩余空间:" + availCount
-				[Tags]* blockSize / 1024 + "KB");
+				 * blockSize / 1024 + "KB");
 	}
 }
 void readSDCard() {
@@ -26,7 +26,7 @@ void readSDCard() {
 		Log.d("", "block大小:" + blockSize + ",block数目:" + blockCount
 				+ ",总大小:" + blockSize * blockCount / 1024 + "KB");
 		Log.d("", "可用的block数目：:" + availCount + ",剩余空间:" + availCount
-				[Tags]* blockSize / 1024 + "KB");
+				 * blockSize / 1024 + "KB");
 	}
 }
 ```
@@ -41,7 +41,7 @@ void readSystem() {
 	Log.d("", "block大小:" + blockSize + ",block数目:" + blockCount + ",总大小:
 			+ blockSize * blockCount / 1024 + "KB");
 	Log.d("", "可用的block数目：:" + availCount + ",可用大小:" + availCount
-			[Tags]* blockSize / 1024 + "KB");
+			 * blockSize / 1024 + "KB");
 }
 void readSystem() {
 	File root = Environment.getRootDirectory();
@@ -52,7 +52,7 @@ void readSystem() {
 	Log.d("", "block大小:" + blockSize + ",block数目:" + blockCount + ",总大小:
 			+ blockSize * blockCount / 1024 + "KB");
 	Log.d("", "可用的block数目：:" + availCount + ",可用大小:" + availCount
-			[Tags]* blockSize / 1024 + "KB");
+			 * blockSize / 1024 + "KB");
 }
 ```
 StatFs获取的都是以block为单位的，这里我解释一下block的概念：

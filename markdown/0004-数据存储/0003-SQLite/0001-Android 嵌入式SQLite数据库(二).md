@@ -27,32 +27,32 @@ public class SQLPersonService {
 	public SQLPersonService(Context context) {
 		helper = new DBOpenHelper(context, "itcast.db", null, 2);// 初始化数据库
 	}
-	[Tags]/**
-	 [Tags]* 插入一个Person
-	 [Tags]* @param p
-	 [Tags]* 要插入的Person
-	 [Tags]*/
+	 /**
+	  * 插入一个Person
+	  * @param p
+	  * 要插入的Person
+	  */
 	public void insert(Person p) {
 		SQLiteDatabase db = helper.getWritableDatabase(); // 获取到数据库
 		db.execSQL("INSERT INTO person(name,phone,balance) VALUES(?,?)",
 				new Object[] { p.getName(), p.getPhone() });
 		db.close();
 	}
-	[Tags]/**
-	 [Tags]* 根据ID删除
-	 [Tags]* @param id
-	 [Tags]* 要删除的PERSON的ID
-	 [Tags]*/
+	 /**
+	  * 根据ID删除
+	  * @param id
+	  * 要删除的PERSON的ID
+	  */
 	public void delete(Integer id) {
 		SQLiteDatabase db = helper.getWritableDatabase();
 		db.execSQL("DELETE FROM person WHERE id=?", new Object[] { id });
 		db.close();
 	}
-	[Tags]/**
-	 [Tags]* 更新Person
-	 [Tags]* @param p
-	 [Tags]* 要更新的Person
-	 [Tags]*/
+	 /**
+	  * 更新Person
+	  * @param p
+	  * 要更新的Person
+	  */
 	public void update(Person p) {
 		SQLiteDatabase db = helper.getWritableDatabase();
 		db.execSQL(
@@ -61,11 +61,11 @@ public class SQLPersonService {
 						p.getId() });
 		db.close();
 	}
-	[Tags]/**
-	 [Tags]* 根据ID查找
-	 [Tags]* @param id 要查的ID
-	 [Tags]* @return 对应的对象, 如果未找到返回null
-	 [Tags]*/
+	 /**
+	  * 根据ID查找
+	  * @param id 要查的ID
+	  * @return 对应的对象, 如果未找到返回null
+	  */
 	public Person find(Integer id) {
 		SQLiteDatabase db = helper.getReadableDatabase();
 		Cursor cursor = db.rawQuery(
@@ -82,10 +82,10 @@ public class SQLPersonService {
 		db.close();
 		return p;
 	}
-	[Tags]/**
-	 [Tags]* 查询所有Person对象
-	 [Tags]* @return Person对象集合, 如未找到, 返回一个size()为0的List
-	 [Tags]*/
+	 /**
+	  * 查询所有Person对象
+	  * @return Person对象集合, 如未找到, 返回一个size()为0的List
+	  */
 	public List<Person> findAll() {
 		SQLiteDatabase db = helper.getReadableDatabase();
 		Cursor cursor = db.rawQuery("SELECT id,name,phone,balance FROM person",
@@ -102,11 +102,11 @@ public class SQLPersonService {
 		db.close();
 		return persons;
 	}
-	[Tags]/**
-	 [Tags]* 查询某一页数据
-	 [Tags]* @param page 页码
-	 [Tags]* @param size 每页记录数
-	 [Tags]*/
+	 /**
+	  * 查询某一页数据
+	  * @param page 页码
+	  * @param size 每页记录数
+	  */
 	public List<Person> findPage(int page, int size) {
 		SQLiteDatabase db = helper.getReadableDatabase();
 		Cursor cursor = db.rawQuery(
@@ -125,10 +125,10 @@ public class SQLPersonService {
 		db.close();
 		return persons;
 	}
-	[Tags]/**
-	 [Tags]* 获取记录数
-	 [Tags]* @return 记录数
-	 [Tags]*/
+	 /**
+	  * 获取记录数
+	  * @return 记录数
+	  */
 	public int getCount() {
 		SQLiteDatabase db = helper.getReadableDatabase();
 		Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM person", null);

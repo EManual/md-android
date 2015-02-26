@@ -28,9 +28,9 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-[Tags]/**
- [Tags]* @解释 此类我们只需要传建一个构造函数 以及重写两个方法就OK啦、
- [Tags]*/
+ /**
+  * @解释 此类我们只需要传建一个构造函数 以及重写两个方法就OK啦、
+  */
 public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 	public final static int VERSION = 1;// 版本号
 	public final static String TABLE_NAME = "himi";// 表名
@@ -86,17 +86,17 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 // ------------第三种保存方式--------《SQLite》---------
-[Tags]/**
- [Tags]* @保存方式：SQLite 轻量级数据库、
- [Tags]* @优点： 可以将自己的数据存储到文件系统或者数据库当中， 也可以将自己的数据存 储到SQLite数据库当中，还可以存到SD卡中
- [Tags]* @注意1：数据库对于一个游戏(一个应用)来说是私有的，并且在一个游戏当中， 数据库的名字也是唯一的。
- [Tags]* @注意2 apk中创建的数据库外部的进程是没有权限去读/写的, 我们需要把数据库文件创建到sdcard上可以解决类似问题.
- [Tags]* @注意3 当你删除id靠前的数据或者全部删除数据的时候，SQLite不会自动排序，
- [Tags]*      也就是说再添加数据的时候你不指定id那么SQLite默认还是在原有id最后添加一条新数据
- [Tags]* @注意4 android 中 的SQLite 语法区分大小写的!!!!!这点要注意！ String UPDATA_DATA =
- [Tags]*      "UPDATE himi SET text='通过SQL语句来修改数据'  WHERE id=1"; 千万 不能可以写成 String
- [Tags]*      UPDATA_DATA = "updata himi set text='通过SQL语句来修改数据'  where id=1";
- [Tags]*/
+ /**
+  * @保存方式：SQLite 轻量级数据库、
+  * @优点： 可以将自己的数据存储到文件系统或者数据库当中， 也可以将自己的数据存 储到SQLite数据库当中，还可以存到SD卡中
+  * @注意1：数据库对于一个游戏(一个应用)来说是私有的，并且在一个游戏当中， 数据库的名字也是唯一的。
+  * @注意2 apk中创建的数据库外部的进程是没有权限去读/写的, 我们需要把数据库文件创建到sdcard上可以解决类似问题.
+  * @注意3 当你删除id靠前的数据或者全部删除数据的时候，SQLite不会自动排序，
+  *      也就是说再添加数据的时候你不指定id那么SQLite默认还是在原有id最后添加一条新数据
+  * @注意4 android 中 的SQLite 语法区分大小写的!!!!!这点要注意！ String UPDATA_DATA =
+  *      "UPDATE himi SET text='通过SQL语句来修改数据'  WHERE id=1"; 千万 不能可以写成 String
+  *      UPDATA_DATA = "updata himi set text='通过SQL语句来修改数据'  where id=1";
+  */
 public class MainActivity extends Activity implements OnClickListener {
 	private Button btn_addOne, btn_deleteone, btn_check, btn_deleteTable,
 			btn_edit, btn_newTable;

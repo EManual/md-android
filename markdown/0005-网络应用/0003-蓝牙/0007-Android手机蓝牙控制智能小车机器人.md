@@ -112,7 +112,7 @@ public class ThinBTClient extends Activity {
 	private static final UUID MY_UUID = UUID
 			.fromString("00001101-0000-1000-8000-00805F9B34FB");
 	private static String address = "00:11:03:21:00:43"; // <==要连接的蓝牙设备MAC地址
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -369,12 +369,12 @@ public class ThinBTClient extends Activity {
 		if (D)
 			Log.e(TAG, "+ ABOUT TO SAY SOMETHING TO SERVER +");
 		/*
-		 [Tags]* try { outStream = btSocket.getOutputStream(); } catch (IOException e)
-		 [Tags]* { Log.e(TAG, "ON RESUME: Output stream creation failed.", e); }
-		 [Tags]* String message = "1"; byte[] msgBuffer = message.getBytes(); try {
-		 [Tags]* outStream.write(msgBuffer); } catch (IOException e) { Log.e(TAG,
-		 [Tags]* "ON RESUME: Exception during write.", e); }
-		 [Tags]*/
+		  * try { outStream = btSocket.getOutputStream(); } catch (IOException e)
+		  * { Log.e(TAG, "ON RESUME: Output stream creation failed.", e); }
+		  * String message = "1"; byte[] msgBuffer = message.getBytes(); try {
+		  * outStream.write(msgBuffer); } catch (IOException e) { Log.e(TAG,
+		  * "ON RESUME: Exception during write.", e); }
+		  */
 	}
 	@Override
 	public void onPause() {

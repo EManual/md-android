@@ -5,9 +5,9 @@ import it.bean.Person;
 import it.service.PersonSQLservice;
 import android.test.AndroidTestCase;
 import android.util.Log;
-[Tags]/**
- [Tags]* 执行PersonSQLservice 进行测试
- [Tags]*/
+ /**
+  * 执行PersonSQLservice 进行测试
+  */
 public class PersonSQLserviceTest extends AndroidTestCase {
 	private static final String TAG = "PersonSQLserviceTest";
 	public void testsave() {

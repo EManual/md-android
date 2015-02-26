@@ -1,7 +1,7 @@
 Android可以借助于gps实现定位，但是很多地方是使用gps无法定位比如在室内，而且gps定位的话速度慢。 
 下面的代码实现了定位的大致功能
 ```  
-[Tags]/*CellIDInfo.java 封装了cellid的信息 */
+ /*CellIDInfo.java 封装了cellid的信息 */
 public class CellIDInfo {
 public int cellId;
 public String mobileCountryCode;

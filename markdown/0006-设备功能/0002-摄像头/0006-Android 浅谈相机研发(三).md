@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 public class CameraTest_3 extends Activity implements OnClickListener {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	MySurfaceView mySurface;
 	boolean isClicked = false;
 	@Override

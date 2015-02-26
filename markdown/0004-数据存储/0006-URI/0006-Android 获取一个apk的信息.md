@@ -1,8 +1,8 @@
 下面是获取一个apk的application信息的代码
 ```  
-[Tags]/*
- [Tags]* Utility method to get application information for a given packageURI
- [Tags]*/
+ /*
+  * Utility method to get application information for a given packageURI
+  */
 public static ApplicationInfo getApplicationInfo(Uri packageURI) {
 	final String archiveFilePath = packageURI.getPath();
 	PackageParser packageParser = new PackageParser(archiveFilePath);
@@ -16,9 +16,9 @@ public static ApplicationInfo getApplicationInfo(Uri packageURI) {
 	}
 	return pkg.applicationInfo;
 }
-[Tags]/*
- [Tags]* Utility method to get application information for a given packageURI
- [Tags]*/
+ /*
+  * Utility method to get application information for a given packageURI
+  */
 public static ApplicationInfo getApplicationInfo(Uri packageURI) {
 	final String archiveFilePath = packageURI.getPath();
 	PackageParser packageParser = new PackageParser(archiveFilePath);

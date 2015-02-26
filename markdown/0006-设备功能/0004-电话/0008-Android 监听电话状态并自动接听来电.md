@@ -136,9 +136,9 @@ public class SpeakMananger {
 		telephonyService.silenceRinger();
 		telephonyService.answerRingingCall();
 	}
-	[Tags]/**
-	 [Tags]* 利用JAVA反射机制调用ITelephony的answerRingingCall()开始通话。
-	 [Tags]*/
+	 /**
+	  * 利用JAVA反射机制调用ITelephony的answerRingingCall()开始通话。
+	  */
 	private void StartCall() {
 		// 初始化iTelephony
 		Class<TelephonyManager> c = TelephonyManager.class;
@@ -270,17 +270,17 @@ public class PhoneCallStateService extends Service {
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent; /*
- [Tags]* 1.首先开机启动后系统会发出一个Standard Broadcast Action，
- [Tags]*    名字叫android.intent.action.BOOT_COMPLETED，这个Action只会发出一次。
- [Tags]* 2.构造一个BroadcastReceiver类，重构其抽象方法onReceive(Context context, Intent intent)，
- [Tags]*         在其中启动你想要启动的Service。
- [Tags]* 3.在AndroidManifest.xml中，首先加入
- [Tags]*    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission>
- [Tags]*    来获得BOOT_COMPLETED的使用许可，然后注册前面重构的IntentReceiver类，
- [Tags]*    在其<intent-filter>中加入<action android:name="android.intent.action.BOOT_COMPLETED" /> ，
- [Tags]*    以使其能捕捉到这个Action。       
- [Tags]* 參考文檔： 
- [Tags]*/
+  * 1.首先开机启动后系统会发出一个Standard Broadcast Action，
+  *    名字叫android.intent.action.BOOT_COMPLETED，这个Action只会发出一次。
+  * 2.构造一个BroadcastReceiver类，重构其抽象方法onReceive(Context context, Intent intent)，
+  *         在其中启动你想要启动的Service。
+  * 3.在AndroidManifest.xml中，首先加入
+  *    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission>
+  *    来获得BOOT_COMPLETED的使用许可，然后注册前面重构的IntentReceiver类，
+  *    在其<intent-filter>中加入<action android:name="android.intent.action.BOOT_COMPLETED" /> ，
+  *    以使其能捕捉到这个Action。       
+  * 參考文檔： 
+  */
 public class StartReceiver extends BroadcastReceiver {
 	/* 要接收的intent源 */
 	static final String ACTION = "android.intent.action.BOOT_COMPLETED";
@@ -292,9 +292,9 @@ public class StartReceiver extends BroadcastReceiver {
 					PhoneCallStateService.class));
 		}
 		/*
-		 [Tags]* intent.getAction().equals(Intent.ACTION_NEW_OUTGOING_CALL) 去电
-		 [Tags]* intent.getAction().equals(Intent.ACTION_CALL)) 来电
-		 [Tags]*/
+		  * intent.getAction().equals(Intent.ACTION_NEW_OUTGOING_CALL) 去电
+		  * intent.getAction().equals(Intent.ACTION_CALL)) 来电
+		  */
 		// 监听去电获得去电电话号码
 		if (intent.getAction().equals(Intent.ACTION_NEW_OUTGOING_CALL)) {
 			CommonHelper.outGoingPhoneNumber = intent

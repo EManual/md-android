@@ -21,26 +21,26 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 public class DBOpenHelper extends SQLiteOpenHelper {
-	[Tags]/**
-	 [Tags]* 创建OpenHelper
-	 [Tags]* @param context 上下文
-	 [Tags]* @param name 数据库名
-	 [Tags]* @param factory 游标工厂
-	 [Tags]* @param version 数据库版本, 不要设置为0, 如果为0则会每次都创建数据库
-	 [Tags]*/
+	 /**
+	  * 创建OpenHelper
+	  * @param context 上下文
+	  * @param name 数据库名
+	  * @param factory 游标工厂
+	  * @param version 数据库版本, 不要设置为0, 如果为0则会每次都创建数据库
+	  */
 	public DBOpenHelper(Context context, String name, CursorFactory factory,
 			int version) {
 		super(context, name, factory, version);
 	}
-	[Tags]/**
-	 [Tags]* 当数据库第一次创建的时候被调用
-	 [Tags]*/
+	 /**
+	  * 当数据库第一次创建的时候被调用
+	  */
 	public void onCreate(SQLiteDatabase db) {
 		db.execSQL("CREATE TABLE person(id INTEGER PRIMARY KEY AUTOINCREMENT, name)");
 	}
-	[Tags]/**
-	 [Tags]* 当数据库版本发生改变的时候被调用
-	 [Tags]*/
+	 /**
+	  * 当数据库版本发生改变的时候被调用
+	  */
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		db.execSQL("ALTER TABLE person ADD balance");
 	}

@@ -53,7 +53,7 @@ int requestNumber;
 void (*dispatchFunction) (Parcel &p, struct RequestInfo *pRI); 
 int(*responseFunction) (Parcel &p, void *response, size_t responselen);
 } CommandInfo; 
-[Tags]*/ 
+ */ 
 pRI->pCI = &(s_commands[request]);
 pRI->p_next = s_pendingRequests;
 s_pendingRequests = pRI;

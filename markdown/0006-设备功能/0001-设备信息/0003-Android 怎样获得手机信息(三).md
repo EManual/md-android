@@ -1,9 +1,9 @@
 1.2.3.2 获取内存信息
 获取内存信息的方法和获取CPU信息的实现差不多，可以读取/proc/meminfo信息，另外还可以通过getSystemService(Context.ACTIVIT_SERV-ICE)获取ActivityManager.MemoryInfo对象，进而获取可用内存信息，主要代码如下：
 ```  
-[Tags]/**
- [Tags]* 系统内存情况查看
- [Tags]*/
+ /**
+  * 系统内存情况查看
+  */
 public static String getMemoryInfo(Context context) {
 	StringBuffer memoryInfo = new StringBuffer();
 	final ActivityManager activityManager = (ActivityManager) context

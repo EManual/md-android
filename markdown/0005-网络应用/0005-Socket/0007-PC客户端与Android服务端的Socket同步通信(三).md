@@ -11,9 +11,9 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
 import android.util.Log;
-[Tags]/**
- [Tags]* 设置：android手机
- [Tags]* [Tags]*/
+ /**
+  * 设置：android手机
+  *  */
 public class androidService extends Service {
 	public static final String TAG = "TAG";
 	public static Boolean mainThreadFlag = true;

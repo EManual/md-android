@@ -102,15 +102,15 @@ public class FormFile {
 ```
 实现文件上传的代码如下：
 ```  
-[Tags]/**
- [Tags]* 直接通过HTTP协议提交数据到服务器,实现表单提交功能
- [Tags]* @param actionUrl
- [Tags]*            上传路径
- [Tags]* @param params
- [Tags]*            请求参数 key为参数名,value为参数值
- [Tags]* @param file
- [Tags]*            上传文件
- [Tags]*/
+ /**
+  * 直接通过HTTP协议提交数据到服务器,实现表单提交功能
+  * @param actionUrl
+  *            上传路径
+  * @param params
+  *            请求参数 key为参数名,value为参数值
+  * @param file
+  *            上传文件
+  */
 public static String post(String actionUrl, Map<String, String> params,
 		FormFile[] files) {
 	try {

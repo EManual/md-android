@@ -68,9 +68,9 @@ preference.xml 内容如下：
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 public class seekBarDemo extends PreferenceActivity {
-	[Tags]/**
-	 [Tags]* Called when the activity is first created.
-	 [Tags]*/
+	 /**
+	  * Called when the activity is first created.
+	  */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

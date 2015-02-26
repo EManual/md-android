@@ -42,10 +42,10 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 // 这个方法就是用来设置我们 MainActivity 上的TextView的值(就是我们首选项的值)
 private void setOptionText() {
 	/*
-	 [Tags]* 这个方法比较有意思了 第一个参数：用来指定我们存储我们首选项值的文件的名称 格式就是
-	 [Tags]* 包名_preferences,大家可以看到我的包名就是xiaohang.zhimeng 这里如果你不按照这个格式写 比如你不写你当前包名
-	 [Tags]* 写成别的，也会生成 当前包名_preferences 这个文件 写或不写它就在那里 第二个参数：打开模式
-	 [Tags]*/
+	  * 这个方法比较有意思了 第一个参数：用来指定我们存储我们首选项值的文件的名称 格式就是
+	  * 包名_preferences,大家可以看到我的包名就是xiaohang.zhimeng 这里如果你不按照这个格式写 比如你不写你当前包名
+	  * 写成别的，也会生成 当前包名_preferences 这个文件 写或不写它就在那里 第二个参数：打开模式
+	  */
 	SharedPreferences prefs = getSharedPreferences(
 			"xiaohang.zhimeng_preferences", 0);
 	// 这个方法大家去看文档，否则我会越写越乱

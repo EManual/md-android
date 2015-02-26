@@ -40,19 +40,19 @@ public class JavaScriptActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		webView = (WebView) findViewById(R.id.webView1);
-		[Tags]/**
-		 [Tags]* webSettings 保存着WebView中的状态信息。当WebView第一次被创建时，webSetting中
-		 [Tags]* 存储的都为默认值。WebSetting和WebView是一一绑定的。如果webView被销毁了，那么
-		 [Tags]* 我们再次调用webSetting中的方法时，会抛出异常。
-		 [Tags]*/
+		 /**
+		  * webSettings 保存着WebView中的状态信息。当WebView第一次被创建时，webSetting中
+		  * 存储的都为默认值。WebSetting和WebView是一一绑定的。如果webView被销毁了，那么
+		  * 我们再次调用webSetting中的方法时，会抛出异常。
+		  */
 		WebSettings webSettings = webView.getSettings();
 		webSettings.setJavaScriptEnabled(true);
 		webView.loadUrl("file:///data/js.html");
-		[Tags]/***
-		 [Tags]* webChromeClient是一个比较神奇的东西，其里面提供了一系列的方法，
-		 [Tags]* 分别作用于我们的javascript代码调用特定方法时执行，我们一般在其内部 将javascript形式的展示切换为android的形式。
-		 [Tags]* 例如：我们重写了onJsAlert方法，那么当页面中需要弹出alert窗口时，便 会执行我们的代码，按照我们的Toast的形式提示用户。
-		 [Tags]*/
+		 /***
+		  * webChromeClient是一个比较神奇的东西，其里面提供了一系列的方法，
+		  * 分别作用于我们的javascript代码调用特定方法时执行，我们一般在其内部 将javascript形式的展示切换为android的形式。
+		  * 例如：我们重写了onJsAlert方法，那么当页面中需要弹出alert窗口时，便 会执行我们的代码，按照我们的Toast的形式提示用户。
+		  */
 		class MyWebChromeClient extends WebChromeClient {
 			@Override
 			public boolean onJsAlert(WebView view, String url, String message,
@@ -64,12 +64,12 @@ public class JavaScriptActivity extends Activity {
 		}
 		webView.setWebChromeClient(new MyWebChromeClient());
 		/*
-		 [Tags]* 为javascript提供一个回调的接口，这里要注意，一定要在单独的线程中实现,要不会阻塞线程的
-		 [Tags]* addJavascriptInterface(Object obj, String interfaceName)
-		 [Tags]* obj代表一个java对象，这里我们一般会实现一个自己的类，类里面提供我们要提供给javascript访问的方法
-		 [Tags]* interfaceName则是访问我们在obj中声明的方法时候所用到的js对象
-		 [Tags]* ，调用模式为window.interfaceName.方法名()
-		 [Tags]*/
+		  * 为javascript提供一个回调的接口，这里要注意，一定要在单独的线程中实现,要不会阻塞线程的
+		  * addJavascriptInterface(Object obj, String interfaceName)
+		  * obj代表一个java对象，这里我们一般会实现一个自己的类，类里面提供我们要提供给javascript访问的方法
+		  * interfaceName则是访问我们在obj中声明的方法时候所用到的js对象
+		  * ，调用模式为window.interfaceName.方法名()
+		  */
 		webView.addJavascriptInterface(new Object() {
 			public void show() {
 				handler.post(new Runnable() {
@@ -77,9 +77,9 @@ public class JavaScriptActivity extends Activity {
 					public void run() {
 						Log.i("通知", "调用了该方法哦");
 						/*
-						 [Tags]* 通过webView.loadUrl("javascript:xxx")方式就可以调用当前网页中的名称
-						 [Tags]* 为xxx的javascript方法
-						 [Tags]*/
+						  * 通过webView.loadUrl("javascript:xxx")方式就可以调用当前网页中的名称
+						  * 为xxx的javascript方法
+						  */
 						webView.loadUrl("javascript:show()");
 					}
 				});

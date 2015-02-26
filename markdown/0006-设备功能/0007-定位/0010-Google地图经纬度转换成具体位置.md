@@ -28,15 +28,15 @@ public class LocationDemoActivity extends Activity implements OnClickListener {
 		addressTView = (TextView) findViewById(R.id.address);
 		parseBtn.setOnClickListener(this);
 	}
-	[Tags]/**
-	 [Tags]* 由经纬度获得地址
-	 [Tags]* 
-	 [Tags]* @param latitude
-	 [Tags]*            纬度
-	 [Tags]* @param longitude
-	 [Tags]*            经度
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 由经纬度获得地址
+	  * 
+	  * @param latitude
+	  *            纬度
+	  * @param longitude
+	  *            经度
+	  * @return
+	  */
 	private static JSONObject geocodeAddr(double lat, double lng) {
 		String urlString = "http://ditu.google.com/maps/geo?q=+" + lat + ",
 				+ lng + "&output=json&oe=utf8&hl=zh-CN&sensor=false";

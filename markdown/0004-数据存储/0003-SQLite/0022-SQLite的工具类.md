@@ -12,73 +12,73 @@ import java.util.List;
 import java.util.Map;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-[Tags]/**
- [Tags]* 通过SQL语句查询出结果并封闭到VO里
- [Tags]*/
+ /**
+  * 通过SQL语句查询出结果并封闭到VO里
+  */
 public class HappySQL {
-	[Tags]/**
-	 [Tags]* 通过SQL语句获得对应的VO。注意：Cursor的字段名或者别名一定要和VO的成员名一样
-	 [Tags]* 
-	 [Tags]* @param db
-	 [Tags]* @param sql
-	 [Tags]* @param clazz
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 通过SQL语句获得对应的VO。注意：Cursor的字段名或者别名一定要和VO的成员名一样
+	  * 
+	  * @param db
+	  * @param sql
+	  * @param clazz
+	  * @return
+	  */
 	@SuppressWarnings("rawtypes")
 	public static Object sql2VO(SQLiteDatabase db, String sql, Class clazz) {
 		Cursor c = db.rawQuery(sql, null);
 		return cursor2VO(c, clazz);
 	}
-	[Tags]/**
-	 [Tags]* 通过SQL语句获得对应的VO。注意：Cursor的字段名或者别名一定要和VO的成员名一样
-	 [Tags]* 
-	 [Tags]* @param db
-	 [Tags]* @param sql
-	 [Tags]* @param selectionArgs
-	 [Tags]* @param clazz
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 通过SQL语句获得对应的VO。注意：Cursor的字段名或者别名一定要和VO的成员名一样
+	  * 
+	  * @param db
+	  * @param sql
+	  * @param selectionArgs
+	  * @param clazz
+	  * @return
+	  */
 	@SuppressWarnings("rawtypes")
 	public static Object sql2VO(SQLiteDatabase db, String sql,
 			String[] selectionArgs, Class clazz) {
 		Cursor c = db.rawQuery(sql, selectionArgs);
 		return cursor2VO(c, clazz);
 	}
-	[Tags]/**
-	 [Tags]* 通过SQL语句获得对应的VO的List。注意：Cursor的字段名或者别名一定要和VO的成员名一样
-	 [Tags]* 
-	 [Tags]* @param db
-	 [Tags]* @param sql
-	 [Tags]* @param clazz
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 通过SQL语句获得对应的VO的List。注意：Cursor的字段名或者别名一定要和VO的成员名一样
+	  * 
+	  * @param db
+	  * @param sql
+	  * @param clazz
+	  * @return
+	  */
 	@SuppressWarnings("rawtypes")
 	public static List sql2VOList(SQLiteDatabase db, String sql, Class clazz) {
 		Cursor c = db.rawQuery(sql, null);
 		return cursor2VOList(c, clazz);
 	}
-	[Tags]/**
-	 [Tags]* 通过SQL语句获得对应的VO的List。注意：Cursor的字段名或者别名一定要和VO的成员名一样
-	 [Tags]* 
-	 [Tags]* @param db
-	 [Tags]* @param sql
-	 [Tags]* @param selectionArgs
-	 [Tags]* @param clazz
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 通过SQL语句获得对应的VO的List。注意：Cursor的字段名或者别名一定要和VO的成员名一样
+	  * 
+	  * @param db
+	  * @param sql
+	  * @param selectionArgs
+	  * @param clazz
+	  * @return
+	  */
 	@SuppressWarnings("rawtypes")
 	public static List sql2VOList(SQLiteDatabase db, String sql,
 			String[] selectionArgs, Class clazz) {
 		Cursor c = db.rawQuery(sql, selectionArgs);
 		return cursor2VOList(c, clazz);
 	}
-	[Tags]/**
-	 [Tags]* 通过Cursor转换成对应的VO。注意：Cursor里的字段名（可用别名）必须要和VO的属性名一致
-	 [Tags]* 
-	 [Tags]* @param c
-	 [Tags]* @param clazz
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 通过Cursor转换成对应的VO。注意：Cursor里的字段名（可用别名）必须要和VO的属性名一致
+	  * 
+	  * @param c
+	  * @param clazz
+	  * @return
+	  */
 	@SuppressWarnings({ "rawtypes", "unused" })
 	private static Object cursor2VO(Cursor c, Class clazz) {
 		if (c == null) {
@@ -98,13 +98,13 @@ public class HappySQL {
 			c.close();
 		}
 	}
-	[Tags]/**
-	 [Tags]* 通过Cursor转换成对应的VO集合。注意：Cursor里的字段名（可用别名）必须要和VO的属性名一致
-	 [Tags]* 
-	 [Tags]* @param c
-	 [Tags]* @param clazz
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 通过Cursor转换成对应的VO集合。注意：Cursor里的字段名（可用别名）必须要和VO的属性名一致
+	  * 
+	  * @param c
+	  * @param clazz
+	  * @return
+	  */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private static List cursor2VOList(Cursor c, Class clazz) {
 		if (c == null) {
@@ -126,15 +126,15 @@ public class HappySQL {
 			c.close();
 		}
 	}
-	[Tags]/**
-	 [Tags]* 把值设置进类属性里
-	 [Tags]* 
-	 [Tags]* @param columnNames
-	 [Tags]* @param fields
-	 [Tags]* @param c
-	 [Tags]* @param obj
-	 [Tags]* @throws Exception
-	 [Tags]*/
+	 /**
+	  * 把值设置进类属性里
+	  * 
+	  * @param columnNames
+	  * @param fields
+	  * @param c
+	  * @param obj
+	  * @throws Exception
+	  */
 	@SuppressWarnings("rawtypes")
 	private static Object setValues2Fields(Cursor c, Class clazz)
 			throws Exception {
@@ -170,12 +170,12 @@ public class HappySQL {
 		}
 		return obj;
 	}
-	[Tags]/**
-	 [Tags]* 判断是不是基本类型
-	 [Tags]* 
-	 [Tags]* @param typeClass
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 判断是不是基本类型
+	  * 
+	  * @param typeClass
+	  * @return
+	  */
 	@SuppressWarnings("rawtypes")
 	private static boolean isBasicType(Class typeClass) {
 		if (typeClass.equals(Integer.class) || typeClass.equals(Long.class)
@@ -190,12 +190,12 @@ public class HappySQL {
 			return false;
 		}
 	}
-	[Tags]/**
-	 [Tags]* 获得包装类
-	 [Tags]* 
-	 [Tags]* @param typeClass
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 获得包装类
+	  * 
+	  * @param typeClass
+	  * @return
+	  */
 	@SuppressWarnings("all")
 	public static Class<? extends Object> getBasicClass(Class typeClass) {
 		Class _class = basicMap.get(typeClass);

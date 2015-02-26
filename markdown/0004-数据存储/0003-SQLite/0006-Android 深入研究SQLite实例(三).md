@@ -32,12 +32,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import it.bean.Person;
-[Tags]/**
- [Tags]* 
- [Tags]* 实体操作类 rawQuery 执行sql查询 execSQL 执行增删 改的sql 由SQLiteOpenHelper 的继承类
- [Tags]* MangerDatabase获取数据库管理实例 由SQLiteDatabase的对象去获取这个管理实例
- [Tags]* 这个对象可以执行rawQuery和execSQL方法
- [Tags]*/
+ /**
+  * 
+  * 实体操作类 rawQuery 执行sql查询 execSQL 执行增删 改的sql 由SQLiteOpenHelper 的继承类
+  * MangerDatabase获取数据库管理实例 由SQLiteDatabase的对象去获取这个管理实例
+  * 这个对象可以执行rawQuery和execSQL方法
+  */
 public class PersonService {
 	private MangerDatabase dbmanger;
 	public PersonService(Context context) {
@@ -45,13 +45,13 @@ public class PersonService {
 	}
 	// 保存
 	public void save(Person person) {
-		[Tags]/**
-		 [Tags]* 打开数据库 取得数据操作对象 getWritableDatabase()和getReadableDatabase()
-		 [Tags]* 方法都可以获取一个用于操作数据库的SQLiteDatabase实例。 但getWritableDatabase()
-		 [Tags]* 方法以读写方式打开数据库，一旦数据库的磁盘空间满了，数据库就只能读而不能写， 倘若使用的是getWritableDatabase()
-		 [Tags]* 方法就会出错。 getReadableDatabase()方法先以读写方式打开数据库，如果数据库的磁盘空间满了，就会打开失败
-		 [Tags]* 当打开失败后会继续尝试以只读方式打开数据库。 SQLiteDatabase sqlite数据库的管理类
-		 [Tags]*/
+		 /**
+		  * 打开数据库 取得数据操作对象 getWritableDatabase()和getReadableDatabase()
+		  * 方法都可以获取一个用于操作数据库的SQLiteDatabase实例。 但getWritableDatabase()
+		  * 方法以读写方式打开数据库，一旦数据库的磁盘空间满了，数据库就只能读而不能写， 倘若使用的是getWritableDatabase()
+		  * 方法就会出错。 getReadableDatabase()方法先以读写方式打开数据库，如果数据库的磁盘空间满了，就会打开失败
+		  * 当打开失败后会继续尝试以只读方式打开数据库。 SQLiteDatabase sqlite数据库的管理类
+		  */
 		SQLiteDatabase database = dbmanger.getWritableDatabase();
 		database.execSQL("insert into person(name,age) values(?,?)",
 				new Object[] { person.getName(), person.getAge() });

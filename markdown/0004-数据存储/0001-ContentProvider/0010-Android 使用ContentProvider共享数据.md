@@ -76,16 +76,16 @@ public class TestContentProvider extends ContentProvider {
 			return TestContentProvider.class.getSimpleName();
 		}
 	}
-	[Tags]/** */
-	[Tags]/**
-     [Tags]* 
-     [Tags]*/
+	 /** */
+	 /**
+      * 
+      */
 	public TestContentProvider() {
 	}
 	/*
-	 [Tags]* @see android.content.ContentProviderdelete(android.net.Uri,
-	 [Tags]* java.lang.String, java.lang.String[])
-	 [Tags]*/
+	  * @see android.content.ContentProviderdelete(android.net.Uri,
+	  * java.lang.String, java.lang.String[])
+	  */
 	@Override
 	public int delete(Uri uri, String selection, String[] selectionArgs) {
 		// NOTE Argument checking code omitted. Check your parameters!
@@ -97,8 +97,8 @@ public class TestContentProvider extends ContentProvider {
 		return rowCount;
 	}
 	/*
-	 [Tags]* @see android.content.ContentProvidergetType(android.net.Uri)
-	 [Tags]*/
+	  * @see android.content.ContentProvidergetType(android.net.Uri)
+	  */
 	@Override
 	public String getType(Uri uri) {
 		switch (URI_MATCHER.match(uri)) {
@@ -111,9 +111,9 @@ public class TestContentProvider extends ContentProvider {
 		}
 	}
 	/*
-	 [Tags]* @see android.content.ContentProviderinsert(android.net.Uri,
-	 [Tags]* android.content.ContentValues)
-	 [Tags]*/
+	  * @see android.content.ContentProviderinsert(android.net.Uri,
+	  * android.content.ContentValues)
+	  */
 	@Override
 	public Uri insert(Uri uri, ContentValues values) {
 		// NOTE Argument checking code omitted. Check your parameters! Check
@@ -128,8 +128,8 @@ public class TestContentProvider extends ContentProvider {
 		return newUri;
 	}
 	/*
-	 [Tags]* @see android.content.ContentProvideronCreate()
-	 [Tags]*/
+	  * @see android.content.ContentProvideronCreate()
+	  */
 	@Override
 	public boolean onCreate() {
 		try {
@@ -142,10 +142,10 @@ public class TestContentProvider extends ContentProvider {
 		return true;
 	}
 	/*
-	 [Tags]* @see android.content.ContentProviderquery(android.net.Uri,
-	 [Tags]* java.lang.String[], java.lang.String, java.lang.String[],
-	 [Tags]* java.lang.String)
-	 [Tags]*/
+	  * @see android.content.ContentProviderquery(android.net.Uri,
+	  * java.lang.String[], java.lang.String, java.lang.String[],
+	  * java.lang.String)
+	  */
 	public Cursor query(Uri uri, String[] projection, String selection,
 			String[] selectionArgs, String sortOrder) {
 		// We won't bother checking the validity of params here, but you should!
@@ -169,9 +169,9 @@ public class TestContentProvider extends ContentProvider {
 		return c;
 	}
 	/*
-	 [Tags]* @see android.content.ContentProviderupdate(android.net.Uri,
-	 [Tags]* android.content.ContentValues, java.lang.String, java.lang.String[])
-	 [Tags]*/
+	  * @see android.content.ContentProviderupdate(android.net.Uri,
+	  * android.content.ContentValues, java.lang.String, java.lang.String[])
+	  */
 	@Override
 	public int update(Uri uri, ContentValues values, String selection,
 			String[] selectionArgs) {

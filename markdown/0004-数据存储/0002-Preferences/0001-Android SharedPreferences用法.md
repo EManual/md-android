@@ -38,7 +38,7 @@ public class SharedPreferencesUsage extends Activity {
 	public final static String COLUMN_NAME = "name";
 	public final static String COLUMN_MOBILE = "mobile";
 	SharedPreferencesHelper sp;
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

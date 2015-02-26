@@ -28,10 +28,10 @@ public class BootUpReceiver extends BroadcastReceiver {
 ```
 读取开机时间 
 ```  
-[Tags]/**
- [Tags]* Description : 获取开机的时间
- [Tags]* @return String 秒数
- [Tags]*/
+ /**
+  * Description : 获取开机的时间
+  * @return String 秒数
+  */
 public static long getUpTime(Activity context) {
 	SharedPreferences sharedPreferences = context.getSharedPreferences(
 			"这是存储文件的名字", Context.MODE_PRIVATE);

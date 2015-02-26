@@ -19,7 +19,7 @@ public class IBMEyes extends Activity implements SensorListener {
 	TextView xViewO = null;
 	TextView yViewO = null;
 	TextView zViewO = null;
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// get reference to SensorManager sm = (SensorManager)

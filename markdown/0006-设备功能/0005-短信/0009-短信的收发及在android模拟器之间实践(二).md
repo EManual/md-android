@@ -176,7 +176,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 public class TextMessage extends Activity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

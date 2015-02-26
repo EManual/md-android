@@ -45,9 +45,9 @@ private void handleRingtonePicked(Uri pickedUri) {
 	}
 	saveData();
 }
-[Tags]/**
- [Tags]* 保存数据
- [Tags]*/
+ /**
+  * 保存数据
+  */
 private void saveData() {
 	ContentValues values = new ContentValues();
 	values.put(Contacts.CUSTOM_RINGTONE, mCustomRingtone);

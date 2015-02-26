@@ -121,12 +121,12 @@ public void onContentChanged() {
 	super.onContentChanged();
 	postBindPreferences();
 }
-[Tags]/**
- [Tags]* Posts a message to bind the preferences to the list view.
- [Tags]* <p>
- [Tags]* Binding late is preferred as any custom preference types created in
- [Tags]* {@link onCreate(Bundle)} are able to have their views recycled.
- [Tags]*/
+ /**
+  * Posts a message to bind the preferences to the list view.
+  * <p>
+  * Binding late is preferred as any custom preference types created in
+  * {@link onCreate(Bundle)} are able to have their views recycled.
+  */
 private void postBindPreferences() {
 	if (mHandler.hasMessages(MSG_BIND_PREFERENCES)) return;
 	mHandler.obtainMessage(MSG_BIND_PREFERENCES).sendToTarget();

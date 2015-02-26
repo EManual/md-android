@@ -154,8 +154,8 @@ public class Snippet {
 						ht.call(null, envelope);
 						Object Response = envelope.getResult();
 						/*
-						 [Tags]* 必要时打印出tx.responseDump来观察soap是否正确工作
-						 [Tags]*/
+						  * 必要时打印出tx.responseDump来观察soap是否正确工作
+						  */
 						System.out.println("dump>>" + tx.responseDump);
 						String sResponse = (String) Response;
 					} catch (Exception e) {

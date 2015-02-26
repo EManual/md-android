@@ -3,7 +3,7 @@ java代码：
 import android.app.Activity;
 import android.os.Bundle;
 public class CameraTest_3 extends Activity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	MySurfaceView mySurface;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

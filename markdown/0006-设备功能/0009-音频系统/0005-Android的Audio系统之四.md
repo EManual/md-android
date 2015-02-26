@@ -30,7 +30,7 @@ static jint android_media_AudioTrack_native_write(JNIEnv *env,  jobject thiz, jb
                     int16_t *dst = (int16_t *)lpTrack->sharedBuffer()->pointer();
                     const int8_t *src = (const int8_t *)(cAudioData + offsetInBytes);
                     while(count--) {
-                         [Tags]*dst++ = (int16_t)([Tags]*src++^0x80) << 8;  
+                          *dst++ = (int16_t)( *src++^0x80) << 8;  
                      }  
                     written = sizeInBytes;
                 }  

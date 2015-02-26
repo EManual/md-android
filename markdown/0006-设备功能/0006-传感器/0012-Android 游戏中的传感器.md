@@ -13,11 +13,11 @@
 ```
 今天我们给大家介绍的是游戏开发中最最常见的，用到的频率最高的一种传感器，加速度传感器(重力传感器)!
 ```  
-[Tags]/**
- [Tags]* @Sensor 加速度传感器 ,也称为重力传感器
- [Tags]* @SDK 1.5(api 3)就支持传感器了
- [Tags]* @解释：此传感器不仅对玩家反转手机的动作可以检测到，而且会根据反转手机的程度,得到传感器的值也会不同！
- [Tags]*/
+ /**
+  * @Sensor 加速度传感器 ,也称为重力传感器
+  * @SDK 1.5(api 3)就支持传感器了
+  * @解释：此传感器不仅对玩家反转手机的动作可以检测到，而且会根据反转手机的程度,得到传感器的值也会不同！
+  */
 public class MySurfaceView extends SurfaceView implements Callback, Runnable {
 	private Thread th = new Thread(this);
 	private SurfaceHolder sfh;

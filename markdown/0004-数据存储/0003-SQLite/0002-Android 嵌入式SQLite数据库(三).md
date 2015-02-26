@@ -1,10 +1,10 @@
 第二种方式示例：
 ```  
 public class Snippet {
-	[Tags]/**
-	 [Tags]* 插入一个Person
-	 [Tags]* @param p 要插入的Person
-	 [Tags]*/
+	 /**
+	  * 插入一个Person
+	  * @param p 要插入的Person
+	  */
 	public void insert(Person p) { 
 		SQLiteDatabase db = helper.getWritableDatabase(); 7.
 		ContentValues values = new ContentValues();
@@ -15,19 +15,19 @@ public class Snippet {
 		db.insert("person", null, values);
 		db.close();
 	}
-	[Tags]/**
-	 [Tags]* 根据ID删除
-	 [Tags]* @param id 要删除的PERSON的ID
-	 [Tags]*/
+	 /**
+	  * 根据ID删除
+	  * @param id 要删除的PERSON的ID
+	  */
 	public void delete(Integer id) {
 		SQLiteDatabase db = helper.getWritableDatabase();
 		db.delete("person", "id=?", new String[] { id.toString() });
 		db.close();
 	}
-	[Tags]/**
-	 [Tags]* 更新Person
-	 [Tags]* @param p 要更新的Person
-	 [Tags]*/
+	 /**
+	  * 更新Person
+	  * @param p 要更新的Person
+	  */
 	public void update(Person p) {
 		SQLiteDatabase db = helper.getWritableDatabase();
 		ContentValues values = new ContentValues();
@@ -39,11 +39,11 @@ public class Snippet {
 				new String[] { p.getId().toString() });
 		db.close();
 	}
-	[Tags]/**
-	 [Tags]* 根据ID查找
-	 [Tags]* @param id 要查的ID
-	 [Tags]* @return 对应的对象, 如果未找到返回null
-	 [Tags]*/
+	 /**
+	  * 根据ID查找
+	  * @param id 要查的ID
+	  * @return 对应的对象, 如果未找到返回null
+	  */
 	public Person find(Integer id) {
 		SQLiteDatabase db = helper.getReadableDatabase();
 		Cursor cursor = db.query("person", new String[] { "name", "phone",
@@ -60,10 +60,10 @@ public class Snippet {
 		db.close();
 		return p;
 	}
-	[Tags]/**
-	 [Tags]* 查询所有Person对象
-	 [Tags]* @return Person对象集合, 如未找到, 返回一个size()为0的List
-	 [Tags]*/
+	 /**
+	  * 查询所有Person对象
+	  * @return Person对象集合, 如未找到, 返回一个size()为0的List
+	  */
 	public List<Person> findAll() {
 		SQLiteDatabase db = helper.getReadableDatabase();
 		Cursor cursor = db.query("person", new String[] { "id", "name",
@@ -81,17 +81,17 @@ public class Snippet {
 		db.close();
 		return persons;
 	}
-	[Tags]/**
-	 [Tags]* 查询某一页数据
-	 [Tags]* @param page 页码
-	 [Tags]* @param size 每页记录数
-	 [Tags]* @return
-	 [Tags]*/
+	 /**
+	  * 查询某一页数据
+	  * @param page 页码
+	  * @param size 每页记录数
+	  * @return
+	  */
 	public List<Person> findPage(int page, int size) {
 		SQLiteDatabase db = helper.getReadableDatabase();
 		Cursor cursor = db.query("person", new String[] { "id", "name",
 				"phone", "balance" }, null, null, null, null, null, (page - 1)
-				[Tags]* size + "," + size);
+				 * size + "," + size);
 		List<Person> persons = new ArrayList<Person>();
 		while (cursor.moveToNext()) {
 			Integer id = cursor.getInt(0);
@@ -104,10 +104,10 @@ public class Snippet {
 		db.close();
 		return persons;
 	}
-	[Tags]/**
-	 [Tags]* 获取记录数
-	 [Tags]* @return 记录数
-	 [Tags]*/
+	 /**
+	  * 获取记录数
+	  * @return 记录数
+	  */
 	public int getCount() {
 		SQLiteDatabase db = helper.getReadableDatabase();
 		Cursor cursor = db.query("person", new String[] { "COUNT(*)" }, null,

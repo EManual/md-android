@@ -14,9 +14,9 @@
 ```
 8 业务bean
 ```  
-[Tags]/**
- [Tags]* 数据库的实体类
- [Tags]*/
+ /**
+  * 数据库的实体类
+  */
 public class Person {
 	private Integer personId;
 	private String name;

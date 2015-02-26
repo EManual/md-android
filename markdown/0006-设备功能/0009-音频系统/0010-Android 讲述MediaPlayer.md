@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.Toast;
 public class testMedia extends Activity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	private SeekBar skb_audio = null;
 	private Button btn_start_audio = null;
 	private Button btn_stop_audio = null;
@@ -74,8 +74,8 @@ public class testMedia extends Activity {
 		surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 	}
 	/*
-	 [Tags]* 按键事件处理
-	 [Tags]*/
+	  * 按键事件处理
+	  */
 	class ClickEvent implements View.OnClickListener {
 
 		@Override
@@ -116,8 +116,8 @@ public class testMedia extends Activity {
 		}
 	}
 	/*
-	 [Tags]* SeekBar 进度改变事件
-	 [Tags]*/
+	  * SeekBar 进度改变事件
+	  */
 	class SeekBarChangeEvent implements SeekBar.OnSeekBarChangeListener {
 		@Override
 		public void onProgressChanged(SeekBar seekBar, int progress,

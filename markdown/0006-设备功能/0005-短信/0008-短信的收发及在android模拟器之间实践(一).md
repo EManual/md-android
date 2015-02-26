@@ -164,7 +164,7 @@ import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.*;
 public class TextMessage extends Activity {
-	[Tags]/** Called when the activity is first created. */
+	 /** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

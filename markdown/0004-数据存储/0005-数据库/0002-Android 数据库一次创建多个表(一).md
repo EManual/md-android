@@ -4,9 +4,9 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-[Tags]/**
- [Tags]* 默认就在数据库里创建4张表
- [Tags]*/
+ /**
+  * 默认就在数据库里创建4张表
+  */
 public class DBOpenHelper extends SQLiteOpenHelper {
 	private static final String name = "database.db";// 数据库名称
 	private static final int version = 1;// 数据库版本
@@ -41,9 +41,9 @@ import com.yangguangfu.bean.ApplicationInfo;
 import com.yangguangfu.bean.ConfigInfo;
 import com.yangguangfu.bean.InstallInfo;
 import com.yangguangfu.bean.SMSInfo;
-[Tags]/**
- [Tags]* 数据库方法封装，创建表，删除表，数据(增删该查)...
- [Tags]*/
+ /**
+  * 数据库方法封装，创建表，删除表，数据(增删该查)...
+  */
 public class DatabaseService {
 	private DBOpenHelper dbOpenHelper;
 	public DatabaseService(Context context) {

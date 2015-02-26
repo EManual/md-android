@@ -44,9 +44,9 @@ import it.bean.Person;
 import it.service.PersonService;
 import android.test.AndroidTestCase;
 import android.util.Log;
-[Tags]/**
- [Tags]* 执行PersonService的测试
- [Tags]*/
+ /**
+  * 执行PersonService的测试
+  */
 public class PersonServiceTest extends AndroidTestCase {
 	private static final String tag = "PersonServiceTest";
 	public void testsave() throws Exception {

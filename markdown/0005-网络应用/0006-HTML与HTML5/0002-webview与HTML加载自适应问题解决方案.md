@@ -12,7 +12,7 @@
 	<title><? echo $arr['subject'];?></title>
 	<style type="text/css">
 		<!--
-		[Tags]*{ margin:0; padding:0}
+		 *{ margin:0; padding:0}
 		body{
 			margin-left:0;
 			margin-right:0;

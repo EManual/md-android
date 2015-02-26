@@ -8,18 +8,18 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.util.Log;
-[Tags]/**
- [Tags]* A helper class to manage database creation and version management. You create
- [Tags]* a subclass implementing {@link onCreate}, {@link onUpgrade} and optionally
- [Tags]* {@link onOpen}, and this class takes care of opening the database if it
- [Tags]* exists, creating it if it does not, and upgrading it as necessary.
- [Tags]* Transactions are used to make sure the database is always in a sensible
- [Tags]* state.
- [Tags]* <p>
- [Tags]* For an example, see the NotePadProvider class in the NotePad sample
- [Tags]* application, in the <em>samples/</em> directory of the SDK.
- [Tags]* </p>
- [Tags]*/
+ /**
+  * A helper class to manage database creation and version management. You create
+  * a subclass implementing {@link onCreate}, {@link onUpgrade} and optionally
+  * {@link onOpen}, and this class takes care of opening the database if it
+  * exists, creating it if it does not, and upgrading it as necessary.
+  * Transactions are used to make sure the database is always in a sensible
+  * state.
+  * <p>
+  * For an example, see the NotePadProvider class in the NotePad sample
+  * application, in the <em>samples/</em> directory of the SDK.
+  * </p>
+  */
 public abstract class SDSQLiteOpenHelper {
 	private static final String TAG = SDSQLiteOpenHelper.class.getSimpleName();
 	private final Context mContext;
@@ -28,21 +28,21 @@ public abstract class SDSQLiteOpenHelper {
 	private final int mNewVersion;
 	private SQLiteDatabase mDatabase = null;
 	private boolean mIsInitializing = false;
-	[Tags]/**
-	 [Tags]* Create a helper object to create, open, and/or manage a database. The
-	 [Tags]* database is not actually created or opened until one of
-	 [Tags]* {@link getWritableDatabase} or {@link getReadableDatabase} is called.
-	 [Tags]* 
-	 [Tags]* @param context
-	 [Tags]*            to use to open or create the database
-	 [Tags]* @param name
-	 [Tags]*            of the database file, or null for an in-memory database
-	 [Tags]* @param factory
-	 [Tags]*            to use for creating cursor objects, or null for the default
-	 [Tags]* @param version
-	 [Tags]*            number of the database (starting at 1); if the database is
-	 [Tags]*            older, {@link onUpgrade} will be used to upgrade the database
-	 [Tags]*/
+	 /**
+	  * Create a helper object to create, open, and/or manage a database. The
+	  * database is not actually created or opened until one of
+	  * {@link getWritableDatabase} or {@link getReadableDatabase} is called.
+	  * 
+	  * @param context
+	  *            to use to open or create the database
+	  * @param name
+	  *            of the database file, or null for an in-memory database
+	  * @param factory
+	  *            to use for creating cursor objects, or null for the default
+	  * @param version
+	  *            number of the database (starting at 1); if the database is
+	  *            older, {@link onUpgrade} will be used to upgrade the database
+	  */
 	public SDSQLiteOpenHelper(Context context, String name,
 			CursorFactory factory, int version) {
 		if (version < 1)
@@ -53,21 +53,21 @@ public abstract class SDSQLiteOpenHelper {
 		mFactory = factory;
 		mNewVersion = version;
 	}
-	[Tags]/**
-	 [Tags]* Create and/or open a database that will be used for reading and writing.
-	 [Tags]* Once opened successfully, the database is cached, so you can call this
-	 [Tags]* method every time you need to write to the database. Make sure to call
-	 [Tags]* {@link close} when you no longer need it.
-	 [Tags]* 
-	 [Tags]* <p>
-	 [Tags]* Errors such as bad permissions or a full disk may cause this operation to
-	 [Tags]* fail, but future attempts may succeed if the problem is fixed.
-	 [Tags]* </p>
-	 [Tags]* 
-	 [Tags]* @throws SQLiteException
-	 [Tags]*             if the database cannot be opened for writing
-	 [Tags]* @return a read/write database object valid until {@link close} is called
-	 [Tags]*/
+	 /**
+	  * Create and/or open a database that will be used for reading and writing.
+	  * Once opened successfully, the database is cached, so you can call this
+	  * method every time you need to write to the database. Make sure to call
+	  * {@link close} when you no longer need it.
+	  * 
+	  * <p>
+	  * Errors such as bad permissions or a full disk may cause this operation to
+	  * fail, but future attempts may succeed if the problem is fixed.
+	  * </p>
+	  * 
+	  * @throws SQLiteException
+	  *             if the database cannot be opened for writing
+	  * @return a read/write database object valid until {@link close} is called
+	  */
 	public synchronized SQLiteDatabase getWritableDatabase() {
 		if (mDatabase != null && mDatabase.isOpen() && !mDatabase.isReadOnly()) {
 			return mDatabase; // The database is already open for business
@@ -125,20 +125,20 @@ public abstract class SDSQLiteOpenHelper {
 			}
 		}
 	}
-	[Tags]/**
-	 [Tags]* Create and/or open a database. This will be the same object returned by
-	 [Tags]* {@link getWritableDatabase} unless some problem, such as a full disk,
-	 [Tags]* requires the database to be opened read-only. In that case, a read-only
-	 [Tags]* database object will be returned. If the problem is fixed, a future call
-	 [Tags]* to {@link getWritableDatabase} may succeed, in which case the read-only
-	 [Tags]* database object will be closed and the read/write object will be returned
-	 [Tags]* in the future.
-	 [Tags]* 
-	 [Tags]* @throws SQLiteException
-	 [Tags]*             if the database cannot be opened
-	 [Tags]* @return a database object valid until {@link getWritableDatabase} or
-	 [Tags]*         {@link close} is called.
-	 [Tags]*/
+	 /**
+	  * Create and/or open a database. This will be the same object returned by
+	  * {@link getWritableDatabase} unless some problem, such as a full disk,
+	  * requires the database to be opened read-only. In that case, a read-only
+	  * database object will be returned. If the problem is fixed, a future call
+	  * to {@link getWritableDatabase} may succeed, in which case the read-only
+	  * database object will be closed and the read/write object will be returned
+	  * in the future.
+	  * 
+	  * @throws SQLiteException
+	  *             if the database cannot be opened
+	  * @return a database object valid until {@link getWritableDatabase} or
+	  *         {@link close} is called.
+	  */
 	public synchronized SQLiteDatabase getReadableDatabase() {
 		if (mDatabase != null && mDatabase.isOpen()) {
 			return mDatabase; // The database is already open for business
@@ -177,9 +177,9 @@ public abstract class SDSQLiteOpenHelper {
 				db.close();
 		}
 	}
-	[Tags]/**
-	 [Tags]* Close any open database object.
-	 [Tags]*/
+	 /**
+	  * Close any open database object.
+	  */
 	public synchronized void close() {
 		if (mIsInitializing)
 			throw new IllegalStateException("Closed during initialization");
@@ -191,44 +191,44 @@ public abstract class SDSQLiteOpenHelper {
 	public File getDatabasePath(String name) {
 		return new File("/sdcard/" + name);
 	}
-	[Tags]/**
-	 [Tags]* Called when the database is created for the first time. This is where the
-	 [Tags]* creation of tables and the initial population of the tables should
-	 [Tags]* happen.
-	 [Tags]* 
-	 [Tags]* @param db
-	 [Tags]*            The database.
-	 [Tags]*/
+	 /**
+	  * Called when the database is created for the first time. This is where the
+	  * creation of tables and the initial population of the tables should
+	  * happen.
+	  * 
+	  * @param db
+	  *            The database.
+	  */
 	public abstract void onCreate(SQLiteDatabase db);
-	[Tags]/**
-	 [Tags]* Called when the database needs to be upgraded. The implementation should
-	 [Tags]* use this method to drop tables, add tables, or do anything else it needs
-	 [Tags]* to upgrade to the new schema version.
-	 [Tags]* 
-	 [Tags]* <p>
-	 [Tags]* The SQLite ALTER TABLE documentation can be found <a
-	 [Tags]* href="http://sqlite.org/lang_altertable.html">here</a>. If you add new
-	 [Tags]* columns you can use ALTER TABLE to insert them into a live table. If you
-	 [Tags]* rename or remove columns you can use ALTER TABLE to rename the old table,
-	 [Tags]* then create the new table and then populate the new table with the
-	 [Tags]* contents of the old table.
-	 [Tags]* 
-	 [Tags]* @param db
-	 [Tags]*            The database.
-	 [Tags]* @param oldVersion
-	 [Tags]*            The old database version.
-	 [Tags]* @param newVersion
-	 [Tags]*            The new database version.
-	 [Tags]*/
+	 /**
+	  * Called when the database needs to be upgraded. The implementation should
+	  * use this method to drop tables, add tables, or do anything else it needs
+	  * to upgrade to the new schema version.
+	  * 
+	  * <p>
+	  * The SQLite ALTER TABLE documentation can be found <a
+	  * href="http://sqlite.org/lang_altertable.html">here</a>. If you add new
+	  * columns you can use ALTER TABLE to insert them into a live table. If you
+	  * rename or remove columns you can use ALTER TABLE to rename the old table,
+	  * then create the new table and then populate the new table with the
+	  * contents of the old table.
+	  * 
+	  * @param db
+	  *            The database.
+	  * @param oldVersion
+	  *            The old database version.
+	  * @param newVersion
+	  *            The new database version.
+	  */
 	public abstract void onUpgrade(SQLiteDatabase db, int oldVersion,
 			int newVersion);
-	[Tags]/**
-	 [Tags]* Called when the database has been opened. Override method should check
-	 [Tags]* {@link SQLiteDatabaseisReadOnly} before updating the database.
-	 [Tags]* 
-	 [Tags]* @param db
-	 [Tags]*            The database.
-	 [Tags]*/
+	 /**
+	  * Called when the database has been opened. Override method should check
+	  * {@link SQLiteDatabaseisReadOnly} before updating the database.
+	  * 
+	  * @param db
+	  *            The database.
+	  */
 	public void onOpen(SQLiteDatabase db) {
 	}
 }

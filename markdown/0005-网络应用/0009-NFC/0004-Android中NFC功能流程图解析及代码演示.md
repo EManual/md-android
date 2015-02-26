@@ -98,14 +98,14 @@ public class Beam extends Activity implements CreateNdefMessageCallback {
 		// 回调函数，构造NdefMessage格式
 		NdefMessage msg = new NdefMessage(new NdefRecord[] { createMimeRecord(
 				"application/com.example.android.beam", text.getBytes())
-		[Tags]/**
-		 [Tags]* The Android Application Record (AAR) is commented out. When a device
-		 [Tags]* receives a push with an AAR in it, the application specified in the
-		 [Tags]* AAR is guaranteed to run. The AAR overrides the tag dispatch system.
-		 [Tags]* You can add it back in to guarantee that this activity starts when
-		 [Tags]* receiving a beamed message. For now, this code uses the tag dispatch
-		 [Tags]* system.
-		 [Tags]*/
+		 /**
+		  * The Android Application Record (AAR) is commented out. When a device
+		  * receives a push with an AAR in it, the application specified in the
+		  * AAR is guaranteed to run. The AAR overrides the tag dispatch system.
+		  * You can add it back in to guarantee that this activity starts when
+		  * receiving a beamed message. For now, this code uses the tag dispatch
+		  * system.
+		  */
 		// ,NdefRecord.createApplicationRecord("com.example.android.beam")
 				});
 		return msg;
@@ -125,9 +125,9 @@ public class Beam extends Activity implements CreateNdefMessageCallback {
 		// onResume gets called after this to handle the intent
 		setIntent(intent);
 	}
-	[Tags]/**
-	 [Tags]* Parses the NDEF Message from the intent and prints to the TextView
-	 [Tags]*/
+	 /**
+	  * Parses the NDEF Message from the intent and prints to the TextView
+	  */
 	// 关键处理函数，处理扫描到的NdefMessage
 	void processIntent(Intent intent) {
 		textView = (TextView) findViewById(R.id.textView);
@@ -138,9 +138,9 @@ public class Beam extends Activity implements CreateNdefMessageCallback {
 		// record 0 contains the MIME type, record 1 is the AAR, if present
 		textView.setText(new String(msg.getRecords()[0].getPayload()));
 	}
-	[Tags]/**
-	 [Tags]* Creates a custom MIME type encapsulated in an NDEF record
-	 [Tags]*/
+	 /**
+	  * Creates a custom MIME type encapsulated in an NDEF record
+	  */
 	public NdefRecord createMimeRecord(String mimeType, byte[] payload) {
 		byte[] mimeBytes = mimeType.getBytes(Charset.forName("US-ASCII"));
 		NdefRecord mimeRecord = new NdefRecord(NdefRecord.TNF_MIME_MEDIA,
@@ -185,8 +185,8 @@ public class Snippet {
 		}
 	}
 	/*
-	 [Tags]* Writes an NdefMessage to a NFC tag
-	 [Tags]*/
+	  * Writes an NdefMessage to a NFC tag
+	  */
 	public static boolean writeTag(NdefMessage message, Tag tag) {
 		int size = message.toByteArray().length;
 		try {

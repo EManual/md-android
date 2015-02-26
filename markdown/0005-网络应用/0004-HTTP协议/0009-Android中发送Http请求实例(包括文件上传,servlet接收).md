@@ -2,15 +2,15 @@
 发完发现代码部分的格式……这个编辑器不太会用，怎么感觉把换行都去掉了,处理好换行缩进也……
 首先我是写了个java工程测试发送post请求：可以包含文本参数和文件参数
 ```  
-[Tags]/**
- [Tags]* 通过http协议提交数据到服务端，实现表单提交功能，包括上传文件
- [Tags]* @param actionUrl
- [Tags]*            上传路径
- [Tags]* @param params
- [Tags]*            请求参数 key为参数名,value为参数值
- [Tags]* @param file
- [Tags]*            上传文件
- [Tags]*/
+ /**
+  * 通过http协议提交数据到服务端，实现表单提交功能，包括上传文件
+  * @param actionUrl
+  *            上传路径
+  * @param params
+  *            请求参数 key为参数名,value为参数值
+  * @param file
+  *            上传文件
+  */
 public static void postMultiParams(String actionUrl,
 		Map<String, String> params, FormBean[] files) {
 	try {
@@ -66,14 +66,14 @@ public static void main(String[] args) {
 还有个异常就是VerifyError。 开发中有几次碰到这个异常都束手无策，觉得是SDK不兼容还是怎么地，哪位知道可得跟我说说～～
 于是看网上有直接分析http request的内容构建post请求的，也有找到带上传文件的，拿下来运行老是有些问题，便直接通过运行上面的java工程发送的post请求，在servlet中打印出请求内容，然后对照着拼接字符串和流终于给实现了！代码如下：
 ```  
-[Tags]/**
- [Tags]* 通过拼接的方式构造请求内容，实现参数传输以及文件传输
- [Tags]* @param actionUrl
- [Tags]* @param params
- [Tags]* @param files
- [Tags]* @return
- [Tags]* @throws IOException
- [Tags]*/
+ /**
+  * 通过拼接的方式构造请求内容，实现参数传输以及文件传输
+  * @param actionUrl
+  * @param params
+  * @param files
+  * @return
+  * @throws IOException
+  */
 public static String post(String actionUrl, Map<String, String> params,
 		Map<String, File> files) throws IOException {
 	String BOUNDARY = java.util.UUID.randomUUID().toString();

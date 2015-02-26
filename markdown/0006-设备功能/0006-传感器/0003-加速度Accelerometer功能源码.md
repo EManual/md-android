@@ -2,20 +2,20 @@
 Rexsee的源码如下，有兴趣的朋友可以再去找找，社区公开的源码里有包括加速度在内的，重力、磁场、温度、距离和方向等传感器功能。http://www.rexsee.com/CN/helpReference.php
 ```  
 /* 
- [Tags]* Copyright (C) 2011 The Rexsee Open Source Project 
- [Tags]* 
- [Tags]* Licensed under the Rexsee License, Version 1.0 (the "License"); 
- [Tags]* you may not use this file except in compliance with the License. 
- [Tags]* You may obtain a copy of the License at 
- [Tags]* 
- [Tags]*      http://www.rexsee.com/CN/legal/license.html 
- [Tags]* 
- [Tags]* Unless required by applicable law or agreed to in writing, software 
- [Tags]* distributed under the License is distributed on an "AS IS" BASIS, 
- [Tags]* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
- [Tags]* See the License for the specific language governing permissions and 
- [Tags]* limitations under the License. 
- [Tags]*/
+  * Copyright (C) 2011 The Rexsee Open Source Project 
+  * 
+  * Licensed under the Rexsee License, Version 1.0 (the "License"); 
+  * you may not use this file except in compliance with the License. 
+  * You may obtain a copy of the License at 
+  * 
+  *      http://www.rexsee.com/CN/legal/license.html 
+  * 
+  * Unless required by applicable law or agreed to in writing, software 
+  * distributed under the License is distributed on an "AS IS" BASIS, 
+  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+  * See the License for the specific language governing permissions and 
+  * limitations under the License. 
+  */
 import rexsee.core.browser.JavascriptInterface;
 import rexsee.core.browser.RexseeBrowser;
 import android.content.Context;
