@@ -18,7 +18,9 @@ onBind将返回给客户端一个IBind接口实例，IBind允许客户端回调�
 service可以在和多场合的应用中使用，比如播放多媒体的时候用户启动了其他Activity这个时候程序要在后台继续播放，比如检测SD卡上文件的变化，再或者在后台记录你地理信息位置的改变等等，总之服务嘛，总是藏在后头的。
 下面我做了一个简单的音乐播放的应用，分别使用startService和bindService来启动本地的服务。
 下面是整个应用启动界面：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_service/11_service.jpg) 
+
 先从使用startService启动Service学起
 首先编写一个Activity
 ```  
@@ -177,7 +179,9 @@ IBundle bundle = intent.getExtras();
 int op = bundle.getInt("op");
 ```
 然后更具定义好的操作码进行相应的f播放操作。启动后界面如下图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_service/11_service2.png) 
+
 图中的”close”和“exit”是不同的，close只是调用finish()退出当前的Activity，但是Service并没有关掉，音乐会继续播放。而exit就是调用了stopService(intent);来停止服务，Service会调用onDestroy()方法来对mediaPlayer进行停止和释放资源。
 有时候如果服务只提供一些操作接口，我们也可以通过广播的g方式来启动服务。
 首先要定义一个Receiver，并继承BroadcastReceiver，然后在AndroidManifest.xml中进行注册：
@@ -371,4 +375,5 @@ public class BindMusicService extends Service {
 ```
 我们看到Service中有个返回IBinder对象的onBind方法，这个方法会在Service被绑定到其他程序上时被调用，而这个IBinder对象和之前看到的onServiceConnected方法中传入的那个IBinder是同一个东西。应用和Service间就依靠这个IBinder对象进行通信。
 启动后的界面如下图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_service/11_service3.png) 

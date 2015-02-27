@@ -3,7 +3,9 @@ Handler主要用于异步消息的处理：当发出一个消息之后，首先�
 使用一个例子简单的来介绍一下Handler。 
 示例1：一个应用程序中有2个按钮（start、end），当点击start按钮时，执行一个线程，这个线程在控制台输出一串字符串，并且每隔3秒再执行一次线程，直到点击end按钮为止，线程停止。 
 下图为这个应用程序的界面： 
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_handler/02_handler.png)  
+
 #### 开发步骤： 
 1、新建一个Android应用程序。
 2、在布局文件中添加2个Button控件标签，并为其设置属性和值。
@@ -74,7 +76,9 @@ public class HandlerTest extends Activity {
 上面是一个最简单的例子，下面再看另外一个例子。 
 示例2：一个应用程序中有一个进度条和一个按钮，当点击按钮后，每隔一秒钟进度条前进一部分。 
 下图为应用程序的运行效果图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_handler/02_handler2.png)  
+
 #### 开发步骤： 
 1、新建一个Android应用程序。
 2、在布局文件中添加一个progressBar和一个Button，并为其设置属性和值。

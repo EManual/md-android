@@ -2,7 +2,9 @@
 理解Activity的生命周期对应用程序开发来说是至关重要的，这样才能确保您的应用提供了一个很好的用户体验和妥善管理其资源。由于OPhone应用程序不控制自己的进程寿命，由OPhone Runtime管理每个应用程序进程，但是每个Activity的状态反过来会影响到OPhone Runtime是否将终止当前Activity和还是让它继续运行。
 #### Actvity 堆栈
 每个Actvity的状态由它所在Activity栈中的位置所决定，所有当前正在运行的Actvity将遵循照后进先出的原则。当一个新的 Activity启动，当前的Activity将移至堆栈的顶部，如果用户使用Back按钮，或在前台Activity被关闭，下一个Activity将被激活并且移至到堆栈的顶部。这个过程如下图所示
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_activity/04_activity.jpg)  
+
 #### Activity状态
 随着Activity的创建和销毁，也就会进出栈如上图所示，其中可能会经历以下四种状态：
 1、Active状态：这时候Activity处于栈顶，且是可见的，有焦点的，能够接收用户输入前景Activity。OPhone Runtime将试图不惜一切代价保持它活着，甚至杀死其他Activity以确保它有它所需的资源。当另一个Activity变成Active时，当前的将变成Paused状态。
@@ -13,7 +15,9 @@
 为确保无缝的用户体验，这些状态之间的过渡对用户来说应该做到透明的。不管Activity处于那种状态，最重要的是保留好UI状态和用户数据，一旦Actvity被激活，用户都能看到他想要的东西。
 #### 如何监测Actvity的状态变化
 为了确保Activity能够及时的响应状态的变化，OPhone提供了一系列的事件处理程序来处理Activity的状态转移，参考下图和示例代码。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_activity/04_activity2.jpg)  
+
 ```  
 public class MyActivity extends Activity {
 	// 在Activity生命周期开始时被调用

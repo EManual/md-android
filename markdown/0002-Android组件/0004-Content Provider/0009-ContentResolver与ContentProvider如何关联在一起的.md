@@ -9,7 +9,9 @@ froyo/frameworks/base/services/java/com/android/server/am/ActivityManagerService
 当我们真正的启动一个activity的时候，我们会把当前Application的ApplicationContext传进去，ApplicationContext实例持有一个mContextResolver对象，该对象对应于ApplicationContext的内部类ApplicationContentResolver。
 当activity调用getContentResolver()时，我们实际调用的是当前ApplicationContext中的mContextResolver.
 我们来看看效果图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_provider/10_provider.jpg) 
+
 由于黑色的继承关系，我们可以得到红色的调用关系我们看看效果图就知道了，它们两个是怎么样跳过文件来直接联系在一起的。这样的话我们就省去了很多环节，也给我们节省了时间这样的话我们也不容易出错，这样以来我们就会大大的提高了我们的工作效率，
 代码片段如下：
 Activity调用ContextWrapper的方法

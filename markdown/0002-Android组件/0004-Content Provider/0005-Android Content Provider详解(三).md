@@ -8,7 +8,9 @@ public static final UriCONTENT_URI =
 Uri.parse("content://com.example.codelab.transportationprovider");
 ```
 如果有多个表，它们也是使用相同的CONTENT_URI，只是它们的路径部分不同。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_provider/06_provider.jpg)  
+
 也就是说红色框部分是一致的。
 定义返回的列名，public static final，列名的值，比如使用SQLite数据库作为存储，对应表的列名。
 在文档中要写出各个列的数据类型，便于使用者读取。

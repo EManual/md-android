@@ -93,4 +93,4 @@ public class AsyncTest extends Activity {
 	}
 }
 ```
-![img](P)  
+![img](http://emanual.github.io/md-android/img/component_asynctask/04_asynctask.jpg)  

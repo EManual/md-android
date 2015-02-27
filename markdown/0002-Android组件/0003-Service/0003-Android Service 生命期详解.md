@@ -59,7 +59,9 @@ public class ExampleService extends Service {
 }
 ```
 注：不像activity的生命期回调方法们，你不需要调用父类的相应实现。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_service/04_service.jpg) 
+
 图 service的生命期。
 左图显示了用startService()创建的service的生命期，右图显示了用bindService()创建的service的生命期。
 通过实现这些方法们，你可以监视service生命期的两个嵌套循环：

@@ -173,11 +173,17 @@ public void onActivityResult(int reqCode, int resCode, Intent data) {
 ```
 它指TextMessage活动定是真个程序的入口并且TextMessage会列举在Launcher即启动列表中。
 程序运行结果如下图所示：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_intent/02_intent.png)  
+
 图1、主界面
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_intent/02_intent2.png)
+
 图2、点击contact按钮之后
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_intent/02_intent3.png)
+
 图3、选择一个联系人之后
 #### 总结
 我们用发短信中选择联系人的例子说明Intent和Intent Filter，这里体现了两个活动之间如何通过Intent和Intent Filter来交互，这也是我们在编写Android应用程序的时候经常遇到了。本文除了上述的主要内容之外，还涉及别的知识点，下面列举几个个人认为比较有用的知识点：

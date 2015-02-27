@@ -100,4 +100,5 @@ public class MainActivity extends Activity {
 }
 ```
 运行效果如图所示：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_handler/06_handler.png) 

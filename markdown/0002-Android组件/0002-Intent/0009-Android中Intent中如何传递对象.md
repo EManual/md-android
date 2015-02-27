@@ -1,6 +1,8 @@
 就目前所知道的有两种方法，一种是Bundle.putSerializable(Key,Object);另一种是Bundle.putParcelable(Key, Object);当然这些Object是有一定的条件的，前者是实现了Serializable接口，而后者是实现了Parcelable接口，为了让大家更容易理解我还是照常写了一个简单的Demo,大家就一步一步跟我来吧！
 第一步:新建一个Android工程命名为ObjectTranDemo(类比较多哦!)目录结构如下图:
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_intent/10_intent.jpg)  
+
 第二步:修改main.xml布局文件(这里我增加了两个按钮)代码如下
 ```  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -220,11 +222,11 @@ view plaincopy to clipboardprint?
 ``` 
 第六步:运行上述工程查看效果图啦:
 效果1：首界面:
-![img](P)  
+![img](http://emanual.github.io/md-android/img/component_intent/10_intent2.jpg)  
 效果2:点击Serializable按钮
-![img](P)  
+![img](http://emanual.github.io/md-android/img/component_intent/10_intent3.jpg)  
 效果3:点击Parcelable按钮:
-![img](P)  
+![img](http://emanual.github.io/md-android/img/component_intent/10_intent4.jpg) 
 很多人知道在activity之间传递对象时有两个选择一个是Parcelable，另外一个是Serializable。但究竟我们该何时使用其中的一个呢？很多人不得而知，所以混用和滥用的情况就出现了。在这里我想给大家说清楚，以减少在程序中的不必要的风险。
 1.在使用内存的时候，Parcelable 类比Serializable性能高，所以推荐使用Parcelable类。
 2.Serializable在序列化的时候会产生大量的临时变量，从而引起频繁的GC。

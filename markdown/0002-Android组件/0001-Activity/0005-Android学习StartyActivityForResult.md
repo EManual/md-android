@@ -55,14 +55,20 @@ ToActivity.this.finish();
 ```
 这里是被调用Activity返回数据关键代码。Intent不用再指定Activity。
 上几张截图:
-![img](P)  
-![img](P)  
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_activity/06_activity.jpg)  
+![img](http://emanual.github.io/md-android/img/component_activity/06_activity2.jpg)  
+![img](http://emanual.github.io/md-android/img/component_activity/06_activity3.jpg)  
+
 #### 2. onActivityResut被提前调用
 异常情况总会有的，这里就出现了异常，当我再次执行的时候，发现被调用这数据接收正常，而调用者显示的返回值不正常了。打印以下Log。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_activity/06_activity4.jpg)  
+
 可以看出，在被调用的Activity oncreate之前，调用者已经执行了。警告说有一被调用的Activity 启动了一个新的Task，activity result被取消了。这主要是由于我再manifest文件中把被调用的Activity的launchMode设成了singleInstance。那再测试一下singleTask和singleTop。看图，感觉是由于启用了新的Task，Activity之间就没法回传数据了。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_activity/06_activity6.png)  
+
 #### 3. 返回无响应
 1.中我把M_REQUEST_CODE 设成了101， 现在改成 <0 的数据试试。就会发先onActivity不会被调用了。
 关键还是看API文档

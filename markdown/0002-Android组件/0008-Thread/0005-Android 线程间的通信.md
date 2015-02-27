@@ -36,7 +36,9 @@ class ChildThread extends Thread {
 mChildHandler.getLooper().quit(); 
 ```
 下面是一个线程间通信的小例子：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_thread/06_thread.png) 
+
 ```  
 public class MainThread extends Activity {
 	private static final String TAG = "MainThread";

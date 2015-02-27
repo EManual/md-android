@@ -26,7 +26,9 @@ Activity的前台生命周期自onResume()调用起，至相应的onPause()调�
 为什么要研究Activity的启动呢？有时候我们设置了一些全局变量，比如系统的通话记录程序，每次启动它的时候都要刷新下，不然刚刚拨打过电话的记录就不会显示，类似的还有如果我们有一些全局需要调用的变量是从一个本地配置文件读取的，但是当Activity压栈时候，本地配置或者全局变量发生变化呢?如果不重新读取下，它的值就不会改变，程序就会出错的。
 #### Android中Activty的生命周期和栈
 Activty的生命周期的也就是它所在进程的生命周期。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_activity/03_activity.jpg)  
+
 每一个活动（ Activity ）都处于某一个状态，对于开发者来说，是无法控制其应用程序处于某一个状态的，这些均由系统来完成。
 但是当一个活动的状态发生改变的时候，开发者可以通过调用 onXX() 的方法获取到相关的通知信息。
 在实现 Activity 类的时候，通过覆盖（ override ）这些方法即可在你需要处理的时候来调用。
@@ -44,7 +46,9 @@ Activity栈上面提到开发者是无法控制Activity的状态的，那Activit
 每个Activity的状态是由它在Activity栈（是一个后进先出LIFO，包含所有正在运行Activity的队列）中的位置决定的。
 当一个新的Activity启动时，当前的活动的Activity将会移到Activity栈的顶部。
 如果用户使用后退按钮返回的话，或者前台的Activity结束，在栈上的Activity将会移上来并变为活动状态。如下图所示：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_activity/03_activity2.jpg)  
+
 一个应用程序的优先级是受最高优先级的Activity影响的。当决定某个应用程序是否要终结去释放资源，Android内存管理使用栈来决定基于Activity的应用程序的优先级。
 #### Activity状态
 一般认为Activity有以下四种状态：

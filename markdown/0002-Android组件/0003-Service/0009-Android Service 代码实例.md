@@ -1,6 +1,8 @@
 #### 1、Service本质结构
 我们还是从Service的根本意义分析入手，服务的本质就是响应客户端请求。要提供服务，就必须建立接收请求，处理请求，应答客服端的框架。我想在Android Service设计者也会无时不刻把这个服务本质框图挂在脑海中。从程序的角度，服务一定要存在一个闭合循环框架和请求处理框架。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_service/10_service.jpg) 
+
 分析清楚服务框就必须弄清楚以下的机制及其构成。
 (1)闭合循环结构放置在哪里？
 (2)处理请求是如何分发和管理？
@@ -8,7 +10,9 @@
 (4)概念框架是如何建立的？
 #### 2、Service基本框架分析
 Android设计中，Native Service和Android Service采用了同一个闭合循环框架。这个闭合循环框架放置在Native的C++空间中。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_service/10_service.jpg) 
+
 在服务框架中，ProcessState是公用的部分，这个公用部分最主要的框架就是闭合循环框架和接收到从Binder来的请求后的处理框架。我们将服务框架用ProcessSate来表示，简言之：
 (1) addservice
 (2) 建立闭合循环处理框架。

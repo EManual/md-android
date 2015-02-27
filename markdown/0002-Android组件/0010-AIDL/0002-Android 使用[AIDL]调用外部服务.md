@@ -10,7 +10,9 @@
 本文要实现的功能大致如下：创建AIDL服务端，此服务端将提供一个Student的javabean提供客户端取得数据，因为aidl支持的数据类型比较简单，故这里建议把常用的数据类型的数据写入服务。
 1、创建AIDL 服务端
 在Android 的src 文件夹下的任意包里面新建文件，后缀名为*.aidl，如下图
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_aidl/03_aidl.png) 
+
 ```  
 import java.util.Map;
 interface IMyService {
@@ -72,7 +74,9 @@ public class Student implements Parcelable {
 编写完Student 为时，必须再新建一个Student.aidl 文件，此文件输入以下内容：
 parcelable Student; 这里的书写是供上面我们说过的接口   *.aidl 文件导包时可以找到，并通过此文件找到Student类对象。
 如果上面的步骤顺利通过的话，Android 将会自动在gen 目录下R文件的相同目录生成一个以*.aidl 文件命名的*.java 文件，如下图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_aidl/03_aidl2.png) 
+
 顺利生成成功后，我们再来编写一个AIDL 服务类，代码如下：
 ```  
 import java.util.HashMap;

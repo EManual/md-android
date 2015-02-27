@@ -1,7 +1,9 @@
 使用bindService方法来绑定AIDL服务。其中需要使用Intent对象指定AIDL服务的ID，也就是<action>标签中android:name属性的值。
 在绑定时需要一个ServiceConnection对象。创建ServiceConnection对象的过程中如果绑定成功，系统会调用onServiceConnected方法，通过该方法的service参数值可获得AIDL服务对象。
 首先运行AIDL服务程序，然后运行客户端程序，单击【绑定AIDL服务】按钮，如果绑定成功，【调用AIDL服务】按钮会变为可选状态，单击这个按钮，会输出getValue方法的返回值，如图所示。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_aidl/02_aidl.jpg)  
+
 AIDL服务只支持有限的数据类型，因此，如果用AIDL服务传递一些复杂的数据就需要做更一步处理。AIDL服务支持的数据类型如下：
 Java的简单类型（int、char、boolean等）。不需要导入（import）。
 String和CharSequence。不需要导入（import）。

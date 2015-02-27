@@ -77,6 +77,9 @@ public class MainContentProvider extends Activity {
 ```
 效果图：
 系统通讯录中的联系人信息
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_provider/07_provider.jpg)  
+
 我们的程序读取出来的联系人信息
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_provider/07_provider2.jpg)   

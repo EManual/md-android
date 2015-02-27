@@ -1,6 +1,8 @@
 #### 2. 客户端实现：
 （1）目录结构，如下图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_aidl/06_aidl.jpg) 
+
 （2）将服务器端的IAIDLService.aidl，Person.aidl和Person.java文件拷贝到本工程中，如上图所示：
 （3）res/layout/main.xml实现：
 ```  

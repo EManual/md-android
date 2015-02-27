@@ -1,5 +1,7 @@
 首先创建——开始——销毁，整个流程。真的非常简单，先让大家看一下图先。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_service/03_service.jpg) 
+
 根据上面的按钮所得到方法，大家可以在LogCat中增加一个标签，立即可以看到
 ```  
 import android.app.Service;

@@ -256,5 +256,7 @@ public class RotationAsyncActivity extends Activity {
 }
 ```
 我们在运行示例时就会发现，无论怎样旋转屏幕都不会影响进度条的更新与下载，需要解释下的是这里我并没有设置下载功能，有兴趣或需要的朋友自己添加即可。实现效果图如下所示：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_activity/07_activity.png)  
+
 以上就是在Android中关于InstanceState保存数据和恢复数据的过程，在这里我想再重复一遍：onSaveInstanceState()和onRestoreInstanceState()机制来保存数据时，它仅在非用户显式的指令杀死应用程序时保存和恢复数据。我们可以使用它在我们的程序中来保存数据，可以作为保存数据的一种方式，但在使用过程中需要注意其使用原理和方法。

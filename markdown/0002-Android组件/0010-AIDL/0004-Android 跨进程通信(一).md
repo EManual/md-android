@@ -3,7 +3,9 @@
 #### 二. 实现流程：
 1. 服务器端实现：
 （1）目录结构，如下图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/component_aidl/05_aidl.jpg) 
+
 （2）实现*.aidl文件：
 A. IAIDLService.aidl实现：
 ```  
