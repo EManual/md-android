@@ -1,0 +1,94 @@
+3.registerNativeMethods()函数的用途
+应用层级的Java类别透过VM而呼叫到本地函数。一般是仰赖VM去寻找*.so里的本地函数。如果需要连续呼叫很多次，每次都需要寻找一遍，会多花许多时间。此时，组件开发者可以自行将本地函数向VM进行登记。例如，在Android的/system/lib/libmedia_jni.so档案里的代码段如下：
+```  
+//defineLOG_NDEBUG0
+defineLOG_TAG"MediaPlayer-JNI
+staticJNINativeMethodgMethods[]={
+	{"setDataSource","(Ljava/lang/String;)V",
+	(void*)android_media_MediaPlayer_setDataSource},
+	{"setDataSource","(Ljava/io/FileDescriptor;JJ)V",
+	(void*)android_media_MediaPlayer_setDataSourceFD},
+	{"prepare","()V",(void*)android_media_MediaPlayer_prepare},
+	{"prepareAsync","()V",(void*)android_media_MediaPlayer_prepareAsync},
+	{"_start","()V",(void*)android_media_MediaPlayer_start},
+	{"_stop","()V",(void*)android_media_MediaPlayer_stop},
+	{"getVideoWidth","()I",(void*)android_media_MediaPlayer_getVideoWidth},
+	{"getVideoHeight","()I",(void*)android_media_MediaPlayer_getVideoHeight},
+	{"seekTo","(I)V",(void*)android_media_MediaPlayer_seekTo},
+	{"_pause","()V",(void*)android_media_MediaPlayer_pause},
+	{"isPlaying","()Z",(void*)android_media_MediaPlayer_isPlaying},
+	{"getCurrentPosition","()I",(void*)android_media_MediaPlayer_getCurrentPosition},
+	{"getDuration","()I",(void*)android_media_MediaPlayer_getDuration},
+	{"_release","()V",(void*)android_media_MediaPlayer_release},
+	{"_reset","()V",(void*)android_media_MediaPlayer_reset},
+	{"setAudioStreamType","(I)V",(void*)android_media_MediaPlayer_setAudioStreamType},
+	{"setLooping","(Z)V",(void*)android_media_MediaPlayer_setLooping},
+	{"setVolume","(FF)V",(void*)android_media_MediaPlayer_setVolume},
+	{"getFrameAt","(I)Landroid/graphics/Bitmap;",
+	(void*)android_media_MediaPlayer_getFrameAt},
+	{"native_setup","(Ljava/lang/Object;)V",
+	(void*)android_media_MediaPlayer_native_setup},
+	{"native_finalize","()V",(void*)android_media_MediaPlayer_native_finalize},
+};
+staticintregister_android_media_MediaPlayer(JNIEnv*env){
+	returnAndroidRuntime::registerNativeMethods(env,
+	"android/media/MediaPlayer",gMethods,NELEM(gMethods));
+}
+jintJNI_OnLoad(JavaVM* vm,void* reserved){
+	if(register_android_media_MediaPlayer(env)<0){
+		LOGE("ERROR:MediaPlayernativeregistrationfailed\n");
+		goto bail;
+	}
+}}
+```
+当VM载入libmedia_jni.so档案时，就呼叫JNI_OnLoad()函数。接着，JNI_OnLoad()呼叫register_android_media_MediaPlayer()函数。此时，就呼叫到AndroidRuntime::registerNativeMethods()函数，向VM(即AndroidRuntime)登记gMethods[]表格所含的本地函数了。简而言之，registerNativeMethods()函数的用途有二：
+(1)更有效率去找到函数。
+(2)可在执行期间进行抽换。由于gMethods[]是一个<名称，函数指针>对照表，在程序执行时，可多次呼叫registerNativeMethods()函数来更换本地函数之指针，而达到弹性抽换本地函数之目的。
+4.Andoird中使用了一种不同传统JavaJNI的方式来定义其native的函数。其中很重要的区别是Andorid使用了一种Java和C函数的映射表数组，并在其中描述了函数的参数和返回值。这个数组的类型是JNINativeMethod，定义如下：
+```  
+typedefstruct{
+	constchar*name;/*Java中函数的名字*/
+	constchar*signature;/*描述了函数的参数和返回值*/
+	void*fnPtr;/*函数指针，指向C函数*/
+}JNINativeMethod;
+```
+其中比较难以理解的是第二个参数，例如：
+```  
+"()V"
+"(II)V"
+"(Ljava/lang/String;Ljava/lang/String;)V"
+```
+实际上这些字符是与函数的参数类型一一对应的。
+"()"中的字符表示参数，后面的则代表返回值。例如"()V"就表示voidFunc();
+"(II)V"表示voidFunc(int,int);
+具体的每一个字符的对应关系如下
+```  
+字符Java类型C类型
+Vvoidvoid
+Zjbooleanboolean
+Ijintint
+Jjlonglong
+Djdoubledouble
+Fjfloatfloat
+Bjbytebyte
+Cjcharchar
+Sjshortshort
+```
+数组则以"["开始，用两个字符表示
+```  
+[IjintArrayint[]
+[FjfloatArrayfloat[]
+[BjbyteArraybyte[]
+[CjcharArraychar[]
+[SjshortArrayshort[]
+[DjdoubleArraydouble[]
+[JjlongArraylong[]
+[ZjbooleanArrayboolean[]
+```
+上面的都是基本类型。如果Java函数的参数是class，则以"L"开头，以";"结尾，中间是用"/"隔开的包及类名。而其对应的C函数名的参数则为jobject。一个例外是String类，其对应的类为jstring
+```  
+Ljava/lang/String;Stringjstring
+Ljava/net/Socket;Socketjobject
+```
+如果JAVA函数位于一个嵌入类，则用$作为类名间的分隔符。
+例如"(Ljava/lang/String;Landroid/os/FileUtils$FileStatus;)Z"

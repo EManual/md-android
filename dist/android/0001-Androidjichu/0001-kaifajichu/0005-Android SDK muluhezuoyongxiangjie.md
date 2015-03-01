@@ -1,0 +1,16 @@
+1、add-ons
+这里面保存着附加库，比如GoogleMaps，当然你如果安装了OphoneSDK，这里也会有一些类库在里面。
+2、docs
+这里面是Android SDKAPI参考文档，所有的API都可以在这里查到。
+3、market_licensing
+作为AndroidMarket版权保护组件，一般发布付费应用到电子市场可以用它来反盗版。
+4、platforms
+是每个平台的SDK真正的文件，里面会根据APILevel划分的SDK版本，这里就以Android2.2来说，进入后有一个android-8的文件夹，android-8进入后是Android2.2SDK的主要文件，其中ant为ant编译脚本，data保存着一些系统资源，images是模拟器映像文件，skins则是Android模拟器的皮肤，templates是工程创建的默认模板，android.jar则是该版本的主要framework文件，tools目录里面包含了重要的编译工具，比如aapt、aidl、逆向调试工具dexdump和编译脚本dx。
+5、platform-tools
+保存着一些通用工具，比如adb、和aapt、aidl、dx等文件，Android123提示，这里和platforms目录中tools文件夹有些重复，主要是从android2.3开始这些工具被划分为通用了。
+6、samples是Android 
+SDK自带的默认示例工程，里面的apidemos强烈推荐初学者运行学习，对于SQLite数据库操作可以查看NotePad这个例子，对于游戏开发Snake、LunarLander都是不错的例子，对于Android主题开发Home则是android m5时代的主题设计原理。
+7、tools
+作为SDK根目录下的tools文件夹，这里包含了重要的工具，比如ddms用于启动Android调试工具，比如logcat、屏幕截图和文件管理器，而draw9patch则是绘制android平台的可缩放png图片的工具，sqlite3可以在PC上操作SQLite数据库，而monkeyrunner则是一个不错的压力测试应用，模拟用户随机按键，mksdcard则是模拟器SD映像的创建工具，emulator是Android SDK模拟器主程序，不过从android 1.5开始，需要输入合适的参数才能启动模拟器，traceview作为android平台上重要的调试工具。
+8、usb_driver
+顾名思义，保存着android平台google官方机型的驱动如nexusone、nexuss，同时也有一些老机型驱动的支持，比如说htcdream、htcmagic和motorola的droid。

@@ -1,0 +1,8 @@
+Content Provider，听着就和数据相关，没错，这就是Android提供的第三方应用数据的访问方案。在Android中，对数据的保护是很严密的，除了放在SD卡中的数据，一个应用所持有的数据库、文件、等等内容，都是不允许其他直接访问的，但有时候，沟通是必要的，不仅对第三方很重要，对应用自己也很重要。
+比如，一个联系人管理的应用。如果不允许第三方的应用对其联系人数据库进行增删该查，整个应用就失去了可扩展力，必将被其他应用抛弃，然后另立门户，自个玩自个的去了。
+Andorid当然不会真的把每个应用都做成一座孤岛，它为所有应用都准备了一扇窗，这就是Content Provider。应用想对外提供的数据，可以通过派生ContentProvider类， 封装成一枚Content Provider，每个Content Provider都用一个uri作为独立的标识，形如：content://com.xxxxx。所有东西看着像REST的样子，但实际上，它比REST更为灵活。和REST类似，uri也可以有两种类型，一种是带id的，另一种是列表的，但实现者不需要按照这个模式来做，给你id的uri你也可以返回列表类型的数据，只要调用者明白，就无妨，不用苛求所谓的REST。
+Android 系统为一些常见的数据类型(如音乐、视频、图像、手机通信录联系人信息等)内置了一系列的 Content Provider, 这些都位于android.provider包下。持有特定的许可，可以在自己开发的应用程序中访问这些Content Provider。 
+另外，Content Provider不和REST一样只有uri可用，还可以接受Projection，Selection，OrderBy等参数，这样，就可以像数据库那样进行投影，选择和排序。查询到的结果，以Cursor（参见：reference/android/database/Cursor.html ）的形式进行返回，调用者可以移动Cursor来访问各列的数据。
+Content Provider屏蔽了内部数据的存储细节，向外提供了上述统一的接口模型，这样的抽象层次，大大简化了上层应用的书写，也对数据的整合提供了更方便的途径。Content Provider内部，常用数据库来实现，Android提供了强大的Sqlite支持，但很多时候，你也可以封装文件或其他混合的数据。
+在Android中，ContentResolver是用来发起Content Provider的定位和访问的。不过它仅提供了同步访问的Content Provider的接口。但通常，Content Provider需要访问的可能是数据库等大数据源，效率上不足够快，会导致调用线程的拥塞。因此Android提供了一个AsyncQueryHandler（参见：reference/android/content/AsyncQueryHandler.html），帮助进行异步访问Content Provider。
+在各大组件中，Service和Content Provider都是那种需要持续访问的。Service如果是一个耗时的场景，往往会提供异步访问的接口，而Content Provider不论效率如何，都提供的是约定的同步访问接口。我想这遵循的就是场景导向设计的原则，因为Content Provider仅是提供数据访问的，它不能确信具体的使用场景如何，会怎样使用它的数据；而相比之下，Service包含的逻辑更复杂更完整，可以抉择大部分时候使用某接口的场景，从而确定最贴切的接口是同步还是异步，简化了上层调用的逻辑。

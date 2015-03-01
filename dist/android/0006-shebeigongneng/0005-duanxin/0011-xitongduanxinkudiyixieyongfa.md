@@ -1,0 +1,97 @@
+1、查询所有短信，按发件人进行分组
+```  
+Cursor mCursor = managedQuery(
+	Uri.parse("content://sms"),
+	new String[] { "_id,address,date,read,status,type,body,count(address) as 
+			+ "totleCount from (select _id,substr(address,4) as address,date,read,status,type,body
+			+ "from sms where address like \"+86%\" union select _id,address,date,read,status,type,body
+			+ "from sms where address not like \"+86%\") r group by r.address order by r.date desc --" },
+	null, null, null);
+```
+2、删除一个联系人的所有短信会话,包括+86的号码
+```  
+ /**
+  * 删除一个联系人的所有短信会话,包括+86的号码
+  * 
+  * @param phone
+  */
+public int deleteMsgSession(Context context, String phone) {
+	String phoneBytitle = "";
+	if (!phone.startsWith("+86")) {
+		phoneBytitle = "+86" + phone;
+	} else {
+		phoneBytitle = phone.substring(3);
+	}
+	Cursor cursor = context.getContentResolver().query(
+			Uri.parse("content://sms"),
+			new String[] { "distinct thread_id" },
+			"address = ? or address = ?",
+			new String[] { phone, phoneBytitle }, null);
+	List<String> list = new ArrayList<String>();
+	if (null != cursor) {
+		if (cursor.moveToFirst()) {
+			do {
+				int thread_id = cursor.getInt(0);
+				list.add(String.valueOf(thread_id));
+
+			} while (cursor.moveToNext());
+		}
+	}
+	if (null != cursor) {
+		cursor.close();
+		cursor = null;
+	}
+	int size = list.size();
+	if (size == 0) {
+		return -1;
+	} else {
+		int num = 0;
+		for (int i = 0; i < size; i++) {
+			int res = context.getContentResolver()
+					.delete(Uri.parse("content://sms/conversations/
+							+ list.get(i)), null, null);
+			num = num + res;
+		}
+		// System.out.println("sms_num:" + num);
+		return num;
+	}
+}
+```
+3、向系统库插入短信、版本不同插入的字段有所区别
+```  
+ /**
+  * 将发送的短信保存到系统短信库中
+  */
+private void foreverSendMsg(String content) {
+	ContentValues values = new ContentValues();
+	// 系统SDK的版本号
+	String sdkVersion = android.os.Build.VERSION.SDK;
+	try {
+		// 发送时间
+		values.put("date", System.currentTimeMillis());
+		// 阅读状态
+		values.put("read", 1);
+		// 送达号码
+		values.put("address", phoneNumberTextView.getText().toString());
+		// 送达内容
+		values.put("body", content);
+
+		// SDK为2.1时，插入的字段
+		if (ConstValue.SDK_VERSION == Integer.valueOf(sdkVersion)) {
+			values.put("status", -1);
+			values.put("type", 2);
+			// values.put("locked", 0);
+		} else {
+			// 设置可见
+			values.put("seen", 1);
+		}
+
+		getContentResolver()
+				.insert(Uri.parse("content://sms/sent"), values);
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		values = null;
+	}
+}
+```

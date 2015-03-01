@@ -1,0 +1,11 @@
+#### Android中OpenMax的使用情况
+Android系统的一些部分对OpenMax IL层进行使用，基本使用的是标准OpenMax IL层的接口，只是进行了简单的封装。标准的OpenMax IL实现很容易以插件的形式加入到Android系统中。
+Android的多媒体引擎OpenCore和StageFright都可以使用OpenMax作为多媒体编解码的插件，只是没有直接使用OpenMax IL层提供的纯C接口，而是对其进行了一定的封装。
+在Android2.x版本之后，Android的框架层也对OpenMax IL层的接口进行了封装定义，甚至使用Android中的Binder IPC机制。Stagefright使用了这个层次的接口，OpenCore没有使用。
+提示：OpenCore使用OpenMax IL层作为编解码插件在前，Android框架层封装OpenMax接口在后面的版本中才引入。
+#### Android OpenMax实现的内容
+Android中使用的主要是OpenMax的编解码功能。虽然OpenMax也可以生成输入、输出、文件解析—构建等组件，但是在各个系统(不仅是Android)中使用的最多的还是编解码组件。媒体的输入、输出环节和系统的关系很大，引入OpenMax标准比较麻烦;文件解析—构建环节一般不需要使用硬件加速。编解码组件也是最能体现硬件加速的环节，因此最常使用。
+在Android中实现OpenMax IL层和标准的OpenMax IL层的方式基本，一般需要实现以下两个环节。
+编解码驱动程序：位于Linux内核空间，需要通过Linux内核调用驱动程序，通常使用非标准的驱动程序
+OpenMax IL层：根据OpenMax IL层的标准头文件实现不同功能的组件。
+Android中还提供了OpenMax的适配层接口(对OpenMax IL的标准组件进行封装适配)，它作为Android本地层的接口，可以被Android的多媒体引擎调用。

@@ -1,0 +1,11 @@
+将SurfaceView背景设置为透明其实很简单
+主要添加以下几句话就可以了：
+在SurfaceView创建后设置一下下面的参数：
+```  
+setZOrderOnTop(true);
+getHolder().setFormat(PixelFormat.TRANSLUCENT);
+```
+还有在draw方法中绘制背景颜色的时候以下面的方式进行绘制就可以实现SurfaceView的背景透明化
+```  
+canvas.drawColor(Color.TRANSPARENT,Mode.CLEAR);
+```
