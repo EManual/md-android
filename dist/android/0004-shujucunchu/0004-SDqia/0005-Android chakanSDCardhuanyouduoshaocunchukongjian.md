@@ -1,5 +1,7 @@
 如下图所示，通过progressBar来展示当前的sdcard容量。下面我们就来看看怎么样用代码来实现这个比较不错的小实例吧。其中重要的东西都有注释，希望对大家有帮助。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/data_sdcard/06_sdcard.png) 
+
 代码如下：
 ```  
 import java.io.File;

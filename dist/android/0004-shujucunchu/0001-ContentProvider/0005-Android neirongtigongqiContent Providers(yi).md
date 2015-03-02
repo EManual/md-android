@@ -12,7 +12,9 @@ ContentResolver cr = getContentResolver();
 当初始化一个查询时，Android系统识别查询目标的内容提供器并确保它正在运行。系统实例化所有的ContentProvider对象；你从来不需要自己做。事实上，你从来不会直接处理ContentProvider对象。通常，对于每个类型的ContentProvider只有一个简单的实例。但它能够和不同应用程序和进程中的多个ContentProvider对象通讯。进程间的交互通过ContentResolver和ContentProvider类处理。
 #### 数据模型The data model
 内容提供器以数据库模型上的一个简单表格形式暴露它们的数据，这里每一个行是一个记录，每一列是特别类型和含义的数据。比如，关于个人信息以及他们的电话号码可能会以下面的方式展示：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/data_provider/06_provider.jpg)
+
 每个记录包含一个数字的_ID字段用来唯一标识这个表格里的记录。IDs可以用来匹配相关表格中的记录-比如，用来在一张表格中查找个人电话号码并在另外一张表格中查找这个人的照片。
 一个查询返回一个Cursor对象可在表格和列中移动来读取每个字段的内容。它有特定的方法来读取每个数据类型。所以，为了读取一个字段，你必须了解这个字段包含了什么数据类型。（后面会更多的讨论查询结果和游标Cursor对象）。
 #### 唯一资源标识符URIs
@@ -82,5 +84,7 @@ People.NAME + " ASC");
 #### 查询的返回结果What a query returns
 一个查询返回零个或更多数据库记录的集合。列名，默认顺序，以及它们的数据类型是特定于每个内容提供器的。但所有提供器都有一个_ID列，包含了每个记录的唯一ID。另外所有的提供器都可以通过返回_COUNT 列告知记录数目。它的数值对于所有的行而言都是一样的。
 下面是前述查询的返回结果的一个例子：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/data_provider/06_provider2.jpg)
+
 获取到的数据通过一个游标Cursor对象暴露出来，通过游标你可以在结果集中前后浏览。你只能用这个对象来读取数据。如果想增加，修改和删除数据，你必须使用一个ContentResolver对象。

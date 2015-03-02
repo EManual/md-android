@@ -9,7 +9,9 @@
 2.2、锁的状态(Lock States)
 锁对于实现并发访问很重要，而对于大型通用的DBMS，锁的实现也十分复杂，而SQLite相对较简单。通常情况下，它的持续时间和事务一致。一个事务开始，它会先加锁，事务结束，释放锁。但是系统在事务没有结束的情况下崩溃，那么下一个访问数据库的连接会处理这种情况。
 在SQLite中有5种不同状态的锁，连接（connection）任何时候都处于其中的一个状态。下图显示了相应的状态以及锁的生命周期。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/data_sqlite/17_sqlite.jpg) 
+
 关于这个图有以下几点值得注意：
 （1）一个事务可以在UNLOCKED，RESERVED或EXCLUSIVE三种状态下开始。默认情况下在UNLOCKED时开始。
 （2）白色框中的UNLOCKED, PENDING, SHARED和 RESERVED可以在一个数据库的同一时存在。

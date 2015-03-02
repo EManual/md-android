@@ -1,6 +1,8 @@
 下面我们要来创建一个Activity类，首先向其中插入两个数据，然后通过Toast来显示数据库中的数据。 运行效果如下：
-![img](P)  
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/data_provider/05_datastore.jpg)
+![img](http://emanual.github.io/md-android/img/data_provider/05_datastore2.jpg)
+
 ```  
 import android.app.Activity;
 import android.content.ContentValues;

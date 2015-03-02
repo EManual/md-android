@@ -58,4 +58,6 @@ public class SharedPreferencesUsage extends Activity {
 * 文件存放路径： 因为我的这个例子的pack_name 为：package com.android.SharedPreferences;
 所以存放路径为：data/data/com.android.SharedPreferences/share_prefs/contacts.xml
 效果图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/data_preference/02_preference.jpg)  
+  
