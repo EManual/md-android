@@ -164,10 +164,14 @@ public Cursor select()
 }
 ```
 在Android中查询数据是通过Cursor类来实现的，当我们使用SQLiteDatabase.query()方法时，会得到一个Cursor对象，Cursor指向的就是每一条数据.它提供了很多有关查询的方法，具体截图如下：
-![img](P)  
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/data_sqlite/25_sqlite.jpg) 
+![img](http://emanual.github.io/md-android/img/data_sqlite/25_sqlite2.jpg) 
+
 现在dbHelper己经封装完毕，接下来正式进入到我们实际例子中要操作的功能吧，项目运行效果图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/data_sqlite/25_sqlite3.jpg) 
+
 这里用到了Menu做功能按钮，实例代码如下：
 ```  
 import android.app.Activity;

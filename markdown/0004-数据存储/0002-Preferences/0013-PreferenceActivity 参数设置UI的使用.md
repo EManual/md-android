@@ -40,5 +40,6 @@ com.eoeandroid.book_preferences.xml
 ```  
 SharedPreferences sp = getPreferenceManager().getDefaultSharedPreferences(this);
 ```
-![img](P)  
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/data_preference/14_preference.jpg) 
+![img](http://emanual.github.io/md-android/img/data_preference/14_preference2.jpg) 

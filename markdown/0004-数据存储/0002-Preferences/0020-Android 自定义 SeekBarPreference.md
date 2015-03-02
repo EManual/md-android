@@ -79,4 +79,5 @@ public class seekBarDemo extends PreferenceActivity {
 }
 ```
 运行的结果参看：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/data_preference/21_preference.jpg)

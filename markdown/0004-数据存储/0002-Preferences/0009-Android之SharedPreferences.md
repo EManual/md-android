@@ -41,7 +41,10 @@ SharedPreferences信息，在onStop中保存
 SharedPreferences信息。注意程序的状态信息一般都在
 onStop保存。
 程序截图如下：
-![img](P)  
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/data_preference/10_preference.jpg) 
+![img](http://emanual.github.io/md-android/img/data_preference/10_preference2.jpg) 
+
 如果我们通过应用程序管理界面将其数据清除掉后，我们再次运行时发现程序又恢复到第一次运行的状态：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/data_preference/10_preference3.jpg) 

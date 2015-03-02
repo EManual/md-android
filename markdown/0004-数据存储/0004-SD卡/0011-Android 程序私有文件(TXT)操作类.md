@@ -1,7 +1,9 @@
 程序私有文件顾名思义就是本程序可以访问，其他程序无权访问的一类文件。    
 众所周知Android有一套自己的安全模型，具体可参见Android开发文档。当应用程序(.apk)在安装时就会分配一个userid，当该应用要去访问其他资源比如文件的时候，就需要userid匹配。默认情况下，任何应用创建的文件，数据库，sharedpreferences都应该是私有的（位于/data/data/your_project/files/），其余程序无法访问。除非在创建时指明是MODE_WORLD_READABLE或者MODE_WORLD_WRITEABLE,只要这样其余程序才能正确访问。
 目录结构如下：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/data_sdcard/12_sdcard.jpg) 
+
 使用Context.openFileOutput()和Context.openFileInput()来访问文件。
 程序开发或者游戏开发过程中经常使用到文件存储数据，为了简化开发，自己封装了一个类。
 ```  

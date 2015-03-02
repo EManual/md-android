@@ -41,6 +41,8 @@ public static long getUpTime(Activity context) {
 }
 ```
 效果：
-![img](P)  
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/data_preference/17_preference.jpg)
+![img](http://emanual.github.io/md-android/img/data_preference/17_preference2.png) 
+
 开机日期是写入文件的，下面的开机总共时间是根据当前时间算出来的。
