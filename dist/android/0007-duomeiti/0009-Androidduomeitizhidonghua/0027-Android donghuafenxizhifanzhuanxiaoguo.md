@@ -1,6 +1,8 @@
 大家一定看到过三维的翻转效果，所以今天在这里简单的给大家分析一下，我们怎么样才能实现Android中的翻转动画效果的实现，首先看一下运行效果如下图所示。
 效果图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_animation/28_animation.jpg) 
+
 Android中并没有提供直接做3D翻转的动画，所以关于3D翻转的动画效果需要我们自己实现，那么我们首先来分析一下Animation 和 Transformation。
 Animation动画的主要接口，其中主要定义了动画的一些属性比如开始时间，持续时间，是否重复播放等等。而Transformation中则包含一个矩阵和alpha值，矩阵是用来做平移，旋转和缩放动画的，而alpha值是用来做alpha动画的，要实现3D旋转动画我们需要继承自Animation类来实现，我们需要重载getTransformation和applyTransformation，在getTransformation中Animation会根据动画的属性来产生一系列的差值点，然后将这些差值点传给applyTransformation，这个函数将根据这些点来生成不同的Transformation。下面是具体实现：
 ```  

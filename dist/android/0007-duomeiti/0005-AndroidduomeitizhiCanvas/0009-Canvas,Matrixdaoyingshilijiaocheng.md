@@ -1,6 +1,8 @@
 大家都知道android系统自带的控件都不好用，想要美观立体实用肯定需要自定View(未来是自定义的世界。跑题了)，自定义view要是做出来效果肯定要Matrix和Canva以及paint，那么今天带大家去学学利用Matrix、Canvas做一个倒影的效果例子。
 效果图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_canvas/10_canvas.jpg) 
+
 ```  
  /**
   * 创建有倒影的位图

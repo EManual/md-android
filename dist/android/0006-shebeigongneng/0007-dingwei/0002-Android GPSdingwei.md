@@ -41,4 +41,5 @@ textView.setText(msg);
 <uses-permission android:name="android.permission.ACCESS_FIND_LOCATION" />
 ```
 效果图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_gps/03_gps.jpg) 

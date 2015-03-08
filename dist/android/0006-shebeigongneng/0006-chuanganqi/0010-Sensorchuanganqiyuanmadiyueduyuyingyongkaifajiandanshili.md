@@ -1,6 +1,8 @@
 Android系统支持多种传感器。应用到各个层次，有的传感器已经在Android的框架中使用，大多数传感器由应用程序中来使用。
 一．Android中支持的传感器类型：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_sensor/11_sensor.png) 
+
 二．Android 系统的代码分布情况：
 1）传感器系统的java代码
 代码路径：framework/base/core/java/android/hardware中

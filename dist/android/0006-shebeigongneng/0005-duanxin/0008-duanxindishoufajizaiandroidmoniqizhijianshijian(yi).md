@@ -69,7 +69,9 @@ public static final int STATUS_ON_ICC_UNSENT
 ```
 #### 3、简单的SMS发送程序
 1)、首先，编辑布局文件res/layout/main.xml，达到我们想要的结果，界面如下：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_sms/09_sms.jpg)   
+
 图1、程序运行界面
 对应的xml代码如下：
 ```  
@@ -234,15 +236,23 @@ public class TextMessage extends Activity {
 ```
 #### 3.1、运行SMS程序给另一个android模拟器发短信
 运行上面我们编写的TextMessage程序，另外在Windows的命令行下切换到tools目录下，并输入emulator –data smsReceiver，我的如下：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_sms/09_sms2.jpg) 
+
 这样就会启动一个android模拟器，如下所示：（注意它的编号：5556，就是用这个编号与它通信的）
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_sms/09_sms3.jpg) 
+
 图2、通过emulator启动一个android模拟器
 通过我们TextMessage程序启动的android模拟器，编写短信：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_sms/09_sms4.jpg) 
+
 图3、TextMessage程序个5556模拟器发短信
 点击发送之后，通过命令行启动的5556号android模拟器会收到我们刚才发送的短信，如下所示：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_sms/09_sms5.jpg) 
+
 图4、收到短信的提示
 tips：
 如果通过命令行的emulator启动android模拟器提示“NO DNS servers found！”，这时我们发的短信模拟器是收不到的。
@@ -382,7 +392,9 @@ private void sendSMS(String phoneNumber, String message) {
 }
 ```
 运行之后的，发送短信成功的话就可以看到如下界面：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_sms/09_sms6.jpg) 
+
 图5、增强SMS（一）
 #### 5、SMS增强（二）
 下面这个增强是使SMS能够发送二进制数据。要发送数据要使用SmsManager类的sendDataMessage方法，跟sendTextMessage方法类似，只不过该方法多了一个目标端口的参数，构建该SMS的过程跟前面的类似这里就不在累述。

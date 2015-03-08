@@ -4,7 +4,9 @@ Animation translate = AnimationUtils.loadAnimation(TweenActivity.this, R.anim.tr
 //开始动画 
 img.startAnimation(translate); 
 ```
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_animation/04_animation.jpg) 
+
 第4种：Rotate(float fromDegrees, float toDegrees, int pivotXType, float pivotXValue, int pivotYType,
 float pivotYValue)
 功能：创建一个旋转画面的动画
@@ -33,4 +35,5 @@ img.startAnimation(rotate);
 Animation rotate = AnimationUtils.loadAnimation(TweenActivity.this, R.anim.rotate_anim); 
 img.startAnimation(rotate); 
 ```
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_animation/04_animation.jpg) 

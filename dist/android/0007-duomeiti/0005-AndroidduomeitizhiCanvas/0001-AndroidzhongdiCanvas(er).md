@@ -25,7 +25,9 @@ Bitmap bitmap = Bitmap.createBitmap(160, 250, Config.ARGB_8888);
 ```
 createBitmap是Bitmap类的一个静态方法 它返回的也是一个 可变的位图。我为什么这样说呢 ？
 效果图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_canvas/02_canvas.jpg) 
+
 Bitmap的源码里有这样一个变量
 ```  
 private final boolean mIsMutable; 
@@ -38,7 +40,9 @@ private GL mGL;
 在android有这样一个概念就是native canvas这里就不翻译了。(比如什么母画布或者本地画布)我们的native canvas可以是屏面或者是GL或者图片画布。如果是屏面，我们的GL对象 mGL将是null, mBitmap可能会也可能不会。
 目前(我们的默认构造方法创建一个画布，但是这个画布没有屏面) 也就是说如果你这样创建一个画布
 Canvas canvas = new Canvas(); 这时候这个canvas对象将没有屏面也没有java-bitmap可以理解为java的位图。如果我们是以Gl为基础(native canvas)，然后mBitmap将是空的，mGl不能为空。因此这2个对象不可能都是非空的，因为这2个对象只要有一个不为空，另外的一个就得为空。但是有可能两个都为空。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_canvas/02_canvas2.jpg) 
+
 最后我们来看看代码：
 ```  
 import android.content.Context;

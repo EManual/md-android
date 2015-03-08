@@ -1,7 +1,9 @@
 摘要：本文主要介绍HTML5 video在android2。2中实现的主要架构和程序流程。
 #### 一、实现HTML5 video主要的类
 1、主要类结构及介绍
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_html/10_html.jpg)   
+
 （1） HTMLElement类不是最上层类，其父类可追到为Node类。为了表述方便省去了上面的类继承结构。该类是一个通用基类，大部分HTML元素都需要继承该类。
 （2） MediaPlayerClient类是一个接口类，HTMLMediaElement以私有方式继承了部分函数，主要作用是媒体播放状态改变时通过MediaPlyer在MediaPlayerPrivate中调用。
 （3） HTMLMediaElement类完成了video元素大部分行为和属性的定义。包括audio元素也是继承该类。
@@ -23,11 +25,15 @@
 在程序完成下面两个流程后，就可以播放一个视频资源。
 1、类实例初始化流程
 浏览器引擎加载完HTML文档后，开始解析里面的元素搭建DOM tree， Render tree和加载子资源。在解析video元素时，会创建HTMLVideoElement类对象和对应的RenderVideo对象（因为大部分行为是在基类HTMLMediaElement中完成，所以下图标识的是HTMLMediaElement）。对于src属性引擎会调用HTMLMediaElement的loadResource函数，如果没有该属性或source子元素，就不会有下面的流程。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_html/10_html2.jpg)   
+
 图2表示了HTMLMediaElement的loadResource函数内部的主要调用流程。首先调用MediaPlay的create函数。然后调用MediaPlayer的load函数，在load函数中会注册媒体引擎，并根据content type选择最合适的engine。然后通过engine调用对应播放类的实例创建函数，然后调用播放类的load函数保存媒体资源的url，返回到MediaElement。接着判断是poater url是否存在，若存在保存到播放类。接下来媒体元素会调用RenderVideo的updateElement函数。在updateElement函数中调用updatePlayer并调用到MediaPlay的setvisible函数，然后调到播放类的setvisible并创建java播放类和设置video poster。Rendervideo是怎么调用到MediaPlay的函数呢。因为在Element对象和Render对象中都保存对方的指针，在MediaElement中又保存了MediaPlyer指针。引擎在创建Element后，便会调用element的attach函数创建对应的Render对象。
 2、播放调用序列
 在js中调用video。play（）方法时，程序会调用到HTMLMediaElement的play函数。最终会调用到HTML5VideoviewProxy的play函数。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_html/10_html3.jpg)   
+
 #### 三、总结：
 对于媒体资源的回放，解码是最大的难题。既然想通过浏览器来直接支持视频播放，那么也必须考虑这个问题。所以在源码中有Media engine vector的设计，用来根据contentType选择最佳media engine。在目前android2。2源码中只有Mediaplayerprivate一个media engine。而该播放类，最终也是调用了系统java接口videoview。并传给了媒体资源的url。对于解码的支持完全取决于终端系统。
 Android对video元素支持很有限。比如video的controls、autoplay、preload等都没支持。对于autobuffer的值虽然有设置，但是对于播放器并没有用到。对于HTML5中定义的很多规则都没有实现，所以，android对HTML5 video的支持很有限。

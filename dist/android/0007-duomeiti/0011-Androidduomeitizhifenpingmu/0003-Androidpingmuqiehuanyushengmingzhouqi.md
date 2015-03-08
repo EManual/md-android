@@ -40,5 +40,5 @@ public class HelloActivity extends Activity {
 ```
 结果发现，当改变屏幕方向后，日志类似这样：
 效果图：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/media_screen/04_screen.jpg)   
 标红线的地方，是当时转动了屏幕。这下大家就都看明白了吧。希望这个能帮助大家在开发中遇到的问题。

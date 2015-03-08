@@ -1,5 +1,7 @@
 总之说了这么多上个例子让大家看看吧！先来个简单的例子，上图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_store/05_mediastore.jpg) 
+
 先说说这个程序的基本框架吧：这个程序有两个线程一个Main负责播放音乐，一个Handler负责更新数据，这个播放器是通过ContentProvider获取存在数据库中的相关信息，然后播放音乐。附上代码：
 这里注释挺详细的如果有什么不明白的可以看前几篇文章，里面有详细解释：
 ```  
@@ -181,5 +183,5 @@ class SeekBarListener implements OnSeekBarChangeListener {
 }
 ```
 在文章的最后，我会附上一个csdn零积分的下载地址。这里面有详细的注释。并且里面还有一个比较复杂的播放器。先上播放器的图：
-![img](P)  
-![img](P)  
+![img](http://emanual.github.io/md-android/img/media_store/05_mediastore2.jpg) 
+![img](http://emanual.github.io/md-android/img/media_store/05_mediastore3.jpg) 

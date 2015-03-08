@@ -1,7 +1,9 @@
 WIFI的全称是Wireless Fidelity，又称802.11b标准，是一种高速的无线通信协议，传输速度可以达到11Mb/s。实际上，对WIFI并不需要过多的控制（当成功连接WIFI后，就可以直接通过IP在WIFI设备之间进行通信了），一般只需要控制打开或关闭WIFI以及获得一些与WIFI相关的信息（例如，MAC地址、IP等）。如果读者的Android手机有WIFI功能，可以在手机上测试本节的例子。要注意的是，WIFI功能不能在Android模拟器上测试，就算在有WIFI功能的真机上也需要先通过WIFI和计算机或其他WIFI设备连接后，才能获得与WIFI相关的信息。
 本节的例子可以关闭和开始WIFI，并获得各种与WIFI相关的信息。首先确认手机通过WIFI与其他WIFI设备成功连接，然后运行本节的例子，会看到如图所示的输出信息。
 效果图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_wifi/12_wifi.jpg) 
+ 
 本例的完整实现代码如下：
 ```  
 import java.net.Inet4Address;

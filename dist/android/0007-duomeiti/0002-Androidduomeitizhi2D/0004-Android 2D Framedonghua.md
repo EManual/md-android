@@ -109,4 +109,5 @@ public class FramesActivity extends Activity {
 	}
 }
 ```
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_2d/05_2d.jpg)  

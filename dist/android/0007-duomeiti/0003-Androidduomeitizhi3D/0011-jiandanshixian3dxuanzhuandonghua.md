@@ -113,7 +113,9 @@ rotation.setAnimationListener(new AnimationListener() {
 mContainer.startAnimation(rotation);
 ```
 下面是效果图及demo：
-![img](P)  
-![img](P)  
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_3d/12_3d.jpg)
+![img](http://emanual.github.io/md-android/img/media_3d/12_3d2.jpg)
+![img](http://emanual.github.io/md-android/img/media_3d/12_3d3.jpg)
+![img](http://emanual.github.io/md-android/img/media_3d/12_3d4.jpg)
 ![img](P)  

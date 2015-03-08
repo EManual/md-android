@@ -23,7 +23,9 @@ private void checkNetworkInfo() {
 注:
 根据Android的安全机制，在使用ConnectivityManager时，必须在AndroidManifest.xml中添加<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> 否则无法获得系统的许可。
 运行结果(关闭3G及wifi网络连接的状态下)
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_3g/02_3g.jpg)  
+
 调用Android手机的网络配置界面
 使用过Android手机上的手机QQ的朋友，应该知道，当QQ启动时，如果没有有效的网络连接，QQ会提示转入手机的网络配置界面。这是如何实现的呢。其实很简单啦
 ```  
@@ -51,13 +53,19 @@ private void checkNetworkInfo() {
 ```  
 startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));//进入无线网络配置界面
 ```
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_3g/02_3g2.jpg) 
+
 如果调用
 ```  
 startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS)); //直接进入手机中的wifi网络设置界面
 ```
 则直接进入手机中的wifi网络设置界面 
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_3g/02_3g3.jpg) 
+
 在wifi网络连接后 运行该程序
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_3g/02_3g4.jpg) 
+
 我们可以看到 wi-fi 状态为已连接(CONNECTED).

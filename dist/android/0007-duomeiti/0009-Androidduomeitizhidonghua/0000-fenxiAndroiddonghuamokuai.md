@@ -14,7 +14,9 @@ TranslateAnimation、RotateAnimation、AlphaAnimation等是Animation的子类，
 每个动画都重载了父类的applyTransformation方法，这个方法会被父类的getTransformation方法调用。另外每个动画还有个initialize 方法，完成初始化工作。
 不同的动画具有不同的属性，如RotateAnimation的属性是起始角度、终止角度和旋转点坐标，TranslateAnimation的属性是起始位置和终止位置。AlphaAnimation的属性是起始alpha值和终止alpha值。
 Animation 类及其子类的类图如下所示：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_animation/01_animation.jpg)
+
 #### Android类及其子类
 Interpolator 类及其子类Interpolator 定义了动画的变化速度，可以实现匀速、正加速、负加速、无规则变加速等；
 Interpolator 是基类，封装了所有 Interpolator 的共同方法，它只有一个方法，即 getInterpolation(float input)，该方法 maps a point on the timeline to a multiplier to beapplied to the transformations of an animation。
@@ -42,12 +44,16 @@ public float getInterpolation(float input) {
 }
 ```
 Interpolator 类及其子类的类图如下所示：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_animation/01_animation2.jpg)
+
 #### Interpolator 类及其子类
 Transformation 类Transformation 记录了仿射矩阵 Matrix，动画每触发一次，会对原来的矩阵做一次运算， View 的 Bitmap 与这个矩阵相乘就可实现相应的操作(旋转、平移、缩放等)。
 Transformation 类封装了矩阵和 alpha 值，它有两个重要的成员，一是mMatrix，二是mAlpha。
 Transformation 类图如下所示：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_animation/01_animation3.jpg)
+
 #### Transformation 类图
 如何在 View 中实现动画从逻辑上讲，实现动画需要如下几步：
 view 创建动画对象，设置动画属性，调用invalidate刷新屏幕，启动动画；
@@ -58,7 +64,9 @@ invalidate 方法触发了onDraw函数；
 3.调用 canvas 的 drawBitmap 方法，绘制屏幕。
 判断 getTransformation 的返回值，若为真，调用 invalidate 方法，刷新屏幕进入下一桢；若为假，说明动画完成。
 整个流程可用一个序列图表示：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_animation/01_animation4.jpg)
+
 #### Tween 动画序列图
 使用样例下面的代码是一个view，系统创建view时会调用onCreate方法，该方法定义了一个TranslateAniamtion，指定了移动起点和终点，动画持续时间为1s，最后调用startAnimation将该动画保存在View的成员mCurrentAnianmtion中并启动动画。
 注意，在View中需要定义成员变量mCurrentAnimation和mTransformation，分别记录当前的动画和变换。另外需要定义成员函数startAnimation启动动画。

@@ -1,10 +1,12 @@
 当没有android手机的开发者进行传感器开发的时候，遇到了一个问题，没有真机，怎么进行测试。
 答案是：用SensorSimulator进行模拟（它是一个开源的项目）。
 先看看图：
-![img](P)  
-![img](P)  
-![img](P)  
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_sensor/14_sensor.jpg)  
+![img](http://emanual.github.io/md-android/img/device_sensor/14_sensor2.jpg)   
+![img](http://emanual.github.io/md-android/img/device_sensor/14_sensor3.jpg)   
+![img](http://emanual.github.io/md-android/img/device_sensor/14_sensor4.jpg) 
+ 
 1，先下载sensorsimulator-1.1.1.zip 
 2，解压缩，解压后我们会看到它的下面有几个文件夹，有个lib的文件夹，那个就是我们要的lib，在我们的项目下导入这个jar包
 3，接下来是代码部分，代码部分其实变化不大，private SensorManagerSimulator mSensorManager;利用这个调用sensor就行了，代码方面就是我们要利用那个lib包的方法调用service，从而使模拟器监听某个端口，而改变xyz。试试吧，挺好用的。 当然，前期测试阶段用模拟器测试要是用SensorManagerSimulator 这个类，如果是放到真机上跑，还是要是用SensorManager这个类的。毕竟是模拟嘛。在你项目中用到的Sensor，SensorManager，SensorEventListener等类，在导入的jar包里面都有，注意在模拟的时候都要导入该jar包中的，不要导入android提供的。不然会报错滴。

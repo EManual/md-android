@@ -1,6 +1,8 @@
 前面例子介绍了检测，读写NFC TAG开发的一般步骤，本例针对常用的Mifare Tag 具体说明。
 Mifare Tag 可以有1K ,2K, 4K，其内存分区大同小异，下图给出了1K字节容量的Tag的内存分布:
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_nfc/03_nfc.jpg) 
+
 数据分为16个区(Sector) ,每个区有4个块(Block) ，每个块可以存放16字节的数据，其大小为16 X 4 X 16 =1024 bytes
 每个区最后一个块称为Trailer ，主要用来存放读写该区Block数据的Key ，可以有A，B两个Key，每个Key 长度为6个字节，缺省的Key值一般为全FF或是0. 由 MifareClassic.KEY_DEFAULT 定义。
 因此读写Mifare Tag 首先需要有正确的Key值（起到保护的作用），如果鉴权成功
@@ -111,4 +113,5 @@ public static void main(String[] args) {
 	}
 }
 ```
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_nfc/03_nfc2.jpg) 

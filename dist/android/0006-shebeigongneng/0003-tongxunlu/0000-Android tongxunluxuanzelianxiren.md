@@ -206,6 +206,9 @@ public void onActivityResult(int reqCode, int resCode, Intent data) {
 </manifest>
 ```
 效果图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_contact/01_contact.jpg) 
+
 一旦你选择了一个联系人，父Activity会返回到前台，并且显示选择的联系人姓名
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_contact/01_contact2.jpg) 

@@ -53,4 +53,5 @@ protected void onResume() {
 ```
 说明：该段代码与前面案例不同的是第6行检查的磁场的变化，然后将三个方向上的分量分别显示到TextView中，而在注册监听时，同样将那个传感器的类型设置为SENSOR_MAGNETIC_FIELD表示只读取磁场值。
 运行sensorsimulator工具，选中magnetic field使得该工具模拟磁场的变化，然后运行该案例，将观察到如图所示的效果。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_sensor/06_sensor.jpg) 

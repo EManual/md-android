@@ -1,5 +1,7 @@
 我们先来看看效果图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_3d/13_3d.jpg)
+
 ```  
 import android.content.Context;
 import android.graphics.Camera;

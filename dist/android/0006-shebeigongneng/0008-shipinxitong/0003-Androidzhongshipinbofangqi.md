@@ -52,4 +52,5 @@ public class MainVideo extends Activity {
 }
 ```
 效果图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_video/04_video.jpg) 

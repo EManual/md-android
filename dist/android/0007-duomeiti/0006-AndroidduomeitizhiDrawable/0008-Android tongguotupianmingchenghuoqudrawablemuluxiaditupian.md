@@ -31,4 +31,5 @@ public class ReadyDrawable extends Activity {
 	}
 }
 ```
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_drawable/09_drawable.jpg) 

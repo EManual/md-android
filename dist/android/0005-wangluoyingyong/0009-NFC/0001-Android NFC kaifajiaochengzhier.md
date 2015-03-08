@@ -46,11 +46,15 @@
 当Android设备检测到有NFC Tag时，理想的行为是触发最合适的Activity来处理检测到的Tag，这是因为NFC通常是在非常近的距离才起作用(<4m)，如果此时需要用户来选择合适的应用来处理Tag，很容易断开与Tag之间的通信。因此你需要选择合适的Intent filter 只处理你想读写的Tag类型。
 Android系统支持两种NFC消息发送机制：Intent 发送机制和前台Activity 消息发送机制。
 Intent 发送机制 当系统检测到Tag时，Android系统提供manifest 中定义的Intent filter来选择合适的Activity来处理对应的Tag，当有多个Activity可以处理对应的Tag类型时，则会显示Activity选择窗口由用户选择：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_nfc/02_nfc.jpg) 
+
 前台Activity 消息发送机制 允许一个在前台运行的Activity在读写NFC Tag具有优先权，此时如果Android检测到有NFC Tag，如果前台允许的Activity可以处理该种类型的Tag则该Activity具有优先权，而不出现Activity 选择窗口。
 这两种方法基本上都是使用Intent-filter 来指明Activity可以处理的Tag类型，一个是使用Android的Manifest 来说明，一个是通过代码来申明。
 下图显示当Android检测到Tag，消息发送的优先级：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_nfc/02_nfc2.jpg) 
+
 本例 NFCDemoActivity 支持两种NFC消息发送机制，上面的XML指明了Intent 消息发送机制，其中
 ```  
 <meta-data android:name="android.nfc.action.TECH_DISCOVERED"
@@ -143,4 +147,5 @@ public class NFCDemoActivity extends Activity {
 mTechLists = new String[][] { new String[] { MifareClassic.class.getName() } };
 ```
 运行该示例，每靠近一次Tag，计数加1。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_nfc/02_nfc3.jpg) 

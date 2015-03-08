@@ -1,6 +1,8 @@
 在我们开发项目的有些时候，采用Android的layout布局有时候根本满足不了我们对于界面的要求，有时候没有web页面那样炫。其实android也可以采用最原始的html页面来进行布局，这样我们可以修改html页面来满足我们的需求，达到一个很炫的效果。android中我们也可以利用javascript来帮我们实现一些很简单的应用。其他的话不多说啦，直接开始项目的介绍吧。
 1.我们需要将我们的html页面放入andorid中的assets文件夹下，然后新建一个images文件夹，放入一张图片。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_javascript/08_javascript.png) 
+
 这个是我们放好页面后的工程目录。index.html的代码如下：
 ```  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -191,6 +193,9 @@ public class Contact {
 }
 ```
 整个项目的布局如下图所示：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_javascript/08_javascript2.png) 
+
 项目的运行效果：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_javascript/08_javascript3.png)  

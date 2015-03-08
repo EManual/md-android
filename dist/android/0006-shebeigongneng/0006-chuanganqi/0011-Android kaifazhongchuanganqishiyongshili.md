@@ -1,5 +1,7 @@
 样例应用程序仅监控对方向和加速表传感器的更改。当我们收到更改时，传感器值在 TextView 小部件的屏幕上显示。图 1 展示了该应用程序的运行情况。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_sensor/12_sensor.jpg) 
+
 图1. 监视加速和方向
 使用Eclipse环境和Android Developer Tools插件创建的应用程序。
 IBMEyes.java

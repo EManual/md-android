@@ -10,5 +10,7 @@
 5.如果需要，绘制淡入淡出相关的内容并恢复保存的画布所在的层（layer）
 6.绘制修饰的内容（例如滚动条），这个可知要实现滚动条效果并不需要ScrollView，可以在View中完成的，不过有一些小技巧，具体实现可以参看我们的TextViewExample示例代码
 当一个ChildView要重画时，它会调用其成员函数invalidate()函数将通知其ParentView这个ChildView要重画，这个过程一直向上遍历到ViewRoot，当ViewRoot收到这个通知后就会调用上面提到的ViewRoot中的draw函数从而完成绘制。View::onDraw()有一个画布参数Canvas,画布顾名思义就是画东西的地方，Android会为每一个View设置好画布，View就可以调用Canvas的方法，比如：drawText,drawBitmap,drawPath等等去画内容。每一个ChildView的画布是由其ParentView设置的，ParentView根据ChildView在其内部的布局来调整Canvas，其中画布的属性之一就是定义和ChildView相关的坐标系，默认是横轴为X轴，从左至右，值逐渐增大，竖轴为Y轴，从上至下，值逐渐增大,见下图:
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_animation/17_animation.jpg)  
+
 Android动画就是通过ParentView来不断调整ChildView的画布坐标系来实现的，下面以平移动画来做示例，假设在动画开始时ChildView在ParentView中的初始位置在(100,200)处，这时ParentView会根据这个坐标来设置ChildView的画布，在ParentView的dispatchDraw中它发现ChildView有一个平移动画，而且当前的平移位置是(100,200)，于是它通过调用画布的函数traslate(100,200)来告诉ChildView在这个位置开始画，这就是动画的第一帧。如果ParentView发现ChildView有动画，就会不断的调用invalidate()这个函数，这样就会导致自己会不断的重画，就会不断的调用dispatchDraw这个函数，这样就产生了动画的后续帧，当再次进入dispatchDraw时，ParentView根据平移动画产生出第二帧的平移位置(500,200)，然后继续执行上述操作，然后产生第三帧，第四帧，直到动画播完。具体算法描述如清单2：
