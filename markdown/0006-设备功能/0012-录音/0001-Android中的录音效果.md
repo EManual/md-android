@@ -134,6 +134,9 @@ public class MainActivity extends Activity {
 </MANIFEST>
 ```
 效果图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_record/02_record.jpg) 
+
 当点击录音时
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_record/02_record2.jpg) 

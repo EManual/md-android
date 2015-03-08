@@ -3,9 +3,13 @@
 Android里面内置的是SQLite的数据库，虽然对数据库不怎么了解，但关系型数据库，基本操作也就那些，而且基本都一样，所以就直接用呗。
 用命令行下的adb shell进入Android的模拟器，进入data/data目录下面，这里面就是安装的一些应用程序。找啊找，里面有一个com.android.providers.contacts，怎么看都是一个通讯录相关的程序，进入这个目录下，里面有一个databases，就它了，再进去就可以看到有个contacts2.db的文件。
 用sqlite3打开这个数据库文件。查看里面的表。里面表很多，不过看两遍后发现表的名字很熟悉，像什么data,raw_contacts,contacts,minetypes等，前面几个都是我们上次说的那几个所谓的数据模型，它们还真是数据库。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_contact/02_contact.jpg) 
+
 查询一下data表里面的所有信息，可以发现里面的信息联系起来就都是我们通讯录里面的名片。虽然不是一条显示全部，但每个名字每个电话，每个E-mail都有，而且都是分开显示的。现在对于这个应该就有点感觉了。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_contact/02_contact2.jpg) 
+
 再看一下表的结构，用”.schema” 命令后会看到，类似如下的信息：
 ```  
 .schema data

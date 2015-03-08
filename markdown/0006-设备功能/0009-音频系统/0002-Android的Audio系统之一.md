@@ -15,7 +15,9 @@ Audio系统主要分成如下几个层次：
 （4）Audio接口通过JNI和Java框架提供给上层。
 Audio系统的各个层次接口主要提供了两方面功能：放音（Track）和录音（Recorder）。
 Android的Audio系统结构如图1所示。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_audio/03_audio.png) 
+
 图1  Android的Audio系统结构
 Android系统的代码分布情况如下所示：
 （1）Audio的Java部分
@@ -45,4 +47,5 @@ Audio的硬件抽象层提供到硬件的接口，供AudioFlinger调用。Audio�
 提示：Android的Audio系统不涉及编解码环节，只是负责上层系统和底层Audio硬件的交互，一般以PCM作为输入/输出格式。
 在Android的Audio系统中，无论上层还是下层，都使用一个管理类和输出输入两个类来表示整个Audio系统，输出输入两个类负责数据通道。在各个层次之间具有对应关系，如表1所示所示。
 Android各个层次的对应关系
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_audio/03_audio2.jpg) 

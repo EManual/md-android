@@ -1,5 +1,7 @@
 Android中的通信录操作给人的第一感觉就是晕，不知道怎么去用。可以看下这张图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_contact/08_contact.png) 
+
 这幅图的意思是：操作通信录本质是去操作合适的ContentProvider，通过合适的ContentProvider去操作通讯录。
 1：要想熟练的操作合适的ContentProvider，就必须要掌握一个类ContactsContract（2.0开始使用）。
 现在可以思考一个新问题：Android中的联系人信息是如何存储的？
@@ -7,7 +9,9 @@ Android中的联系人信息都是存储在一个叫contacts2.db的数据库中�
 继续思考一个新问题：这个数据库是如何来存储联系人信息的？
 根据官方的文档：通信录是一个3层的数据存储模型（初看挺牛的，说穿了就是3张表）
 我又画了一张图比较形象的反应这个“3层模型”。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_contact/08_contact2.png) 
+
 第一层：Data层，每种独立的数据类型占一行。具体哪些独立的数据可以占一行，可以在mimetypes这张表中找到，原生Android的系统一共12种，例如name,phone,email ect..
 第二层：RawContracts层，由Data层的多条数据组合成一个完整的联系人信息。
 第三层：Contracts层，这一层主要注意与第二层的区别。大部分情况下这两层的数据时指同一个联系人的信息，即他们俩是一一对应的关系，但是有些特殊情况，这个我是查了一些老外的论坛加上自己的理解，例如，我做一个本地通信录和网络上的通信录同步的时候，可能有一个人他在本地存在，他在网络上也存在，这个时候Android就可以识别他们，认为他们两个其实是指同一个人。 （这种情况我没有试出来，我感觉这个其实是Android创造了这个概念之后，留给我们开发自己去实现的。）

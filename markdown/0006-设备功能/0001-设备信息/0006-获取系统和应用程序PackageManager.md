@@ -1,3 +1,4 @@
+
 PackageManager是个非常好的东西，其他的详细的细节等日后有时间整理
 PackageManager的功能：
 ```  
@@ -199,4 +200,4 @@ piitem.xml
     </LinearLayout>
 </LinearLayout>
 ```
-![img](P)  
+![img](http://emanual.github.io/md-android/img/device_info/07_manager.jpg) 

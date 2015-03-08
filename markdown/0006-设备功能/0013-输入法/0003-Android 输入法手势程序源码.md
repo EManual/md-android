@@ -1,5 +1,7 @@
 让手机根据自己的手势写字体，直接给出下载地址
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_record/04_shurufa.jpg) 
+
 ```  
 gov.setGestureStrokeType(GestureOverlayView.GESTURE_STROKE_TYPE_MULTIPLE);//设置笔划类型
   // GestureOverlayView.GESTURE_STROKE_TYPE_MULTIPLE 设置支持多笔划

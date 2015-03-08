@@ -10,7 +10,9 @@ AudioRecorder.h：录音部分对上接口；
 IAudioRecorder.h：录音部分需要下层实现的接口。
 IAudioFlinger.h、IAudioTrack.h和IAudioRecorder.h这三个接口通过下层的继承来实现（即AudioFlinger）。AudioFlinger.h、AudioTrack.h和AudioRecorder.h是对上层提供的接口，它们既供本地程序调用（例如声音的播放器、录制器等），也可以通过JNI向Java层提供接口。
 meida库中Audio部分的结构如图2所示。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_audio/04_audio.png) 
+
 图2  meida库中Audio部分的结构
 从功能上看，AudioSystem负责的是Audio系统的综合管理功能，而AudioTrack和AudioRecorder分别负责音频数据的输出和输入，即播放和录制。
 AudioSystem.h中主要定义了一些枚举值和set/get等一系列接口，如下所示：

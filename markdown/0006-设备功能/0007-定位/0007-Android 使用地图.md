@@ -52,7 +52,9 @@ public class WhereAmI extends MapActivity {
 </LinearLayout>
 ```
 (4) 现在运行这个应用程序应该显示原始的地理位置文本，它的下面会有一个MapView，如图
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/device_gps/08_gps.jpg) 
+
 (5) 配置Map View，并把对它的MapController的一个引用作为实例变量进行存储。然后设置Map View的显示选项来显示卫星和StreetView，并缩进到比较进的视角。
 ```  
 MapController mapController;
