@@ -46,4 +46,4 @@ public class Test extends Activity {
 }
 ```
 效果图：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/media_canvas/07_canvas.jpg) 

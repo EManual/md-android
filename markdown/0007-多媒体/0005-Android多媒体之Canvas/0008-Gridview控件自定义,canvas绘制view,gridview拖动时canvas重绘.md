@@ -1,10 +1,14 @@
 1.canvas使用本地drawable图片资源重绘的话，能够显示正确的图片，如下：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_canvas/09_canvas.jpg) 
+
 2.canvas使用从网上下载下来的图片资源画图的话，图片都能显示但是覆盖掉了背景图，
 如下面：
 再进一步，滑动我的gridview，也就是实现了canvas重绘，当我返回再看这些图时，背景图显示出来了，但是
 load的图又消失了！或者说，它们没有消失，但就是没有正常显示！
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_canvas/09_canvas2.jpg) 
+
 现贴出我的绘图代码：
 ```  
 public Bitmap drawMyPic(Bitmap background, Bitmap front,String groupName)  

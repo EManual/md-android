@@ -1,5 +1,7 @@
 在此先说明一个类的继承关系，<I>表示接口
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_store/03_mediastore.png) 
+
 Android系统提供了MediaScanner，MediaProvider，MediaStore等接口，并且提供了一套数据库表格，通过Content Provider的方式提供给用户。当手机开机或者有SD卡插拔等事件发生时，系统将会自动扫描SD卡和手机内存上的媒体文件，如audio，video，图片等，将相应的信息放到定义好的数据库表格中。在这个程序中，我们不需要关心如何去扫描手机中的文件，只要了解如何查询和使用这些信息就可以了。
 MediaStore中定义了一系列的数据表格，通过ContentResolver提供的查询接口，我们可以得到各种需要的信息。下面我们重点介绍查询SD卡上的音乐文件信息。
 先来了解一下ContentResolver的查询接口：

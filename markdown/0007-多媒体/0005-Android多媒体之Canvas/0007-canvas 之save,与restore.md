@@ -17,7 +17,9 @@ paint.setStrokeWidth(10);//画笔粗细
 canvas.drawLine(0, 0, 80, 80, paint);
 ```
 显示是这样的：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_canvas/08_canvas.jpg) 
+
 ```  
 Paint paint=new Paint();
 paint.setColor(Color.WHITE);
@@ -33,4 +35,5 @@ paint.setStrokeWidth(10);//画笔粗细
 canvas.restore();//restore以后它会返回save之前的状态
 canvas.drawLine(0, 0, 80, 80, paint);
 ```
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_canvas/08_canvas2.jpg) 

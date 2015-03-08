@@ -154,6 +154,9 @@ AndroidManifest.xml的内容如下（设置权限）：
 ```
 效果图：
 点击“查看图片A”按钮，ImageView载入图片A并显示出来
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_drawable/03_drawable.jpg) 
+
 点击”设置图片B为壁纸”按钮，可以看到图片B已经成为桌面壁纸
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_drawable/03_drawable2.jpg) 

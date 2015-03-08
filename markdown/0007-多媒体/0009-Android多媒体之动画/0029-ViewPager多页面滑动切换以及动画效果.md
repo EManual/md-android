@@ -1,7 +1,11 @@
 一、首先，我们来看一下效果图，这是新浪微博的Tab滑动效果。我们可以手势滑动，也可以点击上面的头标进行切换。与此同方式，白色横条会移动到相应的页卡头标下。这是一个动画效果，白条是缓慢滑动过去的。好了，接下来我们就来实现它。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_animation/25_animation.jpg) 
+
 二、在开始前，我们先要认识一个控件，ViewPager。它是google SDk中自带的一个附加包的一个类，可以用来实现屏幕间的切换。这个附加包是android-support-v4.jar，在最后的源码中会提供给大家，在libs文件夹中。当然你也可以自己从网上搜索最新的版本。找到它后，我们需要在项目中添加
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_animation/25_animation.jpg) 
+
 三、我们先做界面，
 界面设计很简单，第一行三个头标，第二行动画图片，第三行页卡内容展示。
 ```  
@@ -189,7 +193,9 @@ private void InitImageView() {
 }
 ```
 根据屏幕的分辨率和图片的宽度计算动画移动的偏移量
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_animation/25_animation.jpg) 
+
 实现页卡切换监听
 ```  
  /**
@@ -238,4 +244,5 @@ public class MyOnPageChangeListener implements OnPageChangeListener {
 }
 ```
 五、打完收工，快来看看自己的劳动成果吧
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_animation/30_animation.gif) 

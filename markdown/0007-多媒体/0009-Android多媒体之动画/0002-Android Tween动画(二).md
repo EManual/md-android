@@ -32,7 +32,9 @@ Animation scale = AnimationUtils.loadAnimation(TweenActivity.this, R.anim.scale_
 //开始动画 
 img.startAnimation(scale); 
 ```
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_animation/03_animation.png) 
+
 第3种:TranslateAnimation(float fromXDelta, float toXDelta, float YDelta, float toYDelta)
 功能：创建一个移动画面位置的动画
 参数：fromXDelta,fromYDelta分别是其实坐标；toXDelta,toYDelta分别是结束坐标

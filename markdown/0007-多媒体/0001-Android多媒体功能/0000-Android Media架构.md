@@ -1,5 +1,7 @@
 整体框架图
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_media/01_media.jpg) 
+
 整个MediaPlayer在运行的时候，可以大致上分成Client和Server两个部分，它们分别在两个进程中运行，它们之间使用Binder机制实现IPC通讯。从框架结构上来看，IMediaPlayerService.h、IMediaPlayerClient.h和MediaPlayer.h三个类定义了MeidaPlayer的接口和架构，MediaPlayerService.cpp和mediaplayer.coo两个文件用于MeidaPlayer架构的实现，MeidaPlayer的具体功能在PVPlayer（库libopencoreplayer.so）中的实现。
 IMediaPlayerClient.h用于描述一个MediaPlayer客户端的接口，描述如下所示：
 ```  

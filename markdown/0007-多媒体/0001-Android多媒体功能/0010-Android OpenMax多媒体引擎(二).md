@@ -6,7 +6,9 @@ OpenMax IL主要内容如下所示。
 端口(Port)：组件的输入输出接口。
 隧道化(Tunneled)：让两个组件直接连接的方式。
 ```
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_media/11_media.jpg) 
+
 OpenMAL IL的客户端，通过调用四个OpenMAL IL组件，实现了一个功能。四个组件分别是Source组件、Host组件、Accelerator组件和Sink组件。Source组件只有一个输出端口;而Host组件有一个输入端口和一个输出端口;Accelerator组件具有一个输入端口，调用了硬件的编解码器，加速主要体现在这个环节上。Accelerator组件和Sink组件通过私有通讯方式在内部进行连接，没有经过明确的组件端口。
 OpenMAL IL在使用的时候，其数据流也有不同的处理方式：既可以经由客户端，也可以不经由客户端。Source组件到Host组件的数据流就是经过客户端的;而Host组件到Accelerator组件的数据流就没有经过客户端，使用了隧道化的方式;Accelerator组件和Sink组件甚至可以使用私有的通讯方式。
 OpenMax Core是辅助各个组件运行的部分，它通常需要完成各个组件的初始化等工作，在真正运行过程中，重点的是各个OpenMax IL的组件，OpenMax Core不是重点，也不是标准。

@@ -1,5 +1,5 @@
 先看效果图： 
-![img](P)  
+![img](http://emanual.github.io/md-android/img/media_screen/05_screen.jpg)   
 其实就是 DisplayMetrics类 的应用 ，代码如下：
 ```  
 import android.app.Activity;

@@ -55,4 +55,4 @@ public class MyBitmap {
 }
 ```
 以下是测试效果图：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/media_bitmap/13_bitmap.jpg)

@@ -19,8 +19,10 @@ public MyView(Context context, AttributeSet attributeSet){
 } 
 ```
 我们现在就来看看下面的一个实例，我们先来看看效果图：
-![img](P)  
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_canvas/01_canvas.jpg) 
+![img](http://emanual.github.io/md-android/img/media_canvas/01_canvas2.jpg) 
+
 就是 一个图像旋转的例子，我们来看看代码吧：
 ```  
 import android.app.Activity;

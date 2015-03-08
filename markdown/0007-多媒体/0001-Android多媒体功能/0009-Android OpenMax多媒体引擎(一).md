@@ -17,4 +17,5 @@ OpenMax API将会与处理器一同提供，以使库和编解码器开发者能
 #### OpenMax IL层的结构
 OpenMax IL目前已经成为了事实上的多媒体框架标准。嵌入式处理器或者多媒体 编解码模块的硬件生产者，通常提供标准的OpenMax IL层的软件接口，这样软件的开发者就可以基于这个层次的标准化接口进行多媒体程序的开发。
 OpenMax IL的接口层次结构适中，既不是硬件编解码的接口，也不是应用程序层的接口，因此比较容易实现标准化。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_media/10_media.jpg) 

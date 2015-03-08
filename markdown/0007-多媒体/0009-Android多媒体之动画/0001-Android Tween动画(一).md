@@ -43,5 +43,5 @@ Animation scale = AnimationUtils.loadAnimation(TweenActivity.this, R.anim.scale_
 //开始动画 
 img.startAnimation(scale); 
 ```
-![img](P)  
-![img](P)  
+![img](http://emanual.github.io/md-android/img/media_animation/02_animation.png)  
+![img](http://emanual.github.io/md-android/img/media_animation/02_animation2.png)

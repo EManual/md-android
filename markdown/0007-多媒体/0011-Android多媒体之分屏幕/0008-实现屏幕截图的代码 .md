@@ -19,7 +19,9 @@
 </LinearLayout>
 ```
 界面视图:
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_screen/09_screen.jpg)   
+
 下面是代码:
 ```  
 import java.io.File;
@@ -68,4 +70,4 @@ public class Main extends Activity {
 }
 ```
 成功后保存到SD卡中 效果如下:
-![img](P)  
+![img](http://emanual.github.io/md-android/img/media_screen/09_screen2.jpg)   

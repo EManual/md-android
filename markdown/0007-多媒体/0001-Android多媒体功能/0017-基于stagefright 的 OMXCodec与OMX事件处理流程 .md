@@ -1,5 +1,7 @@
 学习了解Mutilmedia Framework有一段时间了，今天闲下来稍微整理整理。OMXCodec.cpp类属于libstagefright，在整个MM PF相当OMX的适配层，供awesomeplayer调用，而OMX.cpp，OMXNoteInstance.cpp等相当于OpenMax中的OpenMax IL,首先讲下OMXCodec与OMX callback事件的处理流程。先看整个流程的时序图吧：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_media/18_media.jpg) 
+
 从时序图看，首先我们要建立个OMXCodecObserver,该类是OMXCodec的内部类，在create函数中被创建，并把对应的OMXCodec加入都自己的观察范围内，具体代码如下：
 ```  
 framework/base/media/libstagefright/OMXCodec.cpp
@@ -72,4 +74,5 @@ define OMX_FillThisBuffer(
 mDispatchers.add(*node, new CallbackDispatcher(instance));
 ```
 有了oberser, callback event , callbackdispatcher，那么一个callback event如何从OMX传到OMXCodec呢？下面我们以emptybuffer流程来具体看下，时序图如下：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_media/18_media2.jpg) 

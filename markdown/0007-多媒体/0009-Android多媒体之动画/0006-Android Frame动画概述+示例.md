@@ -1,8 +1,10 @@
 大家平时见到的最多的可能就是Frame动画了，Android中当然也少不了它。它的使用更加简单，只需要创建一个AnimationDrawabledF对象来表示Frame动画，然后通过addFrame方法把每一帧要显示的内容添加进去，最后通过start方法就可以播放这个动画了，同时还可以通过setOneShot方法设置是否重复播放。 下面就是一个用Frame动画模拟日全食的效果。先看看效果。
-![img](P)  
-![img](P)  
-![img](P)  
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_animation/07_animation.jpg)  
+![img](http://emanual.github.io/md-android/img/media_animation/07_animation2.jpg) 
+![img](http://emanual.github.io/md-android/img/media_animation/07_animation3.jpg)  
+![img](http://emanual.github.io/md-android/img/media_animation/07_animation4.jpg) 
+
 Activity01
 ```  
 import android.app.Activity;

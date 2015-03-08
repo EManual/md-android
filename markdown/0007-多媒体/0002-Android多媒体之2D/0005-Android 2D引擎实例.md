@@ -1,7 +1,9 @@
 Box2d是一个很出名的2d物理引擎，大家可以google之。Box2d有C++，flash和Java等版本。android可以直接使用java版本的Jbox2d，但因为Jbox2d的图形渲染是使用processing库来实现的，所以，在android中使用Jbox2d的时候，图形渲染的工作就只能自己来写了。因为网上关于box2d的资料真的非常的少，特别是关于图形绘制方面，所以，虽然程序写得不是很好，还是贴上来了，效果图：
-![img](P)  
-![img](P)  
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_2d/06_2d.png)
+![img](http://emanual.github.io/md-android/img/media_2d/06_2d2.png)  
+![img](http://emanual.github.io/md-android/img/media_2d/06_2d3.png)
+
 程序很简单：蓝色的是地面，从上面掉下两个绿球和一个红色的方块，它们之间的碰撞都由box2d引擎自己来完成。
 代码如下：
 ```  

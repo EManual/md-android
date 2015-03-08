@@ -1,7 +1,11 @@
 图片闪烁，类似这样。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_animation/25_animation.gif) 
+
 左右摇摆：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_animation/25_animation2.gif) 
+
 一、续播  (不知道取什么名字好，就是先播放动画A， 接着播放动画B)
 有两种方式。
 第一种，分别动画两个动画，A和B，然后先播放动画A，设置A的AnimationListener。当onAnimationEnd触发（即A播放完毕）时，开始播放B。

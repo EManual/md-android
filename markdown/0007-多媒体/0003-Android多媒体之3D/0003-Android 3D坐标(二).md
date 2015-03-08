@@ -28,4 +28,5 @@ public void onDrawFrame(GL10 gl) {
 }
 ```
 效果图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/media_3d/04_3d.png) 
