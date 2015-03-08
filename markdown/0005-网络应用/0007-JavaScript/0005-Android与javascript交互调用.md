@@ -1,6 +1,8 @@
 我们都知道，手机时代的来临的主要标志是啥？能够方便的接入互联网！互联网展现给我们的方式一般都是网页，网页中又必不可少的拥有javascript，所以说，android提供对javascript的支持那是迫在眉睫了，幸好，android早就给我们提供了无缝连接。让我们可以通过android与javascript进行交互。
 我们的应用很简单，如图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_javascript/06_javascript.png) 
+
 我们有一个输入框，旁边有个按钮，点击按钮就会提示我们输入的内容。当然这只是html中最简单的程序了，但是你将这个程序放入android手机中访问下试试，它是不会进行提示的。要想让其以android的形式提示用户，我们就需要用到android和javascript的交互。对了，这里展示的是一个网页哦，代码如下：
 ```  
 <html> 

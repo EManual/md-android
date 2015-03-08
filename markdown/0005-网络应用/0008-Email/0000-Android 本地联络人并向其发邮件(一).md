@@ -3,7 +3,9 @@
 用户可以先把手动输入邮箱，也可以长按邮箱文本框跳到联系人那里找到联系人，得到联系人的邮箱，后返回；
 发送邮件。
 程序运行的效果图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_email/01_email.png) 
+
 我们现在就来看看项目里的布局代码：
 ```  
 <?xml version="1.0" encoding="utf-8"?>

@@ -1,8 +1,10 @@
 前几天项目遇到了webview加载HTML的时候，网页拖动右边有空白的现象，找了很多方案，都没解决，我研究了一下，其实很简单，特把方法列出来，供大家参考一下，希望能对大家有所帮助。
 先看效果图
 怎么拖都不会动，同时加 有对网页放大和缩小的功能。
-![img](P)  
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_html/03_html.jpg)   
+![img](http://emanual.github.io/md-android/img/network_html/03_html2.jpg) 
+
 先把代码拿出来，HTML的我是PHP写的，
 ```  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

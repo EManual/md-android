@@ -11,7 +11,9 @@ Spil Driessen表示，“我们希望通过HTML5获得的是真正的云端游�
 虽然HTML5原先旨在服务各种设备，但我们依然无法确保其能够顺利适应各种硬件标准。
 EA创意总监Richard Hilleman最近在旧金山的“New Game Conference”上分享自己在此平台遇到的挫折，他表示团队的试验3D动画在MacBook Air上运作顺利，但在更强大的设备上则遇到阻碍。
 Hilleman表示，“在我自己的电脑上，其处理器是i7，我一秒钟只能获得若干帧数。”他接着解释到：“高性能的JavaScript通常非常迟钝，”所以我们很难预测应用在既定硬件设备的运作情况会怎样。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_html/12_html.jpg)   
+
 HTML5的运作情况无法预测
 他补充表示，“我不知道如何向客户解释。这是很大的问题。”
 瞄准手机平台的HTML5开发者很容易遇到这些问题，因为他们的游戏需要在各种智能手机和其他手机设备上运作。

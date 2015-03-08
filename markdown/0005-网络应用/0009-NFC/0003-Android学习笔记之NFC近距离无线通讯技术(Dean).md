@@ -1,5 +1,7 @@
 首先要弄清楚NFC是什么？
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_nfc/04_nfc.jpg) 
+
 NFC是Near Field Communication缩写，即近距离无线通讯技术。由飞利浦公司和索尼公司共同开发的NFC是一种非接触式识别和互联技术，可以在移动设备、消费类电子产品、PC 和智能控件工具间进行近距离无线通信。NFC 提供了一种简单、触控式的解决方案，可以让消费者简单直观地交换信息、访问内容与服务。 
 NFC将非接触读卡器、非接触卡和点对点（Peer-to-Peer）功能整合进一块单芯片，为消费者的生活方式开创了不计其数的全新机遇。这是一个开放接口平台，可以对无线网络进行快速、主动设置，也是虚拟连接器，服务于现有蜂窝状网络、蓝牙和无线 802.11 设备。 
 NFC可兼容索尼公司的FeliCaTM卡以及已广泛建立的非接触式智能卡架构，该架构基于ISO 14443 A，使用飞利浦的MIFARE?技术。 
@@ -165,12 +167,14 @@ TagTechnology.java
 最上层的接口这里定义集中协议类型的标识 继承closeable便于克隆
 拥有方法getTag connect reconnect close isConnected
 这里涉及到几个协议一起来看一下
-![img](P)  
-![img](P)  
-![img](P)  
-![img](P)  
-![img](P)  
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_nfc/03_nfc2.jpg) 
+![img](http://emanual.github.io/md-android/img/network_nfc/03_nfc3.jpg)  
+![img](http://emanual.github.io/md-android/img/network_nfc/03_nfc4.jpg)  
+![img](http://emanual.github.io/md-android/img/network_nfc/03_nfc5.jpg) 
+![img](http://emanual.github.io/md-android/img/network_nfc/03_nfc6.jpg) 
+![img](http://emanual.github.io/md-android/img/network_nfc/03_nfc7.jpg) 
+
 ```  
 3.frameworks/base/core/java/com/android/internal/nfc
 LlcpConnectionlessSocket.java

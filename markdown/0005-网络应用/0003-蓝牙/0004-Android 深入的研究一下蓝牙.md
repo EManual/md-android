@@ -1,6 +1,8 @@
 完整的蓝牙协议栈如图所示，不是任何应用都必须使用全部协议，而是可以只使用其中的一列或多列。图显示了所有协议之间的相互关系，但这种关系在某些应用中是有变化的。
 效果图
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_bluetooth/05_bluetooth.jpg) 
+
 蓝牙协议体系中的协议按SIG的关注程度分为四层：
 核心协议：BaseBand、LMP、L2CAP、SDP； 
 电缆替代协议：RFCOMM； 

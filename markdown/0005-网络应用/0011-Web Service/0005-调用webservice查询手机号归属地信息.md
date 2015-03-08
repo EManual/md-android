@@ -1,8 +1,12 @@
 Web Services是由企业发布的完成其特定商务需求的在线应用服务,其他公司或应用软件能够通过Internet来访问并使用这项在线服务。在这里我们使用soap协议往webservice发送信息。然后得到webservice服务器返回过来的信息。
 Web Services有很多种类型，在这里我们使用www.webxml.com.cn。如图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_webservice/06_webservice.jpg) 
+
 点击进去。我们可以看到soap协议定义的内容。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/network_webservice/06_webservice2.jpg) 
+
 ```  
 import java.io.InputStream;
 import java.io.OutputStream;
