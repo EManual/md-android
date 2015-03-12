@@ -13,7 +13,7 @@
 12、Android.telephony telephony Api允许直接与蛇鞭的电话栈进行交互，让你可以直接打电话、监控电话状态以及收发SMS消息。
 13、Android.webkit webKit 包提供了与基于Web的内容相关的API，包括一个WebView控件，可以再活动或许cookie管理器重嵌入一个浏览器。
 除了Android API之外，android栈还包含了一些可以提供程序框架使用的c/c++库集合：
-1、OpenGL  基于O喷GL ES ApI 的用来支持3D图形的库。
+1、OpenGL  基于OpenGL ES ApI 的用来支持3D图形的库。
 2、Free Type  支持位图和矢量字体渲染。
 3、SGL 用来提供2D图形引擎的核心库。
 4、Libc 为基于Linux的嵌入式设备而优化的标注C库。
