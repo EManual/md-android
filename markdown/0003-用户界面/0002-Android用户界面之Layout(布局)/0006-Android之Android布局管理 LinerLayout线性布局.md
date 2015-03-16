@@ -29,7 +29,9 @@ LinearLayout还支持为其包含的widget或者是container指定填充权值�
         android:text="3333" />
 </LinearLayout>
 ```
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_layout/07_layout.jpg) 
+
 几个常用的XML属性的详解：
 ```  
 属性名称	相关方法	描述
@@ -171,4 +173,4 @@ public class Dyanmic_Layout_Activity extends Activity {
 }
 ```
 实现效果
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_layout/07_layout2.jpg)  

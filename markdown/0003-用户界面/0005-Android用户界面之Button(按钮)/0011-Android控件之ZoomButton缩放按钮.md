@@ -1,5 +1,5 @@
 效果如下:
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_button/12_button.jpg)
 一、与ZoomControls的区别
 ZoomControls是一个包含放大、缩小按钮的控件。而ZoomButton是您自己定义的缩放按钮，它允许你定义多个这样的按钮，它显示的只能是图片，没有Text属性。
 二、实例

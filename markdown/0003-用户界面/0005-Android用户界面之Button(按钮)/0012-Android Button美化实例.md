@@ -1,5 +1,5 @@
 我们先来看看效果图：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_button/13_button.jpg)
 背景配置文件：button_bg.xml 
 ```  
 <?xml version="1.0" encoding="UTF-8"?>

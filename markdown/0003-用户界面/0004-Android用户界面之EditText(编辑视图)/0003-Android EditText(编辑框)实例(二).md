@@ -59,6 +59,6 @@ strings.xml文件
 </activity>
 ```
 运行结果如下：
-![img](P)  
-![img](P)  
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_edittext/04_edittext.jpg) 
+![img](http://emanual.github.io/md-android/img/view_edittext/04_edittext2.jpg)  
+![img](http://emanual.github.io/md-android/img/view_edittext/04_edittext3.jpg) 

@@ -82,4 +82,4 @@ public class HelloTabWidget extends TabActivity {
 	}
 }
 ```
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_layout/15_layout.jpg) 

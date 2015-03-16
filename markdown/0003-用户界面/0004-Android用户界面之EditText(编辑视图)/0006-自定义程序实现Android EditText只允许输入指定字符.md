@@ -24,6 +24,6 @@ public void afterTextChanged(Editable s) {
 }
 ```
 运行结果如下：
-![img](P)  
-![img](P)  
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_edittext/07_edittext.jpg) 
+![img](http://emanual.github.io/md-android/img/view_edittext/07_edittext2.jpg)   
+![img](http://emanual.github.io/md-android/img/view_edittext/07_edittext3.jpg)  

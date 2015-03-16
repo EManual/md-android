@@ -4,7 +4,7 @@
 3.重写getCount()--一共有多少项由它决定。
 4.实现OnItemClickListener事件--为每一项添加事件实现onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3)事件。
 下面是一个简单的例子：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_adapter/04_dialog.jpg)  
 ```  
 import java.util.ArrayList;
 import java.util.List;

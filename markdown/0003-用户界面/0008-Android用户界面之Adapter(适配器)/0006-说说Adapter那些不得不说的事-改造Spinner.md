@@ -119,4 +119,4 @@ adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 ```
 Adapter很强大,很好用
 最后来个在2.3带的Galaxy Tab上面跑的图O(∩_∩)O哈哈~,来个代码
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_adapter/07_dialog.jpg)  

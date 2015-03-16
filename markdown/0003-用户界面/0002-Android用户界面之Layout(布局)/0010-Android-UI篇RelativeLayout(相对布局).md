@@ -43,4 +43,5 @@ super.onCreate(savedInstanceState);
 setContentView(R.layout.main);
 ```
 5、你可以看到如下的布局
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_layout/11_layout.gif) 

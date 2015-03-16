@@ -6,9 +6,9 @@
 4.当用户在导航中滑动时，导航是会跟着滑动的
 5.该应用是个控件，可以直接放到各种需要用的地方
 先上图吧：
-![img](P)  
-![img](P)  
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_button/10_button.png)
+![img](http://emanual.github.io/md-android/img/view_button/10_button2.png)
+![img](http://emanual.github.io/md-android/img/view_button/10_button3.png)
 上代码吧：
 ```  
 import java.util.ArrayList;

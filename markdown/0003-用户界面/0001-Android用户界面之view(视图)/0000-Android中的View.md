@@ -4,9 +4,11 @@ View类是Android的一个超类，这个类几乎包含了所有的屏幕类型
 下面是这样一个例子，我画了一个在屏幕上不停变换颜色的矩形，我们定义一些事件可以通过模拟器的上下键调节矩形的位置，比如把这个矩形向上移动或者把这个矩形向下移动。  
 下边们看一下运行效果。 
 效果图：
-![img](P)  
-![img](P)  
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_view/01_view.jpg) 
+![img](http://emanual.github.io/md-android/img/view_view/01_view2.jpg)  
+![img](http://emanual.github.io/md-android/img/view_view/01_view3.jpg)  
+ 
 我们一共有2个类一个继承了View用来画图，另外Activity类用来刷新我们的视图，这2类分别是 Activity01和GameView。 
 GameView类
 ```  

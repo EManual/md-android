@@ -31,5 +31,5 @@ public Dialog(Context context, int theme) {
 }
 ```
 效果图：
-![img](P)  
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_dialog/07_dialog.jpg)  
+![img](http://emanual.github.io/md-android/img/view_dialog/07_dialog2.jpg) 

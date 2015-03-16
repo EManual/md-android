@@ -1,5 +1,7 @@
 我现在有这样的一个需求，输入框做了，支持表情的功能，请看图
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_edittext/10_edittext.jpg) 
+
 支持了图片是支持了，但是我现在要获取到EditText的文本的时候，去发现，其中图片的部分就变成了下图obj的那个样子，这样的话，我要将他解析成服务器能认识的形式，那根本就是不可能的呀！！
 请问大家有什么办法么？？我让EditText 显示图片的方法用的是 
 ```  
@@ -32,4 +34,5 @@ private void setFace(String faceTitle, int faceImg) {
 			Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 }
 ```
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_edittext/10_edittext2.jpg)

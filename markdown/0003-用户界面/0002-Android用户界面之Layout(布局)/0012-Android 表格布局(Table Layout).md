@@ -51,4 +51,5 @@
     </TableRow>
 </TableLayout>
 ```
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_layout/13_layout.jpg) 

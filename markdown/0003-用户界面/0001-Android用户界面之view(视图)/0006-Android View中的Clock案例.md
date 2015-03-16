@@ -1,5 +1,7 @@
 下图是最终的运行结果！
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_view/07_view.jpg) 
+
 下来看看My_Clock.java文件内容 My_Clock.java。
 ```  
 import android.app.Activity;

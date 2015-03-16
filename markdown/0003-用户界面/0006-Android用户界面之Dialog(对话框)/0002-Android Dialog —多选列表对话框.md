@@ -101,4 +101,4 @@ public class MutiChoiceDialogActivity extends Activity {
 	}
 }
 ```
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_dialog/03_dialog.jpg)

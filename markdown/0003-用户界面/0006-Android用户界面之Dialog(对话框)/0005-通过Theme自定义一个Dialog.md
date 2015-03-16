@@ -1,5 +1,5 @@
 本文以android2.2ApiDemo中的例子为题材。下面是显示的结果
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_dialog/06_dialog.jpg)
 下面的在Activity中onCreate唯一的一行的代码：
 setContentView(R.layout.custom_dialog_activity);
 custom_dialog_activity：

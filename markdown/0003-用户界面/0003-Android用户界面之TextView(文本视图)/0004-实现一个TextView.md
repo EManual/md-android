@@ -169,4 +169,5 @@ public Text2View(Context context, AttributeSet attrs) {
 </LinearLayout>
 ```
 5. 效果图 和默认的TextView 比较一下
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_textview/05_textview.jpg) 

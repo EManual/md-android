@@ -4,7 +4,9 @@
 线性布局可以在XML布局资源文件中定义，也可以用Java代码在程序中动态的定义。
 下图展示了一个包含7个TextView控件的线性布局。这个线性布局方向被设置为垂直，导致每个TextView控件被显示在一列当中。每一个TextView控件的文本属性都是一个颜色值，背景色就是这个颜色；通过将控件的layout_width属性设置为fill_parent，每个控件都拉伸到屏幕宽度。
 效果图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_layout/09_layout.png) 
+
 #### 用XML布局资源定义线性布局
 设计程序用户界面最方便和可维护的方法是创建XML布局资源。这个方法极大地简化了UI设计过程，它将很多静态创建和用户界面控件的布局以及控件属性的定义移到了XML中，而不是写代码。
 XML布局资源必须被存储在项目目录的/res/layout下。让我们看看前一节介绍的彩虹线性布局。这个屏幕基本上就是一个设置为铺满整个屏幕的垂直线性布局，这通过设置它的layout_width和layout_height属性为fill_parent来实现。适当地将其命名为/res/layout/rainbow.xml，XML定义如下：
