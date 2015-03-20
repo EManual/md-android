@@ -1,5 +1,5 @@
 ProgressBar是Android的进度条。体验效果
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_progressbar/01_progressbar.jpg)  
 下面详细介绍ProgressBar
 #### 一、说明
 在某些操作的进度中的可视指示器，为用户呈现操作的进度，还它有一个次要的进度条，用来显示中间进度，如在流媒体播放的缓冲区的进度。一个进度条也可不确定其进度。在不确定模式下，进度条显示循环动画。这种模式常用于应用程序使用任务的长度是未知的。

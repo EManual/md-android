@@ -1,6 +1,6 @@
 大家可能遇到过这样的情况，一个应用要开发手机版和Pad版，在手机中一个ListView就可以搞定，并且是一列显示的，但运行在Pad上时，发现界面太长，需要在Pad上进行多列显示，这时候就希望实现多列的效果，这里我简单实现了个Demo，供大家参考。
 1.效果类似Hiapk的安卓市场，如下：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gridview/11_gridview.jpg) 
 2.界面布局
 main.xml
 ```  

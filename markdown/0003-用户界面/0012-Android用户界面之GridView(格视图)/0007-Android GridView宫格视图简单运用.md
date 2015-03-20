@@ -203,4 +203,4 @@ public class GridViewTest extends Activity implements
 }
 ```
 ⑩　结果
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gridview/08_gridview.jpg) 

@@ -1,5 +1,5 @@
 #### 普通圆形 ProgressBar
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_progressbar/05_progressbar.jpg) 
 该类型进度条也就是一个表示运转的过程，例如发送短信，连接网络等等，表示一个过程正在执行中。
 一般只要在 XML 布局中定义就可以了。
 ```  
@@ -9,7 +9,7 @@
 </ProgressBar>
 ```
 #### 超大号圆形 ProgressBar
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_progressbar/05_progressbar2.jpg)  
 此时，给设置一个 style 风格属性后，该 ProgressBar 就有了一个风格，这里大号ProgressBar的风格是：
 ```  
 style="?android:attr/progressBarStyleLarge"
@@ -23,7 +23,7 @@ style="?android:attr/progressBarStyleLarge"
 </ProgressBar>
 ```
 #### 小号圆形 ProgressBar
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_progressbar/05_progressbar3.jpg)  
 小号 ProgressBar 对应的风格是：
 ```  
 style="?android:attr/progressBarStyleSmall"
@@ -37,7 +37,7 @@ style="?android:attr/progressBarStyleSmall"
 </ProgressBar>
 ```
 #### 标题型圆形 ProgressBar
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_progressbar/05_progressbar4.jpg) 
 标题型 ProgressBar 对应的风格是：
 ```  
 style="?android:attr/progressBarStyleSmallTitle"

@@ -1,5 +1,5 @@
 先看效果图：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gridview/12_gridview.jpg) 
 Java源代码如下：
 ```  
 import android.app.Activity;

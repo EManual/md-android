@@ -2,7 +2,7 @@ ProgressBar(运行进度条)是较常用到的组件，例如下载进度，安�
 创建项目："ProgressBarProject"
 功能：显示两种样式的进度条
 项目运行效果图：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_progressbar/04_progressbar.jpg) 
 项目代码
 修改布局文件
 main.xml

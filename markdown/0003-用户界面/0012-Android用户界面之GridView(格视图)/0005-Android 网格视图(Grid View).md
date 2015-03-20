@@ -82,4 +82,4 @@ ImageAdapter类扩展自BaseAdapter，所以首先得实现它所要求必须实
 3、setPadding(int, int, int, int)：定义补距，如果图片有不同的横纵比，小的补距将导致更多的剪裁以适合设置的ImageView的高度和宽度。
 如果View传到getView()不是空的，则本地的ImageView初始化时将循环再用View对象。在getView()方法末尾，position整数传入setImageResource()方法以从mThumbIds数组中选择图片。
 运行程序会得到如下结果（点击第一张图片之后）：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gridview/06_gridview.jpg) 
