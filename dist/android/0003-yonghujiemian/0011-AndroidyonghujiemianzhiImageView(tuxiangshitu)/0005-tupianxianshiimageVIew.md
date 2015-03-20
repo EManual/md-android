@@ -1,8 +1,8 @@
 处在多媒体时代，没有图片显示怎么可以？幸好android为我们提供了图片显示的控件imageVIew，下面的程序将通过这个控件实现触摸屏幕更换显示的图片。
 程序开始运行
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_imageview/06_imageview.jpg) 
 单击屏幕之后，更换图片
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_imageview/06_imageview2.jpg)  
 ```  
 import android.app.Activity;
 import android.os.Bundle;

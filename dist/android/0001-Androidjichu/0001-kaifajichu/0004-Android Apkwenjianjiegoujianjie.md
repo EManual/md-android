@@ -12,6 +12,7 @@ apk文件实际是一个zip压缩包，可以通过解压缩工具解开。
 | | |--icon.png
 | |-- layout
 | | |--main.xml
+|-- resources.arsc
 ```
 #### Manifest 文件         
 AndroidManifest.xml是每个应用都必须定义和包含的，它描述了应用的名字、版本、权限、引用的库文件等等信息，如要把apk上传到Google Market上，也要对这个xml做一些配置。

@@ -152,4 +152,5 @@ XML如下：
         android:layout_height="wrap_content" />
 </LinearLayout>
 ```
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_button/02_button.jpg)

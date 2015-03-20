@@ -1,6 +1,8 @@
 权威的文章应该是这个：
 http://developer.android.com/guide/practices/screens_support.html
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_layout/24_layout.jpg) 
+
 ```  
 res/layout/my_layout.xml             // layout for normal screen size ("default")
 res/layout-small/my_layout.xml       // layout for small screen size

@@ -1,6 +1,8 @@
 在Android开发应用中，默认的Button是由系统渲染和管理大小的。而我们看到的成功的移动应用，都是有着酷炫的外观和使用体验的。因此，我们在开发产品的时候，需要对默认按钮进行美化。在本篇里，笔者结合在应用开发中的经验，探讨一下自定义背景的按钮、自定义形状按钮的实现方法。
 首先看实现效果截图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_button/07_button.gif)
+
 自定义背景的按钮目前有2种方式实现，矢量和位图。
 1. 矢量图形绘制的方式
 矢量图形绘制的方式实现简单，适合对于按钮形状和图案要求不高的场合。步骤如下：
@@ -59,10 +61,14 @@
 此种方法相对复杂繁琐，但可以制作出更多、更复杂样式的按钮图样。
 什么是9-patch格式呢？
 9-patch格式，是在Android中特有的一种PNG图片格式，以"***.9.png"结尾。此种格式的图片定义了可以伸缩拉伸的区域和文字显示区域，这样，就可以在Android开发中对非矢量图进行拉伸而仍然保持美观。如果使用位图而没有经过9-patch处理的话，效果就会想第一张截图中的“普通图片背景按钮”那样被无情的拉伸，影响效果。Android中大量用了这种技术，默认的按钮的背景就是用了类似的方法实现的。我们看一下google官方的描述：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_button/07_button2.gif)
+
 该格式相对于一般PNG图片来说，多了上下左右各一条1px的黑线。左、上黑线隔开了9个格子，当中一个格子(见上图Strechable Area区域)声明为可以进行拉伸。右、下两条黑线所定义的Paddingbox区域是在该图片当做背景时，能够在图片上填写文字的区域。每条黑线都是可以不连续的，这样就可以定义出很多自动拉伸的规格。Android sdk中提供了设置的工具，启动命令位于：$ANDROID_SDK/tools/draw9patch.bat，使用它对于原始PNG进行设置9-patch格式，非常方便，如下图：
-![img](P)  
-![img](P)     
+
+![img](http://emanual.github.io/md-android/img/view_button/07_button3.gif)
+![img](http://emanual.github.io/md-android/img/view_button/07_button4.gif)
+
 draw9patch工具的右侧是能够看到各方向拉伸后的效果图，你所要做的就是在图上最外侧一圈1px宽的像素上涂黑线。
 注意，在draw9patch.bat第一次运行时，sdk2.2版本上会报错：java.lang.NoClassDefFoundError:org/jdesktop/swingworker/SwingWorker。需要下载swing-worker-1.1.jar，放入$android_sdk/tools/lib路径下，成功运行。
 此种方法实现的步骤如下。
@@ -107,11 +113,11 @@ draw9patch工具的右侧是能够看到各方向拉伸后的效果图，你所�
 3. 自定义形状、颜色、图样的按钮的实现
 步骤如下。
 (a) 设计一张自定义形状风格背景的图片，如下图。
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_button/07_button5.gif)
 (b) 未点击和按下后的状态各做一张，形成一套图片，如下图。
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_button/07_button6.gif)
 forward.png    
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_button/07_button7.gif)
 forward2.png
 (c) 创建和编写按钮不同状态的图片使用描述文件drawable/ib_forward.xml
 ```  

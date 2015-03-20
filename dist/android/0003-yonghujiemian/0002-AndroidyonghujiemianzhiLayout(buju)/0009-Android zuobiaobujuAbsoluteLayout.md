@@ -41,4 +41,5 @@ android:layout_y="60px"
 //这个是定义Y轴的像素
 ```
 效果图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_layout/10_layout.jpg) 

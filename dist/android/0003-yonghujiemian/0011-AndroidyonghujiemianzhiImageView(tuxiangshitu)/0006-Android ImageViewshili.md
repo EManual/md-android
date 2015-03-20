@@ -1,7 +1,7 @@
 ImageView控件是一个图片控件，负责显示图片。
 以下模拟手机图片查看器
 目录结构
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_imageview/07_imageview.png) 
 main.xml布局文件
 ```  
 <?xml version="1.0" encoding="utf-8"?>
@@ -108,4 +108,4 @@ public class ImageViewActivity extends Activity {
 	};
 }
 ```
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_imageview/07_imageview2.jpg) 

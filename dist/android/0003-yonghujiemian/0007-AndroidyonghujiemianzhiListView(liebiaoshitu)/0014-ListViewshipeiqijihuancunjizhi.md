@@ -4,7 +4,7 @@ ListView和适配器的基础：
 2、一个新的布局创建出来并显示出来。
 下一个问题：当我们有10亿个条目的时候怎么办，难道新创建一个新的布局并显示出来吗？答案肯定是“不”。Android会为你把布局缓存起来。
 这一部分在Android中称呼为"Recycle - 回收利用"。以下为它的具体实现过程图。
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_listview/15_listview.jpg) 
 当你有一亿个条目的时候， 只有可看见的View保存在内存中+Recycle过的View
 当ListView第一次向适配器请求一个VIew的时候，convertView为null，因此需要新建一个convertView.
 当ListView请求一个条目item1的VIew，并且item1已经超出屏幕之外，并进来一个相同类型的条目从底部进入到屏幕里面，这时convertVIew 不为null，而是等于item1。 你只需要获取新的数据装载到该View里面并返回回去。而不必要重新创建一个新的VIew
@@ -66,7 +66,7 @@ public class MultipleItemsList extends ListActivity {
 }
 ```
 运行程序并观察发生了什么
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_listview/15_listview2.gif) 
 getView方法调用了9次。对于可以看见的VIew中，convertView一直为null。
 ```  
 02-05 13:47:32.559: INFO/System.out(947): getView 0 null
@@ -80,7 +80,7 @@ getView方法调用了9次。对于可以看见的VIew中，convertView一直为
 02-05 13:47:32.729: INFO/System.out(947): getView 8 null
 ```
 拖动以下，并查看输出的状态。
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_listview/15_listview3.png) 
 ```  
 02-05 14:01:31.069: INFO/System.out(947): getView 11 android.widget.LinearLayout@437447d0
 02-05 14:01:31.142: INFO/System.out(947): getView 12 android.widget.LinearLayout@43744ff8
@@ -190,7 +190,7 @@ public class MultipleItemsList extends ListActivity {
 }
 ```
 我们运行并查看以下我们写的代码所输出的东西，我们会发现每隔4个条目它会出现一个分隔符。
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_listview/15_listview4.gif)  
 查看输出Log，没有什么特别的对于不同的类型 convertView都为Null
 ```  
 02-05 15:19:03.080: INFO/System.out(1035): getView 0 null type = 0

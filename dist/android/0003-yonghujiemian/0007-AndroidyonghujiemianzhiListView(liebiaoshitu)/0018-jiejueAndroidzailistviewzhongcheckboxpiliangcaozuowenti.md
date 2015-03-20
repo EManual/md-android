@@ -266,4 +266,4 @@ public class MainActivity extends Activity {
 }
 ```
 好了，来看运行结果
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_listview/19_listview.jpg)  

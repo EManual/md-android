@@ -1,5 +1,5 @@
 效果如下：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_progressbar/10_progressbar.jpg) 
 我们要实现一个类似于小米分享中的圆形播放进度条，android自带的圆形ProgressBar是默认自动旋转的，所以无法实现，于是我们想到了使用自定义一个View，来实现这种效果。
 首先来看看自己定义的View
 ```  

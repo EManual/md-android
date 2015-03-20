@@ -1,6 +1,6 @@
 开机画面、加载画面等都可以用下面的例子来实现。
 废话不多说，先看效果图：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_progressbar/14_progressbar.jpg)
 最主要的还是Java代码了，其他XML布局，Activity的跳转相信大家都会，主要代码如下：
 ```  
 import android.app.Activity;

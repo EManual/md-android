@@ -1,6 +1,6 @@
 提示：用ClipDrawable。
 其实用ClipDrawable不仅能实现自定义图片的进度条，也能实现很多同样的效果。
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_progressbar/07_progressbar.jpg) 
 ```  
 public class SelfDefProgressActivity extends Activity {
 	private ImageView mView;

@@ -67,6 +67,6 @@ public class DraftTest extends Activity {
 }
 ```
 运行效果如下：
-![img](P)  
-![img](P)  
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_button/09_button.jpg)  
+![img](http://emanual.github.io/md-android/img/view_button/09_button2.jpg)  
+![img](http://emanual.github.io/md-android/img/view_button/09_button3.jpg)  

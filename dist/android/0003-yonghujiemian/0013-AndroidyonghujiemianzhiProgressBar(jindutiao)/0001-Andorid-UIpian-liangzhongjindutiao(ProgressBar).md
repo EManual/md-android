@@ -139,8 +139,8 @@ main.xml
 </LinearLayout>
 ```
 运行结果如下：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_progressbar/02_progressbar.jpg) 
 点击启动进度条按钮后，进度条将自动运行
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_progressbar/02_progressbar2.jpg) 
 当结束时，自动退出进度条程序，返回第一个图片的
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_progressbar/02_progressbar3.jpg) 

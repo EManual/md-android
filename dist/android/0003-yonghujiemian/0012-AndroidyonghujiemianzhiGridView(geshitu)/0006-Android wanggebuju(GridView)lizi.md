@@ -1,5 +1,5 @@
 本例展示的是GridView的实现，其中图片资源来自《Android核心技术与实例详解》一书，代码部分参照官方文档完成。效果如下
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gridview/07_gridview.jpg)  
 代码如下：
 1、string.xml文件
 ```  

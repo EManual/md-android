@@ -27,7 +27,9 @@
         android:text="Start" />
 </FrameLayout>
 ```
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_layout/05_layout.jpg) 
+
 #### 布局优化
 使用tools里面的hierarchyviewer.bat来查看layout的层次。在启动模拟器启动所要分析的程序，再启动hierarchyviewer.bat，选择模拟器以及该程序，点击“Load View Hierarchy”，就会开始分析。可以save as png。   
 #### 减少视图层级结构

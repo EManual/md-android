@@ -112,4 +112,4 @@ public class ProgressTest extends Activity {
 }
 ```
 PS：刚开始本以为进度条的构造方法只需要重写那个最长参数的，也就是那个构造方法3，实际上我测试的时候基本都是运行的3方法。但有一次出错了，最后才找到系统居然用的1方法，所以没办法，直接把三个构造方法全重写了。如果有谁知道原因，麻烦告诉一下。进度条上的文字信息，不一定非要百分比，可以自由发挥。比如类似  “当前个数/总数”。
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_progressbar/11_progressbar.png)

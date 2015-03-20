@@ -2,7 +2,9 @@
 布局资源是Android中最常使用的一种资源，Android可以将屏幕中组件的布局方式定义在一个XML文件中，这有点像Web开发中的HTML页面。我们可以调用Activity.setContentView()方法，将布局文件展示在Activity上。Android通过LayoutInflater类将XML文件中的组件解析为可视化的视图组件。布局文件保存在res\layout\文件夹中，文件名称任意。
 #### 布局文件的定义
 我们将通过表来说明布局文件的定义情况。
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_layout/01_layout.png) 
+
 下面通过一个实例来演示布局文件的用法。该实例定义一个布局文件，在该布局文件中添加一个TextView、一个EditText和一个Button，分别设置其属性，并且使用Activity.setContentView()方法将其设置为Activity的界面，使用findViewById()方法来得到布局中的组件。
 在工程的res\layout\目录下创建一个test_layout.xml布局文件，在该布局文件中使用LinearLayout嵌套TableLayout进行布局管理，其中添加TextView、EditText和Button三个视图组件，并为其设置属性。
 ```  
@@ -67,4 +69,5 @@ public class TestLayoutActivity extends Activity {
 }
 ```
 效果图：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_layout/01_layout2.jpg)  

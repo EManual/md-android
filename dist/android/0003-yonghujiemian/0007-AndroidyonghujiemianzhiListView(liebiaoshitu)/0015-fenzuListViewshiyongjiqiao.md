@@ -243,4 +243,4 @@ public class SectionedListActivity extends ListActivity implements
 }
 ```
 好了，希望大家happy Coding.!! 效果图：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_listview/16_listview.png) 

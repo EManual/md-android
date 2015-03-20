@@ -15,7 +15,9 @@
 #### 1、view的布局显示概述
 通过前面的学习我们知道：在一个Android应用程序中，用户界面通过View和ViewGroup对象构建。Android中有很多种View和ViewGroup，他们都继承自View类。View对象是Android平台上表示用户界面的基本单元。
 View的布局显示方式直接影响用户界面，View的布局方式是指一组View元素如何布局，准确的说是一个ViewGroup中包含的一些View怎么样布局。ViewGroup类是布局（layout）和视图容器（View container）的基类，此类也定义了ViewGroup.LayoutParams类，它作为布局参数的基类，此类告诉父视图其中的子视图想如何显示。例如，XML布局文件中名为layout_something的属性。我们要介绍的View的布局方式的类，都是直接或间接继承自ViewGroup类，如下图所示：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_layout/02_layout.png) 
+
 图1、继承自ViewGroup的一些布局类
 其实，所有的布局方式都可以归类为ViewGroup的5个类别，即ViewGroup的5个直接子类。其它的一些布局都扩展自这5个类。下面分小节分别介绍View的七种布局显示方式。
 #### 2、线性布局（Linear Layout）
@@ -59,14 +61,20 @@ View的布局显示方式直接影响用户界面，View的布局方式是指一
 </LinearLayout>
 ```
 从上面可以看出根LinearLayout视图组（ViewGroup）包含5个Button，它的子元素是以线性方式（horizontal，水平的）布局，运行效果如下图所示：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_layout/02_layout2.png) 
+
 图2、线性布局（水平或者说是横向）
 如果你在android:orientation="horizontal"设置为vertical，则是是垂直或者说是纵向的，如下图所示：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_layout/02_layout3.png) 
+
 图3、线性布局（垂直或者说是纵向）
 #### 2.1、Tips：android:layout_weight="1"
 这个属性很关键，如果你没有显示设置它，它默认为0。把上面布局文件（水平显示的那个）中的这个属性都去掉，运行会得出如下结果：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_layout/02_layout4.png) 
+
 图4、layout_weight属性
 没有了这个属性，我们本来定义的5个Button运行后却只显示了2个Button，为什么呢？？
 "weight"顾名思义是权重的意思，layout_weight用于给一个线性布局中的诸多视图的重要程度赋值。所有的视图都有一个layout_weight值，默认为零，意思是需要显示多大的视图就占据多大的屏幕空间。这就不难解释为什么会造成上面的情况了：Button1~Button5都设置了layout_height和layout_width属性为wrap_content即包住文字内容，他们都没有设置layout_weight属性，即默认为0.，这样Button1和Button2根据需要的内容占据了整个屏幕，别的就显示不了啦！
@@ -107,7 +115,9 @@ View的布局显示方式直接影响用户界面，View的布局方式是指一
 </RelativeLayout>
 ```
 从上面的布局文件我们知道，RelativeLayout视图组包含一个TextView、一个EditView、两个Button，注意标记了（请注意运行代码的时候，请把这些注释去掉，否则会运行出错，上面加上是为了更加醒目！）的属性，在使用相对布局方式中就是使用这些类似的属性来定位视图到你想要的位置，它们的值是你参照的视图的id。这些属性的意思很简单，就是英文单词的直译，就不多做介绍了。运行之后，得如下结果：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_layout/02_layout5.png) 
+
 图5、相对布局
 #### 4、 表格布局（Table Layout）
 表格布局：是一个ViewGroup以表格显示它的子视图（view）元素，即行和列标识一个视图的位置。其实Android的表格布局跟HTML中的表格布局非常类似，TableRow就像HTML表格的tr<标记。
@@ -160,7 +170,9 @@ android:collapseColumns，对应的方法：setColumnCollapsed(int,boolean)，�
 </TableLayout>
 ```
 运行之后可以得出下面的结果：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_layout/02_layout6.jpg) 
+
 图6、表格布局
 #### 5、列表视图（List View）
 列表布局：是一个ViewGroup以列表显示它的子视图（view）元素，列表是可滚动的列表。列表元素通过ListAdapter自动插入到列表。
@@ -217,7 +229,9 @@ public class HelloWorld extends ListActivity {
 Note：onCreate()函数中并不像往常一样通过setContentView()为活动（Activity）加载布局文件，替代的是通过setListAdapter(ListAdapter)自动添加一个ListView填充整个屏幕的ListActivity。在此文件中这个方法以一个ArrayAdapter为参数：setListAdapter(new ArrayAdapter(this,R.layout.main,COUNTRIES))，这个ArrayAdapter管理填入ListView中的列表元素。ArrayAdapter的构造函数的参数为：this（表示应用程序的上下文context）、表示ListViewde布局文件（这里是R.layout.main）、插入ListView的List对象对数组（这里是COUNTRES）。
 setOnItemClickListener(OnItemClickListener)定义了每个元素的点击（on-click）的监听器，当ListView中的元素被点击时，onItemClick()方法被调用，在这里是即一个Toast消息——每个元素的位置将显示。
 #### 3)、运行应用程序得如下结果（点击1之后，在下面显示了1）：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_layout/02_layout7.jpg) 
+
 图7、列表布局
 NOTE:如果你改了HelloWorld extendsListActivity 而不是Activity之后，运行程序是提示：“Conversion to Dalvik format failed with error 1”。可以这么解决：解决办法是 Project < Clean... < Clean project selected below < Ok
 #### 5.1、一个小的改进
@@ -341,7 +355,9 @@ ImageAdapter类扩展自BaseAdapter，所以首先得实现它所要求必须实
 3、setPadding(int, int, int, int)：定义补距，如果图片有不同的横纵比，小的补距将导致更多的剪裁以适合设置的ImageView的高度和宽度。
 如果View传到getView()不是空的，则本地的ImageView初始化时将循环再用View对象。在getView()方法末尾，position整数传入setImageResource()方法以从mThumbIds数组中选择图片。
 运行程序会得到如下结果（点击第一张图片之后）：
-![img](P)  
+
+![img](http://emanual.github.io/md-android/img/view_layout/02_layout8.jpg) 
+
 图8、网格布局
 #### 7、绝对布局（AbsoluteLayout）
 绝对布局：是一个ViewGroup以绝对方式显示它的子视图（view）元素，即以坐标的方式来定位在屏幕上位置。
@@ -479,5 +495,5 @@ PS：其实这也算是Android的一个bug，而且这个bug在2.2中还没有�
 <activity android:name=".SongsActivity"  android:label="@string/app_name"></activity>
 ```
 现在运行可以看到如下结果：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_layout/02_layout9.png)  
 图9、标签布局

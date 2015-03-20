@@ -105,4 +105,4 @@ public class CustomerDialogActivity extends Activity {
 }
 ```
 上个丑陋的效果图（源码就不提供了）
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_dialog/02_dialog.jpg) 

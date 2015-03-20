@@ -152,5 +152,5 @@ public class Images extends Graphics2DActivity implements OnClickListener {
 ```
 从代码中看到，Dialog是通过AlertDialog.Builder来创建的，这里Dialog显示了三个选项，通过builder.setSingleChoiceItems添加处理事件。实际AlertDialog可以有多种选项，具体请参考Android AlertDialog 文档。
 效果图：
-![img](P)  
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_dialog/05_dialog.jpg)
+![img](http://emanual.github.io/md-android/img/view_dialog/05_dialog2.jpg) 

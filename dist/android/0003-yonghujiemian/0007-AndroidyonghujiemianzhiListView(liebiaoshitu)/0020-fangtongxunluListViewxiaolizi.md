@@ -1,8 +1,8 @@
 写这例子的初衷是想模仿通讯录列表，实现了一些效果，也没法做到100%相像，自己也认为还有一些不足(存在些内存上的浪费)。
 这个阶段先这样了，代码量比较大，就不贴代码了，只上效果图。
-![img](P)  
-![img](P)  
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_listview/21_listview.jpg) 
+![img](http://emanual.github.io/md-android/img/view_listview/21_listview2.jpg) 
+![img](http://emanual.github.io/md-android/img/view_listview/21_listview3.jpg) 
 1.实现根据字母进行分类.
 2.实现快速滑动及修改快速滑动条的图标.
 3.实现快速滑动时的字母提示.
