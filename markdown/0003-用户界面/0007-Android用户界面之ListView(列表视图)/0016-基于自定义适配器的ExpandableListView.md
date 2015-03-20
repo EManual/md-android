@@ -1,6 +1,6 @@
 以前学习ListView的时候就经常要用到自定义适配器的ListView，这两天看到Mars老师的ExpandableListView教学视频，但只讲到了最基本使用。并没有讲到如何定义自己的ExpandableListView，于是就想类比以前的ListView，自己定义一个Adapter。下面就是程序了，其实只是实现了最基本的自定义，如果网友有需要，完全可以定义属于自己的更炫的界面效果。代码已添加了简单注释，如有疑问，可以留言提出。如有不足，欢迎拍砖! 
 废话不多说，先上图:
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_listview/17_listview.png)  
 再上代码:
 main.xml:定义Activity的界面布局:
 ```  

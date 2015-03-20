@@ -1,6 +1,6 @@
 最近由于需要开发一个基于android系统的小查询系统，直接从代码里面学习是最快的，确实通过三天的努力，系统完成了，中间走了不少弯路，但是起码东西是做出来了,有很多代码都是从这个论坛里下的，也没有什么回报的，只能上传一些学习过程中的代码了。
 该代码的效果图1如下:
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_listview/22_listview.jpg) 
 main.xml的代码如下:
 ```  
 <?xml version="1.0" encoding="utf-8"?>

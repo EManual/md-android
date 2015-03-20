@@ -1,5 +1,5 @@
 之前想做个带分隔符的listview（以前写的listview另类解法就是为了实现分隔符但是不完美），现在借鉴别人的程序做了一个比较理想的例子发出来大家围观一记，上个图吧：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_listview/18_listview.jpg) 
 下面奉上程序：
 main.xml是这个样子的：
 ```  
