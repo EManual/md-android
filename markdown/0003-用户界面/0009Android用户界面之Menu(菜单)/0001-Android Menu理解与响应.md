@@ -9,9 +9,9 @@
 扩展菜单：选项菜单最多只能显示6个菜单项，超过6个时，第6个菜单项会被系统替换为一个叫“更多”的子菜单，原来显示不下的菜单项都作为“更多”菜单的子菜单项。
 ```
 如下图：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_menu/02_menu.png)    
 android.view.Menu接口代表一个菜单，android用它来管理各种菜单项。注意我们一般不自己创建menu，因为每个Activity默认都自带了一个，我们要做的是为它加菜单项和响应菜单项的点击事件。android.view.MenuItem代表每个菜单项，android.view.SubMenu代表子菜单。其三者的关系可以用下图来表示
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_menu/02_menu2.png)  
 上面说过，每个activity包含一个菜单，一个菜单又能包含多个菜单项和多个子菜单，子菜单其实也是菜单（因为它实现了Menu接口），因此子菜单也可以包含多个菜单项。SubMenu继承了Menu的addSubMenu()方法，但调用时会抛出运行时错误。OnCreateOptionsMenu()和OnOptionsMenuSelected()是activity中提供了两个回调方法，用于创建菜单项和响应菜单项的点击。
 我们看一下如何通过代码创建和响应最常用的选项菜单（options menu）。
 #### 创建options menu

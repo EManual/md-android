@@ -27,4 +27,4 @@ public class f extends Activity {
 </ImageView>
 ```
 图片效果：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_imageview/04_imageview.jpg) 

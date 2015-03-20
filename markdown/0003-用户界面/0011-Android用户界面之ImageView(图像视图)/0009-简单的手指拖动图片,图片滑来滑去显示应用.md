@@ -83,5 +83,5 @@ public class MainActivity extends Activity {
 ```
 运行效果如下
 我们用手指从右向左拖动
-![img](P)  
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_imageview/10_imageview.jpg) 
+![img](http://emanual.github.io/md-android/img/view_imageview/10_imageview2.jpg) 

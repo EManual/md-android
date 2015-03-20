@@ -78,4 +78,4 @@ public class Snippet {
 ```
 在XML可以定义菜单项的图标、快捷键、checkbox等更多特征，了解更多请查阅SDK中关于菜单的主题。
 效果图：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_menu/04_menu.jpg)  

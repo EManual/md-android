@@ -1,6 +1,6 @@
 这个咱再分享个天天动听的半透明Menu效果，个人感觉挺漂亮。
 看下效果。
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_menu/10_menu.jpg)   
 感觉如何啊？
 分解一下:
 1. 利用Shaper设置一个半透明圆角背景。
@@ -158,4 +158,4 @@ public class MenuTest extends Activity {
 ```
 就这样了~~~ 
 效果：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_menu/10_menu2.png) 

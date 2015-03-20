@@ -90,4 +90,4 @@ public class IamgeTranslatActivity extends Activity {
 	}
 }
 ```
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_imageview/10_imageview.jpg)  

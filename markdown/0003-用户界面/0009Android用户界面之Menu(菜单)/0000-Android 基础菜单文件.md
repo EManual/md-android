@@ -195,4 +195,4 @@ public class Snippet {
 }
 ```
 效果图：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_menu/01_menu.jpg)   

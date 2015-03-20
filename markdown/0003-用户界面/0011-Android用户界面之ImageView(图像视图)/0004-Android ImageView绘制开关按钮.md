@@ -1,7 +1,7 @@
 今天弄了一下用图片绘制开关按钮.
 效果图：
-![img](P)  
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_imageview/05_imageview.png) 
+![img](http://emanual.github.io/md-android/img/view_imageview/05_imageview2.png) 
 还有我两张start图片和stop图片就是上面的图片，到时候大家可以按照自己的图片调用..
 Main.xml文件
 在xml进入这段代码就ok了。

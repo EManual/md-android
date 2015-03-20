@@ -129,7 +129,7 @@ android:maxWidth 设置图像的最大高；
 android:maxHeight 设置图像的最大高；
 android:scaleType  控制如何调整图像大小或者移动范围，以配合ImageView 的大小。下面是 scaleType 所支持的类型：
 ```
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_imageview/02_imageview.jpg)   
 ImageView java 文件 位于ApiDemos 的位置： ApiDemos/src/com.example.android.apis.view/ImageView1
 源码为：
 ```  
@@ -146,7 +146,7 @@ public class ImageView1 extends Activity {
 ```
 在这里，无须多讲此类。
 运行效果图如下：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_imageview/02_imageview2.jpg)  
 扩展 LinearLayout
 看上图效果和代码，ImgeView 始终跟着一个TextView ，从代码角度上有点不雅观，那如何改变它呢？一步一步跟着我做吧。
 1、第一步，新建一个包
