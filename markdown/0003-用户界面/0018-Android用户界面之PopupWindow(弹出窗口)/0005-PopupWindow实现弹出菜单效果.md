@@ -2,6 +2,7 @@
 ![img](P)  
 也就是弹出菜单。
 主activity布局 
+
 ```  
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -32,7 +33,9 @@
     </Button>
 </RelativeLayout>
 ```
+
 popupmenu布局 
+
 ```  
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -59,7 +62,9 @@ popupmenu布局
     </Button>
 </LinearLayout>
 ```
+
 主activity代码 
+
 ```  
 import android.app.Activity;
 import android.os.Bundle;
