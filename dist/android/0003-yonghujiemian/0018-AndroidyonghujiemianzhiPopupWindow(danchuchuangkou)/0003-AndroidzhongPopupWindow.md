@@ -1,5 +1,6 @@
 PopupWindow这种对话框。PopupWindow是阻塞对话框，只有在外部线程或者PopupWindow本身做退出操作才行。PopupWindow完全依赖Layout做外观，在常见的开发中，PopupWindow应该会与AlertDialog常混用。
 这里的PopupWindow是个登录框，点“确定”则自动填写，点“取消”则关闭PopupWindow。
+
 ```  
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -62,7 +63,9 @@ PopupWindow这种对话框。PopupWindow是阻塞对话框，只有在外部线�
     </LinearLayout>
 </LinearLayout>
 ```
+
 代码如下：
+
 ```  
 import android.app.Activity;
 import android.app.AlertDialog;
