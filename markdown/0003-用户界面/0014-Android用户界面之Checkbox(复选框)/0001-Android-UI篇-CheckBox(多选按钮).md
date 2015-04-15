@@ -149,6 +149,6 @@ strings.xml文件
 </resources>
 ```
 运行结果如下：
-![img](P)  
-![img](P)  
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_checkbox/02_checkbox.jpg) 
+![img](http://emanual.github.io/md-android/img/view_checkbox/02_checkbox2.jpg)  
+![img](http://emanual.github.io/md-android/img/view_checkbox/02_checkbox3.jpg) 

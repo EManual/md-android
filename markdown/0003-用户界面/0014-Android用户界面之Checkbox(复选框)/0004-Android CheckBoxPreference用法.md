@@ -1,5 +1,5 @@
 我们介绍了下ListPreference的用法。这里我们再介绍下其他几个首选项的用法：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_checkbox/05_checkbox.jpg) 
 activity中：
 ```  
 import android.os.Bundle;

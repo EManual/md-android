@@ -138,4 +138,4 @@ public class ChkBoxActivity extends Activity {
 </LinearLayout>
 ```
 效果图：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_checkbox/01_checkbox.jpg)  

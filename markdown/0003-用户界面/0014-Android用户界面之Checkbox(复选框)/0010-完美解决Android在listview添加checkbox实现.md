@@ -1,6 +1,6 @@
 刚刚看了朋友发了一篇"完美解决Android在listview添加checkbox实现批量操作问题"，觉得问题本身根本不复杂。废话不多话，接下来就说明问题吧！
 由于只是为了说明问题，所以界面啥的就不讲究了，先上一张图吧！
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_checkbox/11_checkbox.png)   
 主界面CheckBoxinListViewActivity.java代码如下：
 ```  
 public class CheckBoxinListViewActivity extends Activity {
