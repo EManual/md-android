@@ -7,7 +7,7 @@ android.widget.FrameLayout
 android.widget.ScrollView
 ```
 android.widget.ScrollView继承了android.widget.FrameLayout框架布局类。ScrollView例子如图所示滚动条例子。
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_srollview/08_srollview.jpg)   
 ```
 布局文件请参考代码清单：
 ```  

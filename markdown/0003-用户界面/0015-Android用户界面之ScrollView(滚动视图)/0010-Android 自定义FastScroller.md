@@ -1,5 +1,5 @@
 我们先来看看效果图
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_srollview/11_srollview.jpg)   
 设置快速滚动属性很容易，只需在布局的xml文件里设置属性即可：
 但是有时候会发现设置属性无效，滚动ListView并未出现滑块。原因是该属性生效有最小记录限制。当ListView记录能够在4屏以内显示（也就是说滚动4页）就不会出现滑块。可能是api设计者认为这么少的记录不需要快速滚动。
 我的依据是android源代码，见FastScroller的常量声明：

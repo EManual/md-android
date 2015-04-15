@@ -1,6 +1,6 @@
 Android平台上可以左右滑动的控件，总共3个文件，其中一个用于是Activity
-![img](P)  
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_srollview/05_srollview.png)   
+![img](http://emanual.github.io/md-android/img/view_srollview/05_srollview2.jpg)    
 包括三个类：
 1. SlipView用于显示
 ```  

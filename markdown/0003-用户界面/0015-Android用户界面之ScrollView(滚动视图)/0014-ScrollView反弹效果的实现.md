@@ -21,7 +21,7 @@ public void scrollTo(int x, int y) {
 }
 ```
 所以也就相当于scrollBy和scrollTo这两个方法都被重写了。重写的代码中加入校验，当你移动到最上面或者最下面的时候无法再向上移动或向下移动。这就导致了如果简单调用scrollTo无法实现继续移动。如果你还要继续移动的话mScrollY就为0或者是你内部视图的测量高度-ScrollView的高度。scrollTo是移动到，scrollBy是移动了。如下图：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_srollview/15_srollview.jpg)   
 所以内容向下移动，手指向上滑动，那这个deltaY就为正，也就是mScrollY=mScrollY+deltaY，mScrollY变大直到移动到最下无法移动位置；反之mScrollY 变小直到为0移动到最上面为止。
 ```  
 final float preY = y;
