@@ -1,7 +1,7 @@
 Gallery组件主要用于横向显示图像列表，不过按常规做法。Gallery组件只能有限地显示指定的图像。也就是说，如果为Gallery组件指定了10张图像，那么当Gallery组件显示到第10张时，就不会再继续显示了。这虽然在大多数时候没有什么关系，但在某些情况下，我们希望图像显示到最后一张时再重第1张开始显示，也就是循环显示。要实现这种风格的Gallery组件，就需要对Gallery的Adapter对象进行一番改进。
 以下通过Gallery模拟循环显示图像，在单击某一个Gallery组件中的图像时在下方显示一个放大的图像（使用ImageSwitcher组件）。
 目录结构
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/09_gallery.jpg) 
 main.xml布局文件
 java代码：
 ```  

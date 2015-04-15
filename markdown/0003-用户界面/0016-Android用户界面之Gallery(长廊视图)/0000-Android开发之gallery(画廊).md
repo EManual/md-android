@@ -10,7 +10,7 @@ android.widget.AbsSpinner
 android.widget.Gallery
 ```
 #### 二、概述
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/01_gallery.jpg) 
 一个锁定中心条目并且拥有水平滚动列表的视图。
 Gallery（画廊）使用Theme_galleryItemBackground作为Gallery（画廊）适配器中的各视图的默认参数。如果你没有设置，你就需要调整一些Gallery（画廊）的属性，比如间距。
 Gallery（画廊）中的视图应该使用Gallery.LayoutParams作为它们的布局参数类型。
@@ -21,7 +21,7 @@ class Gallery.LayoutParams
 ```
 Gallery(画廊)扩展了LayoutParams，以此提供可以容纳当前的转换信息和先前的位置转换信息的场所。
 #### 四、XML属性
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/01_gallery2.jpg) 
 #### 五、公共方法 
 ```  
 public boolean dispatchKeyEvent (KeyEvent event)

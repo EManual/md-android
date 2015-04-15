@@ -1,5 +1,5 @@
 效果图：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/15_gallery.jpg) 
 贴上代码：
 1.扩展Gallery：
 ```  

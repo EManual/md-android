@@ -1,5 +1,5 @@
 lists 的各个 list 里包含的各个 layer 如下所示：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/14_gallery.jpg)
 Layer提供了update(....)，renderOpaque(....)，renderBlended(....)接口，这些接口会在RenderView的onDrawFrame绘制代码中被调用。GridLayer 中有个 GridDrawManager，专门负责绘制，在前面的那几个接口中会调用到GridDrawManager的一些具体绘制函数实现真正的画图工作如：
 ```  
 drawDisplayItem(view, gl, displayItem, texture, PASS_THUMBNAIL_CONTENT,placeholder, displayItem.mAnimatedPlaceholderFade); 画缩略图的 

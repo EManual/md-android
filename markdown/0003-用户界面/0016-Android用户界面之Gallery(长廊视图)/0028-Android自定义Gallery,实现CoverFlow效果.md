@@ -1,8 +1,8 @@
 在android 实现显示文字的Gallery和Android修改Gallery页面布局的基础上，利用Gallery实现了CoverFlow效果，如下：
-![img](P)  
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/29_gallery.jpg) 
+![img](http://emanual.github.io/md-android/img/view_gallery/29_gallery2.jpg)
 项目代码结构如下：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/29_gallery3.jpg)
 layout_gallery.xml是Gallery的布局文件：
 ```  
 <relativelayout 

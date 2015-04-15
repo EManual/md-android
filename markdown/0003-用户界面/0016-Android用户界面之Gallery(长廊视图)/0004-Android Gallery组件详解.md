@@ -2,8 +2,8 @@ Gallery组件主要用于横向显示图像列表，不过按常规做法。Gall
 #### Gallery组件的传统用法
 在实现可循环显示图像的Gallery组件之前先来回顾一下Gallery组件的传统用法。Gallery组件可以横向显示一个图像列表，当单击当前图像的后一个图像时，这个图像列表会向左移动一格，当单击当前图像的前一个图像时，这个图像列表会向右移动一样。也可以通过拖动的方式来向左和向右移动图像列表。当前显示的是第1个图像的效果如图1所示。Gallery组件显示到最后一个图像的效果如图2所示。
 效果图：
-![img](P)  
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/05_gallery.jpg)
+![img](http://emanual.github.io/md-android/img/view_gallery/05_gallery2.jpg) 
 从图2可以看出，当显示到最后一个图像时，列表后面就没有图像的，这也是Gallery组件的基本显示效果。在本文后面的部分将详细介绍如何使Gallery组件显示到最后一个图像时会从第1个图像开始显示。
 好了，现在我们来看一下图1和图2的效果是如何做出来的吧。Gallery既然用于显示图像，那第1步就必须要有一些图像文件用来显示。现在可以随意准备一些图像。在本文的例子中准备了15个jpg文件（item1.jpg至item15.jpg）。将这些文件都放在res\drawable目录中。
 下面将这些图像的资源ID都保存在int数组中，代码如下：
@@ -104,7 +104,7 @@ resIds[position % resIds.length]
 通过上面两点改进，可以使图像列表在向右移动时会循环显示图像。当然，这种方法从本质上说只是伪循环，也就是说，如果真把图像移动到getCount方法返回的值那里，那也就显示到最后一个图像的。不过在这里getCount方法返回的是Integer.MAX_VALUE，这个值超过了20亿，除非有人真想把图像移动到第20亿的位置，否则Gallery组件看着就是一个循环显示图像的组件。
 #### 实现循环显示图像的Gallery组件
 在本节将组出与循环显示图像相关的ImageAdapter类的完整代码。读者可以从中看到上一节介绍的两点改进。为了使界面看上去更丰满，本例还在单击某一个Gallery组件中的图像时在下方显示一个放大的图像（使用ImageSwitcher组件）。本例的显示效果如图3所示。当不断向后移动图像时，图像可不断显示，读者可以自己运行本例来体验一下。
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/05_gallery3.jpg) 
 在main.xml文件中定义的Gallery和ImageSwitcher组件的代码如下：
 ```  
 <?xml version="1.0" encoding="utf-8"?>

@@ -1,5 +1,5 @@
 Gallery效果
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/22_gallery.jpg) 
 废话不多说了，上代码。效果就是上面这样的
 首先定义一个存放资源的容器，ImageAdapter继承于BaseAdapter
 ```  

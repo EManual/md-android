@@ -1,5 +1,5 @@
 先上效果图：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/27_gallery.jpg) 
 系统自带的Gallery选中的item总是在组件的中间。但是有些时候我们需要把选中的元素放在左边或者是Gallery一出来就要放在左边。
 修改Gallery靠左对齐的思路：
 1、Gellary总是对center进行锁定的，所以可以考虑修改它的center的位置，把center改成在left的位置就可以了。
