@@ -7,7 +7,7 @@ public int getCount() {
 index=gallery.getCount()/2;
 gallery.setSelection(iindex);
 ```
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/31_gallery.jpg)
 如果这样写
 ```  
 public int getCount() {
@@ -18,8 +18,8 @@ public int getCount() {
 // gallery.setSelection(iindex);
 ```
 显示效果就是这样的
-![img](P)  
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/31_gallery2.jpg)  
+![img](http://emanual.github.io/md-android/img/view_gallery/31_gallery3.jpg)
 可以看到在第3个倒数第3个图片层次显示不正确  中间的效果和上边的一样是正确的
 不知道大家怎么解决这个问题
 顺便说一下 这个主要是设置gallery.setSpacing 为负值

@@ -137,4 +137,4 @@ public class GalleryDemo extends Activity {
 }
 ```
 效果图：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/02_gallery.jpg) 

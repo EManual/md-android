@@ -1,7 +1,7 @@
 网上看到了许多可以下拉刷新的listview，就像新浪微博那样的。但是却很少看到下拉刷新的Scrollview。有时候listview并不能解决问题，这时候就需要scrollview。于是我就自己做了一个弹性的scrollview，方法大同小异，重载onTouchEvent，并做处理。效果图如下：
-![img](P)  
-![img](P)  
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_srollview/17_srollview.jpg)   
+![img](http://emanual.github.io/md-android/img/view_srollview/17_srollview2.jpg)   
+![img](http://emanual.github.io/md-android/img/view_srollview/17_srollview3.jpg)   
 下面分享一下代码
 首先是下拉刷新头的文件布局
 ```  

@@ -2,10 +2,10 @@
 ImageSwitcher是Android中控制图片展示效果的一个控件，如：幻灯片效果；Gallery俗称画廊控件，是android中实现拖动图片移动一个控件，在项目开发中经常用到该控件。在网上可以看到很多类似这样的例子和效果，一些做得可能还更好。跟网上那些例子不同的是，在这里用了稍微多一点的代码注释讲解ImageSwitch和Gallery的结合使用，作为抛砖引玉的作用。可能有些地方说得不太详细，请多多指教。话不多说，上个运行截图先。
 运行截图：
 下部分的是Gallery控件，实现了无限循环。
-![img](P)  
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/25_gallery.jpg)  
+![img](http://emanual.github.io/md-android/img/view_gallery/25_gallery2.jpg)
 项目结构：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/25_gallery3.jpg)
 界面布局：
 采用绝对布局，上部分是ImageSwitcher控件，下部分是Gallery控件。
 代码如下：

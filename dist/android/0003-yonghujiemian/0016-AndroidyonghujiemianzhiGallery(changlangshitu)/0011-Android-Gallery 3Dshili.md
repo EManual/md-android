@@ -1,5 +1,5 @@
 效果如下：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/12_gallery.jpg)
 一、主类：
 ```  
 import java.io.File;

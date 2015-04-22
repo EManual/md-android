@@ -1,6 +1,6 @@
 使用过Android自带的gallery组件的人都知道，gallery实现的效果就是拖动浏览一组图片，相比iphone里也是用于拖动浏览图片的coverflow，显然逊色不少。实际上，可以通过扩展gallery，通过伪3D变换可以基本实现coverflow的效果。本文通过源代码解析这一功能的实现。具体代码作用可参照注释。
 最终实现效果如下：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/30_gallery.jpg)
 要使用gallery，我们必须首先给其指定一个adapter。在这里，我们实现了一个自定义的ImageAdapter，为图片制作倒影效果。
 传入参数为context和程序内drawable中的图片ID数组。之后调用其中的createReflectedImages()方法分别创造每一个图像的倒影效果，生成对应的ImageView数组，最后在getView()中返回。
 ```  
@@ -311,4 +311,4 @@ preTranslate相当于在对图像进行任何矩阵变换前先进行preTranslat
 举个例子，对图像进行旋转，需要俩个参数：一个是旋转的角度，另一个是旋转中心的坐标。旋转中心的坐标影响旋转的效果。这个能明白吗？你拿一根棍子，拿着棍子的一端进行旋转和拿在棍子中间旋转，是不一样的。preTranslate和postTranslate执行后对图像本身不会有影响，影响的是对图像进行变换时的旋转轴。
 说了这么多有点绕，其实就是矩阵变换的知识。
 MagicK截图
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/30_gallery2.jpg)  

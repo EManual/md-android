@@ -259,4 +259,4 @@ public class MainActivity extends Activity {
 }
 ```
 好了，来看运行结果
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_checkbox/10_checkbox.jpg)  

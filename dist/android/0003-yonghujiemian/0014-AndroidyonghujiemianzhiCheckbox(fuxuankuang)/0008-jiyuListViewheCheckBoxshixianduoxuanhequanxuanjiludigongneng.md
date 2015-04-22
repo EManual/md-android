@@ -229,4 +229,4 @@ public class MultiSelectActivity extends Activity implements OnClickListener,
     </LinearLayout>
 </LinearLayout>
 ```
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_checkbox/09_checkbox.jpg)   

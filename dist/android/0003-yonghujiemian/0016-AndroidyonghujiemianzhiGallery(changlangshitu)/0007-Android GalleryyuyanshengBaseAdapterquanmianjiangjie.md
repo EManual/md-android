@@ -159,4 +159,4 @@ public class myImageAdapter extends BaseAdapter {// 自定义的类变量
 }
 ```
 ⑦　结果
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/08_gallery.jpg)  

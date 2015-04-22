@@ -307,6 +307,6 @@ ScrollView也是一个Layout布局，可以让它内部的数据显示不下的�
 </ScrollView>
 ```
 例子的显示效果：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_srollview/23_srollview.jpg)    
 向下滚屏后的截图：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_srollview/23_srollview2.jpg)  

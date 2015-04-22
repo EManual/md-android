@@ -1,9 +1,9 @@
 之前在网上找了很多都没有这方面的资料，大概的效果是当Gallery滑动时不下载图片，当Gallery滑动停止时加载当前页面图片，自己花了一点时间大概的实现了，如果各位有更好的意见欢迎说出来大家一起学习。
 先上图看看效果：
 这图是在加载图片时显示的默认图片，当图片加载完成则替换。
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/20_gallery.jpg) 
 图片加载完成效果图
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/20_gallery2.jpg)
 ```  
 import java.util.ArrayList;
 import java.util.HashMap;

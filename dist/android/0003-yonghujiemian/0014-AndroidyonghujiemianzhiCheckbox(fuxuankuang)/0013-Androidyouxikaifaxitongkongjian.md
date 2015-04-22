@@ -3,7 +3,7 @@ CheckBox是Android系统最普通的UI控件，继承了Button按钮
 功能：实现复选框的功能
 创建项目“CheckBoxProject”
 运行项目效果截图：
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_checkbox/14_checkbox.jpg) 
 代码实现：
 main.xml
 ```  

@@ -167,7 +167,7 @@ g.setAdapter(new ImageAdapter(this));
 g.setOnItemSelectedListener(this);
 ```
 至此，全部，结束，运行结果如下
-![img](P)  
+![img](http://emanual.github.io/md-android/img/view_gallery/03_gallery.jpg) 
 完整源代码：
 ```  
 import android.app.Activity;
