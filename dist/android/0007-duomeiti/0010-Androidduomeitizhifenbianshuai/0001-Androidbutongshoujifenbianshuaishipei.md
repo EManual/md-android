@@ -6,13 +6,14 @@
 
 我选择的是xml匹配方式，结果发现按上面的方式做了之后，对应分辨率的手机的显示没有任何的效果，后来，我查看帮助文档后，发现必须要在androidmainfest中进行如下代码的配置：
 
-```xml
-<supports-screens
-    android:anyDensity="true
-    android:largeScreens="true
-    android:normalScreens="true
-    android:smallScreens="true
-    android:xlargeScreens="true" />
 ```
+    <supports-screens
+        android:anyDensity="true
+        android:largeScreens="true
+        android:normalScreens="true
+        android:smallScreens="true
+        android:xlargeScreens="true" />
+```
+
 
 如果没有这几行代码，不管你怎么调整layout中的控件，对应分辨率的手机是没有任何效果的。注意：由于android版本的不同，有些版本不支持xlargeScreens，可以直接将android:xlargeScreens="true"去掉。
