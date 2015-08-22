@@ -39,10 +39,10 @@ android.app.Activity类：因为几乎所有的活动（activities）都是与�
 2) onPause()：处理当离开你的活动时要做的事情。最重要的是，用户做的所有改变应该在这里提交（通常ContentProvider保存数据）。
 一个应用程序可能只包含一个活动，或者像刚才提到的短信应用，它可能包含几个活动。这些活动是什么，以及有多少，当然这取决于它的应用和设计。一般来讲，当应用程序被启动时，被标记为第一个的活动应该展示给用户。从一个活动移动到另一个活动由当前的活动完成开始下一个。
 每一个活动都有一个默认的窗口。一般来讲，窗口会填满整个屏幕，但是它可能比屏幕小或浮在其他窗口上。一个活动还可以使用额外的窗口——例如弹出式对话框，或当一用户选择屏幕上一个特定的项时一个窗口显示给用户重要的信息。
-窗口的可视内容是由继承自View基类的一个分层的视图—对象提供。每个视图控件是窗口内的一个特定的矩形空间。父视图包含和组织子女视图的布局。叶子视图（在分层的底层）绘制的矩形直接控制和响应用户的操作。因此，一个视图是活动与用户交互发生的地方。例如，一个视图可能显示一个小的图片和当用户点击图片时发起一个行为。Android有一些现成的视图你可以使用，包括按钮（buttons）、文本域（text fields）、滚动条（scroll bars）、菜单项（menu items）、复选框（check boxes）等等。
+窗口的可视内容是由继承自View基类的一个分层的视图—对象提供。每个视图控件是窗口内的一个特定的矩形空间。父视图包含和组织子女视图的布局。叶子视图（在分层的底层）绘制的png矩形直接控制和响应用户的操作。因此，一个视图是活动与用户交互发生的地方。例如，一个视图可能显示一个小的图片和当用户点击图片时发起一个行为。Android有一些现成的视图你可以使用，包括按钮（buttons）、文本域（text fields）、滚动条（scroll bars）、菜单项（menu items）、复选框（check boxes）等等。
 通过Activity.setContentView() 方法放置一个视图层次在一个活动窗口中。内容视图（content view）是层次结构的根视图对象。层次结构如下图所示：
 
-![img](http://emanual.github.io/md-android/img/component_activity/01_activity.jpg)  
+![img](http://emanual.github.io/md-android/img/component_activity/01_activity.png)  
 
 Activity.setContentView() 方法：
 public void setContentView (int layoutResID)：根据布局资源设置活动的界面。 资源将被夸大，添加布局资源文件中所有的最高层的视图（ top-level views ）到活动.
