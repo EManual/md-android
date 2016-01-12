@@ -108,7 +108,7 @@ drawable- hdpi、drawable- mdpi、drawable-ldpi的区别：
 (2)drawable-mdpi里面存放中等分辨率的图片,如HVGA (320x480)
 (3)drawable-ldpi里面存放低分辨率的图片,如QVGA (240x320)
 系统会根据机器的分辨率来分别到这几个文件夹里面去找对应的图片。
-删除刚才我们添加的<Button>元素，添加一个<ImageView>元素。
+删除刚才我们添加的`<Button>`元素，添加一个`<ImageView>`元素。
 ```   
 <?xml version="1.0" encoding="utf-8"?> 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
@@ -132,7 +132,7 @@ drawable- hdpi、drawable- mdpi、drawable-ldpi的区别：
 字符串前的@符号表示XML解析器应该解析和扩展剩下的ID字符串，并把它作为ID资源。+符号表示这是一个新的资源名字，它必须被创建且加入到我们的资源（R.java文件，R是Resource）。Android框架提供一些其他的ID资源。当引用一个Android资源ID时，你不需要+符号，但是你必须添加android包名字空间，如下：android:id="@android:id/empty"。
 #### 4、Hello World的手术（三）
 上面两个手术都是基于main.xml的，在布局资源文件中声明相应的控件并设置相关属性，如TextView、Button、ImageView等，然后在onCreate()方法中调用setContentView(R.layout.main)方法来输出。其实上面的几个实验我们都可以编程地进行，下面就以编程地用ImageView显示“Hello World！”，别的也是类似来完成。
-首先，我们将main.xml文件中的<ImageView>删掉，且将res/values/strings.xml中的<string name="hello">Hello World, HelloWorld!</string>删掉（其实第3节，用图片显示就没有用到它）；然后，在HelloWorld.java文件中 import android.widget.ImageView;且删掉onCreate()方法中调用setContentView(R.layout.main)方法，因为我们不需要根据main.xml布局资源文件来显示而是编程地Hello World。
+首先，我们将main.xml文件中的`<ImageView>`删掉，且将res/values/strings.xml中的`<string name="hello">Hello World, HelloWorld!</string>`删掉（其实第3节，用图片显示就没有用到它）；然后，在HelloWorld.java文件中 import android.widget.ImageView;且删掉onCreate()方法中调用setContentView(R.layout.main)方法，因为我们不需要根据main.xml布局资源文件来显示而是编程地Hello World。
 接下来我们在onCreate()方法中声明一个ImageView对象，并设置它的图像资源，最后将这个ImageView对象传给setContentView()方法，代码如下： 
 ```  
 import android.app.Activity;

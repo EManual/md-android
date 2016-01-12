@@ -1,7 +1,7 @@
 Android DDMS将为IDE搭建起与测试终端的链接，它们应用各自独立的端口监听调试器的信息，Android DDMS最大的特性就是可以实时监测到测试终端的连接情况，可以查看新的测试终端连接。
 DDMS监听第一个终端App进程的端口为8600，APP进程将分配8601，如果有更多终端或者更多APP进程将按照这个顺序依次类推。DDMS通过8700端口（“base port”）接收所有终端的指令，打开后的窗口为：
 
-![img](http://emanual.github.io/md-android/img/basic_ddms/01_ddms..jpg)  
+![img](http://emanual.github.io/md-android/img/basic_ddms/01_ddms.jpg)  
 
 在GUI的左上角可以看到标签为”Devices”的面板，这里可以查看到所有与Android DDMS连接的终端的详细信息，以及每个终端正在运行的APP进程。每个进程最右边相对应的是与调试器链接的端口。
 因为Android是基于Linux内核开发的操作平台，同时也保留了Linux中特有的进程ID，它介于进程名和端口号之间。Device窗口罗列模拟器中所有的进程，右上角那一排按钮分别为：调试某个进程，更新某个进程，更新进程堆栈信息，停止某个进程，最后一个图片按钮时抓取android目前的屏幕。

@@ -2,9 +2,9 @@
 Android中的菜单分为选项菜单、上下文菜单和子菜单，都可以在XML文件中声明定义，在代码中通过MenuInflater类使用。本节我们主要讲述如何使用菜单资源来声明创建菜单。
 #### 菜单资源文件的定义
 菜单资源文件也是一个XML文件，该菜单文件位于工程的res\menu\my_menu.xml目录下。通过R.menu.my_menu的方式来引用。
-典型菜单资源文件的结构是这样的：<menu>根元素，在<menu>根元素里面会嵌套<item>和<group>子元素，<item>元素中也可嵌套<menu>形成子菜单。
-<menu>根元素没有属性，它包含<item>和<group>子元素。
-<group>表示一个菜单组，相同的菜单组可以一起设置其属性，例如visible、enabled和checkable等。<group>元素的属性说明如下。
+典型菜单资源文件的结构是这样的：`<menu>`根元素，在`<menu>`根元素里面会嵌套`<item>`和`<group>`子元素，`<item>`元素中也可嵌套`<menu>`形成子菜单。
+`<menu>`根元素没有属性，它包含`<item>`和`<group>`子元素。
+`<group>`表示一个菜单组，相同的菜单组可以一起设置其属性，例如visible、enabled和checkable等。`<group>`元素的属性说明如下。
 ```  
 id：唯一标示该菜单组的引用id。
 menuCategory：对菜单进行分类，定义菜单的优先级，有效值为container、system、secondary和alternative。
@@ -13,8 +13,8 @@ checkableBehavior：选择行为，单选、多选还是其他。有效值为non
 visible：是否可见，true或者false。
 enabled：是否可用，true或者false。
 ```
-<item>表示菜单项，包含在<menu>或<group>中的有效属性。
-<item>元素的属性说明如下。
+`<item>`表示菜单项，包含在`<menu>`或`<group>`中的有效属性。
+`<item>`元素的属性说明如下。
 ```  
 id：唯一标示菜单的ID引用。
 menuCategory：菜单分类。

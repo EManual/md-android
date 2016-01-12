@@ -1,6 +1,6 @@
 本文主要实现在自定义的ListView布局中加入CheckBox控件，通过判断用户是否选中CheckBox来对ListView的选中项进行相应的操作。通过一个Demo来展示该功能，选中ListView中的某一项，然后点击Button按钮来显示选中了哪些项。
 [1] 程序结构图如下：
-![img](http://emanual.github.io/md-android/img/view_checkbox/08_checkbox.jpg) 
+![img](http://emanual.github.io/md-android/img/view_checkbox/08_checkbox.png) 
 其中Person.java是实体类，MainActivity.java是Activity组件类。listitem.xml是自定义的列表每项布局文件。
 [2] listitem.xml布局文件源码如下：
 ```  

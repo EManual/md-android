@@ -46,7 +46,7 @@ Api允许直接与蛇鞭的电话栈进行交互，让你可以直接打电话�
 5. SQLite 用来存储数据的轻量级关系数据库引擎
 6. SSL 用来支持使用安全套接字层（Secure Sockets Layer）加密协议的安全Internet通信。
 7. Android.location 基于位置的服务API让应用程序可以访问到设备当前的物理位置，不管使用什么样硬件或技术来确定位置，基于位置的服务都提供了对位置信息的通用访问。
-8. Android.media 媒体API提供了对音频和视频文件的回收和录制的支持，包括留媒体。
+8. Android.media 媒体API提供了对音频和视频文件的回收和录制的支持，包括流媒体。
 9. Android.opengl android使用OpenGL ES API提供了强大的3d渲染引擎，这种酒可以使用它来创建动态的3D用户界面。
 10. Android.hardware 当可用的时候，硬件API就会提供传感器硬件，包括摄像头、加速计和罗盘传感器。
 11. Android.buetooth, android.net.wifi和android.telephony  android也提供了对硬件平台的低级访问，包括蓝牙，wifi和电话硬件。

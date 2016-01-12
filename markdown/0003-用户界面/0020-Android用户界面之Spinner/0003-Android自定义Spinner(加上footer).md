@@ -114,4 +114,5 @@ public class CustomerSpinner extends Spinner implements OnItemClickListener {
 	}
 }
 ```
-![img](P)  
+
+![img](https://emanual.github.io/md-android/img/view_spinner/04_spinner.jpg)  
